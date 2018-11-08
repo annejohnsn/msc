@@ -1,0 +1,80 @@
+
+\begin{proposition}
+	(translation invariance) Let $(M, \rho)$ be a compact ultrametric space and suppose $M$ is also a topological group. If $\rho$ is (left) invariant under the group operation, then so is $\omega$. That\ is, if $\rho(x,y)=\rho(gx,gy)$, $ \forall g,x,y \in M$, then $\omega(gS)=\omega(S)$, for $S \subseteq M$.	
+\end{proposition}
+
+\begin{proof}
+Let $\{a_i\}_{i=0}^\infty$ be a $\rho$-ordering for $S$. Then $\{ga_i\}_{i=0}^\infty$ is a $\rho$-ordering for $gS$. Then $$\omega(gS) = \lim_{n\to\infty} \gamma(n)^{1/n} =  \lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(ga_n,ga_i)]^{1/n} = \lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(a_n,a_i)]^{1/n}	 = \omega(S)$$
+\end{proof}	
+
+\begin{example}
+With the notation of the previous section, note that for $x,y \in (\mathbb{Z}_p, \mid \cdot \mid_p)$, $\rho_p(x,y) = \mid x - y \mid_p = p^{-\nu_p(x-y)} = p^{-\nu_p((a+x)-(a+y))} =  \mid (a+x) - (a+y) \mid_p = \rho_p(a+x,a+y)$ so that $\omega(a+S) = \omega(S)$ for $S \in (\mathbb{Z}_p, \mid \cdot \mid_p)$.
+\end{example}
+
+\begin{example}
+Let $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$ be the metric space with elements $\{(x,y)\mid x,y \in \mathbb{Z}_p\}$ and metric $\rho_{p,\infty}((x_1,x_2), (y_1,y_2)) = \max(\rho_p(x_1, y_1)), \rho_p(x_2, y_2))$. Consider it also as a topological group with operation $(g_1,g_2) + (x_1,x_2) = (g_1+x_1, g_2+x_2)$. Then $\rho_{p,\infty}((x_1,x_2), (y_1,y_2))=\max(\rho_p(x_1, y_1)), \rho_p(x_2, y_2)=\max(\rho_p(g_1+x_1, g_1+y_1)), \rho_p(g_2+x_2, g_2+y_2)=\rho_{p,\infty}(((g_1,g_2) + (x_1,x_2)), ((g_1,g_2) + (y_1,y_2)))$, and $\omega((g_1,g_2)+S) = \omega(S)$ for $S \in (\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$. 	
+	
+\end{example}
+\begin{proposition}
+Let $(V, N)$ be a normed vector space and suppose $N$ satisfies the strong triangle identity. Then if $N$ is multiplicative, so is $\omega$. That is, if $N(gx)=N(g)N(x)$,$\forall g,x \in V$, then $\omega(gS) = N(g)  \omega(S)$, for $g \in V$ and $S \subseteq M$. 
+\end{proposition}
+
+\begin{proof}
+Let $\rho$ be the metric induced by $N$, so that $\rho(x,y) = N(x-y), \forall x,y \in V$. Let $\{a_i\}_{i=0}^\infty$ be a $\rho$-ordering for $S$. Then since $N$ is multiplicative, for $u, v \in gS$, $u=gs_i$ and $v=gs_j$ for some $s_i, s_j \in S$,  $$\rho(u, v) = \rho(gs_i, gs_j) =N(gs_i - gs_j) = N(g(s_i - s_j)) = N(g)N(s_i - s_j) = N(g)\rho(s_i,s_j).$$
+Then $\{ga_i\}_{i=0}^\infty$ is a $\rho$-ordering for $gS$ and 
+
+ $$\omega(gS) = \lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(ga_n,ga_i)]^{1/n} 
+ = \lim_{n\to\infty} [\prod_{i=0}^{n-1} N(g)\rho(a_n,a_i)]^{1/n} $$
+ $$= \lim_{n\to\infty} [N(g)^n\prod_{i=0}^{n-1} \rho(a_n,a_i)]^{1/n} = N(g) \lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(a_n,a_i)]^{1/n} = N(g) \omega(S)$$
+\end{proof}
+
+
+\begin{example}
+	Since $\mid \cdot \mid_p$ is multiplicative, $\omega(mS) = \mid m \mid_p  \omega(S)$ for $m \in \mathbb{Z}_p$ and $S \subseteq \mathbb{Z}$. In particular, $\omega(p\mathbb{Z}) = \mid p \mid_p \omega(\mathbb{Z}) = \frac{1}{p}*p^{1-p} = p^{-p}.$
+\end{example}
+
+\begin{example}
+	Let $(\mathbb{Z}_p \times \mathbb{Z}_p, \mid \cdot \mid_{p,\infty})$ be the vector space with elements $\{(x,y)\mid x,y \in \mathbb{Z}_p\}$ and norm $ \mid (x_1,x_2) \mid_{p,\infty} = \max(\mid x_1 \mid_p,\mid x_2 \mid_p ).$ Then $\mid (g,g)(x_1,x_2) \mid_{p,\infty} = \max(\mid gx_1 \mid_p,\mid gx_2 \mid_p ) = \max(\mid g \mid_p \mid x_1 \mid_p,\mid g \mid_p \mid x_2 \mid_p=\mid (g,g) \mid_p \mid (x_1,x_2) \mid_p$, so that $\mid \cdot \mid_{p,\infty} $ is multiplicative for $(g,g) \in \mathbb{Z}_p \times \mathbb{Z}_p$. Then $\omega((g,g)S) = \mid (g,g) \mid_p\omega(S)$. In particular, $\omega((p,p)\mathbb{Z} \times \mathbb{Z}) =\omega(p\mathbb{Z} \times p\mathbb{Z})=\mid (p,p) \mid_p \omega(\mathbb{Z} \times \mathbb{Z}) =
+	p^{-1} \omega(\mathbb{Z} \times \mathbb{Z}). $
+	
+\end{example}
+
+\begin{proposition}
+	(subadditivity) Suppose $S$ is a subset of a compact ultrametric space $(M, \rho)$ and $S = \cup_{i=1}^n B_{r_i}(x_i)$ with $ B_{r_i}(x_i) \cap B_{r_j}(x_j) = \emptyset, \forall i,j$. Then \[\frac{1}{log(\frac{\omega(S)}{d})} = \sum_{i=1}^\infty \frac{1}{log(\frac{\omega(S_i)}{d})}\] where $d$ is the diameter of $S$, $d=\max_{x,y \in S}\rho(x,y)$.
+\end{proposition}
+
+\begin{proof}
+First note that if $i \neq j$, then $\forall a \in B_{r_i}(x_i)$ and $\forall b \in B_{r_j}(x_j)$, $\rho(a,b) = r$, that is the distance between any two points in disjoint balls is the same:  Suppose $a,x \in B_{r_i}(x_i)$ and  $b,y \in B_{r_j}(x_j)$. Then $\rho(x,y)=\rho(a,y)$ since $\rho(a,y) > \max(r_i,r_j)$, $\rho(x,y) > \max(r_i,r_j)$, $\rho(a,x) \leq r_i$ and all triangles in an ultrametric space are isosceles. For the same reason, $\rho(a,y) = \rho(a,b)$, so that $\rho(a,b)=\rho(a,y)=\rho(x,y)$.\\
+\noindent Since $S$ is compact, there must exists $i,j$ such that $\rho(x_i, x_j)=d$. Note that for any $k \neq i,j$, $\rho(x_k,x_i) = d$ or $\rho(x_k, x_j)=d$. We build a new partition of $S$, $S=A \cup B$, where $B_{r_i}(x_i) \in A$ and $B_{r_j}(x_j) \in B$ and for any $k \neq i,j$, $B_{r_k}(x_k) \in A$ if $\rho(x_k,x_j) = d$ and in $B$ otherwise. 
+\end{proof}
+
+\begin{example}
+	{$S=\mathbb{Z}$ as a subset of $(\mathbb{Z},|\cdot|_2)$}.\\
+	$\mathbb{Z} = 2 \mathbb{Z} +1 \cup 2 \mathbb{Z}$ and since the diameter of $\mathbb{Z}$ is 1, 
+	\[\frac{1}{log(\omega(\mathbb{Z}))} = \frac{1}{log(\omega(2\mathbb{Z}+1))} + \frac{1}{log(\omega(2\mathbb{Z}))}\]
+	\[= \frac{1}{log(\omega(2\mathbb{Z}))} + \frac{1}{log(\omega(2\mathbb{Z}))} = \frac{2}{log(\omega(2\mathbb{Z}))}\]
+	\[=\frac{2}{log(\mid 2 \mid_2\omega(\mathbb{Z}))} =\frac{2}{log(\frac{1}{2}\omega(\mathbb{Z}))}\] so that 
+	\[2log(\omega(\mathbb{Z})) = log(\frac{1}{2}\omega(\mathbb{Z}))\]
+	which implies $\omega(\mathbb{Z}) = 1/2 = 2^{1-2}$, as expected.
+	
+\end{example}
+
+\begin{example}
+	{$S=\mathbb{Z} \setminus 4\mathbb{Z}$ as a subset of $(\mathbb{Z},|\cdot|_2)$}\\
+	$\mathbb{Z} \setminus 4\mathbb{Z} = 2\mathbb{Z} + 1 \cup 4\mathbb{Z} +2$ 
+and since the diameter of $\mathbb{Z} \setminus 4\mathbb{Z}$ is 1,	
+\[\frac{1}{log(\omega(\mathbb{Z} \setminus 4\mathbb{Z}))} = \frac{1}{log(\omega(2\mathbb{Z}+1))} + \frac{1}{log(\omega(4\mathbb{Z}+2))}\]
+\[=\frac{1}{log(\omega(2\mathbb{Z}))} + \frac{1}{log(\omega(4\mathbb{Z}))} =\frac{1}{log(\omega(\mid 2 \mid_2\mathbb{Z}))} + \frac{1}{log(\omega(\mid 4 \mid_2\mathbb{Z}))}\]
+\[=\frac{1}{log(\frac{1}{2}\omega(\mathbb{Z}))} + \frac{1}{log(\frac{1}{4}\omega(\mathbb{Z}))} =\frac{1}{log(\frac{1}{2}*\frac{1}{2}))} + \frac{1}{log(\frac{1}{4}*\frac{1}{2})}=\frac{5}{-6}\]
+so that $\omega(\mathbb{Z} \setminus 4\mathbb{Z}) = \frac{1}{2^{\frac{6}{5}}}$.
+\end{example}
+
+\begin{example}
+{$S=\mathbb{Z} \times \mathbb{Z}$ as a subset of $(\mathbb{Z} \times \mathbb{Z},\mid\cdot\mid_{2,\infty})$\\
+	$\mathbb{Z} \times \mathbb{Z} = 2\mathbb{Z} \times 2\mathbb{Z} \cup 2\mathbb{Z} \times 2\mathbb{Z}+1 \cup 2\mathbb{Z}+1 \times 2\mathbb{Z} \cup 2\mathbb{Z}+1 \times 2\mathbb{Z}+1$} and since the diameter of $\mathbb{Z} \times \mathbb{Z}$ is 1, 
+	\[\frac{1}{log(\omega(\mathbb{Z} \times \mathbb{Z}))} = \frac{1}{log(\omega(2\mathbb{Z} \times 2\mathbb{Z} \cup 2\mathbb{Z} \times 2\mathbb{Z}+1))} + \frac{1}{log(\omega(2\mathbb{Z}+1 \times 2\mathbb{Z} \cup 2\mathbb{Z}+1 \times 2\mathbb{Z}+1))}\]
+	\[=\frac{1}{log(\omega(2\mathbb{Z} \times 2\mathbb{Z})} + \frac{1}{log(\omega(2\mathbb{Z} \times 2\mathbb{Z}+1)} + 
+	\frac{1}{log(\omega(2\mathbb{Z}+1 \times 2\mathbb{Z})} +
+	\frac{1}{log(\omega(2\mathbb{Z}+1 \times 2\mathbb{Z}+1)} \]
+	\[ = \frac{4}{log(\omega(2\mathbb{Z} \times 2\mathbb{Z})}	\]
+\end{example}	

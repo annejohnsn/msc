@@ -1,0 +1,51 @@
+We describe an algorithm for computing the $\rho$-ordering of a set recursively and discuss some immediate corollaries.  \\
+
+Let $S \subseteq M$ be a compact subset of an ultrametric space $(M, \rho)$. Let $\Gamma_S =\{\gamma_0, \gamma_1,\ldots,\gamma_\infty=0\}$ be the set of distances in $S$.  Note that for each $k \in \mathbb{N}$, the closed balls of radius $\gamma_k$ partition $S$, i.e., $S=S_{\gamma_k} := \cup_{i=1}^n \overline{B_{\gamma_k}(x_i)}$, where both $n$ and the $x_i$'s depend on $k$. In what follows, fix a $k \in \mathbb{N}$ and let $S_{\gamma_k} = \cup_{i=1}^n \overline{B_{\gamma_k}(x_i)}$ be such a partition. Note that we can construct $S_{\gamma_{k+1}}$ by partitioning each of the $\overline{B_{\gamma_k}(x_i)}$ , i.e., \[S = S_{\gamma_{k+1}} = \cup_{i=1}^n \cup_{j=1}^{l_i} \overline{B_{\gamma_k}(x_{i,j})}\] where $1 \leq l_i \leq n$ and $\cup_{j=1}^{l_i} \overline{B_{\gamma_k}(x_{i,j})}=\overline{B_{\gamma_k}(x_i)}$, $\forall i$. We denote by $x_{i,j}$ the centre of a ball of radius $\gamma_{k+1}$ partitioning the ball $B_{\gamma_k}(x_i)$. Without loss of generality, when $j=1$, assume $x_{i,j}=x_i$, $\forall i$.\\
+
+We now make the following observation due to \cite{na},
+
+\begin{lemma*}
+For each $k$, the elements of $S_{\gamma_k}$, that is, the closed balls of radius $\gamma_k$, themselves form an ultrametric space, where 
+\[ \rho_k\overline{(B_{\gamma_k}(x)},\overline{B_{\gamma_k}(y)}) = 
+\begin{cases}
+\rho(x,y), & \text{if } \rho(x,y) > \gamma_k \\
+0, & \text{if }   \rho(x,y) \leq \gamma_k \text{, i.e., } \overline{B_{\gamma_k}(x)}=\overline{B_{\gamma_k}(y)}
+\end{cases}
+\]
+\end{lemma*}
+
+We note that since $S$ is assumed to be compact,  $S_{\gamma_k}$ is a finite metric space $\forall k < \infty$ and $S_{\gamma_\infty}=\cup_{x \in S}\overline{B_0(x)} = \cup_{x \in S}x=S$ and $\rho_\infty=\rho$.  Now view $S_{\gamma_k}$, for fixed $k < \infty$ as a finite ultrametric space and represent its $n < \infty$ elements by their centres, the $x_i$'s. Without loss of genearlity, we can reindex the $x_i$'s so that they give the first $n$ terms of a $\rho_k$-ordering of $S_{\gamma_k}$. The following proposition is the main result of this section.
+
+\begin{proposition*}
+Given $S$ a compact subset of an ultrametric space $M$ and $\Gamma_S$, the set of distances in $S$, if $S_{\gamma_k}$ is a partition of $S$ as described above for $\gamma_k \in \Gamma_S$ with $k < \infty$, where the centres of the balls are indexed according to a $\rho_k$-ordering of $S_{\gamma_k}$, then a $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ can be found by forming a matrix, $A_k$, whose $(i,j)^{th}$-entry is $x_{i,j}$, as shown below, and then concatenating the rows (where the columns are padded by * if necessary). 
+\end{proposition*}
+
+\[A_k=
+ \begin{pmatrix}
+  x_{1,1} & x_{2,1} & \ldots  &x_{n,1} \\
+  x_{1,2} & x_{2,2} &\ldots &x_{n,2} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  x_{1,l_1} & x_{2,l_2} & \ldots &x_{n,l_n}
+ \end{pmatrix}
+\]
+
+
+\begin{proof}
+Note that the entries in each column are points in the ball $B_{\gamma_k}(x_i)$ so that the pairwise distance between columns is constant and always exceeds the distance between elements within a column. Moreover, the columns are organized such that for any $j$, $x_{n,j}$ maximizes$\prod_{i=1}^{n-1} \rho_(x_{n,j},x_{i,j})$ since $\prod_{i=1}^{n-1} \rho_(x_{n,j},x_{i,j}) = \prod_{i=1}^{n-1} \rho_(x_{n,1},x_{i,1}) = \prod_{i=1}^{n-1} \rho_(x_{n},x_{i})$ and the $x_i$'s are indexed according a $\rho_k$-ordering of $S_{\gamma_k}$.\\
+
+Then a $\rho_{\gamma_{k+1}}$-ordering of $S_{\gamma_{k+1}}$ is obtained by minimizing the number of elements from any one column and by taking the points $x_{i,j}$ (for fixed $j$) in sequence. For example, by concatenating the rows.
+\end{proof}
+
+\begin{corollary*}
+Interweaving the bottown row of the lattice of closed balls for a set $S$ gives a $\rho$-ordering of $S$. 
+\end{corollary*}
+
+\begin{corollary*}
+Suppose $S$ and $T$ are compact subsets of an ultrametric space $M$ with $\Gamma_S = \Gamma_T$ and $\mid S_{\gamma_k}\mid =\mid T_{\gamma_k}\mid$, $\forall k$. Then $\omega(S) = \omega(T)$. 
+\end{corollary*}
+
+\begin{corollary*}
+(regularity) Suppose that $S$ is such that $\forall k$, any $B_{\gamma_k}(x)=\cup_{j=1}^l B_{\gamma_{k+1}}(x_j)$, that is, every ball in $S$ breaks into exactly $l$ smaller balls. 
+\end{corollary*}
+
+                    
