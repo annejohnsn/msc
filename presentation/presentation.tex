@@ -31,23 +31,25 @@
 \begin{proposition}
 	\cite{ar} All triangles in an ultrametric space $(M,\rho)$ are either equilateral or isocoles, with at most one short side. 
 \end{proposition}
-\begin{proposition}
-\cite{ar} If $M$ is a ultrametric space and $\Gamma_M$ is the set of all distances occurring between points of $M$, then $\Gamma_M$ is a discrete subset of $\mathbb{R}$. In particular if $\mid \Gamma_M\mid = \infty$, then the elements of $\Gamma_M$ can be indexed by $\mathbb{N}$.
-\end{proposition}
-
 \end{frame}
 
 \begin{frame}
-\frametitle{Ultrametric topology}
+\frametitle{Ultrametric basics}
 \begin{proposition*}
 \cite{ar} If $(M, \rho)$ is an ultrametric space and $B_{r_1}(x_0)$ and $B_{r_2}(y_0)$ are balls in $(M, \rho)$, then either $B_{r_1}(x_0) \cap B_{r_2}(y_0) = \emptyset$, $B_{r_1}(x_0) \subseteq B_{r_2}(y_0)$, or $B_{r_2}(x_0) \subseteq B_{r_1}(x_0)$. That is, in an ultrametric space, all balls are either comparable or disjoint.
 \end{proposition*}
 \begin{proposition*}
-\cite{ar} The distance between any two balls in an ultrametric is constant. That is, if $B_{r_1}(x_0)$ and $B_{r_2}(y_0)$ are two balls in an ultrametric space $(M,\rho)$, then $\rho(x,y)=c$ for some $c \in \mathbb{R}$ and $\forall x \in B_{r_1}(x_0)$ and $\forall y \in B_{r_2}(y_0)$
+\cite{ar} The distance between any two disjoint balls in an ultrametric is constant. That is, if $B_{r_1}(x_0)$ and $B_{r_2}(y_0)$ are two balls in an ultrametric space $(M,\rho)$, then $\rho(x,y)=c$ for some $c \in \mathbb{R}$ and $\forall x \in B_{r_1}(x_0)$ and $\forall y \in B_{r_2}(y_0)$
 \end{proposition*}
 \begin{proposition*}
 \cite{ar} Every point of a ball in an ultrametric is at its centre. That is, if $B_r(x_0)$ is a ball in an ultrametric space $(M,\rho)$, then $B_r(x)=B_r(x_0)$,  $\forall x \in B_r(x_0)$
 \end{proposition*}
+\end{frame}
+
+\begin{frame}
+\begin{proposition}
+\cite{ar} If $M$ is a ultrametric space and $\Gamma_M$ is the set of all distances occurring between points of $M$, then $\Gamma_M$ is a discrete subset of $\mathbb{R}$. In particular if $\mid \Gamma_M\mid = \infty$, then the elements of $\Gamma_M$ can be indexed by $\mathbb{N}$.
+\end{proposition}
 \end{frame}
 
 \begin{frame}
@@ -70,11 +72,6 @@ In what follows, let $S$ be a compact subset of an ultrametric space $(M,\rho)$.
  := \lim_{n\to\infty} \gamma(n)^{1/n}\]  
 \end{definition_proposition}
 
-
-\begin{proposition*}
-(upper bound) If $diam(S)  := \max_{x,y \in S} \rho(x,y)= d$, then $\omega(S) < d$.
-\end{proposition*}
-
 \end{frame}
 
 
@@ -93,7 +90,7 @@ In what follows, let $S$ be a compact subset of an ultrametric space $(M,\rho)$.
 \frametitle{valuative capacity: subadditivity}
 
 \begin{proposition*}
-\cite{kj}(subadditivity) If  $diam(S) := \max_{x,y \in S} \rho(x,y)=d$ and $S=\cup_i^n A_i$ for $A_i$ compact subsets of $M$ with $\rho(A_i, A_j)=d, \forall i,j$, then \[\frac{1}{log(\omega(S)/d) } = \sum_{i=1}^n \frac{1}{log(\omega(A_i)/d)}\] 
+\cite{kj}(subadditivity) If  $diam(S) := \max_{x,y \in S} \rho(x,y)=d$ and $S=\cup_i^n A_i$ for $A_i$ compact subsets of $M$ with $\rho(x_i, x_j)=d$, $\forall x_i \in A_i$, $\forall x_j \in A_j$ and $\forall i,j$, then \[\frac{1}{log(\omega(S)/d) } = \sum_{i=1}^n \frac{1}{log(\omega(A_i)/d)}\] 
 \end{proposition*}
 
 \begin{corollary}
@@ -146,7 +143,7 @@ For each $k \in \mathbb{N}$, the elements of $S_{\gamma_k}$, that is, the closed
 We make the following observations:
 \begin{itemize}
 \item Since $S$ is  compact,  $S_{\gamma_k}$ is a finite metric space $\forall k < \infty$ and $S_{\gamma_\infty}=\cup_{x \in S}\overline{B_0(x)} = \cup_{x \in S}x=S$ and $\rho_\infty=\rho$. 
-\item View $S_{\gamma_k}$, for fixed $k < \infty$ as a finite ultrametric space with $n$ elements. Let us denote an element of  $S_{\gamma_k}$, that is a $B_{\gamma_k}(x_i)$, by its centre, $x_i$. 
+\item View $S_{\gamma_k}$, for fixed $k < \infty$ as a finite ultrametric space with $n$ elements. Let us denote an element of  $S_{\gamma_k}$, that is a $\overline{B_{\gamma_k}(x_i)}$, by its centre, $x_i$. 
 \item Without loss of genearlity, we can reindex the $x_i$'s so that they give the first $n$ terms of a $\rho_k$-ordering of $S_{\gamma_k}$.
 \end{itemize}
 \end{frame}	
@@ -172,7 +169,7 @@ Consider the matrix $A_k$, whose $(i,j)^{th}$-entry is $x_{i,j}$ (or * if $l_i <
   x_{1,l_1} & x_{2,l_2} & \ldots &x_{n,l_n}
  \end{pmatrix}
 \]
-
+\pause
  A $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ can be found by concatenating the rows of $A_k$ (and ignoring *'s).
 \end{frame}
 
