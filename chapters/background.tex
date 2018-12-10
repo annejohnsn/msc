@@ -22,10 +22,9 @@
 
 
 \begin{proposition*}
-\cite{ar} If $M$ is a ultrametric space and $\Gamma_M$ is the set of all distances occurring between points of $M$, then $\Gamma_M$ is a discrete subset of $\mathbb{R}$. In particular if $\mid \Gamma_M\mid = \infty$, then the elements of $\Gamma_M$ can be indexed by $\mathbb{N}$.
+\cite{ar} If $S$ is a compact subset of an ultrametric space and $\Gamma_S$ is the set of all distances occurring between points of $S$, then $\Gamma_S$ is a discrete subset of $\mathbb{R}$. In particular if $\mid \Gamma_S\mid = \infty$, then the elements of $\Gamma_S$ can be indexed by $\mathbb{N}$.
 \end{proposition*}
 
-\section{Ultrametric topology}
 \noindent Let $(M, \rho)$ be a compact ultrametric space and let \[B_r(a)=\{x \in M \mid \rho(x,a) < r\}\] denote the open ball of radius $r$, centred at $a$ for some $r \in \mathbb{R}_{\geq 0}$ and $a \in (M,\rho)$. Likewise let \[\overline{ B_r(a)}=\{x \in M \mid \rho(x,a) \leq r\}\]  denote the closed ball of radius $r$, centred at $a$ for some $r \in \mathbb{R}_{\geq 0}$ and $a \in (M,\rho)$.
 
 \begin{proposition*}
@@ -81,21 +80,9 @@ In what follows let $S$ be a compact subset of an ultrametric space $(M,\rho)$.
 \end{proposition*}
 
 \begin{proof}
-Since $d$ is the diameter of $S$, the $n^{th}$ term of the $\rho$-sequence of $S$ is bounded by $d^n$ and so $ \lim_{n\to\infty} \gamma(n)^{1/n}=d$ if and only if $\gamma(n)=d^n$, $\forall n$. This implies $\rho(a_n, a_i) = d$, $\forall n$ and $\forall i < n$. Then $\rho(a_i,a_j)=d$, $\forall i,j$, which means the cover of $S$, $\cup_{a_i} B_d(a_i)$ is in fact an infinite partition, contradicting the compactness of $S$. Then  $\omega(S)= \lim_{n\to\infty} \gamma(n)^{1/n}<d$. 
+Since $d$ is the diameter of $S$, the $n^{th}$ term of the $\rho$-sequence of $S$ is bounded by $d^n$ and so $ \lim_{n\to\infty} \gamma(n)^{1/n}=d$ if and only if $\gamma(n)=d^n$, $\forall n$. This implies $\rho(a_n, a_i) = d$, $\forall n$ and $\forall i < n$, but then $\rho(a_i,a_j)=d$, $\forall i,j$, since the $\rho$-sequence is maximized at each $n$. This means $\omega(S) < d$ would imply that the cover of $S$, $\cup_{a_i} B_d(a_i)$ is in fact an infinite partition, contradicting the compactness of $S$. Then  $\omega(S)= \lim_{n\to\infty} \gamma(n)^{1/n}<d$. 
 \end{proof}
 
-\begin{proposition*}
-\cite{kj}(subadditivity) If  $diam(S) := \max_{x,y \in S} \rho(x,y)=d$ and $S=\cup_i^n A_i$ for $A_i$ compact subsets of $M$ with $\rho(A_i, A_j)=d, \forall i,j$, then \[\frac{1}{log(\omega(S)/d) } = \sum_{i=1}^n \frac{1}{log(\omega(A_i)/d)}\] 
-\end{proposition*}
-
-\begin{corollary*}
-Suppose $S = \cup_i^n S_i$ with $\rho(S_i, S_j)=d=diam(S)$ and also $\omega(S_i)=\omega(S_j)$, $\forall i,j$ .  Let $r \in \mathbb{R}$ be such that $\omega(S_i)=r\omega(S)$, $\forall i$. Then $\omega(S) = r^{\frac{1}{n-1}}\cdot d$. In particular if $S = \mathbb{Z}$ and $(M,\rho)= (\mathbb{Z}, \mid \cdot\mid_p)$ then $\omega(S)=(\frac{1}{p})^{1/p-1}$ for any prime $p$. 
-\end{corollary*}
-
-\begin{corollary*}
-(Joins of computable sets are computable) Let  $\Gamma_M = \{\gamma_0, \gamma_1,\ldots, \gamma_\infty=0\}$ be the set of distances in $M$. Suppose that $S = B_{\gamma_i}(x)$,  for some $x$ and $i$, is the union of $2$ or more balls of radius $\gamma_{i+1}$, i.e., $S=\cup_{j=1}^n B_{\gamma_{i+1}} (x_j)$ is a join in the lattice of open sets in $M$, then 
-\[\frac{1}{log(\omega(S)/\gamma_{i+1} )} = \sum_{j=1}^n \frac{1}{log(\omega(B_{\gamma_{i+1}}(x_j))/\gamma_{i+1} )}\]
-\end{corollary*}
 
 
 \begin{proposition*}
@@ -138,4 +125,78 @@ Then $\{ga_i\}_{i=0}^\infty$ is a $\rho$-ordering for $gS$ and
 \end{example}
 
 
+\begin{proposition*}
+	\cite{kj}(subadditivity) If  $diam(S) := \max_{x,y \in S} \rho(x,y)=d$ and $S=\cup_i^n A_i$ for $A_i$ compact subsets of $M$ with $\rho(A_i, A_j)=d, \forall i,j$, then \[\frac{1}{log(\omega(S)/d) } = \sum_{i=1}^n \frac{1}{log(\omega(A_i)/d)}\] 
+\end{proposition*}
 
+\begin{corollary*}
+	Suppose $S = \cup_i^n S_i$ with $\rho(S_i, S_j)=d=diam(S)$ and also $\omega(S_i)=\omega(S_j)$, $\forall i,j$ .  Let $r \in \mathbb{R}$ be such that $\omega(S_i)=r\omega(S)$, $\forall i$. Then $\omega(S) = r^{\frac{1}{n-1}}\cdot d$. In particular if $S = \mathbb{Z}$ and $(M,\rho)= (\mathbb{Z}, \mid \cdot\mid_p)$ then $\omega(S)=(\frac{1}{p})^{1/p-1}$ for any prime $p$. 
+\end{corollary*}
+
+\begin{corollary*}
+	(Joins of computable sets are computable) Let  $\Gamma_M = \{\gamma_0, \gamma_1,\ldots, \gamma_\infty=0\}$ be the set of distances in $M$. Suppose that $S = B_{\gamma_i}(x)$,  for some $x$ and $i$, is the union of $2$ or more balls of radius $\gamma_{i+1}$, i.e., $S=\cup_{j=1}^n B_{\gamma_{i+1}} (x_j)$ is a join in the lattice of open sets in $M$, then 
+	\[\frac{1}{log(\omega(S)/\gamma_{i+1} )} = \sum_{j=1}^n \frac{1}{log(\omega(B_{\gamma_{i+1}}(x_j))/\gamma_{i+1} )}\]
+\end{corollary*}
+
+\section{Background from Gerritzen and van der Put}
+
+Background results from \cite{gvdp}. Let $k$ be a field that is complete with respect to a non-archimedean valuation and let $K$ be a complete and algebraically closed field containing $k$. 
+
+\begin{definition*}\cite{gvdp} The \textbf{projective line over $k$}, denoted $\mathbb{P}^1(k)$, is the space whose points are lines $l$ in $k^2$ that intersect $(0,0)$ and whose topology and field structure are inherited from $k$. Equivalently, the points of  $\mathbb{P}^1(k)$ are the equivalence classes of $k^2 \setminus (0,0)$ under the relation $(x,y) \sim (x',y')$ if there exists a $\lambda \in k\setminus 0$ such that  $(x,y) = \lambda(x',y')$. ! Give also the homogeneous coordinates.
+\end{definition*}
+
+\begin{proposition*} \cite{gvdp} Let $\psi: k \mapsto \mathbb{P}^1(k)$ be the map given by $\psi(\lambda_0) = [1, \lambda_0]$, where $ [1, \lambda_0]$ is the line in $k^2$, $\{\lambda(1, \lambda_0); \lambda \in k\}$. Then the image of $\psi$ is $\mathbb{P}^1(k) \setminus [0,1]$ and is isomorphic to $k$, so that $k$ is identified with projective space minus a distinguished point, $[0,1]$, which is denoted by $\infty$.  
+\end{proposition*}
+
+\begin{proposition*} \cite{gvdp}
+	$\mathbb{P}^1(k)$ is compact if and only if $k$ is locally compact.
+\end{proposition*}
+
+\begin{definition*} \cite{gvdp}
+We denote by $GL(2,k)$ the set of invertible $2 \times 2$ matrices over $k$. A \textbf{fractional linear automorphism}, $\phi$, of $\mathbb{P}^1(k)$ is a map  defined by $z \mapsto \frac{az +b}{cz +d}$ for some 
+$\bigl( \begin{smallmatrix}a & b\\ c &d\end{smallmatrix}\bigr) \in GL(2,k)$. The set of fractional linear automorphisms of $\mathbb{P}^1(k)$ is denoted $PGL(2,k)$. Note that $PGL(2,k) = GL(2,k) / \{ \bigl( \begin{smallmatrix}\lambda & 0\\ 0 &\lambda \end{smallmatrix}\bigr); \lambda \in k^*  \}$. In homogeneous coordinates, we can represent the action of $\phi$ by $[x_0,x_1] \mapsto [cx_1 +dx_0, ax_1 +bx_0]$. 
+\end{definition*}
+
+
+
+\begin{definition*} \cite{gvdp}
+Suppose $\Gamma$ is a subgroup of $PGL(2,k)$. A point $p  \in \mathbb{P}^1(k)$ is a \textbf{limit point of $\Gamma$}, if there exists a point $q$ in  $\mathbb{P}^1(k)$ and a sequence $\{\gamma_n\}_{n\geq 1}$ in $\Gamma$ such that $\lim_{n\to\infty} \gamma_n(q) = p$.
+\end{definition*}
+
+\begin{proposition*} \cite{gvdp} If $\Gamma$ is not a discrete subgroup of $PGL(2,k)$ then every point of  $\mathbb{P}^1(k)$ is a limit point of $\Gamma$.
+\end{proposition*}	
+
+\begin{proof} 
+Since $\Gamma$ is not discrete, the sequence  $\{\gamma_n\}_{n\geq 1}$ has a limit $\gamma$ in $\Gamma$. Let $p$ be any point of $\mathbb{P}^1(k)$ and let $q= \gamma^{-1}$. Then $\lim_{n\to\infty} \gamma_n(q) = \lim_{n\to\infty} \gamma_n(\gamma^{-1}(p)) =p$. 
+\end{proof}	
+
+\begin{definition*} \cite{gvdp} A subgroup $\Gamma$ of $PGL(2,k)$ is \textbf{discontinuous} if the closure of every orbit of $\Gamma$ in $\mathbb{P}^1(k)$ is compact and the set of all limit points of $\Gamma$ is not equal to  $\mathbb{P}^1(k)$ .
+\end{definition*}
+
+\begin{proposition*} \cite{gvdp} If $\Gamma$ is a discontinuous subgroup of $PGL(2,k)$  and $\mathcal{L}$ is the set of limit points of $\Gamma$, then $\mathcal{L}$ is compact, no where dense and if $\mathcal{L}$ contains more than two points, $\mathcal{L}$ is perfect.
+\end{proposition*}
+
+\begin{definition} \cite{gvdp}
+Let $A$ be an element of $GL(2,k)$ and let $a_1$ and $a_2$  be the eigenvalues of $A$. Then $A$ is called \textbf{elliptic} if $a_1 \neq a_2$, but $\mid a_1\mid = \mid a_2\mid$. $A$ is called \textbf{parabolic} if $a_1 = a_2$, and $A$ is called \textbf{hyperbolic} if  $\mid a_1\mid \neq \mid a_2\mid$.
+\end{definition}
+
+\begin{example} 
+Consider the matrix $T_s =  \bigl( \begin{smallmatrix}p & s\\ 0 & 1 \end{smallmatrix}\bigr) \in GL(2, \mathbb{Q}_p)$ for some $s$ in $(0,\ldots, p-1)$. $T_s$ has eigenvalues $p$ and $1$ and so $T_s$ is hyperbolic for any choice of $s$ or $p$. Consider the action of $T_s$ on $\mathbb{Z}_p \subset \mathbb{Q}_p$, where $\mathbb{Z}_p$ is identified with the subspace $\{[1,\lambda];\lambda \in \mathbb{Z}_p \}$ of $\mathbb{P}^1(\mathbb{Q}_p)$. In homogeneous coordinates, this action is given by $[1,\lambda] \mapsto [1, p\lambda +s]$. Since $\mid (p\lambda +s -s)\mid = \mid p\lambda\mid \leq \frac{1}{p}$, $T_s$ sends $\lambda$ to $B_\frac{1}{p}(s)$. Also note that for $s = 0$, $T_s$ has the effect of shifting the index of $\lambda$ by 1, that is, if $\lambda = \sum_{i=n}^\infty a_ip^i$, where $n = ord(\lambda)$, then $T_0([1,\lambda]) = [1, p\lambda] \rightsquigarrow p\lambda = \sum_{i=n+1}^\infty a_{(i-1)}p^{(i-1)}$.	
+\end{example}	
+
+\begin{definition*} \cite{gvdp} A \textbf{Schottky group} is a finitely-generated, free and discontinuous subgroup of  $PGL(2,k)$
+\end{definition*}
+
+\begin{definition*}\cite{gvdp}
+The set $\{\lambda \in k; \mid \lambda\mid \leq 1\}$, denoted $k^0$ is the \textbf{valuation ring} of $k$. It has a unique maximal ideal, denoted $k^{00}$, given by $\{\lambda \in k; \mid \lambda\mid < 1\}$. The \textbf{residue field} of $k$ is $\bar{k} := k^0/k^{00}$.
+\end{definition*}
+
+\begin{definition*} $k$ is called a \textbf{local field} if $k$ is locally compact. \end{definition*}
+
+\begin{proposition*} \cite{gvdp} The following are equivalent:
+\begin{enumerate}
+\item $k$ is a local field.
+\item $\mid k^*\mid := \{\mid \lambda\mid; \lambda \in k, \lambda \neq 0\} \cong \mathbb{Z}$ and $\bar{k}$ is finite.
+\item $k$ is a finite extension of either $\mathbb{Q}_p$ or $\mathbb{F}_p((t))$.
+\end{enumerate}
+\end{proposition*}	
