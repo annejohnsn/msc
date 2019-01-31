@@ -7,7 +7,7 @@
 \newtheorem*{lemma*}{Lemma}
 \newtheorem*{definition*}{Definition}
 
-\title{Valuative Capacity of subshifts of finite type}
+\title{Valuative Capacity of of some compact subsets of $\mathbb{Z}_p$}
 \author{Anne Johnson}
 \date{\today}
 
@@ -39,7 +39,7 @@ cf:  The \textbf{$\rho$-sequence} of $S$ is the sequence whose $0^{th}$-term is 
 
 \begin{frame}
 \frametitle{Background: valuative and logarithm capacity}
- The \textbf{valuative capacity} of an infinite set, $S \subseteq \mathbb{Z}_p$ is
+ The \textbf{valuative capacity} of an infinite set, $S \subseteq \mathbb{Z}_p$, is
 \[ L_p(S) := \lim_{n\to\infty}  \frac{w_S(n,p)}{n}\]
 where $w_S(n,p)$ is the $p-$sequence of $S$. 
 \newline
@@ -49,12 +49,12 @@ where $w_S(n,p)$ is the $p-$sequence of $S$.
 
 \begin{frame}
 \frametitle{Background: valuative and logarithm capacity}
- The \textbf{logarithm capacity} of an infinite set, $S \subseteq \mathbb{Z}_p$ is
+ The \textbf{logarithm capacity} of an infinite set, $S \subseteq \mathbb{Z}_p$, is
 \[ V_p(E) := p^{-L_p(E)}\]
 \newline
 nb: this is equal to the transfinite diameter and the Chebychev constant.
 \pause \newline
-\\cf: The \textbf{generalized valuative capacity} of a set $S$ is \[\lim_{n\to\infty} \gamma(n)^{1/n}\] where $\gamma(n)$ is the $\rho-$sequence of $S$. \\nb: capacity is translation invariant and multiplicative (when the metric is) and has a subadditivity property.
+%\\cf: The \textbf{generalized valuative capacity} of a set $S$ is \[\lim_{n\to\infty} \gamma(n)^{1/n}\] where $\gamma(n)$ is the $\rho-$sequence of $S$. \\nb: capacity is translation invariant and multiplicative (when the metric is) and has a subadditivity property.
 \end{frame}
 
 \begin{frame}
@@ -86,11 +86,11 @@ An example:\parskip=20pt
 \frametitle{Digression: projective $k$-space}
  Let $k$ be a field that is complete with respect to a non-archimedean valuation.
 
-\begin{definition*} The \textbf{projective line over $k$}, denoted $\mathbb{P}^1(k)$, is the space whose points are lines $l$ in $k^2$ that intersect $(0,0)$ and whose field structure is inherited from $k$. 
+\begin{definition*} The \textbf{projective line over $k$}, denoted $\mathbb{P}^1(k)$, is the space whose points are lines $l$ in $k^2$ that intersect $(0,0)$.% and whose field structure is inherited from $k$. 
 \end{definition*}
 
 
-\begin{proposition*} Let $\psi: k \rightarrow \mathbb{P}^1(k)$ be the map given by $\psi(\lambda_0) = [1, \lambda_0]$, where $ [1, \lambda_0]$ is the line in $k^2$, $\{\lambda(1, \lambda_0); \lambda \in k\}$. Then the image of $\psi$ is $\mathbb{P}^1(k) \setminus [0,1]$ and is isomorphic to $k$, so that $k$ is identified with projective space minus a distinguished point, $[0,1]$, which is denoted by $\infty$.  
+\begin{proposition*} Let $\psi: k \rightarrow \mathbb{P}^1(k)$ be the map given by $\psi(\lambda_0) = [1, \lambda_0]$, where $ [1, \lambda_0]$ is the line in $k^2$, $\{\lambda(1, \lambda_0); \lambda \in k^*\}$. Then the image of $\psi$ is $\mathbb{P}^1(k) \setminus [0,1]$ and is isomorphic to $k$, so that $k$ is identified with projective space minus a distinguished point, $[0,1]$, which is denoted by $\infty$.  
 \end{proposition*}
 \end{frame}
 
@@ -147,16 +147,6 @@ What is the limit set of $\Gamma$?
 \item  Let $a=[a_0,a_1] \in \mathbb{P}^1(\mathbb{Q}_p)$ and let $\{\gamma_n\}$ be a sequence in $\Gamma$. We have that $$\lim_{n\to\infty} \gamma_n(a) = \lim_{n\to\infty} [a_0, p^{nl}a_1 + z_n] = [a_0, z],$$ where the coefficient vector of each $z_n$ is a concatenation of the coefficient vectors of the $x_i$, for finitely-many terms (and then $0$s), and $z$ is an element of $\mathbb{Z}_p$ whose entire coefficient vector is a concatenation of the coefficient vectors of the $x_i$.
 
 \end{itemize}
-%Consider the action of $T_s$ on $\mathbb{Z}_p \subset \mathbb{Q}_p$, where $\mathbb{Z}_p$ is identified with the subspace $\{[1,\lambda];\lambda \in \mathbb{Z}_p \}$ of $\mathbb{P}^1(\mathbb{Q}_p)$. In homogeneous coordinates, this action is given by $[1,\lambda] \mapsto [1, p\lambda +s]$. Since $\mid (p\lambda +s -s)\mid = \mid p\lambda\mid \leq \frac{1}{p}$, $T_s$ sends $\lambda$ to $B_\frac{1}{p}(s)$.
-
-	
-%	We now consider the limit set of $\Gamma$. First consider an arbitrary element $\gamma \neq id_\Gamma \in \Gamma$. If $\gamma = \prod_{j \in J} \gamma_j$ for some finite index set $J$, then we can write $\gamma$ as \[\bigl( \begin{smallmatrix}p^l & a_0+a_1p+\ldots +a_lp^l\\ 0 & 1 \end{smallmatrix}\bigr) \bigl( \begin{smallmatrix}p^l & b_0+b_1p+\ldots +b_lp^l\\ 0 & 1 \end{smallmatrix}\bigr) \ldots \bigl( \begin{smallmatrix}p^l & c_0+c_1p+\ldots +c_lp^l\\ 0 & 1\end{smallmatrix}\bigr)\] \[=\bigl( \begin{smallmatrix}p^{l^n} & a_0+a_1p+\ldots +a_lp^l + b_0p^{l+1}+b_1p^{l+2}+\ldots +b_lp^{2l} + \ldots + c_0p^{(n-1)l +1}+c_1p^{(n-1)l+2}\ldots +c_lp^{nl}\\ 0 & 1 \end{smallmatrix}\bigr) \]
-	
-%	where $n$ is the cardinality of $J$. Then an element of $\Gamma$ is of the form
-%	$\bigl( \begin{smallmatrix}p^{lm} & z\\ 0 & 1 \end{smallmatrix}\bigr)$, where $m \in \mathbb{N}$ and $z$ is an element of $\mathbb{Z}_p$ whose coefficient vector is a concatenation of the coefficient vectors of the $x_i$ (for $0 \leq i \leq ml$ and $0$ for $i > ml$). \\\\
-
-%	 Let $a=[a_0,a_1] \in \mathbb{P}^1(\mathbb{Q}_p)$ and let $\{\gamma_n\}$ be a sequence in $\Gamma$. We have that $$\lim_{n\to\infty} \gamma_n(a) = \lim_{n\to\infty} [a_0, p^{nl}a_1 + z_n] = [a_0, z],$$ where the coefficient vector of each $z_n$ is a concatenation of the coefficient vectors of the $x_i$, for finitely-many terms (and then $0$s), and $z$ is an element of $\mathbb{Z}_p$ whose entire coefficient vector is a concatenation of the coefficient vectors of the $x_i$.  Then the limit set of $\Gamma$ is the set \[\mathcal{L}=\{[\lambda, x]; \lambda \in \mathbb{Q}_p^*, x \in S\},\] where $S$ is the set of $x \in \mathbb{Z}_p$, such that the entire coefficient vector of x is a concatenation of the coefficient vectors of the $x_i$; that is $S$ is the set  $S=E=\phi(X)$ in the original lemma. Now we observe that $\psi^{-1}(\{[1, x]; x \in S\}) = S= E=\phi(X)$ and $\psi^{-1}(\{[\lambda, x]; x \in S\}) = \emptyset$ for any other $\lambda \neq 1 \in \mathbb{Q}_p^*$, so that $Z=\psi^{-1}(\mathcal{L})=S \cup \emptyset = S =E=\phi(X)$, as required. 
-	 
 
 \end{frame}
 
