@@ -1,3 +1,6 @@
+As a first point of departure, a natural space to consider is the product space, $\mathbb{Z}^n$ (or $\mathbb{Z}_p^n$ or $\mathbb{Q}_p^n$), for some $n >1$. A natural candidate for an ultrametric on the space is the $L_\infty$ metric, given by
+\[ \rho_\infty(x,y) = \rho_\infty((x_1,x_2,\ldots),(y_1,y_2, \ldots)) = sup_{i \in 1:n} (\rho(x_i, y_i))\] where $\rho$ is the metric from the base space. 
+Show this an ultrametric, its translation invariant and comes from a multiplicative norm. 
 \begin{example}
 	Let $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$ be the metric space with elements $\{(x,y)\mid x,y \in \mathbb{Z}_p\}$ and metric $\rho_{p,\infty}((x_1,x_2), (y_1,y_2)) = \max(\rho_p(x_1, y_1)), \rho_p(x_2, y_2))$. Consider it also as a topological group with operation $(g_1,g_2) + (x_1,x_2) = (g_1+x_1, g_2+x_2)$. Then $\rho_{p,\infty}((x_1,x_2), (y_1,y_2))=\max(\rho_p(x_1, y_1)), \rho_p(x_2, y_2)=\max(\rho_p(g_1+x_1, g_1+y_1)), \rho_p(g_2+x_2, g_2+y_2)=\rho_{p,\infty}(((g_1,g_2) + (x_1,x_2)), ((g_1,g_2) + (y_1,y_2)))$, and $\omega((g_1,g_2)+S) = \omega(S)$ for $S \in (\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$. 	
 	
