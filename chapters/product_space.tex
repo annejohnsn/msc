@@ -1,5 +1,16 @@
 As a first point of departure, a natural space to consider is the product space, $\mathbb{Z}^n$ (or $\mathbb{Z}_p^n$ or $\mathbb{Q}_p^n$), for some $n >1$. A natural candidate for an ultrametric on the space is the $L_\infty$ metric, given by
-\[ \rho_\infty(x,y) = \rho_\infty((x_1,x_2,\ldots),(y_1,y_2, \ldots)) = sup_{i \in 1:n} (\rho(x_i, y_i))\] where $\rho$ is the metric from the base space. 
+\[ \rho_\infty(x,y) = \rho_\infty((x_1,x_2,\ldots),(y_1,y_2, \ldots)) = sup_{i} \{\rho(x_i, y_i)\}\] where $\rho$ is the metric from the base space. Then $\rho_\infty$ is easily seen to be an ultrametric, so long as $\rho$ is. Indeed, let $(M, \rho)$ be an ultrametric space and consider two points, $x$ and $y$, in the product space, $M^n$ for some $n >1$. Clearly, $\rho_\infty(x,y) \geq 0$ since each $\rho(x_i,y_i) \geq 0$, and $\rho_\infty(x,y) = 0 \iff \rho(x_i,y_i) =0,\forall i \iff x_i=y_i, \forall i \iff x=y$. The fact that $\rho_\infty$ is symmetric is also an easy consequence of the fact that $\rho$ is symmetric since  $\rho(x_i, y_i) = \rho(y_i, x_i)$ implies $sup_{i}\{\rho(x_i, y_i)\} = sup_{i}\{\rho(y_i, x_i)\}$. To see that $\rho_\infty$ is an ultrametric, note that since $\rho$ is an ultrametric $\rho(x_i, y_i) \leq max\{\rho(x_i, z_i), \rho(y_i,z_i)\}$, where $z_i$ is any other point of $M$.
+
+We show a few quick results on the product space. 
+
+\begin{proposition*}
+$\rho_\infty$ is translation invariant if $\rho$ is, in which valuative capcity is translation invariant.
+\end{proposition*}
+
+\begin{proposition*}
+$\rho_\infty$ is mltiplicative if $\rho$ is, in which valuative capcity is multiplicative.
+\end{proposition*}
+
 Show this an ultrametric, its translation invariant and comes from a multiplicative norm. 
 \begin{example}
 	Let $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$ be the metric space with elements $\{(x,y)\mid x,y \in \mathbb{Z}_p\}$ and metric $\rho_{p,\infty}((x_1,x_2), (y_1,y_2)) = \max(\rho_p(x_1, y_1)), \rho_p(x_2, y_2))$. Consider it also as a topological group with operation $(g_1,g_2) + (x_1,x_2) = (g_1+x_1, g_2+x_2)$. Then $\rho_{p,\infty}((x_1,x_2), (y_1,y_2))=\max(\rho_p(x_1, y_1)), \rho_p(x_2, y_2)=\max(\rho_p(g_1+x_1, g_1+y_1)), \rho_p(g_2+x_2, g_2+y_2)=\rho_{p,\infty}(((g_1,g_2) + (x_1,x_2)), ((g_1,g_2) + (y_1,y_2)))$, and $\omega((g_1,g_2)+S) = \omega(S)$ for $S \in (\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$. 	

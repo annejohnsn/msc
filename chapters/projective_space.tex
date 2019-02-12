@@ -112,10 +112,25 @@ and $\psi^{-1}(\mathcal{L})=E=\phi(X)$, as required.
 \end{proof}
  
  
-More background: 
+More background from \cite{gvdp}. 
+
 
 \begin{definition*} \cite{gvdp} A \textbf{Schottky group} is a finitely-generated, free and discontinuous subgroup of  $PGL(2,k)$
 \end{definition*}
+
+Notation: Let $X$ be a subset of $\mathbb{P}^1(k)$ and denote by $X^{(3)}$ the set $X \times X \times X \setminus \Delta$, where $\Delta$ is the fat diagnol, that is the set $\{ x_i = x_j; \text{ for some } i \neq j \text{, } i,j \in 1,2,3\}$\\
+
+Notation: Let $a =(a_0, a_1,a_\infty)$ be an element of $X^{(3)}$ for some $X \subseteq \mathbb{P}^1(k)$. We denote by $\gamma_a$ the element of $PGL(2,k)$ such that $\gamma_a(a_0) = 0$,  $\gamma_a(a_1) = 1$,  $\gamma_a(a_\infty) = \infty$.\\ 
+
+Note that given such a point $a$, we can calculate the map $\gamma_a$ explicitly, as follows: Suppose  $a =(a_0, a_1,a_\infty)$ and $a_i \neq \infty = [0,1], \forall i$. Then $\gamma_a(a_0) = 0 =[1,0]$, $\gamma_a(a_1) = 1 =[1,1]$, and $\gamma_a(a_\infty) = \infty =[0,1]$, so that if $\gamma_a$ is represented by some  $\bigl( \begin{smallmatrix}a & b\\\ c & d \end{smallmatrix}\bigr)$, we have:
+ 
+\begin{definition*}
+Let $x_0, x_1$ be two elements of $k$ such that $max(\mid x_0 \mid, \mid x_1 \mid)$, ie both $x_0$ and $x_1$ are in the valuation ring of $k$ and at least one is in its residue field.  The map $R$ that sends $[x_0,x_1] \mapsto [\bar{x_0}, \bar{x_1}]$, that is that sends each component to its residue class in $\bar{k}$ is called the \textbf{standard reduction}.
+\end{definition*}
+
+
+
+
 
 %Observation: suppose $z \in \mathbb{Z}_p$ is such that $z = \sum_{i=0}^\infty a_ip^i = \sum_{i=0}^n a_ip^i$ for some $n \in \mathbb{N}$. Then $B_{\frac{1}{p^n}}(z)$ is the set of all $y \in \mathbb{Z}_p$ of the form $y=\sum_{i=0}^n a_ip^i + \sum_{i=n+1}^\infty b_ip^i$.
 
