@@ -1,25 +1,57 @@
-As a first point of departure, a natural space to consider is the product space, $\mathbb{Z}^n$ (or $\mathbb{Z}_p^n$ or $\mathbb{Q}_p^n$), for some $n >1$. A natural candidate for an ultrametric on the space is the $L_\infty$ metric, given by
-\[ \rho_\infty(x,y) = \rho_\infty((x_1,x_2,\ldots),(y_1,y_2, \ldots)) = sup_{i} \{\rho(x_i, y_i)\}\] where $\rho$ is the metric from the base space. Then $\rho_\infty$ is easily seen to be an ultrametric, so long as $\rho$ is. Indeed, let $(M, \rho)$ be an ultrametric space and consider two points, $x$ and $y$, in the product space, $M^n$ for some $n >1$. Clearly, $\rho_\infty(x,y) \geq 0$ since each $\rho(x_i,y_i) \geq 0$, and $\rho_\infty(x,y) = 0 \iff \rho(x_i,y_i) =0,\forall i \iff x_i=y_i, \forall i \iff x=y$. The fact that $\rho_\infty$ is symmetric is also an easy consequence of the fact that $\rho$ is symmetric since  $\rho(x_i, y_i) = \rho(y_i, x_i)$ implies $sup_{i}\{\rho(x_i, y_i)\} = sup_{i}\{\rho(y_i, x_i)\}$. To see that $\rho_\infty$ is an ultrametric, note that since $\rho$ is an ultrametric $\rho(x_i, y_i) \leq max\{\rho(x_i, z_i), \rho(y_i,z_i)\}$, where $z_i$ is any other point of $M$.
+As a first point of departure, a natural space to consider is the product space of ultrametric spaces, for example $\mathbb{Z}^n$ (or $\mathbb{Z}_p^n$ or $\mathbb{Q}_p^n$), for some $n >1$. A natural candidate for an ultrametric on the space is the $L_\infty$ metric, given by
+\[ \rho_\infty(x,y) = \rho_\infty((x_1,x_2,\ldots),(y_1,y_2, \ldots)) = sup_{i} \{\rho(x_i, y_i)\}\] where $\rho$ is the metric from the base space. Then $\rho_\infty$ is easily seen to be an ultrametric, so long as $\rho$ is. Indeed, let $(M, \rho)$ be an ultrametric space and consider two points, $x$ and $y$, in the product space, $M^n$ for some $n >1$. Clearly, $\rho_\infty(x,y) \geq 0$ since each $\rho(x_i,y_i) \geq 0$, and $\rho_\infty(x,y) = 0 \iff \rho(x_i,y_i) =0,\forall i \iff x_i=y_i, \forall i \iff x=y$. The fact that $\rho_\infty$ is symmetric is also an easy consequence of the fact that $\rho$ is symmetric since  $\rho(x_i, y_i) = \rho(y_i, x_i)$ implies $sup_{i}\{\rho(x_i, y_i)\} = sup_{i}\{\rho(y_i, x_i)\}$. To see that $\rho_\infty$ is an ultrametric, note that if $z=z_i$ is any other point of $M$, then
+\begin{align*}
+    \rho_\infty(x, y) = sup_i\{\rho(x_i,y_i)\} && \\
+    \leq  sup_i\{max(\rho(x_i,z_i),\rho(y_i,z_i))\} && \text{ since $\rho$ is an ultrametric } \\
+    = max(sup_i\{\rho(x_i,z_i)\}, sup_i\{\rho(y_i,z_i)\} && \\
+    = max(\rho_\infty(x,z),\rho_\infty(y,z))  
+\end{align*}
 
-We show a few quick results on the product space. 
+In fact, in the proof that $(M^n, \rho_\infty)$ is an ultrametric, we see that a more general statement is true, given below.
 
 \begin{proposition*}
-$\rho_\infty$ is translation invariant if $\rho$ is, in which valuative capcity is translation invariant.
+Let $(M_i, \rho_i)$ for $i$ in some finite or countably infinite index set $I$ be a collection of ultrametric spaces. Then $(M,\rho_\infty)$ is an ultrametric space, where $M=M_1 \times M_2 \times M_3 \times \ldots$ and $\rho_\infty$ is the  $L_\infty$ metric described above.
 \end{proposition*}
+
+\begin{proof}
+Above.
+\end{proof}
+
+We show a few quick results ultrametric spaces formed as product spaces, which allows us to quickly calculate the valuative capacity of a few subsets. 
 
 \begin{proposition*}
-$\rho_\infty$ is mltiplicative if $\rho$ is, in which valuative capcity is multiplicative.
+Suppose $(M,\rho_\infty)$ is the product of ultrametric spaces $(M_i, \rho_i)$. Then $\rho_\infty$ is (left) translation invariant if each $\rho_i$ is, in which case valuative capacity is also (left) translation invariant.
 \end{proposition*}
 
-Show this an ultrametric, its translation invariant and comes from a multiplicative norm. 
+\begin{proof}
+Suppose $(M,\rho_\infty)$ is the product of ultrametric spaces $(M_i, \rho_i)$ and each $M_i$ is a topological group with operation $+$. Suppose also that \[\rho(x_i,y_i) = \rho(s_i + x_i, s_i +y_i), \forall s_i, x_i, y_i \in M_i, \forall i.\] that is, suppose each $\rho_i$ is (left) translation invariant. Then,  
+\[
+\rho_\infty(s +x, s+y)  
+= sup_i\{\rho(s_i +x_i, s_i + y_i)\} 
+= sup_i\{\rho(x_i, y_i)\}
+= \rho_\infty(x,y).
+\] so that $\rho_\infty$ is translation invariant.  Proposition $xyz$ implies valuative capacity is as well. 
+\end{proof}
+
+
+\begin{proposition*}
+Suppose $(M,\rho_\infty)$ is the product of ultrametric spaces $(M_i, \rho_i)$. Then $\rho_\infty$ is multiplicative if each $\rho_i$ is, in which valuative capacity is also multiplicative.
+\end{proposition*}
+
+\begin{proof}
+Similar.
+\end{proof}
+
 \begin{example}
-	Let $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$ be the metric space with elements $\{(x,y)\mid x,y \in \mathbb{Z}_p\}$ and metric $\rho_{p,\infty}((x_1,x_2), (y_1,y_2)) = \max(\rho_p(x_1, y_1)), \rho_p(x_2, y_2))$. Consider it also as a topological group with operation $(g_1,g_2) + (x_1,x_2) = (g_1+x_1, g_2+x_2)$. Then $\rho_{p,\infty}((x_1,x_2), (y_1,y_2))=\max(\rho_p(x_1, y_1)), \rho_p(x_2, y_2)=\max(\rho_p(g_1+x_1, g_1+y_1)), \rho_p(g_2+x_2, g_2+y_2)=\rho_{p,\infty}(((g_1,g_2) + (x_1,x_2)), ((g_1,g_2) + (y_1,y_2)))$, and $\omega((g_1,g_2)+S) = \omega(S)$ for $S \in (\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$. 	
-	
+	Let $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$ be the metric space with elements $\{(x,y)\mid x,y \in \mathbb{Z}_p\}$ and metric $\rho_{p,\infty}((x_1,x_2), (y_1,y_2)) = \max(\rho_p(x_1, y_1)), \rho_p(x_2, y_2))$ for some fixed prime $p$. Since $\rho_p$ is translation invariant and multiplicative in $\mathbb{Z}_p$, valuative capacity is also translation invariant and multiplicative in  $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$.
 \end{example}
 
 
 \begin{example}
-	Let $(\mathbb{Z}_p \times \mathbb{Z}_p, \mid \cdot \mid_{p,\infty})$ be the vector space with elements $\{(x,y)\mid x,y \in \mathbb{Z}_p\}$ and norm $ \mid (x_1,x_2) \mid_{p,\infty} = \max(\mid x_1 \mid_p,\mid x_2 \mid_p ).$ Then $\mid (g,g)(x_1,x_2) \mid_{p,\infty} = \max(\mid gx_1 \mid_p,\mid gx_2 \mid_p ) = \max(\mid g \mid_p \mid x_1 \mid_p,\mid g \mid_p \mid x_2 \mid_p=\mid (g,g) \mid_p \mid (x_1,x_2) \mid_p$, so that $\mid \cdot \mid_{p,\infty} $ is multiplicative for $(g,g) \in \mathbb{Z}_p \times \mathbb{Z}_p$. Then $\omega((g,g)S) = \mid (g,g) \mid_p\omega(S)$. In particular, $\omega((p,p)\mathbb{Z} \times \mathbb{Z}) =\omega(p\mathbb{Z} \times p\mathbb{Z})=\mid (p,p) \mid_p \omega(\mathbb{Z} \times \mathbb{Z}) =
-	p^{-1} \omega(\mathbb{Z} \times \mathbb{Z}). $
+	Let $(\mathbb{Z}_2 \times \mathbb{Z}_3 \times \mathbb{Z}_5 \times \ldots, \rho_{p,\infty})$ be the metric space formed by taking the product of $(\mathbb{Z}_p, \rho_p)$ for every prime $p$. Since $\rho_p$ is translation invariant and multiplicative in each $\mathbb{Z}_p$, valuative capacity is also translation invariant and multiplicative in  $(\mathbb{Z}_2 \times \mathbb{Z}_3 \times \mathbb{Z}_5 \times \ldots, \rho_{p,\infty})$.
 \end{example}
 
+Calculate valuative capacity of some examples here.\\
+
+
+In this section, we considered the notion of valuative capacity in product spaces, that is, spaces formed by taking copies of ultrametric spaces. In the following sections, we consider  vaulative capacity in spaces formed by adding points, that is extension fields, or by both taking copies and adding (a distinguished) point, as in projective spaces. For these purposes, it will be more productive to start working over the field $\mathbb{Q}_p$, instead of $\mathbb{Z}_p$.
