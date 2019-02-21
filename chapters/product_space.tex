@@ -51,10 +51,10 @@ Similar.
 	Let $(\mathbb{Z}_2 \times \mathbb{Z}_3 \times \mathbb{Z}_5 \times \ldots, \rho_{P,\infty})$ be the metric space formed by taking the product of $(\mathbb{Z}_p, \rho_p)$ for every prime $p$. Since $\rho_p$ is translation invariant and multiplicative in each $\mathbb{Z}_p$, valuative capacity is also translation invariant and multiplicative in  $(\mathbb{Z}_2 \times \mathbb{Z}_3 \times \mathbb{Z}_5 \times \ldots, \rho_{P,\infty})$.
 \end{example}
 
-
-What is the valuative capacity of  $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$  from the example above? Suppose $p=2$.  Using translation invariance, scaling and subaddivity we can compute the result by first noting that we can write $(\mathbb{Z}_2 \times \mathbb{Z}_2)$ as a union, as below,
+\section*{ \textbf{$2$-fold products}}
+What is the valuative capacity of  $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$  from the example above? Suppose $p=2$.  Using translation invariance, scaling and subaddivity, we can compute the result by first noting that we can write $\mathbb{Z}_2 \times \mathbb{Z}_2$ as a union, as below,
 \[
-\mathbb{Z}_2 \times \mathbb{Z}_2 = (2\mathbb{Z}_2 \times 2\mathbb{Z}_2) \cup (2\mathbb{Z}_2 \times 2\mathbb{Z}_2 +1) \cup (2\mathbb{Z}_2+1 \times 2\mathbb{Z}_2) \cup (2\mathbb{Z}_2+1, 2\mathbb{Z}_2+1)
+\mathbb{Z}_2 \times \mathbb{Z}_2 = (2\mathbb{Z}_2 \times 2\mathbb{Z}_2) \cup (2\mathbb{Z}_2 \times 2\mathbb{Z}_2 +1) \cup (2\mathbb{Z}_2+1 \times 2\mathbb{Z}_2) \cup (2\mathbb{Z}_2+1, 2\mathbb{Z}_2+1).
 \]
 
 Since the pairwise distances on the right-hand side are always $1 = diam(\mathbb{Z}_2 \times \mathbb{Z}_2)$, subadditivity implies that 
@@ -66,14 +66,77 @@ Since the pairwise distances on the right-hand side are always $1 = diam(\mathbb
 
  Taking logs base $2$, we have that 
 \[\omega(\mathbb{Z}_2 \times \mathbb{Z}_2) = 2^{\frac{-1 + log_2(\omega(\mathbb{Z}_2 \times \mathbb{Z}_2))}{4}} =  2^{\frac{-1}{4}} 2^ {\frac{log_2(\omega(\mathbb{Z}_2 \times \mathbb{Z}_2))}{4}}
-= 2^{\frac{-1}{4}}{(2^ {log_2(\omega(\mathbb{Z}_2 \times \mathbb{Z}_2))})}^{\frac{1}{4}}\]
+= 2^{\frac{-1}{4}}{(2^ {log_2(\omega(\mathbb{Z}_2 \times \mathbb{Z}_2))})}^{\frac{1}{4}} = 2^{\frac{-1}{4}}{\omega(\mathbb{Z}_2 \times \mathbb{Z}_2)}^{\frac{1}{4}} \]
 
-\[ = 2^{\frac{-1}{4}}{\omega(\mathbb{Z}_2 \times \mathbb{Z}_2)}^{\frac{1}{4}} \]
+so that ${\omega(\mathbb{Z}_2 \times \mathbb{Z}_2)}$ is a solution of the equation $x^4 - \frac{x}{2}$, for which there is a single real positive root, given by $2^{-1/3}$.\\
 
-so that ${\omega(\mathbb{Z}_2 \times \mathbb{Z}_2)}$ is a solution of the equation $x^4 - x/2$, which has a single real positive root, $2^{-1/3}$.\\
 
-Show the formula for an arbitrary prime, how does this compare to the capacity of $\mathbb{Z}_p$? Is there a formula for the capacity of the $n-fold$ product?
- What about subsets of $\mathbb{Z}_p$ that are simple inclusions into the product space? What about the capacity of the infinite product space?\\
+To compute the valuative capacity for a $2$-fold product for an arbitary prime $p$, note that we can always decompose $\mathbb{Z}_p \times \mathbb{Z}_p$ into a union of $p^2$ sets each of the form $\{p\mathbb{Z}_p+s \times p\mathbb{Z}_p +t\}$ for $s,t \in (0,\ldots, p-1)$, and the pairwise distance between these sets will always be $1 = diam(\mathbb{Z}_p \times \mathbb{Z}_p)$ (to see this, either note that we can always find co-prime elements, or note that each set is a ball of radius $1/p$ centred at (s,t) and so the distance between them must be greater than $1/p$, and $1$ is the only possible distance greater than $1/p$ in $\mathbb{Z}_p \times \mathbb{Z}_p$).  Then, we combine our tools as before to obtain the equation,
 
+\[\frac{1}{log(\omega(\mathbb{Z}_p \times \mathbb{Z}_p))} = \frac{p^2}{log(\|p\|_p * \omega(\mathbb{Z}_p \times \mathbb{Z}_p))} =  \frac{p^2}{log(1/p * \omega(\mathbb{Z}_p \times \mathbb{Z}_p))}    \]
+
+In turn, taking logs base p, we have 
+
+
+\[ \omega(\mathbb{Z}_p \times \mathbb{Z}_p) = p^{\frac{-1}{p^2}} \omega(\mathbb{Z}_p \times \mathbb{Z}_p)^{\frac{1}{p^2}}  \]
+
+So that $\omega(\mathbb{Z}_p \times \mathbb{Z}_p)$ is a solution of the equation $x^{p^2} - \frac{x}{p} = x(x^{p^2-1} - \frac{1}{p})$ over $\mathbb{R}$ and since $\mathbb{R}$ is a division ring, this means the positive solutions are given by solving $x^{p^2-1}-\frac{1}{p}$. Solutions of this equation are of the form $p^{\frac{-1}{p^2-1}}$ times a $p^2-1$ root of unity, and so there is exactly one positive, real solution, namely $p^{\frac{-1}{p^2-1}}$ itself. Then the valulative capacity of the entire product space $\mathbb{Z}_p \times \mathbb{Z}_p$ is $p^{\frac{-1}{p^2-1}}$. In fact, from here it is not hard to see that by taking the $n$-fold product, we would end up with the same equation except that the exponent of $p$ would become $n$ rather than $2$. We arrive at the following result:
+
+\begin{proposition*}
+Let $M=(\mathbb{Z}_p^n, \rho_{p, \infty})$ be the ultrametric space with points equal to the $n$-fold product of $\mathbb{Z}_p$ (for $n < \infty$) for some fixed prime $p$. The valuative capacity of $M$ is  $(\frac{1}{p})^{\frac{1}{p^n-1}}$.
+\end{proposition*}
+
+\begin{proof}
+Above.
+\end{proof}
+
+Taking $n=1$, we see that this agrees with the valuative capacity of $\mathbb{Z}_p$ computed in the last chapter. \\
+
+We end this section with a few observations on the results above.  First we observe the asymptotic behavior of capacity in these spaces. For a fixed prime $p$,  $(\frac{1}{p})^{\frac{1}{p^n-1}}$ is an monotone, increasing sequence in $n$ with $ lim_{n\to\infty} (\frac{1}{p})^{\frac{1}{p^n-1}} =  1$. For fixed $n$, the sequence in $p$ is also montone, increasing, again with  $ lim_{p\to\infty} (\frac{1}{p})^{\frac{1}{p^n-1}}=1$. In both cases, the limiting value is equal to the diameter of space.\\
+
+Recall that in computing the valuative capacity of these spaces, we were ultimately reduced to finding solutions to polynomials of the form $x^{p^n} - \frac{x}{p}$ for some $n$ and for some $p$. The second observation is that these polynomials are $p\mathbb{Z}$-valued on $p\mathbb{Z}$. 
+
+\section*{Infinite products}
+Consider the infinite product spaces $(\mathbb{Z}_p \times \mathbb{Z}_p \times \ldots, \rho_{p,\infty})$ for fixed prime $p$ or $(\mathbb{Z}_2 \times \mathbb{Z}_3 \times \ldots, \rho_{P,\infty})$ for each prime $p$. Both spaces are compact by Tychnoff's theorem, and we know then that the diameter of each space must give a strict upper bound on its valuative capacity. 
+
+
+\section*{Inclusions}
+Start considering the behavior of capcity under maps
 
 In this section, we considered the notion of valuative capacity in product spaces, that is, spaces formed by taking copies of ultrametric spaces. In the following sections, we consider  vaulative capacity in spaces formed by adding points, that is extension fields, or by both taking copies and adding (a distinguished) point, as in projective spaces. For these purposes, it will be more productive to start working over the field $\mathbb{Q}_p$, instead of $\mathbb{Z}_p$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
