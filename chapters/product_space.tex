@@ -43,15 +43,37 @@ Similar.
 \end{proof}
 
 \begin{example}
-	Let $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$ be the metric space with elements $\{(x,y)\mid x,y \in \mathbb{Z}_p\}$ and metric $\rho_{p,\infty}((x_1,x_2), (y_1,y_2)) = \max(\rho_p(x_1, y_1)), \rho_p(x_2, y_2))$ for some fixed prime $p$. Since $\rho_p$ is translation invariant and multiplicative in $\mathbb{Z}_p$, valuative capacity is also translation invariant and multiplicative in  $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$.
+	Let $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$ be the metric space with elements $\{(x,y)\mid x,y \in \mathbb{Z}_p\}$ and metric $\rho_{p,\infty}((x_1,x_2), (y_1,y_2)) = \max(\rho_p(x_1, y_1)), \rho_p(x_2, y_2))$, where $\rho_p$ is the p-adic metric for some fixed prime $p$. Since $\rho_p$ is translation invariant and multiplicative in $\mathbb{Z}_p$, valuative capacity is also translation invariant and multiplicative in  $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$.
 \end{example}
 
 
 \begin{example}
-	Let $(\mathbb{Z}_2 \times \mathbb{Z}_3 \times \mathbb{Z}_5 \times \ldots, \rho_{p,\infty})$ be the metric space formed by taking the product of $(\mathbb{Z}_p, \rho_p)$ for every prime $p$. Since $\rho_p$ is translation invariant and multiplicative in each $\mathbb{Z}_p$, valuative capacity is also translation invariant and multiplicative in  $(\mathbb{Z}_2 \times \mathbb{Z}_3 \times \mathbb{Z}_5 \times \ldots, \rho_{p,\infty})$.
+	Let $(\mathbb{Z}_2 \times \mathbb{Z}_3 \times \mathbb{Z}_5 \times \ldots, \rho_{P,\infty})$ be the metric space formed by taking the product of $(\mathbb{Z}_p, \rho_p)$ for every prime $p$. Since $\rho_p$ is translation invariant and multiplicative in each $\mathbb{Z}_p$, valuative capacity is also translation invariant and multiplicative in  $(\mathbb{Z}_2 \times \mathbb{Z}_3 \times \mathbb{Z}_5 \times \ldots, \rho_{P,\infty})$.
 \end{example}
 
-Calculate valuative capacity of some examples here.\\
+
+What is the valuative capacity of  $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$  from the example above? Suppose $p=2$.  Using translation invariance, scaling and subaddivity we can compute the result by first noting that we can write $(\mathbb{Z}_2 \times \mathbb{Z}_2)$ as a union, as below,
+\[
+\mathbb{Z}_2 \times \mathbb{Z}_2 = (2\mathbb{Z}_2 \times 2\mathbb{Z}_2) \cup (2\mathbb{Z}_2 \times 2\mathbb{Z}_2 +1) \cup (2\mathbb{Z}_2+1 \times 2\mathbb{Z}_2) \cup (2\mathbb{Z}_2+1, 2\mathbb{Z}_2+1)
+\]
+
+Since the pairwise distances on the right-hand side are always $1 = diam(\mathbb{Z}_2 \times \mathbb{Z}_2)$, subadditivity implies that 
+
+\[
+\frac{1}{log(\omega(\mathbb{Z}_2 \times \mathbb{Z}_2))} \]
+\[ = \frac{1}{log(\omega(2\mathbb{Z}_2 \times 2\mathbb{Z}_2))} + \frac{1}{log(\omega(2\mathbb{Z}_2 \times 2\mathbb{Z}_2 +1))} + \frac{1}{log(\omega(2\mathbb{Z}_2+1 \times 2\mathbb{Z}_2))} + \frac{1}{log(\omega(2\mathbb{Z}_2+1 \times 2\mathbb{Z}_2+1))}\]
+\[ = \frac{4}{log(\|2\|_2 * \omega(\mathbb{Z}_2 \times \mathbb{Z}_2))} = \frac{4}{log(\frac{1}{2} * \omega(\mathbb{Z}_2 \times \mathbb{Z}_2))} =  \frac{4}{log(\frac{1}{2}) + log(\omega(\mathbb{Z}_2 \times \mathbb{Z}_2))}\]
+
+ Taking logs base $2$, we have that 
+\[\omega(\mathbb{Z}_2 \times \mathbb{Z}_2) = 2^{\frac{-1 + log_2(\omega(\mathbb{Z}_2 \times \mathbb{Z}_2))}{4}} =  2^{\frac{-1}{4}} 2^ {\frac{log_2(\omega(\mathbb{Z}_2 \times \mathbb{Z}_2))}{4}}
+= 2^{\frac{-1}{4}}{(2^ {log_2(\omega(\mathbb{Z}_2 \times \mathbb{Z}_2))})}^{\frac{1}{4}}\]
+
+\[ = 2^{\frac{-1}{4}}{\omega(\mathbb{Z}_2 \times \mathbb{Z}_2)}^{\frac{1}{4}} \]
+
+so that ${\omega(\mathbb{Z}_2 \times \mathbb{Z}_2)}$ is a solution of the equation $x^4 - x/2$, which has a single real positive root, $2^{-1/3}$.\\
+
+Show the formula for an arbitrary prime, how does this compare to the capacity of $\mathbb{Z}_p$? Is there a formula for the capacity of the $n-fold$ product?
+ What about subsets of $\mathbb{Z}_p$ that are simple inclusions into the product space? What about the capacity of the infinite product space?\\
 
 
 In this section, we considered the notion of valuative capacity in product spaces, that is, spaces formed by taking copies of ultrametric spaces. In the following sections, we consider  vaulative capacity in spaces formed by adding points, that is extension fields, or by both taking copies and adding (a distinguished) point, as in projective spaces. For these purposes, it will be more productive to start working over the field $\mathbb{Q}_p$, instead of $\mathbb{Z}_p$.
