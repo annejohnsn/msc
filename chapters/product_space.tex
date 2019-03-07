@@ -1,30 +1,30 @@
-As a first point of departure, a natural space to consider is the product space of ultrametric spaces, for example $\mathbb{Z}^n$ (or $\mathbb{Z}_p^n$ or $\mathbb{Q}_p^n$), for some $n >1$. A natural candidate for an ultrametric on the space is the $L_\infty$ metric, given by
-\[ \rho_\infty(x,y) = \rho_\infty((x_1,x_2,\ldots),(y_1,y_2, \ldots)) = sup_{i} \{\rho(x_i, y_i)\}\] where $\rho$ is the metric from the base space (what if the base metric spaces are not bounded?). Then $\rho_\infty$ is easily seen to be an ultrametric, so long as $\rho$ is. Indeed, let $(M, \rho)$ be an ultrametric space and consider two points, $x$ and $y$, in the product space, $M^n$ for some $n >1$. Clearly, $\rho_\infty(x,y) \geq 0$ since each $\rho(x_i,y_i) \geq 0$, and $\rho_\infty(x,y) = 0 \iff \rho(x_i,y_i) =0,\forall i \iff x_i=y_i, \forall i \iff x=y$. The fact that $\rho_\infty$ is symmetric is also an easy consequence of the fact that $\rho$ is symmetric since  $\rho(x_i, y_i) = \rho(y_i, x_i)$ implies $sup_{i}\{\rho(x_i, y_i)\} = sup_{i}\{\rho(y_i, x_i)\}$. To see that $\rho_\infty$ is an ultrametric, note that if $z=z_i$ is any other point of $M$, then
-\begin{align*}
-    \rho_\infty(x, y) = sup_i\{\rho(x_i,y_i)\} && \\
-    \leq  sup_i\{max(\rho(x_i,z_i),\rho(y_i,z_i))\} && \text{ since $\rho$ is an ultrametric } \\
-    = max(sup_i\{\rho(x_i,z_i)\}, sup_i\{\rho(y_i,z_i)\} && \\
-    = max(\rho_\infty(x,z),\rho_\infty(y,z))  
-\end{align*}
-
-In fact, in the proof that $(M^n, \rho_\infty)$ is an ultrametric, we see that a more general statement is true, given below.
+As a first point of departure, a natural space to consider is the product space of ultrametric spaces, for example $\mathbb{Z}^n$ (or $\mathbb{Z}_p^n$ or $\mathbb{Q}_p^n$), for some $n >1$. If we restrict our attention to bounded subsets, then a natural candidate for an ultrametric on the product space is the $L_\infty$ metric, given by
+\[ \rho_\infty(x,y) = \rho_\infty((x_1,x_2,\ldots),(y_1,y_2, \ldots)) = sup_{i} \{\rho(x_i, y_i)\}\] where $\rho$ is the metric from the base space. In fact, since we have only defined valuative capacity for compact subsets of an ultrametric spaces, there is no loss of generality by restricting our metric to bounded spaces.  We also see that no problems arise in letting both $M$ and $\rho$ vary between components of the space, as long as each $M_i$ remains bounded and each $\rho_i$ is an ultrametric. 
 
 \begin{proposition*}
-Let $(M_i, \rho_i)$ for $i$ in some finite or countably infinite index set $I$ be a collection of ultrametric spaces. Then $(M,\rho_\infty)$ is an ultrametric space, where $M=M_1 \times M_2 \times M_3 \times \ldots$ and $\rho_\infty$ is the  $L_\infty$ metric described above.
+Let $(M_i, \rho_i)$ for $i$ in some finite or countably infinite index set $I$ be a collection of metric spaces and suppose $\rho_i$ is a bounded ultrametric for all $i$. Then $(M,\rho_\infty)$ is an ultrametric space, where $M=M_1 \times M_2 \times M_3 \times \ldots$ and $\rho_\infty$ is the  $L_\infty$ metric described above.
 \end{proposition*}
 
 \begin{proof}
-Above.
+Let $(M, \rho_\infty)$ be the product of ultrametric spaces as above and let $x$ and $y$ be two points in the space. Clearly, $\rho_\infty(x,y) \geq 0$ since each $\rho_i(x_i,y_i) \geq 0$, and $\rho_\infty(x,y) = 0 \iff \rho_i(x_i,y_i) =0,\forall i \iff x_i=y_i, \forall i \iff x=y$. The fact that $\rho_\infty$ is symmetric is also an easy consequence of the fact that each $\rho_i$ is symmetric since  $\rho_i(x_i, y_i) = \rho_i(y_i, x_i)$ implies $sup_{i}\{\rho_i(x_i, y_i)\} = sup_{i}\{\rho_i(y_i, x_i)\}$. To see that $\rho_\infty$ is an ultrametric, note that if $z=z_i$ is any other point of $M$, then
+\begin{align*}
+    \rho_\infty(x, y) = sup_i\{\rho_i(x_i,y_i)\} && \\
+    \leq  sup_i\{max(\rho_i(x_i,z_i),\rho_i(y_i,z_i))\} && \text{ since each $\rho_i$ is an ultrametric } \\
+    \leq max(\rho_i(x_i,z_i)\rho_i(y_i,z_i)), \forall i && \\
+    \leq max(sup_i\{\rho_i(x_i,z_i)\}, sup_i\{\rho_i(y_i,z_i)\} && \\
+    = max(\rho_\infty(x,z),\rho_\infty(y,z))  
+\end{align*}
+
 \end{proof}
 
 We show a few quick results ultrametric spaces formed as product spaces, which allows us to quickly calculate the valuative capacity of a few subsets. 
 
 \begin{proposition*}
-Suppose $(M,\rho_\infty)$ is the product of ultrametric spaces $(M_i, \rho_i)$. Then $\rho_\infty$ is (left) translation invariant if each $\rho_i$ is, in which case valuative capacity is also (left) translation invariant.
+Suppose $(M,\rho_\infty)$ is the product of ultrametric spaces $(M_i, \rho_i)$ and each $M_i$ is a topological group with operation $+$. Then $\rho_\infty$ is (left) translation invariant if each $\rho_i$ is, in which case valuative capacity is also (left) translation invariant.
 \end{proposition*}
 
 \begin{proof}
-Suppose $(M,\rho_\infty)$ is the product of ultrametric spaces $(M_i, \rho_i)$ and each $M_i$ is a topological group with operation $+$. Suppose also that \[\rho(x_i,y_i) = \rho(s_i + x_i, s_i +y_i), \forall s_i, x_i, y_i \in M_i, \forall i.\] that is, suppose each $\rho_i$ is (left) translation invariant. Then,  
+Let $(M,\rho_\infty)$ be as above. Suppose also that \[\rho(x_i,y_i) = \rho(s_i + x_i, s_i +y_i), \forall s_i, x_i, y_i \in M_i, \forall i.\] that is, suppose each $\rho_i$ is (left) translation invariant. Then,  
 \[
 \rho_\infty(s +x, s+y)  
 = sup_i\{\rho(s_i +x_i, s_i + y_i)\} 
@@ -35,7 +35,7 @@ Suppose $(M,\rho_\infty)$ is the product of ultrametric spaces $(M_i, \rho_i)$ a
 
 
 \begin{proposition*}
-Suppose $(M,\rho_\infty)$ is the product of ultrametric spaces $(M_i, \rho_i)$. Then $\rho_\infty$ is multiplicative if each $\rho_i$ is, in which valuative capacity is also multiplicative.
+Suppose $(M,\rho_\infty)$ is the product of ultrametric spaces $(M_i, \rho_i)$ and each $M_i$ is in fact a normed vector space (with each $\rho_i$ being the metric derived from the norm on $M_i$). Then $\rho_\infty$ is multiplicative if the norm producing each $\rho_i$ is multiplicative, in which valuative capacity is as well.
 \end{proposition*}
 
 \begin{proof}
@@ -46,10 +46,10 @@ Similar.
 	Let $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$ be the metric space with elements $\{(x,y)\mid x,y \in \mathbb{Z}_p\}$ and metric $\rho_{p,\infty}((x_1,x_2), (y_1,y_2)) = \max(\rho_p(x_1, y_1)), \rho_p(x_2, y_2))$, where $\rho_p$ is the p-adic metric for some fixed prime $p$. Since $\rho_p$ is translation invariant and multiplicative in $\mathbb{Z}_p$, valuative capacity is also translation invariant and multiplicative in  $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$.
 \end{example}
 
-
 \begin{example}
-	Let $(\mathbb{Z}_2 \times \mathbb{Z}_3 \times \mathbb{Z}_5 \times \ldots, \rho_{P,\infty})$ be the metric space formed by taking the product of $(\mathbb{Z}_p, \rho_p)$ for every prime $p$. Since $\rho_p$ is translation invariant and multiplicative in each $\mathbb{Z}_p$, valuative capacity is also translation invariant and multiplicative in  $(\mathbb{Z}_2 \times \mathbb{Z}_3 \times \mathbb{Z}_5 \times \ldots, \rho_{P,\infty})$.
+	Let $(\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2}, \rho_{p,\infty})$ be the metric space with elements $\{(x,y)\mid x \in \mathbb{Z}_{p_1}, y \in \mathbb{Z}_{p_2}\}$ for two distinct primes, $p_1 \neq p_2$, and metric $\rho_{p,\infty}((x_1,x_2), (y_1,y_2)) = \max(\rho_{p_1}(x_1, y_1)), \rho_{p_2}(x_2, y_2))$, where $\rho_{p_i}$ is the p-adic metric. Since each $\rho_{p_i}$ is translation invariant and multiplicative in $\mathbb{Z}_{p_i}$, valuative capacity is also translation invariant and multiplicative in  $(\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2}, \rho_{p,\infty})$.
 \end{example}
+
 
 \section*{ \textbf{$n$-fold products}}
 What is the valuative capacity of  $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$  from the example above? Suppose $p=2$.  Using translation invariance, scaling and subaddivity, we can compute the result by first noting that we can write $\mathbb{Z}_2 \times \mathbb{Z}_2$ as a union, as below,
@@ -92,48 +92,74 @@ Above.
 
 Taking $n=1$, we see that this agrees with the valuative capacity of $\mathbb{Z}_p$ computed in the last chapter. \\
 
-We end this section with two observations on the results above.  First we observe the asymptotic behavior of capacity in these spaces. For a fixed prime $p$,  $(\frac{1}{p})^{\frac{1}{p^n-1}}$ is an monotone, increasing sequence in $n$ with $ lim_{n\to\infty} (\frac{1}{p})^{\frac{1}{p^n-1}} =  1$. For fixed $n$, the sequence in $p$ is also montone, increasing, again with  $ lim_{p\to\infty} (\frac{1}{p})^{\frac{1}{p^n-1}}=1$. In both cases, the limiting value is equal to the diameter of space. Indeed, we can observe that the sequence $\{(0,0,\ldots), (1,0,\ldots), (0,1,\ldots), \ldots\}$, in which the first element has only zeros and $n$-th element has a single $1$ in the $n$-th component, is a $\rho-$ordering for both  $(\mathbb{Z}_p \times \mathbb{Z}_p \times \ldots, \rho_{p,\infty})$  and  $(\mathbb{Z}_2 \times \mathbb{Z}_3 \times \ldots, \rho_{P,\infty})$ , since the distance between elements in this sequence (in either metric space) is always $1$. This gives a valuative capacity of $lim_{n\to\infty} (1^n)^(1/n) =1$ for both spaces. \\
+We end this section with two observations on the results above.  First, recall that in computing the valuative capacity of these spaces, we were ultimately reduced to finding solutions to polynomials of the form $x^{p^n} - \frac{x}{p}$ for some $n$ and for some $p$. The first observation is that these polynomials are $\mathbb{Z}$-valued on $p\mathbb{Z}$, that is, they are elements of $Int(p\mathbb{Z},\mathbb{Z})$. We might ask then, what sort of polynomials would arise in finding the valuative capacity of spaces such as $(\mathbb{Z}_2 \times \mathbb{Z}_3, \rho_\infty)$ or in computing the valuative capacity of infinite product spaces, such as $\mathbb{Z}_p \times \mathbb{Z}_p \times \mathbb{Z}_p \times \ldots$ for either some fixed prime $p$ or over each prime. \\
 
-Recall that in computing the valuative capacity of these spaces, we were ultimately reduced to finding solutions to polynomials of the form $x^{p^n} - \frac{x}{p}$ for some $n$ and for some $p$. The second observation is that these polynomials are $\mathbb{Z}$-valued on $p\mathbb{Z}$, that is, they are elements of $Int(p\mathbb{Z},\mathbb{Z})$. We might ask then, what sort of polynomials would arise in finding the valuative capacity of spaces such as $(\mathbb{Z}_2 \times \mathbb{Z}_3, \rho_\infty)$ or the infinite product spaces above via the subadditivity formula. 
+Secondly, we observe the asymptotic behavior of capacity in these spaces. For a fixed prime $p$,  $(\frac{1}{p})^{\frac{1}{p^n-1}}$ is an monotone, increasing sequence in $n$ with $ lim_{n\to\infty} (\frac{1}{p})^{\frac{1}{p^n-1}} =  1$. For fixed $n$, the sequence in $p$ is also montone, increasing, again with  $ lim_{p\to\infty} (\frac{1}{p})^{\frac{1}{p^n-1}}=1$. In both cases, the limiting value is equal to the diameter of space. Indeed, we can observe that the sequence $\{(0,0,\ldots), (1,0,\ldots), (0,1,\ldots), \ldots\}$, in which the first element has only zeros and $n$-th element has a single $1$ in the $n$-th component, is a $\rho-$ordering for both  $(\mathbb{Z}_p \times \mathbb{Z}_p \times \ldots, \rho_{p,\infty})$  and  $(\mathbb{Z}_2 \times \mathbb{Z}_3 \times \ldots, \rho_{P,\infty})$ , since the distance between elements in this sequence (in either metric space) is always $1$. If we could show that these spaces are compact, this would gives a valuative capacity of $lim_{n\to\infty} (1^n)^{(1/n)} =1$ for both spaces. We explore this more in the following section.\\
 
 \section*{Product topology}
-From Munkres, Ch. 2 section 19:
-\begin{definition-proposition*}
-Suppose $X_i$, for $i$ in some index set $I$, is a family of topological spaces. The collection of all sets of the form $\prod_{i \in I} U_i$, for $U_i$ open in $X_i$, generates a topology on $\prod_{i \in I} X_i$ called the \textbf{box topology}. 
+In considering the product space of ultrametric spaces, we may wonder whether the chosen metric also gives back the product topology on the space. For products formed by taking some finite number of copies, the answer is positive. We give the necessary background and show this fact, adapting the proof in Munkres (20.3) to the case of ultrametric spaces. 
+
+\begin{definition-proposition*} (Munkres)
+Suppose $X_i$, for $i$ in some index set $I$, is a family of topological spaces.  Let $\pi_j: \prod_{i \in I} X_i \rightarrow X_j$ be the map given by projection onto the $j$-th component, that is $\pi_j (x) = \pi_j ((x_i)_{i \in I}) = x_j$. For each $j \in I$, let $\mathcal{S}_j$ be the collection \[\mathcal{S}_j = \{\pi^{-1}_j (U_j)\mid U_j \text{ open in } X_j\}\] Let $\mathcal{S}$ be the union of the $\mathcal{S}_j$ over $j \in I$, $\mathcal{S}= \cup_{j \in I} \mathcal{S}_j$. Then $\mathcal{S}$ is a subbasis that generates a topology on  $\prod_{i \in I} X_i$ called the \textbf{product topology}.\\
+
 \end{definition-proposition*}
 
-\begin{definition-proposition*}
-Suppose $X_i$, for $i$ in some index set $I$, is a family of topological spaces.  Let $\pi_j: \prod_{i \in I} X_i \rightarrow X_j$ be the map given by projection onto the $j$-th component, that is $\pi_j (x) = \pi_j ((x_i)_{i \in I}) = x_j$. For each $j \in I$, let $\mathcal{S}_j$ be the collection \[\mathcal{S}_j = \{\pi^{-1}_j (U_j)\mid U_j \text{ open in } X_j\}\] Let $\mathcal{S}$ be the union of the $\mathcal{S}_j$ over $j \in I$, $\mathcal{S}= \cup_{j \in I} \mathcal{S}_j$. Then $\mathcal{S}$ is a subbasis that generates a topology on  $\prod_{i \in I} X_i$ called the \textbf{product topology}. The basis, $\mathcal{B}$, generated by $\mathcal{S}$ is the set of all finite intersections of elements in $\mathcal{S}$. That is $B \in \mathcal{B}$ if there exists $S_1, S_2, \ldots, S_n$ in $\mathcal{S}$ such that $B = S_1 \cap S_2 \cap \ldots S_n$. Then the basis $\mathcal{B}$ is made up of all sets of the form $\prod_{i \in I} U_i$ where $U_i$ open in $X_i$ and $U_i=X_i$ for all but finitely-many $i \in I$.
-\end{definition-proposition*}
+
+ The basis, $\mathcal{B}$, generated by $\mathcal{S}$ in the definition above is the set of all finite intersections of elements in $\mathcal{S}$. That is $B \in \mathcal{B}$ if there exists $S_1, S_2, \ldots, S_n$ in $\mathcal{S}$ such that $B = S_1 \cap S_2 \cap \ldots S_n$.  A useful description of the basis for the product topology also appears in Munkres, as below:
 
 \begin{proposition*} (Munkres 19.2)
 Suppose $X_i$, for $i$ in some index set $I$, is a family of topological spaces and denote by $\mathcal{B}_i$ the basis for the topology on $X_i$. Let 
-\begin{align*}
-\mathcal{B}_B = \prod_{i \in I} B_i, & \text{ for }  B_i \in \mathcal{B}_i 
-\end{align*}
-and 
+
 \begin{align*}
 \mathcal{B}_P = \prod_{i \in I} B_i, & \text{ for }  B_i \in \mathcal{B}_i \text { and } B_i = X_i \text{ for all but finitely-many } i \in I. 
 \end{align*}
+then $\mathcal{B}_P$ is a basis for the product topology on $\prod_{i \in I} X_i$.\\
+
 \end{proposition*}
 
-then $\mathcal{B}_B$ gives a basis for the box topology and $\mathcal{B}_P$ for the product topology on $\prod_{i \in I} X_i$.\\
-
-So what metric induces the product topology on $\mathbb{Z}_p^n$ and $\mathbb{Z}_p \times \mathbb{Z}_p \ldots$ ? First note, 
-$\rho_p$ is bounded in $\mathbb{Z}_p$ for all $p$. (this is not true in $\mathbb{Q}_p$ though, the standard bounded metric on $\mathbb{Q}_p$ is given by $\bar{\rho_p} (x,y) = min\{\rho_p(x,y),1\}$.
+We can now show that the topology induced by the $L_\infty$ metric described above agrees with the product topology for finite products.
 
 \begin{proposition*}
-Let $M=(\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2} \times \ldots \times \mathbb{Z}_{p_n},\rho_\infty)$ for $p_i$ any choice of prime.  Then the topology induced by $\rho_\infty$ coincides with the product topology on $\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2} \times \ldots \times \mathbb{Z}_{p_n}$.
+Let $M=(M_{1} \times M_{2} \times \ldots \times M_{n},\rho_\infty)$ be a finite product of bounded, ultrametric spaces and let $\rho_\infty$ be the metric described above.  Then the topology induced by $\rho_\infty$ coincides with the product topology on $M_{1} \times M_{2} \times \ldots \times M_{n}$.
 \end{proposition*}
 
 \begin{proof}
-Let $\mathcal{T}_{\rho_\infty}$ be the topology on $\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2} \times \ldots \times \mathbb{Z}_{p_n}$ induced by $\rho_\infty$ and let $\mathcal{B}_{\rho_\infty}$ be the basis for this topology. Let $\mathcal{T}_{P}$ be the product topology with basis $\mathcal{B}_P$. We show $\mathcal{T}_{P} \subset \mathcal{T}_{\rho_\infty}$ and vice versa. For this, it is equivalent (Munkres 13.3) to show that for $z \in  \mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2} \times \ldots \times \mathbb{Z}_{p_n}$ and $B \in \mathcal{B}_{P}$ containing $z$, there is a basis element $B' \in \mathcal{B}_{\rho_\infty}$ such that $z \in B' \subset B$, and vice versa (as in Munkres 20.3).\\
+Let $\mathcal{T}_{\rho_\infty}$ be the topology on $M_{1} \times M_{2} \times \ldots \times M_{n}$ induced by $\rho_\infty$ and let $\mathcal{B}_{\rho_\infty}$ be the basis for this topology. Let $\mathcal{T}_{P}$ be the product topology with basis $\mathcal{B}_P$. We show $\mathcal{T}_{P} \subset \mathcal{T}_{\rho_\infty}$ and vice versa. For this, it is equivalent (Munkres 13.3) to show that for $z \in  M_{1} \times M_{2} \times \ldots \times M_{n}$ and $B \in \mathcal{B}_{P}$ containing $z$, there is a basis element $B' \in \mathcal{B}_{\rho_\infty}$ such that $z \in B' \subset B$, and vice versa.\\
 
-So let  $z \in  \mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2} \times \ldots \times \mathbb{Z}_{p_n}$ and suppose $B \in \mathcal{B}_{P}$ contains $z$. Since $B$ is in $\mathcal{B}_{P}$, $B$ is of the form $B_{r_1}(z_1) \times B_{r_2}(z_2) \times \ldots \times B_{r_n}(z_n)$ (since the choice of centres is arbitrary in an ultrametric spaces, we may choose the components of $z$ as the centres without loss of generality). Let $r=\min \{r_i\}$ for $i \in 1,\ldots, n$. Then let $B'$ be the ball $B_r(z)$ in $ \mathcal{B}_{\rho_\infty}$. Clearly, $z \in B_r(z)$ and since $r \leq r_i$, $\forall i$, $B_r(z) = B_r(z_1) \times B_r(z_2) \times \ldots \times B_r(z_n) \subset  B_{r_1}(z_1) \times B_{r_2}(z_2) \times \ldots \times B_{r_n}(z_n) =B$.\\
+So let  $z \in M_{1} \times M_{2} \times \ldots \times M_{n}$ and suppose $B \in \mathcal{B}_{P}$ contains $z$. Since $B$ is in $\mathcal{B}_{P}$, $B$ is of the form $B_{r_1}(z_1) \times B_{r_2}(z_2) \times \ldots \times B_{r_n}(z_n)$ (since the choice of centres is arbitrary in an ultrametric spaces, we may choose the components of $z$ as the centres without loss of generality). Let $r=\min \{r_i\}$ for $i \in 1,\ldots, n$. Then let $B'$ be the ball $B_r(z)$ in $ \mathcal{B}_{\rho_\infty}$. Clearly, $z \in B_r(z)$ and since $r \leq r_i$, $\forall i$, $B_r(z) = B_r(z_1) \times B_r(z_2) \times \ldots \times B_r(z_n) \subset  B_{r_1}(z_1) \times B_{r_2}(z_2) \times \ldots \times B_{r_n}(z_n) =B$.\\
 
 Conversely, suppose $A \in \mathcal{B}_{\rho_\infty}$ and let $y \in A$. To find $A' \in \mathcal{B}_{P}$ such that $y \in A'$ and $A' \subset A$, simply note that $A$ itself is in $\mathcal{B}_{P}$.
 
 \end{proof}
+
+We are now naturally left to ask whether the product topology on \textit{infinite} products of ultrametric spaces coincides with the $L_\infty$ metric. In this case, as in the analogous case of infinite copies of $\mathbb{R}$ and a uniform metric, the answer is negative (at least in general). Forunately, the metric that realizes the product topology on infinite copies of $\mathbb{R}$ can be adapted to the case of ultrametric spaces. We adapt to the proof of Munkres (20.5) to the case of infinite products of ultrametric spaces.
+
+\begin{proposition*}
+Suppose $\textbf{M} = M_{1} \times M_{2} \times \ldots$ is an infinite collection of metric spaces, each with an ultrametric $\rho_i$ which is bounded by 1, that is suppose $\rho_i(x_i,y_i) \leq 1$, for all $x_i, y_i \in M_i$ and for all $i$. Define a metric $d$ on $\textbf{M}$ as follows: \[d(\textbf{x},\textbf{y}) = sup\{\frac{\rho_i(x_i,y_i)}{i}\}\]
+
+Then $d$ is an ultrametric and induces the product topology on $\textbf{M}$.
+\end{proposition*}
+
+\begin{proof}
+We see that $d$ inherits symmetry, injectivity and non-negativity from the requirement that each $\rho_i$ is a metric, just as $\rho_\infty$ did.  To see that $d$  satisfies the strong triangle inequality, define a new metric $\rho_i'$ by $\rho_i'(x,y)=\frac{\rho_i(x_i,y_i)}{i}, \forall i$. Then  $\rho_i'$ is an ultrametric, since $\rho_i(x,y) \leq \max(\rho_i(x,z), \rho_i(y,z))$ implies  $\frac{\rho_i(x,y)}{n} \leq \max(\frac{\rho_i(x,z)}{n}, \frac{\rho_i(y,z)}{n})$ for any $n \in \mathbb{N}$. Then we can view $d$ as the $L_\infty$ metric on the spaces $(M_i, \rho_i')$, and so $d$ will be an ultrametric as shown in the first proposition of this section.\\
+
+Now we show $d$ induces the product topology. We first show that metric topology induced by $d$ is finer than the product topology. Let \[B=B_r^{\textbf{M}}(\textbf{z}) =  B_r^{M_1}(z_1) \times B_{2r}^{M_2}(z_2)  \times B_{3r}^{M_3}(z_3) \times \ldots  \] be a basis open in the metric topology. We must find a basis open $B' \ni z$ in the product topology such that $B' \subseteq B$. Let $N \in \mathbb{N}$ be such that $\frac{1}{N} < r$. Then let $B'$ be the basis open element \[B' = B_r^{M_1}(z_1) \times B_r^{M_2}(z_2) \times \ldots \times B_r^{M_N}(z_N) \times M_{N+1} \times M_{N+2} \times \ldots \] in the product topology. Suppose $\textbf{y} \in B'$. We must show $\textbf{y} \in B$, i.e., $d(\textbf{z}, \textbf{y}) < r$. Note that for all $i \geq N$, 
+\[\frac{\rho_i(z_i, y_i)}{i} \leq \frac{1}{N}\]
+
+which means 
+
+ \[d(\textbf{z},\textbf{y}) = \sup\{\frac{\rho_i(z_i,y_i)}{i}\} \leq \max\{\frac{\rho_1(z_1,y_1)}{1}, \frac{\rho_2(z_2,y_2)}{2}, \ldots, \frac{\rho_N(z_N,y_N)}{N}, \frac{1}{N}\}\]
+
+and since $N$ was chosen so that $\frac{1}{N} < r$ and $B'$ was chosen to have balls of radius $r$ in the first $N$ components, we must have $d(\textbf{z}, \textbf{y}) < r$.
+
+Conversely, $\ldots$
+\end{proof}
+
+\begin{example}
+	Let $(\mathbb{Z}_2 \times \mathbb{Z}_3 \times \mathbb{Z}_5 \times \ldots, \rho_{P,\infty})$ be the metric space formed by taking the product of $(\mathbb{Z}_p, \rho_p)$ for every prime $p$. Since $\rho_p$ is translation invariant and multiplicative in each $\mathbb{Z}_p$, valuative capacity is also translation invariant and multiplicative in  $(\mathbb{Z}_2 \times \mathbb{Z}_3 \times \mathbb{Z}_5 \times \ldots, \rho_{P,\infty})$.
+\end{example}
+
+
 
 \section*{Inclusions}
 From Munkres, Ch. 2 section 18.
