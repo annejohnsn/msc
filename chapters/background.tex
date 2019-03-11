@@ -137,6 +137,20 @@ This doesn't work because  $\cup_{a_i} B_d(a_i)$  could fail to be a cover -when
 	\[\frac{1}{log(\omega(S)/\gamma_{i+1} )} = \sum_{j=1}^n \frac{1}{log(\omega(B_{\gamma_{i+1}}(x_j))/\gamma_{i+1} )}\]
 \end{corollary*}
 
+Under what class of maps is valuative capacity invariant?
+\begin{definition*}
+Let $X$ and $Y$ be topological spaces and suppose $f: X \rightarrow Y$ is a bijection with inverse function $f^{-1}: Y \rightarrow X$. Then $f$ is a \textbf{homeomorphism} so long as $f$ and $f^{-1}$ are continuous.
+\end{definition*}
+
+\begin{definition*}
+Let $X$ and $Y$ be topological spaces and suppose $f: X \rightarrow Y$ is injective and continuous. Let $Z =f(X) \subseteq Y$ be the image of $f$ in $Y$. If $f': X \rightarrow Z$ is a homeomorphism, then we say that $f$ is an \textbf{topological imbedding} of $X$ in $Y$.
+\end{definition*}
+
+\begin{proposition*} (Munkres 18.4)
+Let $A$, $X$ and $Y$ be topological spaces and suppose $f: A \rightarrow X \times Y$  is given by $f(a) = (f_1(a), f_2(a))$, where $f_1:A \rightarrow X$ and $f_2:A \rightarrow Y$. Then $f$ is continuous if and only if both $f_1$ and $f_2$ are.  
+\end{proposition*}
+
+
 \newpage
 \section*{Computing a $\rho$-ordering}
 We describe an algorithm for computing the $\rho$-ordering of a set recursively and discuss some immediate corollaries.  \\
