@@ -24,22 +24,29 @@ Suppose $(M,\rho_\infty)$ is the product of ultrametric spaces $(M_i, \rho_i)$ a
 \end{proposition*}
 
 \begin{proof}
-Let $(M,\rho_\infty)$ be as above. Suppose also that \[\rho(x_i,y_i) = \rho(s_i + x_i, s_i +y_i), \forall s_i, x_i, y_i \in M_i, \forall i.\] that is, suppose each $\rho_i$ is (left) translation invariant. Then,  
+Let $(M,\rho_\infty)$ be as above. Suppose also that \[\rho_i(x_i,y_i) = \rho_i(s_i + x_i, s_i +y_i), \forall s_i, x_i, y_i \in M_i, \forall i.\] that is, suppose each $\rho_i$ is (left) translation invariant. Then,  
 \[
 \rho_\infty(s +x, s+y)  
-= sup_i\{\rho(s_i +x_i, s_i + y_i)\} 
-= sup_i\{\rho(x_i, y_i)\}
+= sup_i\{\rho_i(s_i +x_i, s_i + y_i)\} 
+= sup_i\{\rho_i(x_i, y_i)\}
 = \rho_\infty(x,y).
 \] so that $\rho_\infty$ is translation invariant.  Proposition $xyz$ implies valuative capacity is as well. 
 \end{proof}
 
 
 \begin{proposition*}
-Suppose $(M,\rho_\infty)$ is the product of ultrametric spaces $(M_i, \rho_i)$ and each $M_i$ is in fact a normed vector space (with each $\rho_i$ being the metric derived from the norm on $M_i$). Then $\rho_\infty$ is multiplicative if the norm producing each $\rho_i$ is multiplicative, in which valuative capacity is as well.
+Let $M$ be a normed vector space and suppose the norm on $M$ induces an ultrametric $\rho$. Let $(\textbf{M}, \rho_{\infty})$ be the ultrametric space formed by taking products of $M$, along with the $L_\infty$ metric defined above.  Then if $\rho$ is multiplicative on $M$, $\rho_{\infty}$ is multiplicative on $\textbf{M}$, in the sense that $\rho_{\infty}(\textbf{cx},\textbf{cy}) = \lvert c\rvert_\rho \text{ } \rho_\infty (\textbf{x},\textbf{y})$, for $\textbf{c}=(c,c,c,\ldots) ,\textbf{x},\textbf{y} \in \textbf{M}$.
 \end{proposition*}
 
 \begin{proof}
-Similar.
+Let $(M,\rho_\infty)$ be as above, and denote by $\mid \cdot \mid_{\rho_i}$ the norm on each $M_i$.Suppose also that \[\rho_i(c_ix_i,c_iy_i) = \mid c_i \mid_{\rho_i}\rho_i(x_i,y_i), \forall c_i, x_i, y_i \in M_i, \forall i.\] that is, suppose each $\rho_i$ is multiplicative.  Define a norm on $M$ by $\mid x \mid_{\rho_\infty} = \rho_{\infty}(x-0)=sup_i\{(x_i-0_i)\}=sup_i\{\mid x_i\mid_{\rho_i}\}$.  Then,  
+\[
+\rho_\infty(cx, cy)  
+= sup_i\{\rho_i(c_i x_i, c_i y_i)\} 
+= sup_i\{\mid c_i \mid_{\rho_i} \rho_i(x_i, y_i)\}
+= \rho_\infty(x,y).
+\] so that $\rho_\infty$ is translation invariant.  Proposition $xyz$ implies valuative capacity is as well. 
+
 \end{proof}
 
 \begin{example}
