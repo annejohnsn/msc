@@ -8,10 +8,10 @@ Let $(M_i, \rho_i)$ for $i$ in some finite or countably infinite index set $I$ b
 \begin{proof}
 Let $(M, \rho_\infty)$ be the product of ultrametric spaces as above and let $x$ and $y$ be two points in the space. Clearly, $\rho_\infty(x,y) \geq 0$ since each $\rho_i(x_i,y_i) \geq 0$, and $\rho_\infty(x,y) = 0 \iff \rho_i(x_i,y_i) =0,\forall i \iff x_i=y_i, \forall i \iff x=y$. The fact that $\rho_\infty$ is symmetric is also an easy consequence of the fact that each $\rho_i$ is symmetric since  $\rho_i(x_i, y_i) = \rho_i(y_i, x_i)$ implies $sup_{i}\{\rho_i(x_i, y_i)\} = sup_{i}\{\rho_i(y_i, x_i)\}$. To see that $\rho_\infty$ is an ultrametric, note that if $z=z_i$ is any other point of $M$, then
 \begin{align*}
-    \rho_\infty(x, y) = sup_i\{\rho_i(x_i,y_i)\} && \\
-    \leq  sup_i\{max(\rho_i(x_i,z_i),\rho_i(y_i,z_i))\} && \text{ since each $\rho_i$ is an ultrametric } \\
-    \leq max(\rho_i(x_i,z_i)\rho_i(y_i,z_i)), \forall i && \\
-    \leq max(sup_i\{\rho_i(x_i,z_i)\}, sup_i\{\rho_i(y_i,z_i)\} && \\
+    \rho_\infty(x, y) = \sup_i\{\rho_i(x_i,y_i)\} && \\
+    \leq \sup_i\{max(\rho_i(x_i,z_i),\rho_i(y_i,z_i))\} && \text{ since each $\rho_i$ is an ultrametric } \\
+    \leq \max(\rho_i(x_i,z_i), \rho_i(y_i,z_i)), \forall i && \\
+    \leq \max(\sup_i\{\rho_i(x_i,z_i)\}, \sup_i\{\rho_i(y_i,z_i)\} && \\
     = max(\rho_\infty(x,z),\rho_\infty(y,z))  
 \end{align*}
 
@@ -27,8 +27,8 @@ Suppose $(M,\rho_\infty)$ is the product of ultrametric spaces $(M_i, \rho_i)$ a
 Let $(M,\rho_\infty)$ be as above. Suppose also that \[\rho_i(x_i,y_i) = \rho_i(s_i + x_i, s_i +y_i), \forall s_i, x_i, y_i \in M_i, \forall i.\] that is, suppose each $\rho_i$ is (left) translation invariant. Then,  
 \[
 \rho_\infty(s +x, s+y)  
-= sup_i\{\rho_i(s_i +x_i, s_i + y_i)\} 
-= sup_i\{\rho_i(x_i, y_i)\}
+= \sup_i\{\rho_i(s_i +x_i, s_i + y_i)\} 
+= \sup_i\{\rho_i(x_i, y_i)\}
 = \rho_\infty(x,y).
 \] so that $\rho_\infty$ is translation invariant.  Proposition $xyz$ implies valuative capacity is as well. 
 \end{proof}
@@ -39,22 +39,32 @@ Let $M$ be a normed vector space and suppose the norm on $M$ induces an ultramet
 \end{proposition*}
 
 \begin{proof}
-Let $(M,\rho_\infty)$ be as above, and denote by $\mid \cdot \mid_{\rho_i}$ the norm on each $M_i$.Suppose also that \[\rho_i(c_ix_i,c_iy_i) = \mid c_i \mid_{\rho_i}\rho_i(x_i,y_i), \forall c_i, x_i, y_i \in M_i, \forall i.\] that is, suppose each $\rho_i$ is multiplicative.  Define a norm on $M$ by $\mid x \mid_{\rho_\infty} = \rho_{\infty}(x-0)=sup_i\{(x_i-0_i)\}=sup_i\{\mid x_i\mid_{\rho_i}\}$.  Then,  
+Let $M, \rho,$ and $\rho_{\infty}$ be as above. Then, 
 \[
-\rho_\infty(cx, cy)  
-= sup_i\{\rho_i(c_i x_i, c_i y_i)\} 
-= sup_i\{\mid c_i \mid_{\rho_i} \rho_i(x_i, y_i)\}
-= \rho_\infty(x,y).
-\] so that $\rho_\infty$ is translation invariant.  Proposition $xyz$ implies valuative capacity is as well. 
+\rho_\infty(\textbf{cx}, \textbf{cy}) 
+= \sup_i\{\rho(c_i x_i, c_i y_i)\} 
+= \sup_i\{\vert c \rvert_\rho \text{ }  \rho(x_i, y_i)\}
+= \vert c \rvert_\rho \text{ } \sup_i\{\rho(x_i,y_i)\}
+= \vert c \rvert_\rho \text{ } \rho_\infty(x_i,y_i)
+\]
 
 \end{proof}
+
+\begin{corollary*}
+Let $\textbf{S}$ be a subset of $(\textbf{M}, \rho_\infty)$, where $\textbf{M}$ is the product of an ultrametric space $(M, \rho)$, that is itself a normed vector space with a multiplicative norm inducing $\rho$. If $\textbf{c}=(c,c,c,\ldots)$ is an element of $\textbf{M}$ with constant value on each component, then $\omega(\textbf{cS})=\lvert c \rvert_\rho \text{ }\omega(\textbf{S})$.
+\end{corollary*}
+
+\begin{proof}
+If $\{\textbf{a}_j\}_{j=0}^\infty$ is a $\rho_\infty$ ordering of $\textbf{S}$, then $\{\textbf{ca}_j\}_{j=0}^\infty$ is a $\rho_\infty$ ordering of $\textbf{cS}$.
+\end{proof}
+
 
 \begin{example}
 	Let $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$ be the metric space with elements $\{(x,y)\mid x,y \in \mathbb{Z}_p\}$ and metric $\rho_{p,\infty}((x_1,x_2), (y_1,y_2)) = \max(\rho_p(x_1, y_1)), \rho_p(x_2, y_2))$, where $\rho_p$ is the p-adic metric for some fixed prime $p$. Since $\rho_p$ is translation invariant and multiplicative in $\mathbb{Z}_p$, valuative capacity is also translation invariant and multiplicative in  $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$.
 \end{example}
 
 \begin{example}
-	Let $(\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2}, \rho_{p,\infty})$ be the metric space with elements $\{(x,y)\mid x \in \mathbb{Z}_{p_1}, y \in \mathbb{Z}_{p_2}\}$ for two distinct primes, $p_1 \neq p_2$, and metric $\rho_{p,\infty}((x_1,x_2), (y_1,y_2)) = \max(\rho_{p_1}(x_1, y_1)), \rho_{p_2}(x_2, y_2))$, where $\rho_{p_i}$ is the p-adic metric. Since each $\rho_{p_i}$ is translation invariant and multiplicative in $\mathbb{Z}_{p_i}$, valuative capacity is also translation invariant and multiplicative in  $(\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2}, \rho_{p,\infty})$.
+	Let $(\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2}, \rho_{p,\infty})$ be the metric space with elements $\{(x,y)\mid x \in \mathbb{Z}_{p_1}, y \in \mathbb{Z}_{p_2}\}$ for two distinct primes, $p_1 \neq p_2$, and metric $\rho_{p,\infty}((x_1,x_2), (y_1,y_2)) = \max(\rho_{p_1}(x_1, y_1)), \rho_{p_2}(x_2, y_2))$, where $\rho_{p_i}$ is the p-adic metric. Since each $\rho_{p_i}$ is translation invariant in $\mathbb{Z}_{p_i}$, valuative capacity will be translation invariant  in  $(\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2}, \rho_{p,\infty})$; however, unlike the case of $p_1=p_2$, this space does not have a multiplicative property that allows for scaling.
 \end{example}
 
 
@@ -104,7 +114,7 @@ We end this section with two observations on the results above.  First, recall t
 Secondly, we observe the asymptotic behavior of capacity in these spaces. For a fixed prime $p$,  $(\frac{1}{p})^{\frac{1}{p^n-1}}$ is an monotone, increasing sequence in $n$ with $ lim_{n\to\infty} (\frac{1}{p})^{\frac{1}{p^n-1}} =  1$. For fixed $n$, the sequence in $p$ is also montone, increasing, again with  $ lim_{p\to\infty} (\frac{1}{p})^{\frac{1}{p^n-1}}=1$. In both cases, the limiting value is equal to the diameter of space. Indeed, we can observe that the sequence $\{(0,0,\ldots), (1,0,\ldots), (0,1,\ldots), \ldots\}$, in which the first element has only zeros and the $n$-th element has a single $1$ in the $(n-1)$-th component, is a $\rho-$ordering for both  $(\mathbb{Z}_p \times \mathbb{Z}_p \times \ldots, \rho_{p,\infty})$  and  $(\mathbb{Z}_2 \times \mathbb{Z}_3 \times \ldots, \rho_{P,\infty})$, since the distance between elements in this sequence (in either metric space) is always $1$. If we could show that these spaces are compact, this would gives a valuative capacity of $lim_{n\to\infty} (1^n)^{(1/n)} =1$ for both spaces. We explore this more in the following section.\\
 
 \section*{Product topology}
-In considering the product space of ultrametric spaces, we may wonder whether the chosen metric also gives back the product topology on the space. For products formed by taking some finite number of copies, the answer is positive. We give the necessary background and show this fact, adapting the proof in Munkres (20.3) to the case of ultrametric spaces. 
+In considering the product space of ultrametric spaces, we may wonder whether the chosen metric also gives back the product topology on the space.  For products formed by taking some finite number of copies, the answer is positive. We give the necessary background and show this fact, adapting the proof in Munkres (20.3) to the case of ultrametric spaces. 
 
 \begin{definition-proposition*} (Munkres)
 Suppose $X_i$, for $i$ in some index set $I$, is a family of topological spaces.  Let $\pi_j: \prod_{i \in I} X_i \rightarrow X_j$ be the map given by projection onto the $j$-th component, that is $\pi_j (x) = \pi_j ((x_i)_{i \in I}) = x_j$. For each $j \in I$, let $\mathcal{S}_j$ be the collection \[\mathcal{S}_j = \{\pi^{-1}_j (U_j)\mid U_j \text{ open in } X_j\}\] Let $\mathcal{S}$ be the union of the $\mathcal{S}_j$ over $j \in I$, $\mathcal{S}= \cup_{j \in I} \mathcal{S}_j$. Then $\mathcal{S}$ is a subbasis that generates a topology on  $\prod_{i \in I} X_i$ called the \textbf{product topology}.\\
