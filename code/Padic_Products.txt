@@ -1,0 +1,81 @@
+with(LinearAlgebra):
+with(combinat, cartprod):
+with(padic): #not actually needed for the procedures but is needed for most choices of rho
+
+getPadicProductOrdering := proc (m, components)
+# Given a list of primes, p_1,...,p_n, compute the first m terms of a 
+# p-infinity ordering of Z_p1 x ... x Z_pn, where p-infinity(x,y)=max(p_j(x_j,y_j))
+# and p_j is the p_j-adic metric.
+#
+# arg m; an integer indicating the number of elements of the ordering to return
+# arg components; a list of prime numbers indicating the components of the product space
+# 
+# return; a matrix where each row is an element in the product space and the i-th row is the i-th element in an ordering
+
+    local numberOfComponents, co_primes, i, n, T, M, v, distances, j, M1, newBlock;
+
+    #will end up with one column per component in the product space
+    numberOfComponents := nops(components);
+		
+    # the ordering will start with the cartestian product of coprime elts from each component
+    co_primes := [[seq(i, i = 0 .. (components[1]-1))]]; #everything up to p-1 is coprime	
+    for n from 2 to numberOfComponents do 
+        co_primes := [op(co_primes), [seq(i, i = 0 .. (components[n]-1))]];	
+    od;  
+	
+    #then take the cartestian product to get the first <product of elements in components> elements in the ordering
+    T := cartprod(co_primes);
+    M := Matrix([T['nextvalue']()]);	
+    while not T['finished'] do
+       	M := <M; T['nextvalue']()>;
+    end do;	
+
+    #make a list to keep track of the exponent of each prime; start by take each prime to the power -1
+    v := Vector[row](1 .. numberOfComponents, 1);
+    v := convert(v, list);
+
+
+    while RowDimension(M) < m do #keep adding rows until you have enough points in the ordering
+        distances := zip(proc (x, y) options operator, arrow; x^(-y) end proc, components, v); #take each prime to the power of minus the elements in v
+        for j from 1 to numberOfComponents do #check each column to see if the max distance was achieved
+            if distances[j] = max(distances) then# if it was then split this column
+	        M1 := copy(M, deep); #take a snapshot of M before you start - this is what you have to add to
+ 	        for i from 1 to (components[j]-1) do  #create p-1 new blocks
+                    newBlock := copy(M1, deep);
+                    newBlock(1..RowDimension(newBlock), j) := Column(newBlock, [j]) +~ (i*components[j]^v[j]);
+                    M := Matrix([[M],[newBlock]]); #add the new block to the master matrix
+                od; 
+                v[j] := v[j]+1; #update the vector of exponents
+            end if;
+        od;
+    end do;
+  return M[1..m,]; 
+end proc; 
+
+
+getPartialRhoSeq := proc (S, rho) #rho and S must be compatible
+	local s_n, f, distances, nthTerm;
+
+	s_n := S[RowDimension(S),]; #find the last element in the ordering 
+
+	#make a function that calculates the distance from the i-th row of S to s_n
+	f := proc (i) options operator, arrow; rho(op(convert(s_n, list)), op(convert(S[i,], list))) end proc; 
+	#run over each row to get the set of all n-1 distances
+	distances := map(f, [seq(i, i = 1 .. (RowDimension(S)-1))]);
+
+	#multiply them to get the n-th term of the rho-ordering
+	nthTerm := mul(distances);
+
+	return nthTerm;	
+end proc;
+
+
+#EXAMPLE USAGE
+
+#rho2_1 := proc (x, y) options operator, arrow; valuep(x-y, 2) end proc;
+#S := getPadicProduct(100, [2]);
+#getPartialRhoSeq(S, rho2_1);
+
+#rho2_2 := proc (x_1, x_2, y_1, y_2) options operator, arrow; d:= max(valuep(x_1-y_1, 2), valuep(x_2-y_2, 2)); return d; end proc;
+#S := getPadicProductOrdering(100, [2, 2]);
+#getPartialRhoSeq(S, rho2_2);

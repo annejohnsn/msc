@@ -1,0 +1,56 @@
+with(LinearAlgebra):
+with(combinat, cartprod):
+
+getPadicProductOrdering := proc (m, components=list(numeric))
+# Given a list of primes, p_1,...,p_j, compute the first m terms of a 
+# p-infinity ordering of Z_p1 x ... x Z_pj, where p-infinity(x,y)=max(p_i(x_i,y_i))
+# and p_i is the p_i-adic metric.
+#
+# param m; an integer indicating the number of elements of the ordering to return
+# param components; a list of prime numbers indicating the components of the product space
+# 
+# return; a matrix where each row is an element in the product space and the i-th row is the i-th element in an ordering
+
+
+ 
+	numberOfComponents := nops(components);
+	
+	# the ordering will start with the cartestian product of coprime elts from each component
+	centres := [[seq(i, i = 0 .. (components[1]-1))]]; #everything up to p-1 is coprime	
+	for n from 2 to numberOfComponents do 
+		centres := [op(centres), [seq(i, i = 0 .. (components[n]-1))]];	
+	od; 
+	T := cartprod(centres);
+	M0 := <T['nextvalue']()>;	
+	while not T['finished'] do
+        	M0 := <M0, T['nextvalue']()>;
+   	end do;	
+
+
+
+while not M0 finisheddoT[nextvalue]()end do
+	M0 := Matrix(1, numberOfComponents, 0)
+
+		M1 := Matrix(M0,	
+
+
+
+end proc;
+
+
+M0=matrix(data=c(c(0,0,0,1,1,1),c(0,1,2,0,1,2)), ncol=2) ) {
+  
+  for(i in 1:n){
+    M1 <- matrix(data=c(M0[,1],M0[,1]+(2^i),M0[,2], M0[,2]), ncol=2)
+    M2 <- matrix(data=c(M1[,1],M1[,1],M1[,1],M1[,2], M1[,2]+(3^i), M1[,2]+(2*(3^i))), ncol=2)
+    M0 <-M2
+  }
+  
+  return(M2)
+}
+> getOrdering(n=2)
+
+numberOfRows := components[1];
+	for n from 2 to numberOfComponents do
+ 		numberOfRows := numberOfRows *components[n]; #take the product of the primes
+	od;
