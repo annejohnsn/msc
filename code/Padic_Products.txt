@@ -68,14 +68,3 @@ getPartialRhoSeq := proc (S, rho) #rho and S must be compatible
 
 	return nthTerm;	
 end proc;
-
-
-#EXAMPLE USAGE
-
-#rho2_1 := proc (x, y) options operator, arrow; valuep(x-y, 2) end proc;
-#S := getPadicProduct(100, [2]);
-#getPartialRhoSeq(S, rho2_1);
-
-#rho2_2 := proc (x_1, x_2, y_1, y_2) options operator, arrow; d:= max(valuep(x_1-y_1, 2), valuep(x_2-y_2, 2)); return d; end proc;
-#S := getPadicProductOrdering(100, [2, 2]);
-#getPartialRhoSeq(S, rho2_2);
