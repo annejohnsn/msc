@@ -1,42 +1,29 @@
-
-with(DynamicSystems):
 interface(rtablesize=500);
 
+#=== ordering and partial sums of Z_2 with p-adic metric ===#
 rho2_1 := proc (x, y) options operator, arrow; Fraction(1, 2^ordp(x-y, 2)) end proc;
-S := getPadicProductOrdering(100, [2]);
-getPartialRhoSeq(S, rho2_1);
-
-
-
+S := ComputePadicProductOrdering(100, [2]);
+ComputePartialRhoSeq(S, rho2_1);
 #take the nth root to see what the capacity is approaching
-root[100](getPartialRhoSeq(getPadicProductOrdering(100, [2]), rho2_1))
-#create a function to do this iteratively:
-g := x -> root[x-1](getPartialRhoSeq(getPadicProductOrdering(x, [2]), rho2_1))
+g := x -> root[x-1](ComputePartialRhoSeq(ComputePadicProductOrdering(x, [2]), rho2_1))
 map(g, [seq(i, i = 1 ..100)])
-#look at the results for increasing n
-DiscretePlot([seq(i, i = 1 .. 100)], [seq(g(i), i = 1 .. 100)], style = point)
 
+#=== ordering and partial sums of Z_2 x Z_2 with infinity metric ===#
 rho2_2 := proc (x_1, x_2, y_1, y_2) options operator, arrow; d:= max(Fraction(1, 2^ordp(x_1-y_1, 2)), Fraction(1, 2^ordp(x_2-y_2, 2))); return d; end proc;
-S := getPadicProductOrdering(100, [2, 2]);
-getPartialRhoSeq(S, rho2_2);
-g := x -> root[x-1](getPartialRhoSeq(getPadicProductOrdering(x, [2,2]), rho2_2))
+S := ComputePadicProductOrdering(100, [2, 2]);
+ComputePartialRhoSeq(S, rho2_2);
+g := x -> root[x-1](ComputePartialRhoSeq(ComputePadicProductOrdering(x, [2,2]), rho2_2))
 
-
+#=== ordering and partial sums of Z_2 x Z_3 with infinity metric ===#
 rho23_2 := proc (x_1, x_2, y_1, y_2) options operator, arrow; d:= max(Fraction(1, 2^ordp(x_1-y_1, 2)), Fraction(1, 3^ordp(x_2-y_2, 3))); return d; end proc;
-S := getPadicProductOrdering(101, [2, 3]);
-getPartialRhoSeq(S, rho23_2);
-g := x -> root[x-1](getPartialRhoSeq(getPadicProductOrdering(x, [2,3]), rho23_2))
+S := ComputePadicProductOrdering(101, [2, 3]);
+ComputePartialRhoSeq(S, rho23_2);
+g := x -> root[x-1](ComputePartialRhoSeq(ComputePadicProductOrdering(x, [2,3]), rho23_2))
 
 
-guess := proc(n)
-    local exp2, exp3, partial;
- 
-    exp2 := round(n*.133);
-    exp3 := round(n*.064);
-
-    partial := 2^(-exp2)*3^(-exp3);
-
-    return root[n-1](partial);
- 
-end proc;
-
+#=== use a more rapidly convergent subsequence to speed up calculations ===#
+# use Z_2 x Z_2 to get started
+A := Matrix([[0,0],[0,1]]); # set A to be the B_1(0x0) U B_1(0x1) (the other piece of Z_2 x Z_2 is A + (1,0))
+g := proc (x) options operator, arrow; root[2*x-1](FastPartialRhoSeq(x, A, [2, 2], rho2_2)) end proc
+map(g, [seq(i, i = 1 .. 100)])
+g(500);

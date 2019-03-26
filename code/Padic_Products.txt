@@ -2,7 +2,7 @@ with(LinearAlgebra):
 with(combinat, cartprod):
 with(padic): #not actually needed for the procedures but is needed for most choices of rho
 
-getPadicProductOrdering := proc (m, components)
+ComputePadicProductOrdering := proc (m, components)
 # Given a list of primes, p_1,...,p_n, compute the first m terms of a 
 # p-infinity ordering of Z_p1 x ... x Z_pn, where p-infinity(x,y)=max(p_j(x_j,y_j))
 # and p_j is the p_j-adic metric.
@@ -53,18 +53,78 @@ getPadicProductOrdering := proc (m, components)
 end proc; 
 
 
-getPartialRhoSeq := proc (S, rho) #rho and S must be compatible
-	local s_n, f, distances, nthTerm;
+ComputePartialRhoSeq := proc (S, rho) #rho and S must be compatible
+# Given an m by n matrix S whose columns represent points of an n-component product space
+# and that has as its i-th row the i-th term in a rho-ordering of that space
+# compute the (m-1)-th partial sum of the rho-sequence 
+# note that S and rho must be compatible and no checking is done to ensure this	
+#
+# arg S; an n by m matrix representing a rho-ordering, for example as created by ComputePadicProductOrdering
+# arg rho; a compatible metric on the points (rows) in S
+#
+# return; a real number, correpsonding to the (m-1)-th term of the partial rho-sequence
 
-	s_n := S[RowDimension(S),]; #find the last element in the ordering 
+	local lastTerm, f, distances, nthTerm;
 
-	#make a function that calculates the distance from the i-th row of S to s_n
-	f := proc (i) options operator, arrow; rho(op(convert(s_n, list)), op(convert(S[i,], list))) end proc; 
-	#run over each row to get the set of all n-1 distances
+	lastTerm := S[RowDimension(S),]; #find the last element in the ordering 
+
+	#make a function that calculates the distance from the i-th row of S to the last term in the ordering
+	f := proc (i) options operator, arrow; rho(op(convert(lastTerm, list)), op(convert(S[i,], list))) end proc; 
+	#run over each row to get the set of all m-1 distances
 	distances := map(f, [seq(i, i = 1 .. (RowDimension(S)-1))]);
 
-	#multiply them to get the n-th term of the rho-ordering
-	nthTerm := mul(distances);
+	#multiply them to get the (m-1)-th term of the rho-ordering
+	partialSum:= mul(distances);
 
-	return nthTerm;	
+	return partialSum
 end proc;
+
+
+FastPartialRhoSeq := proc (m, A, components, rho) 
+# exploit the repetition in (the distances in) S to speed up calucations
+
+    local numberOfComponents, i, v, distances, j, M,M1, newBlock, a_m, f, distanceVector, partialSum;
+
+    #will end up with one column per component in the product space
+    numberOfComponents := ColumnDimension(A);
+		
+    #make a list to keep track of the exponent of each prime; start by take each prime to the power -1
+    v := Vector[row](1 .. numberOfComponents, 1);
+    v := convert(v, list);
+
+    #make a copy of A because maple complains if you modifiy A directly
+    M := copy(A, deep);
+
+    while RowDimension(M) < m do #keep adding rows until you have enough points in the ordering
+        distances := zip(proc (x, y) options operator, arrow; x^(-y) end proc, components, v); #take each prime to the power of minus the elements in v
+        for j from 1 to numberOfComponents do #check each column to see if the max distance was achieved
+            if distances[j] = max(distances) then# if it was then split this column
+	        M1 := copy(M, deep); #take a snapshot of M before you start - this is what you have to add to
+ 	        for i from 1 to (components[j]-1) do  #create p-1 new blocks
+                    newBlock := copy(M1, deep);
+                    newBlock(1..RowDimension(newBlock), j) := Column(newBlock, [j]) +~ (i*components[j]^v[j]);
+                    M := Matrix([[M],[newBlock]]); #add the new block to the master matrix
+                od; 
+                v[j] := v[j]+1; #update the vector of exponents
+            end if;
+        od;
+    end do;
+    
+
+   a_m := M[m,]; #find the (m-1)-th element in the ordering 
+
+    #make a function that calculates the distance from the i-th row of M to a_m
+    f := proc (i) options operator, arrow; rho(op(convert(a_m, list)), op(convert(M[i,], list))) end proc; 
+    #run over each row to get the set of all n-1 distances
+    distanceVector := map(f, [seq(i, i = 1 .. (m-1))]);
+
+    #multiply them to get the (m-1)-th term of the rho-ordering
+    partialSum := mul(distanceVector);
+
+    return partialSum;	
+
+end proc;
+
+
+
+
