@@ -22,8 +22,3 @@ g := x -> root[x-1](ComputePartialRhoSeq(ComputePadicProductOrdering(x, [2,3]), 
 
 
 #=== use a more rapidly convergent subsequence to speed up calculations ===#
-# use Z_2 x Z_2 to get started
-A := Matrix([[0,0],[0,1]]); # set A to be the B_1(0x0) U B_1(0x1) (the other piece of Z_2 x Z_2 is A + (1,0))
-g := proc (x) options operator, arrow; root[2*x-1](FastPartialRhoSeq(x, A, [2, 2], rho2_2)) end proc
-map(g, [seq(i, i = 1 .. 100)])
-g(500);
