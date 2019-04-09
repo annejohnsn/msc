@@ -22,3 +22,8 @@ g := x -> root[x-1](ComputePartialRhoSeq(ComputePadicProductOrdering(x, [2,3]), 
 
 
 #=== use a more rapidly convergent subsequence to speed up calculations ===#
+longA := [6, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2]
+FastPartialRhoSeq(longA[1..2], [2,3])
+FastPartialRhoSeq(longA[1..11], [2,3])
+
+

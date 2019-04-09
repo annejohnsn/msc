@@ -137,7 +137,7 @@ FastPartialRhoSeq := proc (A, p:=[2,3])
 		
 		#the exponent of this prime in the nth partial will be -([the sum of the elements in powers]/n)
 		#where n is the product of elements in A (including the first element)
-		thisPrimeSum := add(powers);
+		thisPrimeSum := add(powers); #you have to pull out what power of two is in G here
 		primeExponents(i) := thisPrimeSum/n; 
 		
  	end do;
