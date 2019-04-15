@@ -1,0 +1,100 @@
+with(LinearAlgebra):
+with(combinat, cartprod):
+with(padic):
+
+interface(rtablesize=500);
+
+FastPartialRhoSeq := proc (A, p:=[2,3]) 
+	local g, h,computePowers,n, shortA, primeExponents,i, thisPrime, thisPrimeIndex,B, G, powers, powersOfG, thisPrimeSum;
+	
+	#=== Some helper functions ===#
+	#Return the index of every instance of p-multiples in a list 
+	#Use to find the index of a given prime in A
+	h := proc(i,L,p) if L[i] mod p = 0 then return i else return NULL fi; end proc;	
+
+	#Count the number of times the mth element has appeared as a factor for the 1..m first elements in a list
+	#<and raise the mth element to that number>
+	#Use to compute the (decreasing) sequence of distances in A or a subset of A
+	g := proc(m, L)
+		local basePrime;
+		
+		basePrime := L[m];
+		
+		#since we just want the exponent not actual distance just compute what power this would be
+		return ordp(mul(L[1..m]), basePrime); 
+		#return Fraction(1,basePrime^ordp(mul(L[1..m]), basePrime));
+
+	end proc;
+	
+	#Compute the appropriate power of an element of G
+	computePowers := proc(m, L)
+		local power;
+	
+		if m=nops(L) then
+			power:= L[-1]-1;
+		else 
+			power:= mul(L[(m+1)..nops(L)])* (L[m]-1);
+		end if;
+		return power
+	end proc;
+	
+	#compute n, then create a copy of A with the first element deleted to ease the indexing
+	n := mul(A);
+	shortA := A[2..nops(A)];
+
+	#=== compute the terms corrsponding to each prime given ==#
+	primeExponents := Vector();
+	for i from 1 to nops(p) do
+		#pull out the prime 
+		thisPrime := p[i];
+
+		#first get the index in A of this prime
+		thisPrimeIndex := map(h, [seq(i, i=1..nops(shortA))], shortA, thisPrime);
+		B:= shortA[thisPrimeIndex];
+
+		#then find the (exponents for the) distances occuring with this prime
+		G:= map(g,[seq(i, i=1..nops(B))],B);
+	
+		#Figure out what power each distance should be raised to
+		powers := map(computePowers,thisPrimeIndex, shortA);
+	
+		#raise each element in G to the given powers
+   		#powersOfG:= zip(proc (x, y) options operator, arrow; x^(y) end proc, G, powers); 
+		powersOfG:= zip(proc (x, y) options operator, arrow; x*(y) end proc, G, powers); 
+		
+		#the exponent of this prime in the nth partial will be -([the sum of the elements in powers]/n)
+		#where n is the product of elements in A (including the first element)
+
+		thisPrimeSum := add(powersOfG);
+		primeExponents(i) := thisPrimeSum/n; 
+		
+ 	end do;
+
+	return primeExponents;
+	
+end proc;
+
+
+longA := [6, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2];
+
+partial23:=proc(n)
+    local partial, m, multiple2, multiple3, powers, partialSum, row;
+
+    partialSum := FastPartialRhoSeq(longA[1..n], [2, 3]);
+    m := mul(longA[1..n]);
+    multiple2 := m/denom(partialSum[1]);
+    multiple3 := m/denom(partialSum[2]);
+   
+    powers := [numer(partialSum[1])*multiple2, numer(partialSum[2])*multiple3];
+    
+    row := Vector[row]([m, 2^(-powers[1]/m)*3^(-powers[2]/m), powers[1], evalf(partialSum[1]), powers[2], evalf(partialSum[2])]);
+	
+    return row;
+end proc;
+
+results := Matrix(partial23(1));
+for i from 2 to 50 do
+    results := <results, partial23(i)>:
+end do;
+
+

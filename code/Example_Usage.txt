@@ -18,7 +18,7 @@ g := x -> root[x-1](ComputePartialRhoSeq(ComputePadicProductOrdering(x, [2,2]), 
 rho23_2 := proc (x_1, x_2, y_1, y_2) options operator, arrow; d:= max(Fraction(1, 2^ordp(x_1-y_1, 2)), Fraction(1, 3^ordp(x_2-y_2, 3))); return d; end proc;
 S := ComputePadicProductOrdering(101, [2, 3]);
 ComputePartialRhoSeq(S, rho23_2);
-g := x -> root[x-1](ComputePartialRhoSeq(ComputePadicProductOrdering(x, [2,3]), rho23_2))
+g := x -> root[x](ComputePartialRhoSeq(ComputePadicProductOrdering(x, [2,3]), rho23_2))
 
 
 #=== use a more rapidly convergent subsequence to speed up calculations ===#

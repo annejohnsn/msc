@@ -1,0 +1,24 @@
+interface(rtablesize=500);
+longA := [6, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 3, 2, 2, 3, 2, 3, 2]
+
+
+partial23:=proc(n)
+    local partial, m, multiple2, multiple3, powers, partialSum, row;
+
+    partialSum := FastPartialRhoSeq(longA[1..n], [2, 3]);
+    m := mul(longA[1..n]);
+    multiple2 := m/denom(partialSum[1]);
+    multiple3 := m/denom(partialSum[2]);
+   
+    powers := [numer(partialSum[1])*multiple2, numer(partialSum[2])*multiple3];
+    
+    row := Vector[row]([m, powers[1], evalf(partialSum[1]), powers[2], evalf(partialSum[2])]);
+	
+    return row;
+end proc;
+
+results := Matrix(partial23(1));
+for i from 2 to 50 do
+    results := <results, partial23(i)>;
+end do;
+

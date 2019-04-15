@@ -81,16 +81,16 @@ end proc;
 
 
 FastPartialRhoSeq := proc (A, p:=[2,3]) 
-	local g, h,computePowers,n, shortA, primeExponents,i, thisPrime, thisPrimeIndex,B, G, powers, thisPrimeSum;
+	local g, h,computePowers,n, shortA, primeExponents,i, thisPrime, thisPrimeIndex,B, G, powers, powersOfG, thisPrimeSum;
 	
 	#=== Some helper functions ===#
 	#Return the index of every instance of p-multiples in a list 
 	#Use to find the index of a given prime in A
 	h := proc(i,L,p) if L[i] mod p = 0 then return i else return NULL fi; end proc;	
 
-	#Count the number of times the mth element has already occured in a list 
-	#<and raise the mth element to that number
-	#Use to compute the (decreasing) sequence of distances in A or a subset of A>
+	#Count the number of times the mth element has appeared as a factor for the 1..m first elements in a list
+	#<and raise the mth element to that number>
+	#Use to compute the (decreasing) sequence of distances in A or a subset of A
 	g := proc(m, L)
 		local basePrime;
 		
@@ -135,7 +135,7 @@ FastPartialRhoSeq := proc (A, p:=[2,3])
 		powers := map(computePowers,thisPrimeIndex, shortA);
 	
 		#raise each element in G to the given powers
-    #powersOfG:= zip(proc (x, y) options operator, arrow; x^(y) end proc, G, powers); 
+   		#powersOfG:= zip(proc (x, y) options operator, arrow; x^(y) end proc, G, powers); 
 		powersOfG:= zip(proc (x, y) options operator, arrow; x*(y) end proc, G, powers); 
 		
 		#the exponent of this prime in the nth partial will be -([the sum of the elements in powers]/n)

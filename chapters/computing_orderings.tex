@@ -1,0 +1,92 @@
+
+
+\newpage
+
+\section*{Computing a $\rho$-ordering}
+In the previous section, we defined valuative capacity for a compact subset $S$ of an ultrametric space $(M, \rho)$. We also got a glimpse into the way the valuative capacity of $S$ interacts with its other properties, such as the set of distances occurring in $S$ and the lattice of closed balls in $S$ (or equivalently, if $S$ has enough structure, the lattice of subgroups). In this section, we offer a more detailed study of the interaction between the valuative capacity of $S$ and the lattice of closed balls in $S$, showing how, in all cases (with $S$ compact), the latter can be used to compute the first $n$ terms of a $\rho-$ordering of $S$ (for any $n < \infty$) and how, in some cases, this extends to being able to compute the valuative capacity of $S$. \\
+
+We begin by letting $S$ be as before,  a compact subset of an ultrametric space $(M, \rho)$, and by letting $\Gamma_S =\{\gamma_0, \gamma_1,\ldots,\gamma_\infty=0\}$ be the set of distances in $S$.  Now fix some $k \in \mathbb{N}$, and consider for a moment the set of closed balls of radius $\gamma_k$ in $S$. We could denote these alternatively by $\overline{B^M_{\gamma_k}(x_i)} \cap S$ or by  $\overline{B^S_{\gamma_k}(x_i)}$, but when there is no risk of confusion, we will denote them simply by $\overline{B_{\gamma_k}(x_i})$. Since $S$ is compact, we must have some $x_1,\ldots, x_n$  such that $S= \cup_{i=1}^n \overline{B_{\gamma_k}(x_i)}$, and in fact,  since $\rho$ is an ultrametric, $\cup_{i=1}^n \overline{B_{\gamma_k}(x_i)}$ will be a partition of $S$. Note that both $n$ and the $x_i$'s depend on our fixed $k$, but that $n$ is independent of the $x_i$'s, since any choice of centres is equivalent. We rephrase this with following definition and proposition:
+
+\begin{definition*}
+For $S$ and $\Gamma_S$ as above, and fixed $k \in \mathbb{N}$, define $\sim_k$ to  be the relation on $S$ given by $x \sim_k y$ if and only if $\rho(x,y) \leq \gamma_k$, i.e.,  $x \sim_k y$ if and only if $\overline{B_{\gamma_k}(x)} =\overline{B_{\gamma_k}(y)}$.
+\end{definition*}
+
+The fact $\sim_k$ is an equivalence relation on $S$ is equivalent to the observation that every point in a ultrametric ball is at its centre:
+
+\begin{proposition*}
+Let  $S$ and $\Gamma_S$ be as above, then $\sim_k$ is an equivalence relation on $S$. We denote the set of equivalence classes of $S/\sim_k$ by $S_{\gamma_k}$.
+\end{proposition*}
+
+\begin{proof}
+$\sim_k$ is clearly reflexive and symmetric, since $\rho$ is a metric. Transitivity results from the ultrametric property of $\rho$: if $x \sim_k y$ and $y \sim_k z$, then $$\rho(x, z) \leq \max(\rho(x,y), \rho(z,y)) \leq \gamma_k$$ so $x \sim_k z$. 
+\end{proof}
+
+We have defined  $S_{\gamma_k}$ to be the set of equivalence classes in $S$ under the relation $\sim_k$, which is equivalent to letting $S_{\gamma_k}$ be the set of closed balls of fixed radius $\gamma_k$ in  $S$. We now offer a third perspective on the elements on $S_{\gamma_k}$, which is due to \cite{na},
+
+\begin{lemma*}
+For each $k$, the elements of $S_{\gamma_k}$, that is, the closed balls of radius $\gamma_k$, themselves form an ultrametric space, where 
+\[ \rho_k\overline{(B_{\gamma_k}(x)},\overline{B_{\gamma_k}(y)}) = 
+\begin{cases}
+\rho(x,y), & \text{if } \rho(x,y) > \gamma_k \\
+0, & \text{if }   \rho(x,y) \leq \gamma_k \text{, i.e., } \overline{B_{\gamma_k}(x)}=\overline{B_{\gamma_k}(y)}
+\end{cases}
+\]
+\end{lemma*}
+
+So now the elements of $S_{\gamma_k}$ may be viewed as either equivalence classes, closed balls of fixed radius, or points in a new metric space. We make a final definition before moving on.
+
+\begin{definition*}
+Let $S$ and $\Gamma_S$ be as above. Define $\beta(i)_{i=0}^{\infty}$ to be the sequence given by $\beta(i) = \mid S_{\gamma_k}\mid$, which is an invariant of $S$ and which counts the number of connected components of $S_{\gamma_k}$ when viewed as a metric space. When necessary, we use $\beta^S(i)$ to denote the $\beta$ sequence for a given, compact  ultrametric space $S$.
+\end{definition*}
+
+We return to the sequence $\beta(i)$ at the end of the section. For now,we  show how a $\rho-$ordering of $S$ can be built recursively from the spaces $S_{\gamma_k}$. This begins by noting that we can build these spaces themselves recursively:
+
+\begin{lemma*}
+Let $S$, $\Gamma_S$, and $S_{\gamma_k}$. Then $S_{\gamma_k+1}$ can be constructed by partitioning each of the closed balls in $S_{\gamma_k}$ into closed balls of radius $\gamma_{k+1}$ and taking their union.
+\end{lemma*}
+
+\begin{proof}
+ Let $\overline{B_{\gamma_k}(x_i)}$  be an element of $S_{\gamma_k}$. T
+
+i.e., \[S = S_{\gamma_{k+1}} = \cup_{i=1}^n \cup_{j=1}^{l_i} \overline{B_{\gamma_k}(x_{i,j})}\] where $1 \leq l_i \leq n$ and $\cup_{j=1}^{l_i} \overline{B_{\gamma_k}(x_{i,j})}=\overline{B_{\gamma_k}(x_i)}$, $\forall i$.
+\end{proof}
+
+In what follows, fix a $k \in \mathbb{N}$ and let $S_{\gamma_k} = \cup_{i=1}^n \overline{B_{\gamma_k}(x_i)}$ be such a partition. Note that we can construct $S_{\gamma_{k+1}}$ by partitioning each of the We denote by $x_{i,j}$ the centre of a ball of radius $\gamma_{k+1}$ partitioning the ball $B_{\gamma_k}(x_i)$. Without loss of generality, when $j=1$, assume $x_{i,j}=x_i$, $\forall i$.\\
+
+
+We note that since $S$ is assumed to be compact,  $S_{\gamma_k}$ is a finite metric space $\forall k < \infty$ and $S_{\gamma_\infty}=\cup_{x \in S}\overline{B_0(x)} = \cup_{x \in S}x=S$ and $\rho_\infty=\rho$.  Now view $S_{\gamma_k}$, for fixed $k < \infty$ as a finite ultrametric space and represent its $n < \infty$ elements by their centres, the $x_i$'s. Without loss of genearlity, we can reindex the $x_i$'s so that they give the first $n$ terms of a $\rho_k$-ordering of $S_{\gamma_k}$. The following proposition is the main result of this section.
+
+\begin{proposition*}
+Given $S$ a compact subset of an ultrametric space $M$ and $\Gamma_S$, the set of distances in $S$, if $S_{\gamma_k}$ is a partition of $S$ as described above for $\gamma_k \in \Gamma_S$ with $k < \infty$, where the centres of the balls are indexed according to a $\rho_k$-ordering of $S_{\gamma_k}$, then a $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ can be found by forming a matrix, $A_k$, whose $(i,j)^{th}$-entry is $x_{i,j}$, as shown below, and then concatenating the rows (where the columns are padded by * if necessary). 
+\end{proposition*}
+
+\[A_k=
+ \begin{pmatrix}
+  x_{1,1} & x_{2,1} & \ldots  &x_{n,1} \\
+  x_{1,2} & x_{2,2} &\ldots &x_{n,2} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  x_{1,l_1} & x_{2,l_2} & \ldots &x_{n,l_n}
+ \end{pmatrix}
+\]
+
+
+\begin{proof}
+Note that the entries in each column are points in the ball $B_{\gamma_k}(x_i)$ so that the pairwise distance between columns is constant and always exceeds the distance between elements within a column. Moreover, the columns are organized such that for any $j$, $x_{n,j}$ maximizes$\prod_{i=1}^{n-1} \rho_(x_{n,j},x_{i,j})$ since $\prod_{i=1}^{n-1} \rho_(x_{n,j},x_{i,j}) = \prod_{i=1}^{n-1} \rho_(x_{n,1},x_{i,1}) = \prod_{i=1}^{n-1} \rho_(x_{n},x_{i})$ and the $x_i$'s are indexed according a $\rho_k$-ordering of $S_{\gamma_k}$.\\
+
+Then a $\rho_{\gamma_{k+1}}$-ordering of $S_{\gamma_{k+1}}$ is obtained by minimizing the number of elements from any one column and by taking the points $x_{i,j}$ (for fixed $j$) in sequence. For example, by concatenating the rows.
+\end{proof}
+
+\begin{corollary*}
+Interweaving the bottown row of the lattice of closed balls for a set $S$ gives a $\rho$-ordering of $S$. 
+\end{corollary*}
+
+\begin{corollary*}
+Suppose $S$ and $T$ are compact subsets of an ultrametric space $M$ with $\Gamma_S = \Gamma_T$ and $\mid S_{\gamma_k}\mid =\mid T_{\gamma_k}\mid$, $\forall k$. Then $\omega(S) = \omega(T)$. 
+\end{corollary*}
+\begin{itemize}
+\item i think this coincides with translation invariance when there is a group operation
+\end{itemize}
+
+\begin{corollary*}
+(regularity) Suppose that $S$ is such that $\forall k$, any $B_{\gamma_k}(x)=\cup_{j=1}^l B_{\gamma_{k+1}}(x_j)$, that is, every ball in $S$ breaks into exactly $l$ smaller balls. 
+\end{corollary*}
