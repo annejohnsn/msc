@@ -1,16 +1,15 @@
 
-
 \newpage
 
 \section*{Computing a $\rho$-ordering}
-In the previous section, we defined valuative capacity for a compact subset $S$ of an ultrametric space $(M, \rho)$. We also got a glimpse into the way the valuative capacity of $S$ interacts with its other properties, such as the set of distances occurring in $S$ and the lattice of closed balls in $S$ (or equivalently, if $S$ has enough structure, the lattice of subgroups). \\
+In the previous section, we defined valuative capacity for a compact subset $S$ of an ultrametric space $(M, \rho)$. We also got a glimpse into the way the valuative capacity of $S$ interacts with its other properties, such as the set of distances occurring in $S$ and the lattice of closed balls in $S$ (or equivalently, if $S$ has enough structure, the lattice of subgroups).\\
 
-In this section, we offer a more detailed study of the interaction between the valuative capacity of $S$ and the lattice of closed balls in $S$. In particular, we  show how, in all cases (with $S$ compact), the latter can be used to compute the first $n$ terms of a $\rho-$ordering of $S$ (for any $n < \infty$) and how, in some cases, this extends to being able to compute the valuative capacity of $S$. \\
+In this section, we offer a more detailed study of the interaction between the valuative capacity of $S$ and the lattice of closed balls in $S$. In particular, we  show how, in all cases (with $S$ compact), the latter can be used to compute the first $n$ terms of a $\rho-$ordering of $S$ (for any $n < \infty$) and how, in some cases, this extends to being able to compute the valuative capacity of $S$.\\
 
 We begin by letting $S$ be, as before,  a compact subset of an ultrametric space $(M, \rho)$, and by letting $\Gamma_S =\{\gamma_0, \gamma_1,\ldots,\gamma_\infty=0\}$ be the set of distances in $S$.  Now fix some $k \in \mathbb{N}$, and consider for a moment the set of closed balls of radius $\gamma_k$ in $S$. We could denote these alternatively by $B^M(x, \gamma_k) \cap S$ or by  $B^S(x, \gamma_k)$, but when there is no risk of confusion, we will denote them simply by $B(x, \gamma_k)$. Clearly, the set  $\{B(x, \gamma_k); x \in S\}$ forms a cover of $S$ and since $S$ is compact, we must have some $x_1,\ldots, x_n$  such that $S= \cup_{i=1}^n B(x_i, \gamma_k)$. In fact,  since $\rho$ is an ultrametric, $\cup_{i=1}^n B(x_i, \gamma_k)$ will be a disjoint union and therefore a partition of $S$. Note that both $n$ and the $x_i$'s depend on our fixed $k$, but that $n$ is independent of the $x_i$'s, since any choice of centres is equivalent. We rephrase this with following definition and lemma:
 
 \begin{definition*}
-For $S$ and $\Gamma_S$ as above, and $k \in \mathbb{N}$, fixed,  define $\sim_k$ to  be the relation on $S$ given by \[x \sim_k y\text{ if and only if  }\rho(x,y) \leq \gamma_k\] i.e.,  $x \sim_k y$ if and only if $\overline{B_{\gamma_k}(x)} =\overline{B_{\gamma_k}(y)}$.
+For $S$ and $\Gamma_S$ as above, and $k \in \mathbb{N}$, fixed,  define $\sim_k$ to  be the relation on $S$ given by \[x \sim_k y\text{ if and only if  }\rho(x,y) \leq \gamma_k\] i.e.,  $x \sim_k y$ if and only if $B_{\gamma_k}(x) = B_{\gamma_k}(y)$.
 \end{definition*}
 
 The fact $\sim_k$ is an equivalence relation on $S$ is equivalent to the observation that every point in a ultrametric ball is at its centre:
@@ -27,15 +26,22 @@ $\sim_k$ is clearly reflexive and symmetric, since $\rho$ is a metric. Transitiv
 
 \begin{lemma*}
 For each $k$, the elements of $S_{\gamma_k}$, that is, the closed balls of radius $\gamma_k$, themselves form an ultrametric space, where the metric is given by:
-\[ \rho_k\overline{(B_{\gamma_k}(x)},\overline{B_{\gamma_k}(y)}) = 
+\[ \rho_k(B(x, \gamma_k),B(y, \gamma_k)) = 
 \begin{cases}
 \rho(x,y), & \text{if } \rho(x,y) > \gamma_k \\
-0, & \text{if }   \rho(x,y) \leq \gamma_k \text{, i.e., } \overline{B_{\gamma_k}(x)}=\overline{B_{\gamma_k}(y)}
+0, & \text{if }   \rho(x,y) \leq \gamma_k \text{, i.e., } B(x, \gamma_k)=B(y, \gamma_k)
 \end{cases}
 \]
 \end{lemma*}
 
 \begin{proof}
+$\rho_k$ is reflexive, symmetric and transitive since $\rho$ is. Likewise, $\rho_k$ satisfies the ultrametric property, since $\rho$ does: let $B(x, \gamma_k),B(y, \gamma_k)$ and $B(z, \gamma_k)$ be any three elements of $S_{\gamma_k}$ and suppose $\rho_k(B(x, \gamma_k),B(y, \gamma_k)) > 0 $. Then,
+\begin{align*}
+\gamma_k < \rho_k(B(x, \gamma_k),B(y, \gamma_k)) && \\
+= \rho(x,y) \leq \max(\rho(x,z), \rho(y,z)) && \\
+= \max(\rho_k(B(x, \gamma_k), B(z, \gamma_k)), \rho_k(B(y, \gamma_k),B(z,\gamma_k)))
+\end{align*}
+since $ \gamma_k < \max(\rho(x,z), \rho(y,z))$ implies that at least one of $\rho_k(B(x, \gamma_k), B(z, \gamma_k))$ or $\rho_k(B(y, \gamma_k),B(z,\gamma_k))$ is greater than $0$.
 \end{proof}
 
 So now the elements of $S_{\gamma_k}$ may be viewed as either equivalence classes, closed balls of fixed radius, or points in a new metric space. We  make a final definition and introduce some notation before moving on.
@@ -52,19 +58,20 @@ Let $S_{\gamma_k}$ be as above. We denote the elements of $S_{\gamma_k}$ by $B^k
 We return to the sequence $\beta(i)$ at the end of this section. For now, we show how a $\rho-$ordering of $S$ can be built recursively from the spaces $S_{\gamma_k}$. This begins by noting that the spaces themselves can be built recursively:
 
 \begin{observation*}
-Let $S$, $\Gamma_S$, and $S_{\gamma_k}$ be as above. Then $S_{\gamma_k+1}$ can be constructed by partitioning each of the closed balls in $S_{\gamma_k}$ into closed balls of radius $\gamma_{k+1}$ and taking their union:  Let $\overline{B_{\gamma_k}(x_i)}$  be an element of $S_{\gamma_k}$, denoted by  $B^k_i$. Then, there exists $x_{i,1},\ldots, x_{i,l_{i}} \in B^k_i$ such that,
+Let $S$, $\Gamma_S$, and $S_{\gamma_k}$ be as above. Then $S_{\gamma_k+1}$ can be constructed by partitioning each of the closed balls in $S_{\gamma_k}$ into closed balls of radius $\gamma_{k+1}$ and taking their union:  Let $B(x_i, \gamma_k)$  be an element of $S_{\gamma_k}$, denoted by  $B^k_i$. Then, there exists $x_{i,1},\ldots, x_{i,l_{i}} \in B^k_i$ such that,
 
-\[B^k_i=  \cup_{j=1}^{l_i} \overline{B_{\gamma_{k+1}}(x_{i,j})}\] 
+\[B^k_i=  \cup_{j=1}^{l_i} B(x_{i,j}, \gamma_{k+1})\] 
 
 and so
 
-\[S_{\gamma_{k+1}} =  \cup_{i=1}^{\beta(k)}   \cup_{j=1}^{l_i} \overline{B_{\gamma_{k+1}}(x_{i,j})} = \cup^{\beta(k+1)}_{j=1}B^{k+1}_{j}\] 
+\[S_{\gamma_{k+1}} =  \cup_{i=1}^{\beta(k)}   \cup_{j=1}^{l_i} B(x_{i,j}, \gamma_{k+1}) = \cup^{\beta(k+1)}_{j=1}B^{k+1}_{j}\] 
 
 
-where $\cup_{j=1}^{l_i} \overline{B_{\gamma_k}(x_{i,j})}=\overline{B_{\gamma_{k+1}}(x_i)} = B^k_i$, $\forall i$.
+where $\cup_{j=1}^{l_i} B(x_{i,j},\gamma_{k})=B(x_i, \gamma_{k+1}) = B^k_i$, $\forall i$.
 \end{observation*}
 
-We can represent this schematically as below:\\
+We can represent this schematically as below:
+
 \tikzset{font=\small,
 level distance=1.75cm,
 }
@@ -124,7 +131,7 @@ Given $S$ a compact subset of an ultrametric space $M$ and $\Gamma_S$, the set o
 
 
 \begin{proof}
-Note that the entries in each column are points in the ball $B_{\gamma_k}(x_i)$ so that the pairwise distance between columns is constant and always exceeds the distance between elements within a column. Moreover, the columns are organized such that for any $j$, $x_{n,j}$ maximizes$\prod_{i=1}^{n-1} \rho_(x_{n,j},x_{i,j})$ since $\prod_{i=1}^{n-1} \rho_(x_{n,j},x_{i,j}) = \prod_{i=1}^{n-1} \rho_(x_{n,1},x_{i,1}) = \prod_{i=1}^{n-1} \rho_(x_{n},x_{i})$ and the $x_i$'s are indexed according a $\rho_k$-ordering of $S_{\gamma_k}$.\\
+Note that the entries in each column are points in the ball $B_{\gamma_k}(x_i)$ so that the pairwise distance between columns is constant and always exceeds the distance between elements within a column. Moreover, the columns are organized such that for any $j$, $x_{n,j}$ maximizes$\prod_{i=1}^{n-1} \rho_(x_{n,j},x_{i,j})$ since $\prod_{i=1}^{n-1} \rho_(x_{n,j},x_{i,j}) = \prod_{i=1}^{n-1} \rho_(x_{n,1},x_{i,1}) = \prod_{i=1}^{n-1} \rho_(x_{n},x_{i})$ and the $x_i$'s are indexed according a $\rho_k$-ordering of $S_{\gamma_k}$.
 
 Then a $\rho_{\gamma_{k+1}}$-ordering of $S_{\gamma_{k+1}}$ is obtained by minimizing the number of elements from any one column and by taking the points $x_{i,j}$ (for fixed $j$) in sequence. For example, by concatenating the rows.
 \end{proof}
