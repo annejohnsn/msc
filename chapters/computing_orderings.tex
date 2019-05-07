@@ -3,28 +3,30 @@
 \newpage
 
 \section*{Computing a $\rho$-ordering}
-In the previous section, we defined valuative capacity for a compact subset $S$ of an ultrametric space $(M, \rho)$. We also got a glimpse into the way the valuative capacity of $S$ interacts with its other properties, such as the set of distances occurring in $S$ and the lattice of closed balls in $S$ (or equivalently, if $S$ has enough structure, the lattice of subgroups). In this section, we offer a more detailed study of the interaction between the valuative capacity of $S$ and the lattice of closed balls in $S$, showing how, in all cases (with $S$ compact), the latter can be used to compute the first $n$ terms of a $\rho-$ordering of $S$ (for any $n < \infty$) and how, in some cases, this extends to being able to compute the valuative capacity of $S$. \\
+In the previous section, we defined valuative capacity for a compact subset $S$ of an ultrametric space $(M, \rho)$. We also got a glimpse into the way the valuative capacity of $S$ interacts with its other properties, such as the set of distances occurring in $S$ and the lattice of closed balls in $S$ (or equivalently, if $S$ has enough structure, the lattice of subgroups). \\
 
-We begin by letting $S$ be as before,  a compact subset of an ultrametric space $(M, \rho)$, and by letting $\Gamma_S =\{\gamma_0, \gamma_1,\ldots,\gamma_\infty=0\}$ be the set of distances in $S$.  Now fix some $k \in \mathbb{N}$, and consider for a moment the set of closed balls of radius $\gamma_k$ in $S$. We could denote these alternatively by $\overline{B^M_{\gamma_k}(x_i)} \cap S$ or by  $\overline{B^S_{\gamma_k}(x_i)}$, but when there is no risk of confusion, we will denote them simply by $\overline{B_{\gamma_k}(x_i})$. Since $S$ is compact, we must have some $x_1,\ldots, x_n$  such that $S= \cup_{i=1}^n \overline{B_{\gamma_k}(x_i)}$, and in fact,  since $\rho$ is an ultrametric, $\cup_{i=1}^n \overline{B_{\gamma_k}(x_i)}$ will be a partition of $S$. Note that both $n$ and the $x_i$'s depend on our fixed $k$, but that $n$ is independent of the $x_i$'s, since any choice of centres is equivalent. We rephrase this with following definition and proposition:
+In this section, we offer a more detailed study of the interaction between the valuative capacity of $S$ and the lattice of closed balls in $S$. In particular, we  show how, in all cases (with $S$ compact), the latter can be used to compute the first $n$ terms of a $\rho-$ordering of $S$ (for any $n < \infty$) and how, in some cases, this extends to being able to compute the valuative capacity of $S$. \\
+
+We begin by letting $S$ be, as before,  a compact subset of an ultrametric space $(M, \rho)$, and by letting $\Gamma_S =\{\gamma_0, \gamma_1,\ldots,\gamma_\infty=0\}$ be the set of distances in $S$.  Now fix some $k \in \mathbb{N}$, and consider for a moment the set of closed balls of radius $\gamma_k$ in $S$. We could denote these alternatively by $B^M(x, \gamma_k) \cap S$ or by  $B^S(x, \gamma_k)$, but when there is no risk of confusion, we will denote them simply by $B(x, \gamma_k)$. Clearly, the set  $\{B(x, \gamma_k); x \in S\}$ forms a cover of $S$ and since $S$ is compact, we must have some $x_1,\ldots, x_n$  such that $S= \cup_{i=1}^n B(x_i, \gamma_k)$. In fact,  since $\rho$ is an ultrametric, $\cup_{i=1}^n B(x_i, \gamma_k)$ will be a disjoint union and therefore a partition of $S$. Note that both $n$ and the $x_i$'s depend on our fixed $k$, but that $n$ is independent of the $x_i$'s, since any choice of centres is equivalent. We rephrase this with following definition and lemma:
 
 \begin{definition*}
-For $S$ and $\Gamma_S$ as above, and fixed $k \in \mathbb{N}$, define $\sim_k$ to  be the relation on $S$ given by $x \sim_k y$ if and only if $\rho(x,y) \leq \gamma_k$, i.e.,  $x \sim_k y$ if and only if $\overline{B_{\gamma_k}(x)} =\overline{B_{\gamma_k}(y)}$.
+For $S$ and $\Gamma_S$ as above, and $k \in \mathbb{N}$, fixed,  define $\sim_k$ to  be the relation on $S$ given by \[x \sim_k y\text{ if and only if  }\rho(x,y) \leq \gamma_k\] i.e.,  $x \sim_k y$ if and only if $\overline{B_{\gamma_k}(x)} =\overline{B_{\gamma_k}(y)}$.
 \end{definition*}
 
 The fact $\sim_k$ is an equivalence relation on $S$ is equivalent to the observation that every point in a ultrametric ball is at its centre:
 
-\begin{proposition*}
-Let  $S$ and $\Gamma_S$ be as above, then $\sim_k$ is an equivalence relation on $S$. We denote the set of equivalence classes of $S/\sim_k$ by $S_{\gamma_k}$.
-\end{proposition*}
+\begin{lemma*}
+Let  $S$ and $\Gamma_S$ be as above, then $\sim_k$ is an equivalence relation on $S$.
+\end{lemma*}
 
 \begin{proof}
 $\sim_k$ is clearly reflexive and symmetric, since $\rho$ is a metric. Transitivity results from the ultrametric property of $\rho$: if $x \sim_k y$ and $y \sim_k z$, then $$\rho(x, z) \leq \max(\rho(x,y), \rho(z,y)) \leq \gamma_k$$ so $x \sim_k z$. 
 \end{proof}
 
-We have defined  $S_{\gamma_k}$ to be the set of equivalence classes in $S$ under the relation $\sim_k$, which is equivalent to letting $S_{\gamma_k}$ be the set of closed balls of fixed radius $\gamma_k$ in  $S$. We now offer a third perspective on the elements on $S_{\gamma_k}$, which is due to \cite{na},
+ We denote the set of equivalence classes of $S/\sim_k$ by $S_{\gamma_k}$. We have defined  $S_{\gamma_k}$ to be the set of equivalence classes in $S$ under the relation $\sim_k$, which is equivalent to letting $S_{\gamma_k}$ be the set of closed balls of fixed radius $\gamma_k$ in  $S$. We now offer a third perspective on the elements on $S_{\gamma_k}$, which is due to \cite{na},
 
 \begin{lemma*}
-For each $k$, the elements of $S_{\gamma_k}$, that is, the closed balls of radius $\gamma_k$, themselves form an ultrametric space, where 
+For each $k$, the elements of $S_{\gamma_k}$, that is, the closed balls of radius $\gamma_k$, themselves form an ultrametric space, where the metric is given by:
 \[ \rho_k\overline{(B_{\gamma_k}(x)},\overline{B_{\gamma_k}(y)}) = 
 \begin{cases}
 \rho(x,y), & \text{if } \rho(x,y) > \gamma_k \\
@@ -33,31 +35,82 @@ For each $k$, the elements of $S_{\gamma_k}$, that is, the closed balls of radiu
 \]
 \end{lemma*}
 
-So now the elements of $S_{\gamma_k}$ may be viewed as either equivalence classes, closed balls of fixed radius, or points in a new metric space. We make a final definition before moving on.
-
-\begin{definition*}
-Let $S$ and $\Gamma_S$ be as above. Define $\beta(i)_{i=0}^{\infty}$ to be the sequence given by $\beta(i) = \mid S_{\gamma_k}\mid$, which is an invariant of $S$ and which counts the number of connected components of $S_{\gamma_k}$ when viewed as a metric space. When necessary, we use $\beta^S(i)$ to denote the $\beta$ sequence for a given, compact  ultrametric space $S$.
-\end{definition*}
-
-We return to the sequence $\beta(i)$ at the end of the section. For now,we  show how a $\rho-$ordering of $S$ can be built recursively from the spaces $S_{\gamma_k}$. This begins by noting that we can build these spaces themselves recursively:
-
-\begin{lemma*}
-Let $S$, $\Gamma_S$, and $S_{\gamma_k}$. Then $S_{\gamma_k+1}$ can be constructed by partitioning each of the closed balls in $S_{\gamma_k}$ into closed balls of radius $\gamma_{k+1}$ and taking their union.
-\end{lemma*}
-
 \begin{proof}
- Let $\overline{B_{\gamma_k}(x_i)}$  be an element of $S_{\gamma_k}$. T
-
-i.e., \[S = S_{\gamma_{k+1}} = \cup_{i=1}^n \cup_{j=1}^{l_i} \overline{B_{\gamma_k}(x_{i,j})}\] where $1 \leq l_i \leq n$ and $\cup_{j=1}^{l_i} \overline{B_{\gamma_k}(x_{i,j})}=\overline{B_{\gamma_k}(x_i)}$, $\forall i$.
 \end{proof}
 
-In what follows, fix a $k \in \mathbb{N}$ and let $S_{\gamma_k} = \cup_{i=1}^n \overline{B_{\gamma_k}(x_i)}$ be such a partition. Note that we can construct $S_{\gamma_{k+1}}$ by partitioning each of the We denote by $x_{i,j}$ the centre of a ball of radius $\gamma_{k+1}$ partitioning the ball $B_{\gamma_k}(x_i)$. Without loss of generality, when $j=1$, assume $x_{i,j}=x_i$, $\forall i$.\\
+So now the elements of $S_{\gamma_k}$ may be viewed as either equivalence classes, closed balls of fixed radius, or points in a new metric space. We  make a final definition and introduce some notation before moving on.
+
+\begin{definition*}
+Let $S$ and $\Gamma_S$ be as above. Define $\beta(i)_{i=0}^{\infty}$ to be the sequence given by $\beta(i) = \lvert  S_{\gamma_i}\rvert$, which is an invariant of $S$ and which counts the number of connected components of $S_{\gamma_i}$ when viewed as a metric space. When necessary, we use $\beta^S(i)$ to denote the $\beta$ sequence for a given, compact  ultrametric space $S$. Adapting the terminology in \cite{fp}, we call $\beta^S(i)$ the \textbf{structure sequence} of $S$.
+\end{definition*}
+
+\begin{notation*}
+Let $S_{\gamma_k}$ be as above. We denote the elements of $S_{\gamma_k}$ by $B^k_1, \ldots, B^k_{\beta(k)}$ or by $B^{S,k}_1, \ldots, B^{S,k}_{\beta(k)}$, when necessary.
+\end{notation*}
 
 
-We note that since $S$ is assumed to be compact,  $S_{\gamma_k}$ is a finite metric space $\forall k < \infty$ and $S_{\gamma_\infty}=\cup_{x \in S}\overline{B_0(x)} = \cup_{x \in S}x=S$ and $\rho_\infty=\rho$.  Now view $S_{\gamma_k}$, for fixed $k < \infty$ as a finite ultrametric space and represent its $n < \infty$ elements by their centres, the $x_i$'s. Without loss of genearlity, we can reindex the $x_i$'s so that they give the first $n$ terms of a $\rho_k$-ordering of $S_{\gamma_k}$. The following proposition is the main result of this section.
+We return to the sequence $\beta(i)$ at the end of this section. For now, we show how a $\rho-$ordering of $S$ can be built recursively from the spaces $S_{\gamma_k}$. This begins by noting that the spaces themselves can be built recursively:
+
+\begin{observation*}
+Let $S$, $\Gamma_S$, and $S_{\gamma_k}$ be as above. Then $S_{\gamma_k+1}$ can be constructed by partitioning each of the closed balls in $S_{\gamma_k}$ into closed balls of radius $\gamma_{k+1}$ and taking their union:  Let $\overline{B_{\gamma_k}(x_i)}$  be an element of $S_{\gamma_k}$, denoted by  $B^k_i$. Then, there exists $x_{i,1},\ldots, x_{i,l_{i}} \in B^k_i$ such that,
+
+\[B^k_i=  \cup_{j=1}^{l_i} \overline{B_{\gamma_{k+1}}(x_{i,j})}\] 
+
+and so
+
+\[S_{\gamma_{k+1}} =  \cup_{i=1}^{\beta(k)}   \cup_{j=1}^{l_i} \overline{B_{\gamma_{k+1}}(x_{i,j})} = \cup^{\beta(k+1)}_{j=1}B^{k+1}_{j}\] 
+
+
+where $\cup_{j=1}^{l_i} \overline{B_{\gamma_k}(x_{i,j})}=\overline{B_{\gamma_{k+1}}(x_i)} = B^k_i$, $\forall i$.
+\end{observation*}
+
+We can represent this schematically as below:\\
+\tikzset{font=\small,
+level distance=1.75cm,
+}
+
+%\begin{center}
+%\begin{tikzpicture}
+%\Tree [. $B^0_1$ [. $B^1_1$ [. $B^2_1$ ]
+%				     [. $\ldots$ ]
+    %                                            [. $B^2_{l_1}$ ] ]
+	%	        [.$B^1_2$ [. $B^2_{l_1 + 1}$ ]
+	%		                [. $\ldots$ ]
+              %                                  [. $B^2_{l_1 + l_2}$ ] ]
+                  %           [.$\ldots$ ]
+         %                    [.$B^1_{\beta(1)}$ [. $B^2_{\sum\limits_{\mathclap{i < \beta(1)}}  l_i + 1 }$ ]
+	%		                              [. $\ldots$ ]
+              %                                                [. $B^2_{\sum\limits_{\mathclap{i \leq \beta(1)}} l_i }$ ] ] ] 
+%\end{tikzpicture}
+%\end{center}
+
+
+\begin{center}
+\begin{tikzpicture}
+\Tree [.  $B^0_1$ \edge[draw=none];
+          [. $B^k_1$   [. $B^{k+1}_1$ ]
+		       [. $B^{k+1}_2$ ]
+		        [. $\ldots$ ]
+                              [. $B^{k+1}_{l_1}$ ] ] \edge[draw=none];
+          [.$B^k_2$ [. $B^{k+1}_{l_1 + 1}$ ]
+		       [. $B^{k+1}_{l_1 + 2}$ ]
+	                  [. $\ldots$ ]
+                             [. $B^{k+1}_{l_1 + l_2}$ ] ] \edge[draw=none];
+          [.$\ldots$ ]  \edge[draw=none];
+          [.$B^k_{\beta(k)}$ [. $B^{k+1}_{\sum\limits_{\mathclap{i < \beta(k)}}  l_i + 1 }$ ]
+			                   [. $\ldots$ ]
+                                                    [. $B^{k+1}_{\beta(k+1)}$ ] ] ]
+\end{tikzpicture}
+\end{center}
+
+
+We denote the above tree by $T_s$.Since vertices in $T_s$ represent closed balls in an ultrametric space, it is well-defined to take the distance between any two vertices to be the distance between (a choice of) the centres of those closed balls. By construction, the distance between any two vertices will be the diameter of the smallest closed ball that contains both of them.  In particular, for any $i$, the distances between the children of $B^k_i$ will be $\gamma_k$ and for any $i \neq j$ the distance between the children of $B^k_i$ and $B^k_j$ will be equal to the distance between  $B^k_i$ and $B^k_j$ (which will be some $\gamma_{m}, m <k$). 
+
+
+Lastly, note that without loss of genearlity, we can reindex the $B^k_i$'s so that they give the first $\beta(k)$ terms of a $\rho_k$-ordering of $S_{\gamma_k}$, when the latter is viewed as a (finite) metric space. If the $B^k_i$'s are so indexed, then finding a $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ is straightforward: select a $B^{k+1}_j$ from each of the $B^k_i$'s in order and then start over.  The following proposition is the main result of this section.
 
 \begin{proposition*}
-Given $S$ a compact subset of an ultrametric space $M$ and $\Gamma_S$, the set of distances in $S$, if $S_{\gamma_k}$ is a partition of $S$ as described above for $\gamma_k \in \Gamma_S$ with $k < \infty$, where the centres of the balls are indexed according to a $\rho_k$-ordering of $S_{\gamma_k}$, then a $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ can be found by forming a matrix, $A_k$, whose $(i,j)^{th}$-entry is $x_{i,j}$, as shown below, and then concatenating the rows (where the columns are padded by * if necessary). 
+Given $S$ a compact subset of an ultrametric space $M$ and $\Gamma_S$, the set of distances in $S$, if $S_{\gamma_k}$ is a partition of $S$ as described above for $\gamma_k \in \Gamma_S$ with $k < \infty$, where the elements are indexed according to a $\rho_k$-ordering of $S_{\gamma_k}$, then a $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ can be found by forming a matrix, $A_k$, whose $(i,j)^{th}$-entry is $x_{i,j}$, as shown below, and then concatenating the rows (where the columns are padded by * if necessary). 
 \end{proposition*}
 
 \[A_k=
@@ -76,17 +129,90 @@ Note that the entries in each column are points in the ball $B_{\gamma_k}(x_i)$ 
 Then a $\rho_{\gamma_{k+1}}$-ordering of $S_{\gamma_{k+1}}$ is obtained by minimizing the number of elements from any one column and by taking the points $x_{i,j}$ (for fixed $j$) in sequence. For example, by concatenating the rows.
 \end{proof}
 
-\begin{corollary*}
-Interweaving the bottown row of the lattice of closed balls for a set $S$ gives a $\rho$-ordering of $S$. 
-\end{corollary*}
+\begin{example}
+$\mathbb{Z}$ with any prime
+\end{example}
+
+\begin{example}
+$\mathbb{Z} \setminus 4\mathbb{Z} \subset (\mathbb{Z}, \lvert \cdot \rvert_2)$
+\end{example}
+
 
 \begin{corollary*}
-Suppose $S$ and $T$ are compact subsets of an ultrametric space $M$ with $\Gamma_S = \Gamma_T$ and $\mid S_{\gamma_k}\mid =\mid T_{\gamma_k}\mid$, $\forall k$. Then $\omega(S) = \omega(T)$. 
+Interweaving the bottom row of the lattice of closed balls for a set $S$ gives a $\rho$-ordering of $S$. 
 \end{corollary*}
-\begin{itemize}
-\item i think this coincides with translation invariance when there is a group operation
-\end{itemize}
 
+%\begin{corollary*}
+%Suppose $S$ and $T$ are compact subsets of an ultrametric space $M$ with $\Gamma_S = \Gamma_T$ and $\mid S_{\gamma_k}\mid =\mid T_{\gamma_k}\mid$, $\forall k$. Then $\omega(S) = \omega(T)$. 
+%\end{corollary*}
+%\begin{itemize}
+%\item i think this coincides with translation invariance when there is a group operation
+%\end{itemize}
+\section*{Semi-regularity}
+
+\begin{definition*}
+Let $S$ be as above. We say that $S$ is \textbf{semi-regular} if $T_{B^k_i} = T_{B^k_j}$, $\forall k \in \mathbb{N}$ and  $i,j \in \beta(k)$. That is, $S$ is semi-regular if each ball of radius $\gamma_k$ breaks into the same number of balls of radius $\gamma_{k+1}$, for all $k$. If there exists an $n \in \mathbb{N}$ such that $T_{B^n_i} = T_{B^n_j}$, i.e.  each ball of radius $\gamma_N$ breaks into the same number of balls of radius $\gamma_{N+1}$, for all $N \geq n$, then we say $S$ is \textbf{eventually semi-regular}.
+\end{definition*}
+cite Amice or Fares or both here.
+
+%\begin{notation*}
+%If $S$ is (eventually) semi-regular, then the structure sequence of $B^1_1$ (respectively, $B^N_1$) is also an invariant of $S$, which we denote by $\alpha^S(i)$.\\
+%\end{notation*}
+
+Semi-regularity in $S$ reflects horizontal similarity on every level of $T_S$, and so we expect semi-regularity to simplify the calculation of valuative capacity.
+
+\begin{proposition*}
+Let $S$ be a semi-regular, compact subset of an ultrametric space. Let $\Gamma_S$ be the set of distances in $S$ and let $B$ be the first element of $S_{\gamma_1}$. Let $\sigma^S(i)$  be the characteristic sequence of $S$ and $\sigma^B(i)$ be the characteristic sequence of $B$. Then,
+
+\[\sigma^S(\beta(0) \cdot n)=\gamma_0^c \cdot \sigma^{B}(n)\]
+
+where $c$ counts the numbers in $1$ to $\beta(0) \cdot n$ that are not divisible by $\beta(0)$.
+
+\end{proposition*}
+
+\begin{proof}
+(sketch)
+If $n=0$, then $c=0$ and $\beta(0) \cdot n = 0$, and,
+\[\sigma^S(0)= 1 =	1 \cdot \sigma^{B}(0)\]
+since the $0^{th}$-term of any characteristic sequence is $1$ by definition. When $n=1$, $c=\beta(0)-1$, so that the right-hand side becomes,
+\[\gamma_0^{\beta(0)-1} \cdot \sigma^{B}(1)\]
+Now note that the $\beta(0)^{th}$ term of $\sigma^S$ will have $\beta(0)-1$ copies of $\gamma_0$ (one from each of the elements of $S_{\gamma_0}$ not containing the $\beta(0)^{th}$ element) and the remaining term is in the branch $B$, so it is given by $\sigma^B(1)$, and so,
+\[\sigma^S(\beta(0))=\gamma_0^{\beta(0)-1} \cdot \sigma^{B}(1)\]
+
+
+Suppose:
+\[\sigma^S(\beta(0) \cdot n)=\gamma_0^{c_n} \cdot \sigma^{B}(n)\]
+
+for $0 \leq n < n +1$ and consider $\sigma^S(\beta(0) \cdot (n+1))$. $\sigma^S(\beta(0) \cdot (n+1))$ will add $\beta(0)$ more terms to $\sigma^S(\beta(0) \cdot n)$. Moreover, exactly $\beta(0)-1$ of these additional terms will be in other branches and $1$ term will be in $B$, since any sequence of $\beta(0)$ terms in the $\rho-$ordering of $S$ will be from each of the $\beta(0)$ branches. Each of the $\beta(0)-1$ terms from other branches will add a copy of $\gamma_0$ and remaining term can be found by looking ahead in $\sigma^B$, so that
+
+\begin{align*}
+\sigma^S(\beta(0) \cdot (n+1)) && \\
+= \sigma^S(\beta(0) \cdot n) \cdot \gamma_0^{\beta(0)-1} \cdot \frac{\sigma^B(n+1)}{\sigma^B(n)} && \\
+= {\gamma_0^{c_n}} \cdot \sigma^{B}(n) \cdot \gamma_0^{\beta(0)-1} \cdot  \frac{\sigma^B(n+1)}{\sigma^B(n)} &&\\
+= {\gamma_0^{c_n}}  \cdot \gamma_0^{\beta(0)-1} \cdot  \sigma^B(n+1) && \\
+= {\gamma_0^{c_{n+1}}} \cdot  \sigma^B(n+1) 
+\end{align*}
+
+\end{proof}
+
+Since semi-regularity requires horizontal similarity at every level of $T_S$, we can repeat the branch cuts as many times as needed to calculate $\sigma(n)$.
 \begin{corollary*}
-(regularity) Suppose that $S$ is such that $\forall k$, any $B_{\gamma_k}(x)=\cup_{j=1}^l B_{\gamma_{k+1}}(x_j)$, that is, every ball in $S$ breaks into exactly $l$ smaller balls. 
+$v_{\gamma_k}(\sigma(n)) = \lceil\frac{n}{\alpha(0)\cdot \ldots \cdot \alpha(k)}\rceil$
 \end{corollary*}
+
+
+\begin{proof}
+the exponent of $\gamma_k$ increases every time you land in the appropriate branch, which is every time you hit a multiple of $\alpha(0)\cdot \ldots \cdot \alpha(k)$
+\end{proof}
+
+\begin{example}
+Consider the ultrametric space $(\mathbb{Z}, \rvert \cdot \lvert_p)$  for any prime $p$. The corollary gives 
+\[v_{1}(\sigma(n)) = \lceil\frac{n}{p}\rceil\]
+\[v_{\frac{1}{p}}(\sigma(n)) = \lceil\frac{n}{p^2}\rceil\]
+\[v_{\frac{1}{p^2}}(\sigma(n)) = \lceil\frac{n}{p^3}\rceil\]
+\[v_{\frac{1}{p^3}}(\sigma(n)) = \lceil\frac{n}{p^4}\rceil\]
+
+So that \[\sigma(n) = (\frac{1}{p})^ { \lceil\frac{n}{p^2}\rceil + 2 \cdot  \lceil\frac{n}{p^3}\rceil + 3 \cdot  \lceil\frac{n}{p^4}\rceil + \ldots}\]
+\[ = (\frac{1}{p})^ { \sum_{i=1}^\infty i \cdot \lceil\frac{n}{p^{i+1}}\rceil }\]
+
+\end{example}

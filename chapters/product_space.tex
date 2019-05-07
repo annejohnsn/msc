@@ -10,11 +10,10 @@ Let $(M, \rho_\infty)$ be the product of ultrametric spaces as above and let $x$
 \begin{align*}
     \rho_\infty(x, y) = \sup_i\{\rho_i(x_i,y_i)\} && \\
     \leq \sup_i\{max(\rho_i(x_i,z_i),\rho_i(y_i,z_i))\} && \text{ since each $\rho_i$ is an ultrametric } \\
-    \leq \max(\rho_i(x_i,z_i), \rho_i(y_i,z_i)), \forall i && \\
-    \leq \max(\sup_i\{\rho_i(x_i,z_i)\}, \sup_i\{\rho_i(y_i,z_i)\} && \\
+    \leq \max(\sup_i\{\rho_i(x_i,z_i)\}, \sup_i\{\rho_i(y_i,z_i)\}) && \text{ *}  \\
     = max(\rho_\infty(x,z),\rho_\infty(y,z))  
 \end{align*}
-
+* Let $M= max(sup_i(\{a_i\}, sup_j(\{b_j\})))$, then $M \geq a_i, \forall i$ and $M \geq b_i, \forall i$, so $M \geq max(a_i,b_i), \forall i$, hence $M \geq sup_i(max(a_i,b_i)$.
 \end{proof}
 
 We show a few quick results ultrametric spaces formed as product spaces, which allows us to quickly calculate the valuative capacity of a few subsets. 
@@ -35,7 +34,7 @@ Let $(M,\rho_\infty)$ be as above. Suppose also that \[\rho_i(x_i,y_i) = \rho_i(
 
 
 \begin{proposition*}
-Let $M$ be a normed vector space and suppose the norm on $M$ induces an ultrametric $\rho$. Let $(\textbf{M}, \rho_{\infty})$ be the ultrametric space formed by taking products of $M$, along with the $L_\infty$ metric defined above.  Then if $\rho$ is multiplicative on $M$, $\rho_{\infty}$ is multiplicative on $\textbf{M}$, in the sense that $\rho_{\infty}(\textbf{cx},\textbf{cy}) = \lvert c\rvert_\rho \text{ } \rho_\infty (\textbf{x},\textbf{y})$, for $\textbf{c}=(c,c,c,\ldots) ,\textbf{x},\textbf{y} \in \textbf{M}$.
+Let $(M, \lVert \cdot \rVert)$ be a normed vector space and suppose the norm on $M$ induces an ultrametric $\rho$. Let $(\textbf{M}, \rho_{\infty})$ be the ultrametric space formed by taking products of $M$, along with the $L_\infty$ metric defined above.  Then if $\rho$ is multiplicative on $M$, $\rho_{\infty}$ is multiplicative on $\textbf{M}$, in the sense that $\rho_{\infty}(\textbf{cx},\textbf{cy}) = \lvert c\rvert_\rho \text{ } \rho_\infty (\textbf{x},\textbf{y})$, for $\textbf{c}=(c,c,c,\ldots) ,\textbf{x},\textbf{y} \in \textbf{M}$.
 \end{proposition*}
 
 \begin{proof}
@@ -108,6 +107,11 @@ Above.
 \end{proof}
 
 Taking $n=1$, we see that this agrees with the valuative capacity of $\mathbb{Z}_p$ computed in the last chapter. \\
+\begin{itemize}
+\item What about $(\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2})$ for distinct primes?
+\item These spaces do not admit a scaling property
+\item They are semi-regular, so their partial sums will be a function of $\Gamma$ and the structure sequence
+\end{itemize}
 
 We end this section with two observations on the results above.  First, recall that in computing the valuative capacity of these spaces, we were ultimately reduced to finding solutions to polynomials of the form $x^{p^n} - \frac{x}{p}$ for some $n$ and for some $p$. The first observation is that these polynomials are $\mathbb{Z}$-valued on $p\mathbb{Z}$, that is, they are elements of $Int(p\mathbb{Z},\mathbb{Z})$. We might ask then, what sort of polynomials would arise in finding the valuative capacity of spaces such as $(\mathbb{Z}_2 \times \mathbb{Z}_3, \rho_\infty)$ or in computing the valuative capacity of infinite product spaces, such as $\mathbb{Z}_p \times \mathbb{Z}_p \times \mathbb{Z}_p \times \ldots$ for either some fixed prime $p$ or over each prime. \\
 
