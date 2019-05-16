@@ -142,18 +142,57 @@ $\mathbb{Z} \setminus 4\mathbb{Z} \subset (\mathbb{Z}, \lvert \cdot \rvert_2)$
 Interweaving the bottom row of the lattice of closed balls for a set $S$ gives a $\rho$-ordering of $S$. 
 \end{corollary*}
 
+
+\begin{lemma*}
+If $\delta$ denotes the $\rho$-ordering of $S$ formed by pulling from left to right in $T_s$, then \[\rho(\delta(n),\delta(m))=\gamma_k\] if and only if \[ n=m \mod \beta(k) \text{  and } n \neq m \mod \beta(k+1)\]
+\end{lemma*}
+
+\begin{lemma*}
+$\lfloor\frac{n}{q} \rfloor$ counts the numbers strictly less than $n$ that are congruent to $n \mod q$.
+\end{lemma*}
+
+\begin{proof}
+Every multiple of $q$ produces exactly one of the numbers from $1$ to $q$ and exactly one of those is the residue class of $n$ modulo $q$. The remainder is the residue class of $n$ itself and since we only want the numbers strictly less than $n$, we ignore this by taking the floor.
+\end{proof}
+
+
+\begin{proposition*}
+\[v_{\gamma_k}(\sigma(n)) = \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor \]
+\end{proposition*}
+
+\begin{definition*}
+Let $S$ be as above. We say that $S$ is \textbf{semi-regular} if $T_{B^k_i} = T_{B^k_j}$, $\forall k \in \mathbb{N}$ and  $i,j \in \beta(k)$. That is, $S$ is semi-regular if each ball of radius $\gamma_k$ breaks into the same number of balls of radius $\gamma_{k+1}$, for all $k$. If there exists an $n \in \mathbb{N}$ such that $T_{B^n_i} = T_{B^n_j}$, i.e.  each ball of radius $\gamma_N$ breaks into the same number of balls of radius $\gamma_{N+1}$, for all $N \geq n$, then we say $S$ is \textbf{eventually semi-regular}.
+\end{definition*}
+cite Amice or Fares or both here.
+
+\begin{corollary*}
+If $S$ is a semi-regular ultrametric space, $\Gamma_S$ is the sequence of distances in $S$, and $\beta$ is the structure sequence of $S$, then \[v_{\gamma_k}(\sigma(n)) = \lfloor\frac{n +\beta(k)}{\beta(k+1)}\rfloor \]
+\end{corollary*}
+
+\begin{example}
+Consider the ultrametric space $(\mathbb{Z}, \rvert \cdot \lvert_p)$  for any prime $p$. The corollary gives 
+\[v_{1}(\sigma(n)) = \lceil\frac{n}{p}\rceil\]
+\[v_{\frac{1}{p}}(\sigma(n)) = \lceil\frac{n +p }{p^2}\rceil\]
+\[v_{\frac{1}{p^2}}(\sigma(n)) = \lceil\frac{n + p^2}{p^3}\rceil\]
+\[v_{\frac{1}{p^3}}(\sigma(n)) = \lceil\frac{n + p^3}{p^4}\rceil\]
+
+So that \[\sigma(n) = (\frac{1}{p})^ { \lceil\frac{n + p}{p^2}\rceil + 2 \cdot  \lceil\frac{n +p^2}{p^3}\rceil + 3 \cdot  \lceil\frac{n + p^3}{p^4}\rceil + \ldots}\]
+\[ = (\frac{1}{p})^ { \sum_{i=1}^\infty i \cdot \lceil\frac{n + p^i}{p^{i+1}}\rceil }\]
+\[ = (\frac{1}{p})^ { \sum_{i=1}^\infty i \cdot \lceil\frac{pn}{p^{i+1}}\rceil -  \lceil\frac{n}{p^{i+1}}\rceil }\]
+\[ = (\frac{1}{p})^ { \sum_{i=1}^\infty i \cdot \lceil\frac{n}{p^{i}}\rceil -  \lceil\frac{n}{p^{i+1}}\rceil }\]
+\[ = (\frac{1}{p})^ { \sum_{i=1}^\infty \lceil \frac{n}{p^{i}}\rceil}\]
+\end{example}
+
+\begin{corollary*}
+If $S$ is a (eventually) semi-regular ultrametric space and the $\alpha$ sequence of $S$ is (eventually)  periodic, then the valuative capacity of $S$ is algebraic.
+\end{corollary*}
+
 %\begin{corollary*}
 %Suppose $S$ and $T$ are compact subsets of an ultrametric space $M$ with $\Gamma_S = \Gamma_T$ and $\mid S_{\gamma_k}\mid =\mid T_{\gamma_k}\mid$, $\forall k$. Then $\omega(S) = \omega(T)$. 
 %\end{corollary*}
 %\begin{itemize}
 %\item i think this coincides with translation invariance when there is a group operation
 %\end{itemize}
-\section*{Semi-regularity}
-
-\begin{definition*}
-Let $S$ be as above. We say that $S$ is \textbf{semi-regular} if $T_{B^k_i} = T_{B^k_j}$, $\forall k \in \mathbb{N}$ and  $i,j \in \beta(k)$. That is, $S$ is semi-regular if each ball of radius $\gamma_k$ breaks into the same number of balls of radius $\gamma_{k+1}$, for all $k$. If there exists an $n \in \mathbb{N}$ such that $T_{B^n_i} = T_{B^n_j}$, i.e.  each ball of radius $\gamma_N$ breaks into the same number of balls of radius $\gamma_{N+1}$, for all $N \geq n$, then we say $S$ is \textbf{eventually semi-regular}.
-\end{definition*}
-cite Amice or Fares or both here.
 
 %\begin{notation*}
 %If $S$ is (eventually) semi-regular, then the structure sequence of $B^1_1$ (respectively, $B^N_1$) is also an invariant of $S$, which we denote by $\alpha^S(i)$.\\
@@ -194,25 +233,5 @@ for $0 \leq n < n +1$ and consider $\sigma^S(\beta(0) \cdot (n+1))$. $\sigma^S(\
 \end{align*}
 
 \end{proof}
-
 Since semi-regularity requires horizontal similarity at every level of $T_S$, we can repeat the branch cuts as many times as needed to calculate $\sigma(n)$.
-\begin{corollary*}
-$v_{\gamma_k}(\sigma(n)) = \lceil\frac{n}{\alpha(0)\cdot \ldots \cdot \alpha(k)}\rceil$
-\end{corollary*}
 
-
-\begin{proof}
-the exponent of $\gamma_k$ increases every time you land in the appropriate branch, which is every time you hit a multiple of $\alpha(0)\cdot \ldots \cdot \alpha(k)$
-\end{proof}
-
-\begin{example}
-Consider the ultrametric space $(\mathbb{Z}, \rvert \cdot \lvert_p)$  for any prime $p$. The corollary gives 
-\[v_{1}(\sigma(n)) = \lceil\frac{n}{p}\rceil\]
-\[v_{\frac{1}{p}}(\sigma(n)) = \lceil\frac{n}{p^2}\rceil\]
-\[v_{\frac{1}{p^2}}(\sigma(n)) = \lceil\frac{n}{p^3}\rceil\]
-\[v_{\frac{1}{p^3}}(\sigma(n)) = \lceil\frac{n}{p^4}\rceil\]
-
-So that \[\sigma(n) = (\frac{1}{p})^ { \lceil\frac{n}{p^2}\rceil + 2 \cdot  \lceil\frac{n}{p^3}\rceil + 3 \cdot  \lceil\frac{n}{p^4}\rceil + \ldots}\]
-\[ = (\frac{1}{p})^ { \sum_{i=1}^\infty i \cdot \lceil\frac{n}{p^{i+1}}\rceil }\]
-
-\end{example}
