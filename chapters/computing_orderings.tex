@@ -2,7 +2,7 @@
 \newpage
 
 \section*{Computing a $\rho$-ordering}
-In the previous section, we defined valuative capacity for a compact subset $S$ of an ultrametric space $(M, \rho)$. We also got a glimpse into the way the valuative capacity of $S$ interacts with its other properties, such as the set of distances occurring in $S$ and the lattice of closed balls in $S$ (or equivalently, if $S$ has enough structure, the lattice of subgroups).\\
+In the previous section, we defined valuative capacity for a compact subset $S$ of an ultrametric space $(M, \rho)$. We also got a glimpse into the way the valuative capacity of $S$ interacts with its other properties, such as the set of distances occurring in $S$ and the lattice of closed balls in $S$ (or equivalently, if $S$ has enough structure, a lattice of subgroups).\\
 
 In this section, we offer a more detailed study of the interaction between the valuative capacity of $S$ and the lattice of closed balls in $S$. In particular, we  show how, in all cases (with $S$ compact), the latter can be used to compute the first $n$ terms of a $\rho-$ordering of $S$ (for any $n < \infty$) and how, in some cases, this extends to being able to compute the valuative capacity of $S$.\\
 
@@ -60,7 +60,7 @@ We return to the sequence $\beta(i)$ at the end of this section. For now, we sho
 \begin{observation*}
 Let $S$, $\Gamma_S$, and $S_{\gamma_k}$ be as above. Then $S_{\gamma_k+1}$ can be constructed by partitioning each of the closed balls in $S_{\gamma_k}$ into closed balls of radius $\gamma_{k+1}$ and taking their union:  Let $B(x_i, \gamma_k)$  be an element of $S_{\gamma_k}$, denoted by  $B^k_i$. Then, there exists $x_{i,1},\ldots, x_{i,l_{i}} \in B^k_i$ such that,
 
-\[B^k_i=  \cup_{j=1}^{l_i} B(x_{i,j}, \gamma_{k+1})\] 
+\[B^k_i=  \cup_{j=1}^{l_i} B(x_{i,j}, \gamma_{k+1})\] and  \[B(x_{i,j}, \gamma_{k+1}) \cap B(x_{i,j'}, \gamma_{k+1}) = \emptyset \text{, }\forall j,j' \in 1:l_i\] 
 
 and so
 
@@ -121,37 +121,38 @@ Then the $\rho_k-$sequence of  $(S_{\gamma_k}\setminus B^k_{\overline{n}})$ is s
 Now we see that $\rho_{k+1}-$sequence of $S_{\gamma_{k+1}}$ is maximized by simply skipping over $B^k_{\overline{n}}$, should all its children be exhausted, and selecting a child from $B^k_{\overline{n}+1}$. Then a $\rho_{k+1}-$ordering of $S_{\gamma_{k+1}}$ is found by selecting elements of each $B^k_i$ in order as much as possible, and skipping to $B^k_{i+1}$, when it is not possible.
 
 \end{proof}
-
-The above results quickly leds to a recursive contruction for a $\rho-$ordering of $S$.
-
-\begin{proposition*}
-Let be $S$ a compact subset of an ultrametric space $(M, \rho)$ and let $\Gamma_S$ be the set of distances in $S$. Let $S_{\gamma_k}$ is a partition of $S$ as described above for $\gamma_k \in \Gamma_S$ with $k < \infty$, where the elements are indexed according to a $\rho_k$-ordering of $S_{\gamma_k}$. Let $x_{i,j}$ denote a choice of centre for the element $B^{k+1}_{i,j}$. Then the first $\beta(k+1)$ elements of a $\rho-$ordering of $S$ can be found by forming a matrix, $A_k$, whose $(i,j)^{th}$-entry is $x_{i,j}$, as shown below, and then concatenating the rows (where the columns are padded by * if necessary).
-\end{proposition*}
-
-\[A_k=
- \begin{pmatrix}
-  x_{1,1} & x_{2,1} & \ldots  &x_{n,1} \\
-  x_{1,2} & x_{2,2} &\ldots &x_{n,2} \\
-  \vdots & \vdots & \ddots & \vdots \\
-  x_{1,l_1} & x_{2,l_2} & \ldots &x_{n,l_n}
- \end{pmatrix}
-\]
-
-
-\begin{proof}
-Note that the entries in each column are points in the ball $B_{\gamma_k}(x_i)$ so that the pairwise distance between columns is constant and always exceeds the distance between elements within a column. Moreover, the columns are organized such that for any $j$, $x_{n,j}$ maximizes$\prod_{i=1}^{n-1} \rho_(x_{n,j},x_{i,j})$ since $\prod_{i=1}^{n-1} \rho_(x_{n,j},x_{i,j}) = \prod_{i=1}^{n-1} \rho_(x_{n,1},x_{i,1}) = \prod_{i=1}^{n-1} \rho_(x_{n},x_{i})$ and the $x_i$'s are indexed according a $\rho_k$-ordering of $S_{\gamma_k}$.
-
-Then a $\rho_{\gamma_{k+1}}$-ordering of $S_{\gamma_{k+1}}$ is obtained by minimizing the number of elements from any one column and by taking the points $x_{i,j}$ (for fixed $j$) in sequence. For example, by concatenating the rows.
-\end{proof}
-
-Note that in building the $\rho_{k+1}-$ordering of $S_{\gamma_{k+1}}$, we imposed an ordering on the elements of $S_{\gamma_k}$, but not on the individual children of a given $B^k_i$. Any choice of indexing on these children is equivalent since the distances between any two of them is $\gamma_k$ and the distance between any one of them and a child of some $B^k_j$, $i \neq j$, is the same, since each $B^k_i$ is a ball in an ultrametric space. For this reason, it also did not depend which child was chosen at a given stage. Suppose then that we have created $T_s$ and (arbitrarily) indexed the children of each vertex. Then, there is no loss of genearlity in assuming that at each stage, we select a child with smallest index among its siblings, that is, that we select the leftmost available child in $T_s$. Since for ease of indexing, we will often assume a $\rho-$ordering has been built by this convention, we introduce the following definition.
+Note that in building the $\rho_{k+1}-$ordering of $S_{\gamma_{k+1}}$, we imposed an ordering on the elements of $S_{\gamma_k}$, but not on the individual children of a given $B^k_i$. Any choice of indexing on these children is equivalent since the distances between any two of them is $\gamma_k$ and the distance between any one of them and a child of some $B^k_j$, $i \neq j$, is the same (since each $B^k_i$ is a ball in an ultrametric space). For this reason, it also did not depend which child was chosen at a given stage. Suppose then that we have created $T_s$ and (arbitrarily) indexed the children of each vertex. Then, there is no loss of genearlity in assuming that at each stage, we select a child with smallest index among its siblings, that is, that we select the leftmost available child in $T_s$. Since for ease of indexing, we will often assume a $\rho-$ordering has been built by this convention, we introduce the following definition.
 
 \begin{definition*}
 The $\rho-$ordering of $S$ formed by pulling elements from left to right in (a choice of) $T_s$ is call the \textbf{canonical $\rho$-ordering} of $S$ (with respect to $T_s$).
 \end{definition*}
 
+The above results quickly leds to a recursive contruction for a $\rho-$ordering of $S$.
+
+\begin{proposition*}
+Let be $S$ a compact subset of an ultrametric space $(M, \rho)$ and let $\Gamma_S$ be the set of distances in $S$. Let $S_{\gamma_k}$ be a partition of $S$ as described above for $\gamma_k \in \Gamma_S$ with $k < \infty$, where the elements are indexed according to a $\rho_k$-ordering of $S_{\gamma_k}$. Suppose each of the element of $S_{\gamma_k}$ have also been partitioned into closed balls of radius $\gamma_{k+1}$, $B^k_i =\cup_{j=1}^{l_i} B^{k+1}_{i,j}, \forall i$.\\
+
+Let $x_{i,j}$ denote a choice of centre for the element $B^{k+1}_{i,j}$. Then the first $\beta(k+1)$ elements of a $\rho-$ordering of $S$ can be found by forming a matrix, $A_k$, whose $(i,j)^{th}$-entry is $x_{i,j}$, if $j \leq l_i$ and * otherwise, and then concatenating the rows.
+\end{proposition*}
+
+
+\begin{proof}
+$A_k$ is just a representation of $T_s$ for choice of centres. Since $\rho_k$ is just $\rho$ when points are sufficiently far apart, a choice of centres in a $\rho_k$-ordering gives a $\rho$-ordering. By the above proposition, we must select elements from each $B^K_i$ one after the other, which is achieved by selecting one element from each column in order, for example by concatenating the rows. 
+
+%\[A_k=
+% \begin{pmatrix}
+%  x_{1,1} & x_{2,1} & \ldots  &x_{n,1} \\
+%  x_{1,2} & x_{2,2} &\ldots &x_{n,2} \\
+%  \vdots & \vdots & \ddots & \vdots \\
+%  x_{1,l_1} & x_{2,l_2} & \ldots &x_{n,l_n}
+% \end{pmatrix}
+%\]
+\end{proof}
+
 \begin{example}
 $\mathbb{Z}$ with any prime
+\[S_{\gamma_1} = \{p\mathbb{Z}, p\mathbb{Z} +1, \ldots, p\mathbb{Z} + (p-1)\]
+
 \end{example}
 
 \begin{example}
@@ -163,10 +164,17 @@ $\mathbb{Z} \setminus 4\mathbb{Z} \subset (\mathbb{Z}, \lvert \cdot \rvert_2)$
 Interweaving the bottom row of the lattice of closed balls for a set $S$ gives a $\rho$-ordering of $S$. 
 \end{corollary*}
 
+In the two propositions above, there was notational difficulty that arose when there was an unequal number of children between the vertices on a given level of $T_s$. This difficulty is, in fact, more than a notational inconvenience, and the situation simplifies considerably when it is not the case. We are far from the first to observe this. Amice noted this as far back as her 1964 paper, and it has been observed more recently by Fares and Petite. We first introduce a few preliminary lemmas, before moving on to describing the situation in more detail.
 
 \begin{lemma*}
 If $\delta$ denotes the $\rho$-ordering of $S$ formed by pulling from left to right in $T_s$, then \[\rho(\delta(n),\delta(m))=\gamma_k\] if and only if \[ n=m \mod \beta(k) \text{  and } n \neq m \mod \beta(k+1)\]
 \end{lemma*}
+
+\begin{proof}
+(forward direction) Suppose $\rho(\delta(n),\delta(m))=\gamma_k$, then the diameter of the smallest ball containing both $\delta(n)$ and $\delta(m)$ is $\gamma(k)$. \\
+
+(backward direction) Suppose $n=m \mod \beta(k) \text{  and } n \neq m \mod \beta(k+1)$, then 
+\end{proof}
 
 \begin{lemma*}
 $\lfloor\frac{n}{q} \rfloor$ counts the numbers strictly less than $n$ that are congruent to $n \mod q$.
@@ -181,15 +189,30 @@ Every multiple of $q$ produces exactly one of the numbers from $1$ to $q$ and ex
 \[v_{\gamma_k}(\sigma(n)) = \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor \]
 \end{proposition*}
 
+
 \begin{definition*}
 Let $S$ be as above. We say that $S$ is \textbf{semi-regular} if $T_{B^k_i} = T_{B^k_j}$, $\forall k \in \mathbb{N}$ and  $i,j \in \beta(k)$. That is, $S$ is semi-regular if each ball of radius $\gamma_k$ breaks into the same number of balls of radius $\gamma_{k+1}$, for all $k$. If there exists an $n \in \mathbb{N}$ such that $T_{B^n_i} = T_{B^n_j}$, i.e.  each ball of radius $\gamma_N$ breaks into the same number of balls of radius $\gamma_{N+1}$, for all $N \geq n$, then we say $S$ is \textbf{eventually semi-regular}.
 \end{definition*}
-cite Amice or Fares or both here.
+
+Introduce$\alpha-$sequence 
 
 \begin{corollary*}
 If $S$ is a semi-regular ultrametric space, $\Gamma_S$ is the sequence of distances in $S$, and $\beta$ is the structure sequence of $S$, then \[v_{\gamma_k}(\sigma(n)) = \lfloor\frac{n +\beta(k)}{\beta(k+1)}\rfloor \]
 \end{corollary*}
 
+\begin{proof}
+
+\begin{align*}
+v_{\gamma_k}(\sigma(n)) && \\
+= \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor && \\
+= \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k)\alpha(k+1)}\rfloor && \\
+= \lfloor\frac{n \cdot \alpha(k+1)}{\beta(k)\cdot \alpha(k+1)}\rfloor - \lfloor\frac{n}{\beta(k)\alpha(k+1)}\rfloor && \\
+= \sum_{k=0}^{(n \cdot \alpha(k+1))-1} \lfloor \frac{1}{\beta(k)\alpha(k+1)} + \frac{k}{n\cdot \alpha(k+1)} \rfloor - \sum_{k=0}^{n-1} \lfloor \frac{1}{\beta(k)\alpha(k+1)} + \frac{k}{n} \rfloor && *
+\end{align*}
+
+\end{proof}
+
+* apply Hermite's identity to both sides
 \begin{example}
 Consider the ultrametric space $(\mathbb{Z}, \rvert \cdot \lvert_p)$  for any prime $p$. The corollary gives 
 \[v_{1}(\sigma(n)) = \lceil\frac{n}{p}\rceil\]
