@@ -78,19 +78,10 @@ level distance=1.75cm,
 
 \begin{center}
 \begin{tikzpicture}
-\Tree [.  $B^0_1$ \edge;
-          [. $B^k_1$   [. $B^{k+1}_1$ ]
-		       [. $B^{k+1}_2$ ]
+\Tree [. $B^0_1$ [. $B^1_1$ \edge[dashed]; [. $B^k_1$ [. $B^{k+1}_1$ ] [. $B^{k+1}_2$ ]  [. $\ldots$ ] [. $B^{k+1}_{l_1}$ ] ] ] 
+		        [. $B^1_2$ \edge[dashed]; [. $B^k_2$ [. $B^{k+1}_{l_1 + 1}$ ] [. $B^{k+1}_{l_1 + 2}$ ] [. $\ldots$ ] [. $B^{k+1}_{l_1 + l_2}$ ] ] ] 
 		        [. $\ldots$ ]
-                              [. $B^{k+1}_{l_1}$ ] ] \edge;
-          [.$B^k_2$ [. $B^{k+1}_{l_1 + 1}$ ]
-		       [. $B^{k+1}_{l_1 + 2}$ ]
-	                  [. $\ldots$ ]
-                             [. $B^{k+1}_{l_1 + l_2}$ ] ] \edge;
-          [.$\ldots$ ]  \edge;
-          [.$B^k_{\beta(k)}$ [. $B^{k+1}_{\sum\limits_{\mathclap{i < \beta(k)}}  l_i + 1 }$ ]
-			                   [. $\ldots$ ]
-                                                    [. $B^{k+1}_{\beta(k+1)}$ ] ] ]
+	                   [.$B^1_{\beta(1)}$ \edge[dashed]; [.$B^k_{\beta(k)}$ [. $B^{k+1}_{\sum\limits_{\mathclap{i < \beta(k)}}  l_i + 1 }$ ] [. $\ldots$ ] [. $B^{k+1}_{\beta(k+1)}$ ] ] ]]
 \end{tikzpicture}
 \end{center}
 
@@ -103,16 +94,17 @@ We make a few observation on the relationships between the vertices in $T_s$. Fi
 Finally, note that without loss of genearlity, for any $k \in \mathbb{N}$, we can reindex the $B^k_i$'s so that they give the first $\beta(k)$ terms of a $\rho_k$-ordering of $S_{\gamma_k}$, when the latter is viewed as a (finite) metric space. If the $B^k_i$'s are so indexed, then finding a $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ is straightforward: select a $B^{k+1}_j$ from each of the $B^k_i$'s in order and then start over.  The following two propositions show how this can be used to recursively build a $\rho-$ordering of $S$.
 
 \begin{proposition*} 
-Let be $S$ a compact subset of an ultrametric space $(M, \rho)$ and $\Gamma_S$, the set of distances in $S$. If $S_{\gamma_k}$ is a partition of $S$ as described above for $\gamma_k \in \Gamma_S$ with $k < \infty$, where the elements are indexed according to a $\rho_k$-ordering of $S_{\gamma_k}$, then the first $\beta(k+1)$ terms in a $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ can be found by selecting at each stage $n$, a child from $B^k_\overline{n}$, where $\overline{n} = n \mod \beta(k) +r $ and $r$ is minimal in $\{0,\ldots,\beta(k)-1\}$ such that $B^k_{n \mod \beta(k) +r}$ still has unused children.
+Let be $S$ a compact subset of an ultrametric space $(M, \rho)$ and $\Gamma_S$, the set of distances in $S$. If $S_{\gamma_k}$ is a partition of $S$ as described above for $\gamma_k \in \Gamma_S$ with $k < \infty$, where the elements are indexed according to a $\rho_k$-ordering of $S_{\gamma_k}$, then the first $\beta(k+1)$ terms in a $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ can be found by selecting at each stage $n$, a child from $B^k_{\overline{n}}$, where $\overline{n} = n \mod \beta(k) +r $ and $r$ is minimal in $\{0,\ldots,\beta(k)-1\}$ such that $B^k_{n \mod \beta(k) +r}$ still has unused children.
+\end{proposition*}
 
 \begin{proof}
 Let $S$, $S_{\gamma_K}$, and $S_{\gamma_{k+1}}$ be as above. In particular, suppose the elements of $S_{\gamma_k}$ are indexed according to a $\rho_k-$ordering. Denote the elements of $S_{\gamma_{k+1}}$ by $B^{k+1}_{i,j}$ where the first subscript indicates that the elements is a child of $B^k_i$. To form a $\rho_{k+1}$ ordering of $S_{\gamma_{k+1}}$, we must maximize the product of distances at each step $n$.\\
 
 Now note that $\Gamma_{S_{\gamma_k}} = \{\gamma_0, \gamma_1,\ldots, \gamma_{k-1}\}$ and $\Gamma_{S_{\gamma_{k+1}}} = \{\gamma_0, \gamma_1,\ldots, \gamma_{k-1}, \gamma_{k}\}$. That is, the distances in $S_{\gamma_{k+1}}$ are the same as the distances in $S_{\gamma_k}$, although they also include the smaller distance $\gamma_k$. Since we know that the elements $B^k_1,\ldots,B^k_{\beta(k)}$ already maximizes the product of distances in $\{\gamma_0, \gamma_1,\ldots, \gamma_{k-1}\}$, the first $\beta(k)$ terms of a $\rho_{k+1}$-ordering of $S_{k+1}$ can be found by taking $B^k_{1,j_1},\ldots, B^k_{1,j_{\beta(k)}}$ for any choice of $j$'s. At this point, any choice of next element will produce a copy of $\gamma_k$ in the $\rho_{k+1}$-sequence; however, if we chose another child of $B^k_{1}$, we are able to keep building the ordering in a canonical fashion, since we know that we will then be able to maximize the product at the next step by chosing another child of $B^k_{2}$.\\
 
-We see then that a $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ is found by minimizing the number of times $\gamma_k$ is introduced into the $\rho_{k+1}$-sequence and maximizing the product among the $\gamma_0, \gamma_1,\ldots, \gamma_{k-1}$, and the latter is already known to be achieved by taking the $B^k_i$ in order.  If the $B^k_i$'s all have the same number of children, then we can always select a child of $B^k_\overline{n}$, where $\overline{n} = n \mod \beta(K)$ at each stage $n$, $n < \beta(k+1)$, since there will always be one available. On the other hand, suppose the $B^k_i$ have an unequal number of children and $n$ is the first step at which all the children of $B^k_{\overline{n}}$ have been exhausted. What element will maximize the $\rho_{k+1}-$sequence?\\
+We see then that a $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ is found by minimizing the number of times $\gamma_k$ is introduced into the $\rho_{k+1}$-sequence and maximizing the product among the $\gamma_0, \gamma_1,\ldots, \gamma_{k-1}$, and the latter is already known to be achieved by taking the $B^k_i$ in order.  If the $B^k_i$'s all have the same number of children, then we can always select a child of $B^k_{\overline{n}}$, where $\overline{n} = n \mod \beta(k)$ at each stage $n$, $n < \beta(k+1)$, since there will always be one available. On the other hand, suppose the $B^k_i$ have an unequal number of children and $n$ is the first step at which all the children of $B^k_{\overline{n}}$ have been exhausted. What element will maximize the $\rho_{k+1}-$sequence?\\
 
-Consider the space $(S_{\gamma_k} \setminus B^k_{\overline{n}})$. Removal of $B^k_{\overline{n}$ will not effect the first $m$ terms of a $\rho_k$-ordering of this space, for $m < \overline{n}$, since if a sequence of elements maximizes a function over a set $X$, they will also maximize that function of a subset of $X$ (provided they themselves remain in the subset). Then the $\rho_k-$sequence of $(S_{\gamma_k} \setminus B^k_{\overline{n}})$ begins $\{B^k_1,\ldots, B^k_{\overline{n}-1}\}$.\\
+Consider the space $(S_{\gamma_k} \setminus B^k_{\overline{n}})$. Removal of $B^k_{\overline{n}}$ will not effect the first $m$ terms of a $\rho_k$-ordering of this space, for $m < \overline{n}$, since if a sequence of elements maximizes a function over a set $X$, they will also maximize that function of a subset of $X$ (provided they themselves remain in the subset). Then the $\rho_k-$sequence of $(S_{\gamma_k} \setminus B^k_{\overline{n}})$ begins $\{B^k_1,\ldots, B^k_{\overline{n}-1}\}$.\\
 
 Moreover, if $B^k_{\overline{n}+1}$ maximizes $\prod^{\overline{n}}_{i=1} \rho_{k}(x, B^k_i)$ over $S_{\gamma_k}$, then it also maximizes $\prod^{\overline{n}-1}_{i=1} \rho_{k}(x, B^k_i)$ over $(S_{\gamma_k} \setminus B^k_{\overline{n}})$, since $\prod^{\overline{n}}_{i=1} \rho_{k}(x, B^k_i) = (\prod^{\overline{n}-1}_{i=1} \rho_{k}(x, B^k_i)) \cdot \rho_{k}(x, B^k_{\overline{n}})$.\\
 
@@ -127,7 +119,7 @@ Note that in building the $\rho_{k+1}-$ordering of $S_{\gamma_{k+1}}$, we impose
 The $\rho-$ordering of $S$ formed by pulling elements from left to right in (a choice of) $T_s$ is call the \textbf{canonical $\rho$-ordering} of $S$ (with respect to $T_s$).
 \end{definition*}
 
-The above results quickly leds to a recursive contruction for a $\rho-$ordering of $S$.
+The above result quickly leds to a recursive contruction for a $\rho-$ordering of $S$.
 
 \begin{proposition*}
 Let be $S$ a compact subset of an ultrametric space $(M, \rho)$ and let $\Gamma_S$ be the set of distances in $S$. Let $S_{\gamma_k}$ be a partition of $S$ as described above for $\gamma_k \in \Gamma_S$ with $k < \infty$, where the elements are indexed according to a $\rho_k$-ordering of $S_{\gamma_k}$. Suppose each of the element of $S_{\gamma_k}$ have also been partitioned into closed balls of radius $\gamma_{k+1}$, $B^k_i =\cup_{j=1}^{l_i} B^{k+1}_{i,j}, \forall i$.\\
@@ -137,21 +129,49 @@ Let $x_{i,j}$ denote a choice of centre for the element $B^{k+1}_{i,j}$. Then th
 
 
 \begin{proof}
-$A_k$ is just a representation of $T_s$ for choice of centres. Since $\rho_k$ is just $\rho$ when points are sufficiently far apart, a choice of centres in a $\rho_k$-ordering gives a $\rho$-ordering. By the above proposition, we must select elements from each $B^K_i$ one after the other, which is achieved by selecting one element from each column in order, for example by concatenating the rows. 
+(sketch) $A_k$ is just a representation of $T_s$ for choice of centres. Since $\rho_k$ is just $\rho$ when points are sufficiently far apart, a choice of centres in a $\rho_k$-ordering gives a $\rho$-ordering. By the above proposition, we must select elements from each $B^K_i$ one after the other, which is achieved by selecting one element from each column in order, for example by concatenating the rows. 
 
-%\[A_k=
-% \begin{pmatrix}
-%  x_{1,1} & x_{2,1} & \ldots  &x_{n,1} \\
-%  x_{1,2} & x_{2,2} &\ldots &x_{n,2} \\
-%  \vdots & \vdots & \ddots & \vdots \\
-%  x_{1,l_1} & x_{2,l_2} & \ldots &x_{n,l_n}
-% \end{pmatrix}
-%\]
+
 \end{proof}
 
 \begin{example}
-$\mathbb{Z}$ with any prime
-\[S_{\gamma_1} = \{p\mathbb{Z}, p\mathbb{Z} +1, \ldots, p\mathbb{Z} + (p-1)\]
+Let us use the above to build a $\rho$-ordering of $S=(\mathbb{Z}, \lvert \cdot \rvert_3)$. We have that $\Gamma_S=\{1, \frac{1}{3},\frac{1}{9},\frac{1}{27},\ldots \}$ and $T_s$ begins:
+
+\begin{center}
+\begin{tikzpicture}
+\Tree [. $\mathbb{Z}$  [. $3\mathbb{Z}$ [. $9\mathbb{Z}$ ] 
+						   [. $9\mathbb{Z}+3$  ] 
+						   [. $9\mathbb{Z}+6$ ] ] 
+			      [. $3\mathbb{Z}+1$ [. $9\mathbb{Z}+1$ ] 
+						        [. $9\mathbb{Z}+4$ ] 
+						        [. $9\mathbb{Z}+7$ ] ] 
+		 	      [. $3\mathbb{Z}+2$  [. $9\mathbb{Z}+2$ ] 
+                                                                        [. $9\mathbb{Z}+5$ ] 
+                                                                       [. $9\mathbb{Z}+8$ ] ] ] 
+\end{tikzpicture}
+\end{center}
+
+
+
+
+We start by finding a $\rho_1$-ordering of $S_{\gamma_1}$, but this is trival since the pairwise distance between the elements of $S_{\gamma_1}$ is always $1$. Then any choice of ordering among these elements is a $\rho_1$-ordering. In fact, since all compact ultrametric spaces are bounded, the pairwise distance between elements of $S_{\gamma_1}$ is always constant, and so we can always get started for free. We build $A_1$ by chosing a centre of each closed ball:
+
+\[A_1=
+ \begin{pmatrix}
+0 & 1 &  2 & \\
+3 & 4 &  5 & \\
+6 & 7 &  8 &
+\end{pmatrix}
+\]
+
+To find a $\rho-$ordering we concatenate the rows, $\{0,1,2,3,4,5,6,7,8\}$. This also gives the first row of $A_2$. The remaining rows are found by partitioning each of the closed balls of radius $\frac{1}{3}$ and making a choice of centre:
+\[A_2=
+ \begin{pmatrix}
+0 & 1 &  2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+9 & 10 &  11 & 12 & 13 & 14 & 15 & 16 & 17 \\
+18 & 19 &  20 & 21 & 22 & 23 & 24 & 25 & 26 \\
+\end{pmatrix}
+\]
 
 \end{example}
 
@@ -160,76 +180,85 @@ $\mathbb{Z} \setminus 4\mathbb{Z} \subset (\mathbb{Z}, \lvert \cdot \rvert_2)$
 \end{example}
 
 
-\begin{corollary*}
-Interweaving the bottom row of the lattice of closed balls for a set $S$ gives a $\rho$-ordering of $S$. 
-\end{corollary*}
+%\begin{corollary*}
+%Interweaving the bottom row of the lattice of closed balls for a set $S$ gives a $\rho$-ordering of $S$. 
+%\end{corollary*}
 
 In the two propositions above, there was notational difficulty that arose when there was an unequal number of children between the vertices on a given level of $T_s$. This difficulty is, in fact, more than a notational inconvenience, and the situation simplifies considerably when it is not the case. We are far from the first to observe this. Amice noted this as far back as her 1964 paper, and it has been observed more recently by Fares and Petite. We first introduce a few preliminary lemmas, before moving on to describing the situation in more detail.
-
-\begin{lemma*}
-If $\delta$ denotes the $\rho$-ordering of $S$ formed by pulling from left to right in $T_s$, then \[\rho(\delta(n),\delta(m))=\gamma_k\] if and only if \[ n=m \mod \beta(k) \text{  and } n \neq m \mod \beta(k+1)\]
-\end{lemma*}
-
-\begin{proof}
-(forward direction) Suppose $\rho(\delta(n),\delta(m))=\gamma_k$, then the diameter of the smallest ball containing both $\delta(n)$ and $\delta(m)$ is $\gamma(k)$. \\
-
-(backward direction) Suppose $n=m \mod \beta(k) \text{  and } n \neq m \mod \beta(k+1)$, then 
-\end{proof}
 
 \begin{lemma*}
 $\lfloor\frac{n}{q} \rfloor$ counts the numbers strictly less than $n$ that are congruent to $n \mod q$.
 \end{lemma*}
 
 \begin{proof}
-Every multiple of $q$ produces exactly one of the numbers from $1$ to $q$ and exactly one of those is the residue class of $n$ modulo $q$. The remainder is the residue class of $n$ itself and since we only want the numbers strictly less than $n$, we ignore this by taking the floor.
+(sketch) Every multiple of $q$ produces exactly one of the numbers from $1$ to $q$ and exactly one of those is the residue class of $n$ modulo $q$. The remainder is the residue class of $n$ itself and since we only want the numbers strictly less than $n$, we ignore this by taking the floor.
+\end{proof}
+
+
+\begin{lemma*}
+\[\lfloor\frac{n}{b} \rfloor - \lfloor \frac{n}{ab} \rfloor = \sum_{k=1}^{a-1} \lfloor \frac{n + kb}{ab} \rfloor\] for $n,a,b \in \mathbb{N}$. In particular, 
+\[\lfloor\frac{n}{b} \rfloor - \lfloor \frac{n}{2b} \rfloor= \lfloor \frac{n+b}{2b} \rfloor\] for  $n,b \in \mathbb{N}$.
+\end{lemma*}
+
+\begin{proof}
+\[\lfloor\frac{n}{b} \rfloor - \lfloor \frac{n}{ab} \rfloor = \lfloor a \cdot \frac{n}{ab} \rfloor - \lfloor \frac{n}{ab} \rfloor  = \sum_{k=0}^{a-1} \lfloor \frac{n}{ab} + \frac{k}{a} \rfloor - \lfloor \frac{n}{ab} \rfloor \text{ (*)}\]
+\[= \sum_{k=1}^{a-1} \lfloor \frac{n}{ab} + \frac{k}{a} \rfloor = \sum_{k=1}^{a-1} \lfloor \frac{n + kb}{ab} \rfloor \]
+where the final step in (*) is due to Hermite's identity: $\lfloor nx \rfloor = \sum_{k=0}^{n-1} \lfloor x + \frac{k}{n} \rfloor$
+\end{proof}                                                                                                              
+
+
+
+\begin{definition*}
+Let $S$ be as above, a compact subset of an ultrametric space $(M, \rho)$. We say that $S$ is \textbf{semi-regular} if $T_{B^k_i} = T_{B^k_j}$, $\forall k \in \mathbb{N}$ and  $i,j \in \beta(k)$. That is, $S$ is semi-regular if each ball of radius $\gamma_k$ breaks into the same number of balls of radius $\gamma_{k+1}$, for all $k$. If there exists an $n \in \mathbb{N}$ such that $T_{B^n_i} = T_{B^n_j}$, i.e.  each ball of radius $\gamma_N$ breaks into the same number of balls of radius $\gamma_{N+1}$, for all $N \geq n$, then we say $S$ is \textbf{eventually semi-regular}.
+\end{definition*}
+
+\begin{definition*}
+$\alpha$-sequence
+\end{definition*}
+
+\begin{lemma*}
+If $S$ is semi-regular and $\delta$ denotes the canonical $\rho$-ordering of $S$, that is, a $\rho-$ordering formed by pulling from left to right in $T_s$, then \[\rho(\delta(n),\delta(m))=\gamma_k\] if and only if \[ n=m \mod \beta(k) \text{  and } n \neq m \mod \beta(k+1)\]
+\end{lemma*}
+
+\begin{proof}
+%(forward direction) Suppose $\rho(\delta(n),\delta(m))=\gamma_k$, then the diameter of the smallest ball containing both $\delta(n)$ and $\delta(m)$ is $\gamma(k)$. \\
+%(backward direction) Suppose $n=m \mod \beta(k) \text{  and } n \neq m \mod \beta(k+1)$, then 
 \end{proof}
 
 
 \begin{proposition*}
-\[v_{\gamma_k}(\sigma(n)) = \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor \]
+If $S$ is a semi-regular ultrametric space, $\sigma$ is the characteristic sequence of $S$, $\beta$ is the structure sequence of $S$, and $\alpha$ is the sequence describing the semi-regularity, then
+\[v_{\gamma_k}(\sigma(n)) = \sum_{j=1}^{\alpha(k+1)-1} \lfloor \frac{n + j\cdot \beta(k)}{\alpha(k+1)\beta(k)} \rfloor\]
 \end{proposition*}
 
-
-\begin{definition*}
-Let $S$ be as above. We say that $S$ is \textbf{semi-regular} if $T_{B^k_i} = T_{B^k_j}$, $\forall k \in \mathbb{N}$ and  $i,j \in \beta(k)$. That is, $S$ is semi-regular if each ball of radius $\gamma_k$ breaks into the same number of balls of radius $\gamma_{k+1}$, for all $k$. If there exists an $n \in \mathbb{N}$ such that $T_{B^n_i} = T_{B^n_j}$, i.e.  each ball of radius $\gamma_N$ breaks into the same number of balls of radius $\gamma_{N+1}$, for all $N \geq n$, then we say $S$ is \textbf{eventually semi-regular}.
-\end{definition*}
-
-Introduce$\alpha-$sequence 
-
-\begin{corollary*}
-If $S$ is a semi-regular ultrametric space, $\Gamma_S$ is the sequence of distances in $S$, and $\beta$ is the structure sequence of $S$, then \[v_{\gamma_k}(\sigma(n)) = \lfloor\frac{n +\beta(k)}{\beta(k+1)}\rfloor \]
-\end{corollary*}
-
 \begin{proof}
-
-\begin{align*}
-v_{\gamma_k}(\sigma(n)) && \\
-= \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor && \\
-= \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k)\alpha(k+1)}\rfloor && \\
-= \lfloor\frac{n \cdot \alpha(k+1)}{\beta(k)\cdot \alpha(k+1)}\rfloor - \lfloor\frac{n}{\beta(k)\alpha(k+1)}\rfloor && \\
-= \sum_{k=0}^{(n \cdot \alpha(k+1))-1} \lfloor \frac{1}{\beta(k)\alpha(k+1)} + \frac{k}{n\cdot \alpha(k+1)} \rfloor - \sum_{k=0}^{n-1} \lfloor \frac{1}{\beta(k)\alpha(k+1)} + \frac{k}{n} \rfloor && *
-\end{align*}
-
+The exponent of $\gamma_k$ in the $n^{th}$ term of the characteristic sequence is the number of $m$ strictly less than $n$ such that $\rho(\sigma(n),\sigma(m))=\gamma_k$. By the lemma, this the number of $m <n$ such that $m = n \mod \beta(k)$  and $m \neq n \mod \beta(k+1)$. By the following lemma, this is $\lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor$. Then we have:
+\begin{flalign*}
+v_{\gamma_k}(\sigma(n)) & \\
+= \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor & \\
+= \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k)\alpha(k+1)}\rfloor & \\
+= \sum_{j=1}^{\alpha(k+1)-1} \lfloor \frac{n + j\cdot \beta(k)}{\alpha(k+1)\beta(k)} \rfloor
+\end{flalign*}
 \end{proof}
 
-* apply Hermite's identity to both sides
-\begin{example}
-Consider the ultrametric space $(\mathbb{Z}, \rvert \cdot \lvert_p)$  for any prime $p$. The corollary gives 
-\[v_{1}(\sigma(n)) = \lceil\frac{n}{p}\rceil\]
-\[v_{\frac{1}{p}}(\sigma(n)) = \lceil\frac{n +p }{p^2}\rceil\]
-\[v_{\frac{1}{p^2}}(\sigma(n)) = \lceil\frac{n + p^2}{p^3}\rceil\]
-\[v_{\frac{1}{p^3}}(\sigma(n)) = \lceil\frac{n + p^3}{p^4}\rceil\]
 
-So that \[\sigma(n) = (\frac{1}{p})^ { \lceil\frac{n + p}{p^2}\rceil + 2 \cdot  \lceil\frac{n +p^2}{p^3}\rceil + 3 \cdot  \lceil\frac{n + p^3}{p^4}\rceil + \ldots}\]
-\[ = (\frac{1}{p})^ { \sum_{i=1}^\infty i \cdot \lceil\frac{n + p^i}{p^{i+1}}\rceil }\]
-\[ = (\frac{1}{p})^ { \sum_{i=1}^\infty i \cdot \lceil\frac{pn}{p^{i+1}}\rceil -  \lceil\frac{n}{p^{i+1}}\rceil }\]
-\[ = (\frac{1}{p})^ { \sum_{i=1}^\infty i \cdot \lceil\frac{n}{p^{i}}\rceil -  \lceil\frac{n}{p^{i+1}}\rceil }\]
-\[ = (\frac{1}{p})^ { \sum_{i=1}^\infty \lceil \frac{n}{p^{i}}\rceil}\]
+
+\begin{example}
+Consider the ultrametric space $(\mathbb{Z}, \rvert \cdot \lvert_p)$  for any prime $p$. Then $\beta(k)=p^k$ and $\alpha(k+1)=p$ for any $k$. The above gives 
+\[v_{\gamma_k}(\sigma(n)) = \sum_{j=1}^{p-1} \lfloor \frac{n + j\cdot p^k}{p^{k+1}} \rfloor\]
+and since $\gamma_k = p^{-k}$, $\forall k$, we have 
+\[v_{\frac{1}{p}}(\sigma(n)) = \sum_{k=1}^{\infty} k \cdot \sum_{j=1}^{p-1} \lfloor \frac{n + j\cdot p^k}{p^{k+1}} \rfloor\]
+\[ =  \sum_{k=1}^{\infty} k \cdot (\sum_{j=0}^{p-1} \lfloor \frac{n + j\cdot p^k}{p^{k+1}} \rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor) \]
+\[ =  \sum_{k=1}^{\infty} k \cdot (\sum_{j=0}^{p-1} \lfloor \frac{n}{p^{k+1}} + \frac{j}{p} \rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor) \]
+\[ =  \sum_{k=1}^{\infty} k \cdot (\lfloor p\cdot \frac{n}{p^{k+1}}\rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor) \]
+\[ =  \sum_{k=1}^{\infty} k \cdot (\lfloor \frac{n}{p^{k}}\rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor) \]
+\[ =  \sum_{k=1}^{\infty} \lfloor \frac{n}{p^{k}}\rfloor \]
+\[= v_{p}(n!) \]
 \end{example}
 
-\begin{corollary*}
-If $S$ is a (eventually) semi-regular ultrametric space and the $\alpha$ sequence of $S$ is (eventually)  periodic, then the valuative capacity of $S$ is algebraic.
-\end{corollary*}
+%\begin{corollary*}
+%If $S$ is a (eventually) semi-regular ultrametric space and the $\alpha$ sequence of $S$ is (eventually)  periodic, then the valuative capacity of $S$ is algebraic.
+%\end{corollary*}
 
 %\begin{corollary*}
 %Suppose $S$ and $T$ are compact subsets of an ultrametric space $M$ with $\Gamma_S = \Gamma_T$ and $\mid S_{\gamma_k}\mid =\mid T_{\gamma_k}\mid$, $\forall k$. Then $\omega(S) = \omega(T)$. 
@@ -242,40 +271,40 @@ If $S$ is a (eventually) semi-regular ultrametric space and the $\alpha$ sequenc
 %If $S$ is (eventually) semi-regular, then the structure sequence of $B^1_1$ (respectively, $B^N_1$) is also an invariant of $S$, which we denote by $\alpha^S(i)$.\\
 %\end{notation*}
 
-Semi-regularity in $S$ reflects horizontal similarity on every level of $T_S$, and so we expect semi-regularity to simplify the calculation of valuative capacity.
+%Semi-regularity in $S$ reflects horizontal similarity on every level of $T_S$, and so we expect semi-regularity to simplify the calculation of valuative capacity.
 
-\begin{proposition*}
-Let $S$ be a semi-regular, compact subset of an ultrametric space. Let $\Gamma_S$ be the set of distances in $S$ and let $B$ be the first element of $S_{\gamma_1}$. Let $\sigma^S(i)$  be the characteristic sequence of $S$ and $\sigma^B(i)$ be the characteristic sequence of $B$. Then,
+%\begin{proposition*}
+%Let $S$ be a semi-regular, compact subset of an ultrametric space. Let $\Gamma_S$ be the set of distances in $S$ and let $B$ be the first element of $S_{\gamma_1}$. Let $\sigma^S(i)$  be the characteristic sequence of $S$ and $\sigma^B(i)$ be the characteristic sequence of $B$. Then,
 
-\[\sigma^S(\beta(0) \cdot n)=\gamma_0^c \cdot \sigma^{B}(n)\]
+%\[\sigma^S(\beta(0) \cdot n)=\gamma_0^c \cdot \sigma^{B}(n)\]
 
-where $c$ counts the numbers in $1$ to $\beta(0) \cdot n$ that are not divisible by $\beta(0)$.
+%where $c$ counts the numbers in $1$ to $\beta(0) \cdot n$ that are not divisible by $\beta(0)$.
 
-\end{proposition*}
+%\end{proposition*}
 
-\begin{proof}
-(sketch)
-If $n=0$, then $c=0$ and $\beta(0) \cdot n = 0$, and,
-\[\sigma^S(0)= 1 =	1 \cdot \sigma^{B}(0)\]
-since the $0^{th}$-term of any characteristic sequence is $1$ by definition. When $n=1$, $c=\beta(0)-1$, so that the right-hand side becomes,
-\[\gamma_0^{\beta(0)-1} \cdot \sigma^{B}(1)\]
-Now note that the $\beta(0)^{th}$ term of $\sigma^S$ will have $\beta(0)-1$ copies of $\gamma_0$ (one from each of the elements of $S_{\gamma_0}$ not containing the $\beta(0)^{th}$ element) and the remaining term is in the branch $B$, so it is given by $\sigma^B(1)$, and so,
-\[\sigma^S(\beta(0))=\gamma_0^{\beta(0)-1} \cdot \sigma^{B}(1)\]
+%\begin{proof}
+%(sketch)
+%If $n=0$, then $c=0$ and $\beta(0) \cdot n = 0$, and,
+%\[\sigma^S(0)= 1 =	1 \cdot \sigma^{B}(0)\]
+%since the $0^{th}$-term of any characteristic sequence is $1$ by definition. When $n=1$, $c=\beta(0)-1$, so that the right-hand side becomes,
+%\[\gamma_0^{\beta(0)-1} \cdot \sigma^{B}(1)\]
+%Now note that the $\beta(0)^{th}$ term of $\sigma^S$ will have $\beta(0)-1$ copies of $\gamma_0$ (one from each of the elements of $S_{\gamma_0}$ not containing the $\beta(0)^{th}$ element) and the remaining term is in the branch $B$, so it is given by $\sigma^B(1)$, and so,
+%\[\sigma^S(\beta(0))=\gamma_0^{\beta(0)-1} \cdot \sigma^{B}(1)\]
 
 
-Suppose:
-\[\sigma^S(\beta(0) \cdot n)=\gamma_0^{c_n} \cdot \sigma^{B}(n)\]
+%Suppose:
+%\[\sigma^S(\beta(0) \cdot n)=\gamma_0^{c_n} \cdot \sigma^{B}(n)\]
 
-for $0 \leq n < n +1$ and consider $\sigma^S(\beta(0) \cdot (n+1))$. $\sigma^S(\beta(0) \cdot (n+1))$ will add $\beta(0)$ more terms to $\sigma^S(\beta(0) \cdot n)$. Moreover, exactly $\beta(0)-1$ of these additional terms will be in other branches and $1$ term will be in $B$, since any sequence of $\beta(0)$ terms in the $\rho-$ordering of $S$ will be from each of the $\beta(0)$ branches. Each of the $\beta(0)-1$ terms from other branches will add a copy of $\gamma_0$ and remaining term can be found by looking ahead in $\sigma^B$, so that
+%for $0 \leq n < n +1$ and consider $\sigma^S(\beta(0) \cdot (n+1))$. $\sigma^S(\beta(0) \cdot (n+1))$ will add $\beta(0)$ more terms to $\sigma^S(\beta(0) \cdot n)$. Moreover, exactly $\beta(0)-1$ of these additional terms will be in other branches and $1$ term will be in $B$, since any sequence of $\beta(0)$ terms in the $\rho-$ordering of $S$ will be from each of the $\beta(0)$ branches. Each of the $\beta(0)-1$ terms from other branches will add a copy of $\gamma_0$ and remaining term can be found by looking ahead in $\sigma^B$, so that
 
-\begin{align*}
-\sigma^S(\beta(0) \cdot (n+1)) && \\
-= \sigma^S(\beta(0) \cdot n) \cdot \gamma_0^{\beta(0)-1} \cdot \frac{\sigma^B(n+1)}{\sigma^B(n)} && \\
-= {\gamma_0^{c_n}} \cdot \sigma^{B}(n) \cdot \gamma_0^{\beta(0)-1} \cdot  \frac{\sigma^B(n+1)}{\sigma^B(n)} &&\\
-= {\gamma_0^{c_n}}  \cdot \gamma_0^{\beta(0)-1} \cdot  \sigma^B(n+1) && \\
-= {\gamma_0^{c_{n+1}}} \cdot  \sigma^B(n+1) 
-\end{align*}
+%\begin{align*}
+%\sigma^S(\beta(0) \cdot (n+1)) && \\
+%= \sigma^S(\beta(0) \cdot n) \cdot \gamma_0^{\beta(0)-1} \cdot \frac{\sigma^B(n+1)}{\sigma^B(n)} && \\
+%= {\gamma_0^{c_n}} \cdot \sigma^{B}(n) \cdot \gamma_0^{\beta(0)-1} \cdot  \frac{\sigma^B(n+1)}{\sigma^B(n)} &&\\
+%= {\gamma_0^{c_n}}  \cdot \gamma_0^{\beta(0)-1} \cdot  \sigma^B(n+1) && \\
+%= {\gamma_0^{c_{n+1}}} \cdot  \sigma^B(n+1) 
+%\end{align*}
 
-\end{proof}
-Since semi-regularity requires horizontal similarity at every level of $T_S$, we can repeat the branch cuts as many times as needed to calculate $\sigma(n)$.
+%\end{proof}
+%Since semi-regularity requires horizontal similarity at every level of $T_S$, we can repeat the branch cuts as many times as needed to calculate $\sigma(n)$.
 
