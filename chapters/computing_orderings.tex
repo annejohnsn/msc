@@ -228,7 +228,7 @@ If $S$ is semi-regular and $\delta$ denotes the canonical $\rho$-ordering of $S$
 
 \begin{proposition*}
 If $S$ is a semi-regular ultrametric space, $\sigma$ is the characteristic sequence of $S$, $\beta$ is the structure sequence of $S$, and $\alpha$ is the sequence describing the semi-regularity, then
-\[v_{\gamma_k}(\sigma(n)) =  \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor = \sum_{j=1}^{\alpha(k+1)-1} \lfloor \frac{n + j\cdot \beta(k)}{\alpha(k+1)\beta(k)} \rfloor\]
+\[v_{\gamma_k}(\sigma(n)) =  \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor = \sum_{j=1}^{\alpha(k)-1} \lfloor \frac{n + j\cdot \beta(k)}{\alpha(k)\beta(k)} \rfloor\]
 \end{proposition*}
 
 \begin{proof}
@@ -236,15 +236,15 @@ The exponent of $\gamma_k$ in the $n^{th}$ term of the characteristic sequence i
 \begin{flalign*}
 v_{\gamma_k}(\sigma(n)) & \\
 = \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor & \\
-= \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k)\alpha(k+1)}\rfloor & \\
-= \sum_{j=1}^{\alpha(k+1)-1} \lfloor \frac{n + j\cdot \beta(k)}{\alpha(k+1)\beta(k)} \rfloor
+= \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k)\alpha(k)}\rfloor & \\
+= \sum_{j=1}^{\alpha(k)-1} \lfloor \frac{n + j\cdot \beta(k)}{\alpha(k)\beta(k)} \rfloor
 \end{flalign*}
 \end{proof}
 
 
 
 \begin{example}
-Consider the ultrametric space $(\mathbb{Z}, \rvert \cdot \lvert_p)$  for any prime $p$. Then $\beta(k)=p^k$ and $\alpha(k+1)=p$ for any $k$. The above gives 
+Consider the ultrametric space $(\mathbb{Z}, \rvert \cdot \lvert_p)$  for any prime $p$. Then $\beta(k)=p^k$ and $\alpha(k)=p$ for any $k$. The above gives 
 \[v_{\gamma_k}(\sigma(n)) =\lfloor \frac{n}{p^{k}}\rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor\]
 and since $\gamma_k = p^{-k}$, $\forall k$, we have 
 \[v_{\frac{1}{p}}(\sigma(n)) = \sum_{k=1}^{\infty} k \cdot (\lfloor \frac{n}{p^{k}}\rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor) \]
