@@ -1,0 +1,58 @@
+\textul{Example from previous chapter with more detail}:
+
+\begin{example}
+Consider the ultrametric space $(\mathbb{Z}, \rvert \cdot \lvert_p)$  for any prime $p$. Then $\beta(k)=p^k$ and $\alpha(k)=p$ for any $k$. The above gives 
+\[v_{\gamma_k}(\sigma(n)) =\lfloor \frac{n}{p^{k}}\rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor\]
+and since $\gamma_k = p^{-k}$, $\forall k$, we have 
+\[v_{\frac{1}{p}}(\sigma(n)) \]
+\[ = \sum_{k=1}^{\infty} k \cdot (\lfloor \frac{n}{p^{k}}\rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor) \]
+\[ = \sum_{k=1}^{\lceil log_p(n) \rceil}  k \cdot (\lfloor \frac{n}{p^{k}}\rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor)\]
+\[ = \lfloor \frac{n}{p}\rfloor - \lfloor \frac{n}{p^{2}} \rfloor +  2\lfloor \frac{n}{p^2}\rfloor - 2\lfloor \frac{n}{p^3} \rfloor + \ldots +  \lceil log_p(n)\rceil \lfloor \frac{n}{p^{ \lceil log_p(n)\rceil}} \rfloor \]
+\[ = \lfloor \frac{n}{p}\rfloor + \lfloor \frac{n}{p^2}\rfloor  + \ldots +  \lfloor \frac{n}{p^{ \lceil log_p(n)\rceil}} \rfloor \]
+\[ =  \sum_{k=1}^{\lceil log_p(n) \rceil} \lfloor \frac{n}{p^{k}}\rfloor \]
+\[ =  \sum_{k=1}^{\infty} \lfloor \frac{n}{p^{k}}\rfloor \]
+\[= v_{p}(n!) \]
+
+since $\lfloor \frac{n}{p^k} \rfloor = 0$ if $ p^k > n \iff log(p^k) > log(n) \iff k > log_p(n)$
+\end{example}
+
+
+\textul{The 2-3 case}:
+
+What about $(\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2})$ for distinct primes? These spaces do not admit a scaling property, so the same toolset is not available. They are however semi-regular, so we know that  \[v_{\gamma_k}(\sigma(n)) =  \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor = \sum_{j=1}^{\alpha(k)-1} \lfloor \frac{n + j\cdot \beta(k)}{\alpha(k)\beta(k)} \rfloor \]
+Suppose $p_1 =2$ and $p_2 =3$, so that the $\alpha$ sequence of $S = (\mathbb{Z}_{2} \times \mathbb{Z}_{3})$ is $\alpha = \{6,2,3,2,2,3,2,3,2,\ldots\}$ and the $\beta$ sequence is then $\beta = \{6,12,36,72,144,\ldots\}$. We know that the capacity of $S$ will be a product of some negative power of $2$ and a negative power of $3$.  From the above, we know that when $\alpha(k)=2$, we have 
+\[v_{\gamma_k}(\sigma(n)) = \lfloor \frac{n + \beta(k)}{2\cdot \beta(k)} \rfloor\]
+
+and when $\alpha(k)=3$, we have
+\[v_{\gamma_k}(\sigma(n)) = \lfloor \frac{n + \beta(k)}{3\cdot \beta(k)} \rfloor + \lfloor \frac{n + 2\cdot \beta(k)}{3\cdot \beta(k)} \rfloor \]
+
+We also know that if $\alpha(k)=2$, then $\gamma_k$ must be a (negative) power of $2$, and likewise if $\alpha(k)=3$, then $\gamma_k$ is a power of $3$.\\
+
+ Let us first explore the exponent of $2$ in $\sigma(n)$. We start by noting that if $\gamma_k$ is some $2^{-i}$, then \[v_{\gamma_k}(\sigma(n)) =\lfloor \frac{n + 2^i\cdot 3 ^j}{2^{i+1} \cdot 3^j} \rfloor \] since there will be a copy of $2$ in $\beta(k)$ for every occurence of $2$ in $\alpha(0),\ldots,\alpha(k)$, which is also what $i$ counts. So then, the exponent of $\frac{1}{2}$ in the $n^{th}$ characteristic sequence of $S$ is \[ \sum_{i=1}^\infty i \cdot \lfloor\frac{n + 2^i \cdot 3^j}{2^{i+1}\cdot 3^j} \rfloor\] What can we say about $j$, the exponent of $3$? 
+
+\begin{lemma*}
+Let $S = (\mathbb{Z}_{2} \times \mathbb{Z}_{3}) $ and consider the $k^{th}$ element of the $\beta$ sequence of $S$, $\beta(k) = 2^i \cdot 3^j$. If $k$ is such that $\gamma_k=2^{-i}$ for some $i$, then $j$ counts the numbers $a$ in $\mathbb{Z}_{\geq 0}$ such that $3^a < 2^{i}$.
+\end{lemma*}
+
+\begin{proof}
+(sketch) $2^i$ only makes it into the sequence after all smaller powers of $3$ and $2$ have been used, and since we are only considering the case $\gamma_k$ is a power of $2$, we get all the smaller powers of $3$.
+\end{proof}
+
+ Now note that  
+\begin{align}
+3^a < 2^i
+ \iff
+ log_2(3^a) < log_2(2^i)
+\iff  
+a \cdot log_2(3) < i
+\end{align}
+
+So now we are reduced to counting the number of non-negative integers $a$ that satisfy the above for a given $i$.  Note that the number of such $a$'s will simply be the the value of the largest $a$ plus $1$ since $a$ satisfying the relation implies all $0 \leq a' \leq a$ solve the relation. Then, we are in fact reduced to finding the largest $a \in \mathbb{Z}$ that satisfies $a < \frac{i}{log_2(3)}$, but this is exactly $\lfloor \frac{i}{log_2(3)}\rfloor$. This in turn gives $j =  \lfloor \frac{i}{log_2(3)}\rfloor + 1= \lceil \frac{i}{log_2(3)}\rceil$, since $\frac{i}{log_2(3)}$ is never an integer. We now revisit our expression for the exponent of $\frac{1}{2}$ and substitute our new found value for $j$:
+ 
+\[\sum_{i=1}^\infty i \cdot \lfloor\frac{n + 2^i \cdot 3^{\lceil \frac{i}{log_2(3)}\rceil}}{2^{i+1}\cdot 3^{\lceil \frac{i}{log_2(3)}\rceil}} \rfloor\]
+\[=\sum_{i=1}^\infty i \cdot (\lfloor\frac{n}{2^i \cdot 3^{\lceil \frac{i}{log_2(3)}\rceil }}\rfloor -  \lfloor\frac{n}{2^{i+1}\cdot 3^{\lceil \frac{i}{log_2(3)}\rceil}} \rfloor)\]
+%S :=Sum(x*(floor((n + 2^x*3^ceil(x/log[2](3)))/(2^(x+1)*3^ceil(x/log[2](3))))), x=1..100)
+
+
+
+

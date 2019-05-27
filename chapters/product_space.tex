@@ -109,15 +109,15 @@ Above.
 Taking $n=1$, we see that this agrees with the valuative capacity of $\mathbb{Z}_p$ computed in the last chapter. \\
 
 What about $(\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2})$ for distinct primes? These spaces do not admit a scaling property, so the same toolset is not available. They are however semi-regular, so we know that  \[v_{\gamma_k}(\sigma(n)) =  \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor = \sum_{j=1}^{\alpha(k)-1} \lfloor \frac{n + j\cdot \beta(k)}{\alpha(k)\beta(k)} \rfloor \]
-Suppose $p_1 =2$ and $p_2 =3$, so that the $\alpha$ sequence of $S = (\mathbb{Z}_{2} \times \mathbb{Z}_{3})$ is $\alpha = \{6,2,3,2,2,3,2,3,2,\ldots\}$ and the $\beta$ sequence is then $\beta = \{6,12,36,72,144,\ldots\}$. We know that the capacity of $S$ will be a product of some negative power of $2$ and a negative power of $3$. 
-
-When $\alpha(k)=2$, we have 
+Suppose $p_1 =2$ and $p_2 =3$, so that the $\alpha$ sequence of $S = (\mathbb{Z}_{2} \times \mathbb{Z}_{3})$ is $\alpha = \{6,2,3,2,2,3,2,3,2,\ldots\}$ and the $\beta$ sequence is then $\beta = \{6,12,36,72,144,\ldots\}$. We know that the capacity of $S$ will be a product of some negative power of $2$ and a negative power of $3$.  From the above, we know that when $\alpha(k)=2$, we have 
 \[v_{\gamma_k}(\sigma(n)) = \lfloor \frac{n + \beta(k)}{2\cdot \beta(k)} \rfloor\]
 
 and when $\alpha(k)=3$, we have
 \[v_{\gamma_k}(\sigma(n)) = \lfloor \frac{n + \beta(k)}{3\cdot \beta(k)} \rfloor + \lfloor \frac{n + 2\cdot \beta(k)}{3\cdot \beta(k)} \rfloor \]
 
-We also know that if $\alpha(k)=2$, then $\gamma_k$ must be a (negative) power of $2$, and likewise if $\alpha(k)=3$, then $\gamma_k$ is a power of $3$.  Let us first explore the exponent of $2$ in $\sigma(n)$. We start by noting that if $\gamma_k$ is some $2^{-i}$, then \[v_{\gamma_k}(\sigma(n)) =\lfloor \frac{n + 2^i\cdot 3 ^j}{2^{i+1} \cdot 3^j} \rfloor \] since there will be a copy of $2$ in $\beta(k)$ for every occurence of $2$ in $\alpha(0),\ldots,\alpha(k)$, which is also what $i$ counts. So then, the exponent of $\frac{1}{2}$ in the $n^{th}$ characteristic sequence of $S$ is \[ \sum_{i=1}^\infty i \cdot \lfloor\frac{n + 2^i \cdot 3^j}{2^{i+1}\cdot 3^j} \rfloor\] What can we say about $j$, the exponent of $3$? 
+We also know that if $\alpha(k)=2$, then $\gamma_k$ must be a (negative) power of $2$, and likewise if $\alpha(k)=3$, then $\gamma_k$ is a power of $3$.\\
+
+ Let us first explore the exponent of $2$ in $\sigma(n)$. We start by noting that if $\gamma_k$ is some $2^{-i}$, then \[v_{\gamma_k}(\sigma(n)) =\lfloor \frac{n + 2^i\cdot 3 ^j}{2^{i+1} \cdot 3^j} \rfloor \] since there will be a copy of $2$ in $\beta(k)$ for every occurence of $2$ in $\alpha(0),\ldots,\alpha(k)$, which is also what $i$ counts. So then, the exponent of $\frac{1}{2}$ in the $n^{th}$ characteristic sequence of $S$ is \[ \sum_{i=1}^\infty i \cdot \lfloor\frac{n + 2^i \cdot 3^j}{2^{i+1}\cdot 3^j} \rfloor\] What can we say about $j$, the exponent of $3$? 
 
 \begin{lemma*}
 Let $S = (\mathbb{Z}_{2} \times \mathbb{Z}_{3}) $ and consider the $k^{th}$ element of the $\beta$ sequence of $S$, $\beta(k) = 2^i \cdot 3^j$. If $k$ is such that $\gamma_k=2^{-i}$ for some $i$, then $j$ counts the numbers $a$ in $\mathbb{Z}_{\geq 0}$ such that $3^a < 2^{i}$.
@@ -140,7 +140,9 @@ So now we are reduced to counting the number of non-negative integers $a$ that s
  
 \[\sum_{i=1}^\infty i \cdot \lfloor\frac{n + 2^i \cdot 3^{\lceil \frac{i}{log_2(3)}\rceil}}{2^{i+1}\cdot 3^{\lceil \frac{i}{log_2(3)}\rceil}} \rfloor\]
 \[=\sum_{i=1}^\infty i \cdot (\lfloor\frac{n}{2^i \cdot 3^{\lceil \frac{i}{log_2(3)}\rceil }}\rfloor -  \lfloor\frac{n}{2^{i+1}\cdot 3^{\lceil \frac{i}{log_2(3)}\rceil}} \rfloor)\]
-\[=\sum_{i=1}^\infty \lfloor\frac{n}{2^i \cdot3^{\lceil \frac{i}{log_2(3)}\rceil }}\rfloor\]
+%S :=Sum(x*(floor((n + 2^x*3^ceil(x/log[2](3)))/(2^(x+1)*3^ceil(x/log[2](3))))), x=1..100)
+
+
 
 
 

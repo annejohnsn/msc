@@ -203,7 +203,7 @@ $\lfloor\frac{n}{q} \rfloor$ counts the numbers strictly less than $n$ that are 
 \begin{proof}
 \[\lfloor\frac{n}{b} \rfloor - \lfloor \frac{n}{ab} \rfloor = \lfloor a \cdot \frac{n}{ab} \rfloor - \lfloor \frac{n}{ab} \rfloor  = \sum_{k=0}^{a-1} \lfloor \frac{n}{ab} + \frac{k}{a} \rfloor - \lfloor \frac{n}{ab} \rfloor \text{ (*)}\]
 \[= \sum_{k=1}^{a-1} \lfloor \frac{n}{ab} + \frac{k}{a} \rfloor = \sum_{k=1}^{a-1} \lfloor \frac{n + kb}{ab} \rfloor \]
-where the final step in (*) is due to Hermite's identity: $\lfloor nx \rfloor = \sum_{k=0}^{n-1} \lfloor x + \frac{k}{n} \rfloor$
+where the final step in (*) is due to Hermite's identity: $\lfloor nx \rfloor = \sum_{k=0}^{n-1} \lfloor x + \frac{k}{n} \rfloor$, for $n \in \mathbb{N}$ and $x \in \mathbb{R}$.
 \end{proof}                                                                                                              
 
 
@@ -247,8 +247,16 @@ v_{\gamma_k}(\sigma(n)) & \\
 Consider the ultrametric space $(\mathbb{Z}, \rvert \cdot \lvert_p)$  for any prime $p$. Then $\beta(k)=p^k$ and $\alpha(k)=p$ for any $k$. The above gives 
 \[v_{\gamma_k}(\sigma(n)) =\lfloor \frac{n}{p^{k}}\rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor\]
 and since $\gamma_k = p^{-k}$, $\forall k$, we have 
-\[v_{\frac{1}{p}}(\sigma(n)) = \sum_{k=1}^{\infty} k \cdot (\lfloor \frac{n}{p^{k}}\rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor) \]
-\[ =  \sum_{k=1}^{\infty} \lfloor \frac{n}{p^{k}}\rfloor= v_{p}(n!) \]
+\[v_{\frac{1}{p}}(\sigma(n)) \]
+\[ = \sum_{k=1}^{\infty} k \cdot (\lfloor \frac{n}{p^{k}}\rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor) \]
+\[ = \sum_{k=1}^{\lceil log_p(n) \rceil}  k \cdot (\lfloor \frac{n}{p^{k}}\rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor)\]
+\[ = \lfloor \frac{n}{p}\rfloor - \lfloor \frac{n}{p^{2}} \rfloor +  2\lfloor \frac{n}{p^2}\rfloor - 2\lfloor \frac{n}{p^3} \rfloor + \ldots +  \lceil log_p(n)\rceil \lfloor \frac{n}{p^{ \lceil log_p(n)\rceil}} \rfloor \]
+\[ = \lfloor \frac{n}{p}\rfloor + \lfloor \frac{n}{p^2}\rfloor  + \ldots +  \lfloor \frac{n}{p^{ \lceil log_p(n)\rceil}} \rfloor \]
+\[ =  \sum_{k=1}^{\lceil log_p(n) \rceil} \lfloor \frac{n}{p^{k}}\rfloor \]
+\[ =  \sum_{k=1}^{\infty} \lfloor \frac{n}{p^{k}}\rfloor \]
+\[= v_{p}(n!) \]
+
+since $\lfloor \frac{n}{p^k} \rfloor = 0$ if $ p^k > n \iff log(p^k) > log(n) \iff k > log_p(n)$
 \end{example}
 
 %\begin{corollary*}
