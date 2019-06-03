@@ -1,12 +1,12 @@
 
-\newpage
-
-\section*{Computing a $\rho$-ordering}
 In the previous section, we defined valuative capacity for a compact subset $S$ of an ultrametric space $(M, \rho)$. We also got a glimpse into the way the valuative capacity of $S$ interacts with its other properties, such as the set of distances occurring in $S$ and the lattice of closed balls in $S$ (or equivalently, if $S$ has enough structure, a lattice of subgroups).\\
 
 In this section, we offer a more detailed study of the interaction between the valuative capacity of $S$ and the lattice of closed balls in $S$. In particular, we  show how, in all cases (with $S$ compact), the latter can be used to compute the first $n$ terms of a $\rho-$ordering of $S$ (for any $n < \infty$) and how, in some cases, this extends to being able to compute the valuative capacity of $S$.\\
 
-We begin by letting $S$ be, as before,  a compact subset of an ultrametric space $(M, \rho)$, and by letting $\Gamma_S =\{\gamma_0, \gamma_1,\ldots,\gamma_\infty=0\}$ be the set of distances in $S$.  Now fix some $k \in \mathbb{N}$, and consider for a moment the set of closed balls of radius $\gamma_k$ in $S$. We could denote these alternatively by $B^M(x, \gamma_k) \cap S$ or by  $B^S(x, \gamma_k)$, but when there is no risk of confusion, we will denote them simply by $B(x, \gamma_k)$. Clearly, the set  $\{B(x, \gamma_k); x \in S\}$ forms a cover of $S$ and since $S$ is compact, we must have some $x_1,\ldots, x_n$  such that $S= \cup_{i=1}^n B(x_i, \gamma_k)$. In fact,  since $\rho$ is an ultrametric, we can pick the $x_i$'s so that $\cup_{i=1}^n B(x_i, \gamma_k)$ will be a disjoint union and therefore a partition of $S$. Note that both $n$ and the $x_i$'s depend on our fixed $k$, but that $n$ is independent of the $x_i$'s, since any choice of centres is equivalent. We rephrase this with following definition and lemma:
+\subsection*{Subspaces of $S$}
+In the section we explore the subspaces of $S$ formed by considering closed balls of some fixed radius. We begin by letting $S$ be, as before,  a compact subset of an ultrametric space $(M, \rho)$.  Recall from the previous section that if $S$ is compact, then the set of distances occurring in $S$ is a discrete, bounded subset of $\mathbb{R}$ and so we may represent the set of distances by a sequence in decreasing order. As before, let the decreasing sequence of distances in $S$ be given by  $\Gamma_S =\{\gamma_0=\text{diam}(S), \gamma_1,\ldots,\gamma_\infty=0\}$.\\
+
+ Now fix some $k \in \mathbb{N}$, and consider for a moment the set of closed balls of radius $\gamma_k$ in $S$. We could denote these alternatively by $B^M(x, \gamma_k) \cap S$ or by  $B^S(x, \gamma_k)$, but when there is no risk of confusion, we will denote them simply by $B(x, \gamma_k)$. Clearly, the set  $\{B(x, \gamma_k); x \in S\}$ forms a cover of $S$ and since $S$ is compact, we must have some $x_1,\ldots, x_n$  such that $S= \cup_{i=1}^n B(x_i, \gamma_k)$. In fact,  since $\rho$ is an ultrametric, we can pick the $x_i$'s so that $\cup_{i=1}^n B(x_i, \gamma_k)$ will be a disjoint union and therefore a partition of $S$. Note that both $n$ and the $x_i$'s depend on our fixed $k$, but that $n$ is independent of the $x_i$'s, since any choice of centres is equivalent. We rephrase this with following definition and lemma:
 
 \begin{definition*}
 For $S$ and $\Gamma_S$ as above, and $k \in \mathbb{N}$, fixed,  define $\sim_k$ to  be the relation on $S$ given by \[x \sim_k y\text{ if and only if  }\rho(x,y) \leq \gamma_k\] i.e.,  $x \sim_k y$ if and only if $B_{\gamma_k}(x) = B_{\gamma_k}(y)$.
@@ -47,7 +47,7 @@ since $ \gamma_k < \max(\rho(x,z), \rho(y,z))$ implies that at least one of $\rh
 So now the elements of $S_{\gamma_k}$ may be viewed as either equivalence classes, closed balls of fixed radius, or points in a new metric space. We  make a final definition and introduce some notation before moving on.
 
 \begin{definition*}
-Let $S$ and $\Gamma_S$ be as above. Define $\beta(i)_{i=0}^{\infty}$ to be the sequence given by $\beta(i) = \lvert  S_{\gamma_i}\rvert$, which is an invariant of $S$ and which counts the number of connected components of $S_{\gamma_i}$ when viewed as a metric space. When necessary, we use $\beta^S(i)$ to denote the $\beta$ sequence for a given, compact  ultrametric space $S$. Adapting the terminology in \cite{fp}, we call $\beta^S(i)$ the \textbf{structure sequence} of $S$.
+Let $S$ and $\Gamma_S$ be as above. Define $\beta(i)_{i \geq 0}$ to be the sequence given by $\beta(i) = \lvert  S_{\gamma_i}\rvert$, which is an invariant of $S$ and which counts the number of connected components of $S_{\gamma_i}$, that is, the points of $S_{\gamma_i}$, when viewed as a metric space. When necessary, we use $\beta^S(i)$ to denote the $\beta$ sequence for a given, compact  ultrametric space $S$. Adapting the terminology in \cite{fp}, we call $\beta^S(i)$ the \textbf{structure sequence} of $S$.
 \end{definition*}
 
 \begin{notation*}
@@ -70,7 +70,10 @@ and so
 where $\cup_{j=1}^{l_i} B(x_{i,j},\gamma_{k})=B(x_i, \gamma_{k+1}) = B^k_i$, $\forall i$.
 \end{observation*}
 
-We can represent this schematically as below:
+Since $S$ is compact, hence bounded, if we represent this process schematically we obtain a tree, where the root node is $B^0_1=B(x,\gamma_0)$, for any choice of $x \in S$, and the children of any given $B^m_n$ are such that they form a partition of their join.  Since we will often refer to this schematic representation, we define it below.
+
+\begin{definition*}
+If $S$ is a compact subset of an ultrametric space, then $T_s$ is the tree whose vertices are $B^k_i$, that is the elements of $S_{\gamma_k}$, and whose edgeset, $E$, is given by $ (B^i_k, B^j_l) \in E$ if, and only if, $ j = i+1$ and $B^j_l \subseteq B^i_k$ for some choice of representatives $B(x_k,\gamma_i)$ and $B(x_l, \gamma_j)$, as shown below:\\
 
 \tikzset{font=\small,
 level distance=1.75cm,
@@ -78,23 +81,33 @@ level distance=1.75cm,
 
 \begin{center}
 \begin{tikzpicture}
-\Tree [. $B^0_1$ [. $B^1_1$ \edge[dashed]; [. $B^k_1$ [. $B^{k+1}_1$ ] [. $B^{k+1}_2$ ]  [. $\ldots$ ] [. $B^{k+1}_{l_1}$ ] ] ] 
-		        [. $B^1_2$ \edge[dashed]; [. $B^k_2$ [. $B^{k+1}_{l_1 + 1}$ ] [. $B^{k+1}_{l_1 + 2}$ ] [. $\ldots$ ] [. $B^{k+1}_{l_1 + l_2}$ ] ] ] 
-		        [. $\ldots$ ]
-	                   [.$B^1_{\beta(1)}$ \edge[dashed]; [.$B^k_{\beta(k)}$ [. $B^{k+1}_{\sum\limits_{\mathclap{i < \beta(k)}}  l_i + 1 }$ ] [. $\ldots$ ] [. $B^{k+1}_{\beta(k+1)}$ ] ] ]]
+\Tree [. $B^0_1$ [. $B^1_1$ \edge [draw=none]; [. $\ldots$ \edge [draw=none]; [. $B^k_1$ [. $B^{k+1}_1$ ] [. $B^{k+1}_2$ ]  [. $\ldots$ ] [. $B^{k+1}_{l_1}$ ] ] ] ] 
+		        [. $B^1_2$ \edge [draw=none]; [. $\ldots$ \edge [draw=none]; [. $B^k_2$ [. $B^{k+1}_{l_1 + 1}$ ] [. $B^{k+1}_{l_1 + 2}$ ] [. $\ldots$ ] [. $B^{k+1}_{l_1 + l_2}$ ] ] ] ] 
+		        [. $\ldots$  \edge [draw=none]; [. $\ldots$ \edge [draw=none]; [. $\ldots$ ] ] ]
+	                   [.$B^1_{\beta(1)}$ \edge [draw=none]; [. $\ldots$ \edge [draw=none]; [.$B^k_{\beta(k)}$ [. $B^{k+1}_{\sum\limits_{\mathclap{i < \beta(k)}}  l_i + 1 }$ ] [. $\ldots$ ] [. $B^{k+1}_{\beta(k+1)}$ ] ] ] ] ]
 \end{tikzpicture}
 \end{center}
+\end{definition*}
 
-\begin{notation*}
-If $S$ is a compact subset of an ultrametric space, the lattice of closed balls in $S$, as depicted above, is denoted by $T_s$.\\
-\end{notation*}
+Before going on, first note that we have drawn $T_S$ such that leftmost child of some $B^k_i$ is $B^{k+1}_j$ where $j$ is minimal among the children of $B^k_i$, and then continued in increasing order. In general, if we draw $T_S$ so that the children of a given vertex are depicted in increasing order according to their index, then  each choice of indexing for the elements of $S_{\gamma_k}$ produces a different graphical representation of $T_S$. The structures produced by different choices of indices are clearly isomorphic as trees, and as we will see by the end of the section, each choice of indexing will be equivalent for our purposes as well.\\
 
-We make a few observation on the relationships between the vertices in $T_s$. First we consider the distance between two vertices in $T_s$. Since each vertex represents a ball in an ultrametric space, it is well-defined to let the distance between vertices be equal to the distance between a choice of centres for those balls. This is equal to the diameter of the smallest closed ball that contains any two vertices, that is, the level of their join. In particular, for any $k$ and any $i < \beta(k)$, the distances between the children of $B^k_i$ will be $\gamma_k$ and for any $i \neq j$ the distance between the children of $B^k_i$ and $B^k_j$ will be equal to the distance between  $B^k_i$ and $B^k_j$ (which will be some $\gamma_{m}, m <k$).\\
+Of central importance to us is the distance between two vertices in $T_s$. Since each vertex represents an element of $S_{\gamma_k}$, that is a closed ball in an ultrametric space, it is well-defined to let the distance between vertices be equal to the distance between a choice of centres for those balls. Note that if the distance between $B^k_i$ and $B^l_j$ is taken to be $\rho(x_i,x_j)$, for some choice of $x_i \in B^k_i$ and $x_j \in B^l_j$, say $\rho(x_i,x_j)=\gamma_n$ , then the join of  $B^k_i$ and $B^l_j$ is some $B^n_x$. 
 
-Finally, note that without loss of genearlity, for any $k \in \mathbb{N}$, we can reindex the $B^k_i$'s so that they give the first $\beta(k)$ terms of a $\rho_k$-ordering of $S_{\gamma_k}$, when the latter is viewed as a (finite) metric space. If the $B^k_i$'s are so indexed, then finding a $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ is straightforward: select a $B^{k+1}_j$ from each of the $B^k_i$'s in order and then start over.  The following two propositions show how this can be used to recursively build a $\rho-$ordering of $S$.
+\begin{lemma*}
+If $B^k_i$ and $B^l_j$ are two vertices in $T_S$, then $\rho(x_i,x_j)$, for any choice of  $x_i \in B^k_i$ and $x_j \in B^l_j$, is equal to the diameter of the join of  $B^k_i$ and $B^l_j$. 
+\end{lemma*}
+
+\begin{proof}
+Let $B^k_i$ and $B^l_j$ be two (distinct) vertices in $T_S$ and let $B^n_x$ be their join. The diameter of $B^n_x$ is $\gamma_n$ since $B^n_x=B(x_0, \gamma_n)$ for some $x_0$. Since $\rho$ is an ultrametric the distance between any  $x_i \in B^k_i$ and $x_j \in B^l_j$ is constant, and must be equal to the diameter of the smallest ball containing both of them, that is $\gamma_n$.
+\end{proof}
+
+In particular, we have that for any $k$ and any $i < \beta(k)$, the distances between the children of $B^k_i$ will be $\gamma_k$ and for any $i \neq j$ the distance between the children of $B^k_i$ and $B^k_j$ will be equal to the distance between  $B^k_i$ and $B^k_j$ (which will be some $\gamma_{m}, m <k$).
+
+\section*{Recusive $\rho$-orderings}
+In this section, we show how the recursive partioning of $S$ into the spaces $S_{\gamma_k}$ gives rise to a $\rho-$ordering of $S$. We first note that without loss of generality, for any $k \in \mathbb{N}$, we can reindex the $B^k_i$'s so that they give the first $\beta(k)$ terms of a $\rho_k$-ordering of $S_{\gamma_k}$, when the latter is viewed as a (finite) metric space. In the first proposition below, we note that if the $B^k_i$'s are so indexed, then finding a $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ is straightforward: select a $B^{k+1}_j$ from each of the $B^k_i$'s in order and then start over.  
 
 \begin{proposition*} 
-Let be $S$ a compact subset of an ultrametric space $(M, \rho)$ and $\Gamma_S$, the set of distances in $S$. If $S_{\gamma_k}$ is a partition of $S$ as described above for $\gamma_k \in \Gamma_S$ with $k < \infty$, where the elements are indexed according to a $\rho_k$-ordering of $S_{\gamma_k}$, then the first $\beta(k+1)$ terms in a $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ can be found by selecting at each stage $n$, a child from $B^k_{\overline{n}}$, where $\overline{n} = n \mod \beta(k) +r $ and $r$ is minimal in $\{0,\ldots,\beta(k)-1\}$ such that $B^k_{n \mod \beta(k) +r}$ still has unused children.
+Let be $S$ a compact subset of an ultrametric space $(M, \rho)$ and $\Gamma_S$, the set of distances in $S$. If $S_{\gamma_k}$ is the partition of $S$ as described above for $\gamma_k \in \Gamma_S$ with $k < \infty$, where the elements are indexed according to a $\rho_k$-ordering of $S_{\gamma_k}$, then the first $\beta(k+1)$ terms in a $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ can be found by selecting at each stage $n$, a child from $B^k_{\overline{n}}$, where $\overline{n} = n \mod \beta(k) +r $ and $r$ is minimal in $\{0,\ldots,\beta(k)-1\}$ such that $B^k_{n \mod \beta(k) +r}$ still has unused children.
 \end{proposition*}
 
 \begin{proof}
@@ -113,29 +126,27 @@ Then the $\rho_k-$sequence of  $(S_{\gamma_k}\setminus B^k_{\overline{n}})$ is s
 Now we see that $\rho_{k+1}-$sequence of $S_{\gamma_{k+1}}$ is maximized by simply skipping over $B^k_{\overline{n}}$, should all its children be exhausted, and selecting a child from $B^k_{\overline{n}+1}$. Then a $\rho_{k+1}-$ordering of $S_{\gamma_{k+1}}$ is found by selecting elements of each $B^k_i$ in order as much as possible, and skipping to $B^k_{i+1}$, when it is not possible.
 
 \end{proof}
-Note that in building the $\rho_{k+1}-$ordering of $S_{\gamma_{k+1}}$, we imposed an ordering on the elements of $S_{\gamma_k}$, but not on the individual children of a given $B^k_i$. Any choice of indexing on these children is equivalent since the distances between any two of them is $\gamma_k$ and the distance between any one of them and a child of some $B^k_j$, $i \neq j$, is the same (since each $B^k_i$ is a ball in an ultrametric space). For this reason, it also did not depend which child was chosen at a given stage. Suppose then that we have created $T_s$ and (arbitrarily) indexed the children of each vertex. Then, there is no loss of genearlity in assuming that at each stage, we select a child with smallest index among its siblings, that is, that we select the leftmost available child in $T_s$. Since for ease of indexing, we will often assume a $\rho-$ordering has been built by this convention, we introduce the following definition.
+Note that in building the $\rho_{k+1}-$ordering of $S_{\gamma_{k+1}}$ we selected, at each step, a child of some $B^k_i$, but we did not concern ourselves over which child was selected. This is because the distances between any two children of some $B^k_i$  is $\gamma_k$, and the distance between any one of them and a child of some $B^k_j$, $i \neq j$, is the same. Suppose then that we have created $T_s$ and (arbitrarily) indexed the children of each vertex. Then, there is no loss of genearlity in assuming that at each stage, we select a child with smallest index among its siblings, that is, that we select the leftmost available child in $T_s$. Since for ease of indexing, we will assume a $\rho-$ordering has been built by this convention, we introduce the following definition.
 
 \begin{definition*}
 The $\rho-$ordering of $S$ formed by pulling elements from left to right in (a choice of) $T_s$ is call the \textbf{canonical $\rho$-ordering} of $S$ (with respect to $T_s$).
 \end{definition*}
 
-The above result quickly leds to a recursive contruction for a $\rho-$ordering of $S$.
+The above proposition quickly leds to a recursive contruction for a $\rho-$ordering of $S$. Indeed, to build a $\rho-$ordering of $S$ from the above, it suffices only to make a choice of centres for each of $B^k_i$'s.
 
 \begin{proposition*}
-Let be $S$ a compact subset of an ultrametric space $(M, \rho)$ and let $\Gamma_S$ be the set of distances in $S$. Let $S_{\gamma_k}$ be a partition of $S$ as described above for $\gamma_k \in \Gamma_S$ with $k < \infty$, where the elements are indexed according to a $\rho_k$-ordering of $S_{\gamma_k}$. Suppose each of the element of $S_{\gamma_k}$ have also been partitioned into closed balls of radius $\gamma_{k+1}$, $B^k_i =\cup_{j=1}^{l_i} B^{k+1}_{i,j}, \forall i$.\\
+Let be $S$ a compact subset of an ultrametric space $(M, \rho)$ and let $\Gamma_S$ be the set of distances in $S$. Let $S_{\gamma_k}$ be the partition of $S$ as described above for $\gamma_k \in \Gamma_S$ with $k < \infty$, where the elements are indexed according to a $\rho_k$-ordering of $S_{\gamma_k}$. Suppose each of the element of $S_{\gamma_k}$ have also been partitioned into closed balls of radius $\gamma_{k+1}$, $B^k_i =\cup_{j=1}^{l_i} B^{k+1}_{i,j}, \forall i$.\\
 
 Let $x_{i,j}$ denote a choice of centre for the element $B^{k+1}_{i,j}$. Then the first $\beta(k+1)$ elements of a $\rho-$ordering of $S$ can be found by forming a matrix, $A_k$, whose $(i,j)^{th}$-entry is $x_{i,j}$, if $j \leq l_i$ and * otherwise, and then concatenating the rows.
 \end{proposition*}
 
 
 \begin{proof}
-(sketch) $A_k$ is just a representation of $T_s$ for choice of centres. Since $\rho_k$ is just $\rho$ when points are sufficiently far apart, a choice of centres in a $\rho_k$-ordering gives a $\rho$-ordering. By the above proposition, we must select elements from each $B^K_i$ one after the other, which is achieved by selecting one element from each column in order, for example by concatenating the rows. 
-
-
+The matrix $A_k$ is a representation of the $k^{th}$ and $(k+1)^{th}$ levesl of $T_S$ where the $B^k_i$'s have been replaced by a choice of centres. Since matrices must be rectangluar, the case where some $B^k_i$ and $B^k_j$ have an unequal number children is handled by inserting a placeholder, *, into $A_k$.  Moreover, since the $\rho_{k+1}$ distance between distinct closed balls is just the $\rho$ distance between a choice of centres of those  balls, a choice of centres in a $\rho_{k+1}$-ordering gives the beginning of a $\rho$-ordering.  By the above proposition, we must select elements from each $B^K_i$ one after the other, which is achieved by selecting one element from each column in order, for example by concatenating the rows (and then deleting *'s if necessary). 
 \end{proof}
 
 \begin{example}
-Let us use the above to build a $\rho$-ordering of $S=(\mathbb{Z}, \lvert \cdot \rvert_3)$. We have that $\Gamma_S=\{1, \frac{1}{3},\frac{1}{9},\frac{1}{27},\ldots \}$ and $T_s$ begins:
+Let us use the above to start a $\rho$-ordering of $S=(\mathbb{Z}, \lvert \cdot \rvert_3)$. We have that $\Gamma_S=\{1, \frac{1}{3},\frac{1}{9},\frac{1}{27},\ldots \}$ and $T_s$ begins:
 
 \begin{center}
 \begin{tikzpicture}
@@ -154,7 +165,18 @@ Let us use the above to build a $\rho$-ordering of $S=(\mathbb{Z}, \lvert \cdot 
 
 
 
-We start by finding a $\rho_1$-ordering of $S_{\gamma_1}$, but this is trival since the pairwise distance between the elements of $S_{\gamma_1}$ is always $1$. Then any choice of ordering among these elements is a $\rho_1$-ordering. In fact, since all compact ultrametric spaces are bounded, the pairwise distance between elements of $S_{\gamma_1}$ is always constant, and so we can always get started for free. We build $A_1$ by chosing a centre of each closed ball:
+We start by finding a $\rho_0$-ordering of $S_{\gamma_0}$, but this is trival since $S_{\gamma_0}$ has only a single element. Let us pick $0$ to be our choice on centre for $B^0_1=B(0,1)=\mathbb{Z}$. As we see from $T_S$, $S_{\gamma_0}$ is partitioned into $3$ closed balls of radius $\gamma_1=\frac{1}{3}$, namely $3\mathbb{Z}, 3\mathbb{Z}+1$, and $3\mathbb{Z}+2$. A choice of centres is given by $0,1$, and $2$, so that $A_0$ becomes:
+
+\[A_0=
+ \begin{pmatrix}
+0 \\
+1  \\
+2 
+\end{pmatrix}
+\]
+
+
+To start the $\rho-$ordering, concatenate the rows to obtain $\{0,1,2\}$, and to continue it, make a choice of centres for each of the closed balls of radius $\gamma_2=\frac{1}{9}$ partitioning the sets $3\mathbb{Z}+i$, $i \in 0,1,2$. For example, $3\mathbb{Z} =  9\mathbb{Z} \cup 9\mathbb{Z}+3 \cup 9\mathbb{Z}+6$, so a choice of centres is given by $\{0,3,6\}$. Making choices for the remaining elements, we obtain:
 
 \[A_1=
  \begin{pmatrix}
@@ -164,7 +186,7 @@ We start by finding a $\rho_1$-ordering of $S_{\gamma_1}$, but this is trival si
 \end{pmatrix}
 \]
 
-To find a $\rho-$ordering we concatenate the rows, $\{0,1,2,3,4,5,6,7,8\}$. This also gives the first row of $A_2$. The remaining rows are found by partitioning each of the closed balls of radius $\frac{1}{3}$ and making a choice of centre:
+To continue the $\rho-$ordering we concatenate the rows, $\{0,1,2,3,4,5,6,7,8\}$, which also gives the first row of $A_2$. The remaining rows are found by partitioning each of the closed balls of radius $\frac{1}{9}$ and again making a choice of centres:
 \[A_2=
  \begin{pmatrix}
 0 & 1 &  2 & 3 & 4 & 5 & 6 & 7 & 8 \\
@@ -173,7 +195,13 @@ To find a $\rho-$ordering we concatenate the rows, $\{0,1,2,3,4,5,6,7,8\}$. This
 \end{pmatrix}
 \]
 
+And so on. 
 \end{example}
+
+We are able to make two takeaway statements following this example. First note that in starting the $\rho-$ordering, the fact that $S_{\gamma_0}$ had only a single element allowed us to get started for free. In fact,  all compact ultrametric spaces are bounded, so this is always the case. Moreover, since we know that choice of index on the children of any vertex in $T_S$ does not influence the construction of the $\rho-$ordering, we can see that all of the isomorphic representations of $T_S$ are valid for producing $\rho-$orderings.\\
+
+The second takeaway is that we found the start of a $\rho-$ordering of $S=(\mathbb{Z}, \lvert \cdot \rvert_3)$ was given by taking the integers starting at $0$ in their natural order. If we had continued building the ordering, we would have continued to find this. The fact that the natural ordering on the integers is a $\rho_p-$ordering, where $\rho_p$ is the $p-$adic metric for any prime $p$, is well known (cf. $\ldots$), but we give an alternate proof of it here: 
+
 
 \begin{example}
 $\mathbb{Z} \setminus 4\mathbb{Z} \subset (\mathbb{Z}, \lvert \cdot \rvert_2)$
@@ -184,7 +212,8 @@ $\mathbb{Z} \setminus 4\mathbb{Z} \subset (\mathbb{Z}, \lvert \cdot \rvert_2)$
 %Interweaving the bottom row of the lattice of closed balls for a set $S$ gives a $\rho$-ordering of $S$. 
 %\end{corollary*}
 
-In the two propositions above, there was notational difficulty that arose when there was an unequal number of children between the vertices on a given level of $T_s$. This difficulty is, in fact, more than a notational inconvenience, and the situation simplifies considerably when it is not the case. We are far from the first to observe this. Amice noted this as far back as her 1964 paper, and it has been observed more recently by Fares and Petite. We first introduce a few preliminary lemmas, before moving on to describing the situation in more detail.
+\section*{Semi-regularity}
+In the two propositions above, there was notational difficulty that arose when there was an unequal number of children between the vertices on a given level of $T_s$. This difficulty is, in fact, more than a notational inconvenience, and the situation simplifies considerably when it is not the case. We are far from the first to observe this. Amice noted this as far back as her 1964 paper, and it has been observed more recently in several papers by Fares and colleagues. We first introduce a few preliminary lemmas, before moving on to describing the situation in more detail.
 
 \begin{lemma*}
 $\lfloor\frac{n}{q} \rfloor$ counts the numbers strictly less than $n$ that are congruent to $n \mod q$.
