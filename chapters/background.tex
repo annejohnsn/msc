@@ -1,59 +1,78 @@
-\section{Ultrametric basics}
+%\section{Ultrametric basics}
 
+The principal context for this thesis is an arbitrary ultrametric space, which is a metric space that also satisifies an additional axion, sometimes called the ultrametric inequality or (in the case of vector spaces) the strong triangle propery. We define  ultrametric spaces below and for the rest of this section, we review some of their more important characteristics. The proofs offered in this section are, for the most part, standard and can be found in a number of reference texts, such as \cite{ar}.\\
 
-We begin by going over definitions and basic results about ultrametric spaces. 
 \begin{definition}
-	 Let $(M, \rho)$ be a metric space, i.e., suppose $M$ is a set and $\rho: M \times M \rightarrow \mathbb{R}_{\geq 0}$ is such that:
-	\begin{itemize}
+	 Let $(M, \rho)$ be a metric space; that is, suppose $M$ is a set and $\rho: M \times M \rightarrow \mathbb{R}_{\geq 0}$ is such that:
+	\begin{enumerate}[(i)]
 		\item $\rho(x,y) = 0$ if and only if $x=y$
 		\item $\rho(x,y) = \rho(y,x)$
 		\item $\rho(x,z) \leq \rho(x,y) + \rho(y,z)$
-	\end{itemize}
-	for any $x,y,z \in M$. If $\rho$ satistifies the ultrametric inequality,
-	\begin{itemize}
-		\item $\rho(x,z) \leq max{(\rho(x,y), \rho(y,z))}$
-	\end{itemize}
-	 for any $x,y,z \in M$, then $(M, \rho)$ is an \textbf{ultrametric space}.
+	\end{enumerate}
+	for any $x,y,z \in M$. If $\rho$ satistifies the ultrametric inequality,	
+		\[ \rho(x,z) \leq \max{(\rho(x,y), \rho(y,z))}\]
+for any $x,y,z \in M$, then $(M, \rho)$ is an \textbf{ultrametric space}.
 \end{definition}
 
+A special case of an ultrametric space, and one where much of the previous work on this topic has been completed, is one where the metric has been derived from a norm on a vector space. \\
+
 \begin{definition}
-	 Let $(V, N)$ be a normed vector space, i.e., suppose $V$ is $\mathbb{F-}$vector space, $\mathbb{F}$ a subfield of $\mathbb{C}$, and $N: V \rightarrow \mathbb{R}_{\geq 0}$  is such that:
-	\begin{itemize}
+	 Let $(V, N)$ be a normed vector space; that is, suppose $V$ is $\mathbb{F-}$vector space, for $\mathbb{F}$ some subfield of $\mathbb{C}$, and $N: V \rightarrow \mathbb{R}_{\geq 0}$  is such that:
+	\begin{enumerate}[(i)]
 		\item $N(x +y ) \leq N(x) + N(y)$
-		\item $N(cx) = \lvert c \rvert N(X)$
+		\item $N(cx) = \lvert c \rvert \text{ } N(X)$
 		\item $N(x) = 0$ implies $x=0$
-	\end{itemize}
+	\end{enumerate}
 	for any $x,y \in V$ and $c \in \mathbb{F}$. We say that $N$ satisfies the \textbf{strong trianlge inequality} if
-	\[N(x + y) \leq max(N(x), N(y))\]
+	\[ N(x + y) \leq \max(N(x), N(y)) \]
 	for any $x,y \in V$.
 \end{definition}
 
 \begin{proposition}
-	Let $(V,N)$ be a normed vector space and suppose $N$ satisfies the strong triangle inequality. Then the metric space, $(V,\rho_N)$, where $\rho_N$ is the metric induced by $N$, i.e. $\rho_N(x,y) = N(x-y)$, is an ultrametric space.
+	Let $(V,N)$ be a normed vector space and suppose $N$ satisfies the strong triangle inequality. Then the metric space, $(V,\rho_N)$, where $\rho_N$ is the metric induced by $N$, that is, $\rho_N(x,y) = N(x-y)$, is an ultrametric space.
 \end{proposition}
 
+\begin{proof}
+We take for granted that  $(V,\rho_N)$ is a metric space and also note that 
+\[N(x + z) \leq \max(N(x), N(z))\]
+ implies  
+\[\rho_N(x,z) \leq \max(\rho_N(x,0), \rho_N(z,0)) \leq \max(\rho_N(x,y), \rho_N(y,z))\]
+\end{proof}
+
+\begin{notation*}
+ If $(V, N)$ is a normed vector space, then the metric induced by $N$ is denoted $\rho_N$.
+\end{notation*}
+
+Ultrametric spaces exhibit properties much unlike traditional metric spaces, and we review of few of these below. Of particular interest to us is the behavior between (closed) balls in an ultrametric space.
+
+\begin{notation*}
+	Let $(M, \rho)$ be a compact ultrametric space and let \[B(a, r)=\{x \in M \mid \rho(x,a) \leq r\}\] denote the \textit{closed} ball of radius $r$, centred at $a$ for some $r \in \mathbb{R}_{\geq 0}$ and $a \in (M,\rho)$.
+\end{notation*} 
+In the above notation, we break from  convention in that we denote a closed ball without using any decoration and by omitting any notation for an open ball. This because, for the most part, the notion of open and closed ball in an ultrametric space overlap, although we will need a few more facts before showing this.
+
 \begin{definition}
-The \textbf{diameter of $S$} is $diam(S) = \max\limits_{x,y\in S}\rho(x,y)$. 
+Let $S$ be a subset of an ultrametric space. The \textbf{diameter of $S$} is $diam(S) = \max\limits_{x,y\in S}\rho(x,y)$. 
 \end{definition}
 
 \begin{proposition}
-	\cite{ar} All triangles in an ultrametric space $(M,\rho)$ are either equilateral or isosceles, with at most one short side. 
+	Let $B(a, r)$ be a (closed) ball in an ultrametric space $(M,\rho)$. Then the diameter of $B$ is less than or equal to the radius of $B$.    
 \end{proposition}
 
-\begin{notation*}
-	Let $(M, \rho)$ be a compact ultrametric space and let \[B_r(a)=\{x \in M \mid \rho(x,a) < r\}\] denote the open ball of radius $r$, centred at $a$ for some $r \in \mathbb{R}_{\geq 0}$ and $a \in (M,\rho)$. Likewise let \[\overline{ B_r(a)}=\{x \in M \mid 		\rho(x,a) \leq r\}\]  denote the closed ball of radius $r$, centred at $a$ for some $r \in \mathbb{R}_{\geq 0}$ and $a \in (M,\rho)$.
-\end{notation*} 
+\begin{proof}
+Suppose $d = diam(B)$. If $d > r$, this would imply there exists $x,y$ in $B(a,r)$ such that $\rho(x,y) > r$, but this would mean $\rho(x,y)$ is strictly greater than $\max(\rho(x,a), \rho(y,a))$, which is a contradiction since $\rho$ is an ultrametric.
+\end{proof}
 
 \begin{proposition}
-	Let $B_r(a)$ be an open ball in an ultrametric space $(M,\rho)$. Then the diameter of $B$, $d=diam(B)=\sup_{x,y \in B}{\rho(x,y)}$, is less than or equal to the radius of $B$.    
+	 All triangles in an ultrametric space $(M,\rho)$ are either equilateral or isosceles, with at most one short side. 
 \end{proposition}
+
 
 \begin{proposition}
 	If $(M, \rho)$ is an ultrametric space and $B_{r_1}(x_0)$ and $B_{r_2}(y_0)$ are balls in $(M, \rho)$, then either $B_{r_1}(x_0) \cap B_{r_2}(y_0) = \emptyset$, $B_{r_1}(x_0) \subseteq B_{r_2}(y_0)$, or $B_{r_2}(x_0) \subseteq B_{r_1}(x_0)$. That is, in an ultrametric space, all balls are either comparable or disjoint.
 \end{proposition}
 
 \begin{proposition}
-\cite{ar} The distance between any two balls in an ultrametric is constant. That is, if $B_{r_1}(x_0)$ and $B_{r_2}(y_0)$ are two balls in an ultrametric space $(M,\rho)$, then there exists a $c \in \mathbb{R}_{\geq 0}$ such that  $\rho(x,y)=c$, $\forall x \in B_{r_1}(x_0)$ and $\forall y \in B_{r_2}(y_0)$
+ The distance between any two balls in an ultrametric is constant. That is, if $B_{r_1}(x_0)$ and $B_{r_2}(y_0)$ are two balls in an ultrametric space $(M,\rho)$, then there exists a $c \in \mathbb{R}_{\geq 0}$ such that  $\rho(x,y)=c$, $\forall x \in B_{r_1}(x_0)$ and $\forall y \in B_{r_2}(y_0)$
 \end{proposition}
 
 \begin{proof}
@@ -61,7 +80,12 @@ Write a proof - this is because all triangesl are isosceles.
 \end{proof}
 
 \begin{proposition}
-\cite{ar} Every point of a ball in an ultrametric is at its centre. That is, if $B_r(x_0)$ is a ball in an ultrametric space $(M,\rho)$, then $B_r(x)=B_r(x_0)$,  $\forall x \in B_r(x_0)$
+ Every point of a ball in an ultrametric is at its centre. That is, if $B_r(x_0)$ is a ball in an ultrametric space $(M,\rho)$, then $B_r(x)=B_r(x_0)$,  $\forall x \in B_r(x_0)$
+\end{proposition}
+
+
+\begin{proposition}
+Let $B(a, r)$ be a closed ball in an ultrametric space. Then there exists $ r' > r \in \mathbb{R}$ such that $B(a, r) = \{x \in M \mid \rho(x,a) < r'\} $; that is, every closed ball is also an open ball with the same centre and  slightly larger radius.
 \end{proposition}
 
 
@@ -78,6 +102,7 @@ It will become useful to write the set of distances occuring in $S$ as a sequenc
 $$\Gamma_S = \{\gamma_0 = d =diam(S), \gamma_1, \gamma_2, \ldots, \gamma_\infty =0 \}$$
 
 where $\gamma_i \in  \Gamma_S$ if and only if $\exists x,y \in S$ such that $\rho(x,y) = \gamma_i$ and  $\gamma_i < \gamma_j$ if and only if $i > j$. 
+
 
 \newpage
 \section*{$\rho$-orderings, $\rho$-sequences, and valuative capacity}
