@@ -8,15 +8,15 @@ In the section we explore the subspaces of $S$ formed by considering closed ball
 
  Now fix some $k \in \mathbb{N}$, and consider for a moment the set of closed balls of radius $\gamma_k$ in $S$. We could denote these alternatively by $B^M(x, \gamma_k) \cap S$ or by  $B^S(x, \gamma_k)$, but when there is no risk of confusion, we will denote them simply by $B(x, \gamma_k)$. Clearly, the set  $\{B(x, \gamma_k); x \in S\}$ forms a cover of $S$. Although we have build the cover using closed balls, since each set in an ultrametric is clopen, this gives an open cover of $S$ (in fact, each element is not only an open set, but also an open ball for some radius slightly bigger than $\gamma_k$). Then since $S$ is compact, we must have some $x_1,\ldots, x_n$  such that $S= \cup_{i=1}^n B(x_i, \gamma_k)$. In fact,  since $\rho$ is an ultrametric, we can pick the $x_i$'s so that $\cup_{i=1}^n B(x_i, \gamma_k)$ will be a disjoint union and therefore a partition of $S$. Note that both $n$ and the $x_i$'s depend on our fixed $k$, but that $n$ is independent of the $x_i$'s, since any choice of centres is equivalent. We rephrase this with following definition and lemma:
 
-\begin{definition*}
+\begin{definition}
 For $S$ and $\Gamma_S$ as above, and $k \in \mathbb{N}$, fixed,  define $\sim_k$ to  be the relation on $S$ given by \[x \sim_k y\text{ if and only if  }\rho(x,y) \leq \gamma_k\] i.e.,  $x \sim_k y$ if and only if $B_{\gamma_k}(x) = B_{\gamma_k}(y)$.
-\end{definition*}
+\end{definition}
 
 The fact $\sim_k$ is an equivalence relation on $S$ is equivalent to the observation that every point in a ultrametric ball is at its centre:
 
-\begin{lemma*}
+\begin{lemma}
 Let  $S$ and $\Gamma_S$ be as above, then $\sim_k$ is an equivalence relation on $S$.
-\end{lemma*}
+\end{lemma}
 
 \begin{proof}
 $\sim_k$ is clearly reflexive and symmetric, since $\rho$ is a metric. Transitivity results from the ultrametric property of $\rho$: if $x \sim_k y$ and $y \sim_k z$, then $$\rho(x, z) \leq \max(\rho(x,y), \rho(z,y)) \leq \gamma_k$$ so $x \sim_k z$. 
@@ -24,7 +24,7 @@ $\sim_k$ is clearly reflexive and symmetric, since $\rho$ is a metric. Transitiv
 
  We denote the set of equivalence classes of $S/\sim_k$ by $S_{\gamma_k}$. We have defined  $S_{\gamma_k}$ to be the set of equivalence classes in $S$ under the relation $\sim_k$, which is equivalent to letting $S_{\gamma_k}$ be the set of closed balls of fixed radius $\gamma_k$ in  $S$. We now offer a third perspective on the elements on $S_{\gamma_k}$, which is due to \cite{na},
 
-\begin{lemma*}
+\begin{lemma}
 For each $k$, the elements of $S_{\gamma_k}$, that is, the closed balls of radius $\gamma_k$, themselves form an ultrametric space, where the metric is given by:
 \[ \rho_k(B(x, \gamma_k),B(y, \gamma_k)) = 
 \begin{cases}
@@ -32,7 +32,7 @@ For each $k$, the elements of $S_{\gamma_k}$, that is, the closed balls of radiu
 0, & \text{if }   \rho(x,y) \leq \gamma_k \text{, i.e., } B(x, \gamma_k)=B(y, \gamma_k)
 \end{cases}
 \]
-\end{lemma*}
+\end{lemma}
 
 \begin{proof}
 $\rho_k$ is reflexive, symmetric and transitive since $\rho$ is. Likewise, $\rho_k$ satisfies the ultrametric property, since $\rho$ does: let $B(x, \gamma_k),B(y, \gamma_k)$ and $B(z, \gamma_k)$ be any three elements of $S_{\gamma_k}$ and suppose $\rho_k(B(x, \gamma_k),B(y, \gamma_k)) > 0 $. Then,
@@ -46,18 +46,18 @@ since $ \gamma_k < \max(\rho(x,z), \rho(y,z))$ implies that at least one of $\rh
 
 So now the elements of $S_{\gamma_k}$ may be viewed as either equivalence classes, closed balls of fixed radius, or points in a new metric space. We  make a final definition and introduce some notation before moving on.
 
-\begin{definition*}
+\begin{definition}
 Let $S$ and $\Gamma_S$ be as above. Define $\beta(i)_{i \geq 0}$ to be the sequence given by $\beta(i) = \lvert  S_{\gamma_i}\rvert$, which is an invariant of $S$ and which counts the number of connected components of $S_{\gamma_i}$ (that is, the points of $S_{\gamma_i}$), when viewed as a metric space. When necessary, we use $\beta^S(i)$ to denote the $\beta$ sequence for a given, compact  ultrametric space $S$. Adapting the terminology in \cite{fp}, we call $\beta^S(i)$ the \textbf{structure sequence} of $S$.
-\end{definition*}
+\end{definition}
 
-\begin{notation*}
+\begin{notation}
 Let $S_{\gamma_k}$ be as above. We denote the elements of $S_{\gamma_k}$ by $B^k_1, \ldots, B^k_{\beta(k)}$ or by $B^{S,k}_1, \ldots, B^{S,k}_{\beta(k)}$, when necessary.
-\end{notation*}
+\end{notation}
 
 
 We return to the sequence $\beta(i)$ at the end of this section. For now, we show how a $\rho-$ordering of $S$ can be built recursively from the spaces $S_{\gamma_k}$. This begins by noting that the spaces themselves can be built recursively:
 
-\begin{observation*}
+\begin{observation}
 Let $S$, $\Gamma_S$, and $S_{\gamma_k}$ be as above. Then $S_{\gamma_k+1}$ can be constructed by partitioning each of the closed balls in $S_{\gamma_k}$ into closed balls of radius $\gamma_{k+1}$ and taking their union:  Let $B(x_i, \gamma_k)$  be an element of $S_{\gamma_k}$, denoted by  $B^k_i$. Then, there exists $x_{i,1},\ldots, x_{i,l_{i}} \in B^k_i$ such that,
 
 \[B^k_i=  \bigcup_{j=1}^{l_i} B(x_{i,j}, \gamma_{k+1})\] and  \[B(x_{i,j}, \gamma_{k+1}) \cap B(x_{i,j'}, \gamma_{k+1}) = \emptyset \text{, }\forall j,j' \in 1:l_i\] 
@@ -68,11 +68,11 @@ and so
 
 
 where $\cup_{j=1}^{l_i} B(x_{i,j},\gamma_{k})=B(x_i, \gamma_{k+1}) = B^k_i$, $\forall i$.
-\end{observation*}
+\end{observation}
 
 Since $S$ is compact, hence bounded, if we represent this process schematically we obtain a tree, where the root node is $B^0_1=B(x,\gamma_0)$, for any choice of $x \in S$, and the children of any given $B^m_n$ are such that they form a partition of their join.  Since we will often refer to this schematic representation, we define it below.
 
-\begin{definition*}
+\begin{definition}
 If $S$ is a compact subset of an ultrametric space, then $T_s$ is the tree whose vertices are $B^k_i$, that is the elements of $S_{\gamma_k}$, and whose edgeset, $E$, is given by $ (B^i_k, B^j_l) \in E$ if, and only if, $ j = i+1$ and $B^j_l \subseteq B^i_k$ for some choice of representatives $B(x_k,\gamma_i)$ and $B(x_l, \gamma_j)$, as shown below:\\
 
 \tikzset{font=\small,
@@ -87,15 +87,15 @@ level distance=1.75cm,
 	                   [.$B^1_{\beta(1)}$ \edge [draw=none]; [. $\ldots$ \edge [draw=none]; [.$B^k_{\beta(k)}$ [. $B^{k+1}_{\sum\limits_{\mathclap{i < \beta(k)}}  l_i + 1 }$ ] [. $\ldots$ ] [. $B^{k+1}_{\beta(k+1)}$ ] ] ] ] ]
 \end{tikzpicture}
 \end{center}
-\end{definition*}
+\end{definition}
 
 Before going on, first note that we have drawn $T_S$ such that leftmost child of some $B^k_i$ is $B^{k+1}_j$ where $j$ is minimal among the children of $B^k_i$, and then continued in increasing order. In general, if we draw $T_S$ so that the children of a given vertex are depicted in increasing order according to their index, then  each choice of indexing for the elements of $S_{\gamma_k}$ produces a different graphical representation of $T_S$. The structures produced by different choices of indices are clearly isomorphic as trees, and as we will see by the end of the section, each choice of indexing will be valid for our purposes as well.\\
 
 Of central importance to us is the distance between two vertices in $T_s$. Since each vertex represents an element of $S_{\gamma_k}$, that is a closed ball in an ultrametric space, it is well-defined to let the distance between vertices be equal to the distance between a choice of centres for those balls. Note that if the distance between $B^k_i$ and $B^l_j$ is taken to be $\rho(x_i,x_j)$, for some choice of $x_i \in B^k_i$ and $x_j \in B^l_j$, say $\rho(x_i,x_j)=\gamma_n$ , then the join of  $B^k_i$ and $B^l_j$ is some $B^n_x$. 
 
-\begin{lemma*}
+\begin{lemma}
 If $B^k_i$ and $B^l_j$ are two vertices in $T_S$, then $\rho(x_i,x_j)$, for any choice of  $x_i \in B^k_i$ and $x_j \in B^l_j$, is equal to the diameter of the join of  $B^k_i$ and $B^l_j$. 
-\end{lemma*}
+\end{lemma}
 
 \begin{proof}
 Let $B^k_i$ and $B^l_j$ be two (distinct) vertices in $T_S$ and let $B^n_x$ be their join. The diameter of $B^n_x$ is $\gamma_n$ since $B^n_x=B(x_0, \gamma_n)$ for some $x_0$. Since $\rho$ is an ultrametric the distance between any  $x_i \in B^k_i$ and $x_j \in B^l_j$ is constant, and must be equal to the diameter of the smallest ball containing both of them, that is $\gamma_n$.
@@ -106,9 +106,9 @@ In particular, we have that for any $k$ and any $i < \beta(k)$, the distances be
 \section*{Recusive $\rho$-orderings}
 In this section, we show how the recursive partioning of $S$ into the spaces $S_{\gamma_k}$ gives rise to a $\rho-$ordering of $S$. We first note that without loss of generality, for any $k \in \mathbb{N}$, we can reindex the $B^k_i$'s so that they give the first $\beta(k)$ terms of a $\rho_k$-ordering of $S_{\gamma_k}$, when the latter is viewed as a (finite) metric space. In the first proposition below, we note that if the $B^k_i$'s are so indexed, then finding a $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ is straightforward: select a $B^{k+1}_j$ from each of the $B^k_i$'s in order and then start over.  
 
-\begin{proposition*} 
+\begin{proposition} 
 Let be $S$ a compact subset of an ultrametric space $(M, \rho)$ and $\Gamma_S$, the set of distances in $S$. If $S_{\gamma_k}$ is the partition of $S$ as described above for $\gamma_k \in \Gamma_S$ with $k < \infty$, where the elements are indexed according to a $\rho_k$-ordering of $S_{\gamma_k}$, then the first $\beta(k+1)$ terms in a $\rho_{k+1}$-ordering of $S_{\gamma_{k+1}}$ can be found by selecting at each stage $n$, a child from $B^k_{\overline{n}}$, where $\overline{n} = n \mod \beta(k) +r $ and $r$ is minimal in $\{0,\ldots,\beta(k)-1\}$ such that $B^k_{n \mod \beta(k) +r}$ still has unused children.
-\end{proposition*}
+\end{proposition}
 
 \begin{proof}
 Let $S$, $S_{\gamma_K}$, and $S_{\gamma_{k+1}}$ be as above. In particular, suppose the elements of $S_{\gamma_k}$ are indexed according to a $\rho_k-$ordering. Denote the elements of $S_{\gamma_{k+1}}$ by $B^{k+1}_{i,j}$ where the first subscript indicates that the elements is a child of $B^k_i$. To form a $\rho_{k+1}$ ordering of $S_{\gamma_{k+1}}$, we must maximize the product of distances at each step $n$.\\
@@ -128,17 +128,17 @@ Now we see that $\rho_{k+1}-$sequence of $S_{\gamma_{k+1}}$ is maximized by simp
 \end{proof}
 Note that in building the $\rho_{k+1}-$ordering of $S_{\gamma_{k+1}}$ we selected, at each step, a child of some $B^k_i$, but we did not concern ourselves over which child was selected. This is because the distances between any two children of some $B^k_i$  is $\gamma_k$, and the distance between any one of them and a child of some $B^k_j$, $i \neq j$, is the same. We can now see, as claimed above, that any of the isomorphic versions of $T_ S$ are valid for producing $\rho-$orderings. Suppose then that we have created $T_s$ and (arbitrarily) indexed the children of each vertex. Then, there is no loss of genearlity in assuming that at each stage, we select a child with smallest index among its siblings, that is, that we select the leftmost available child in $T_s$. Since for ease of indexing, we will assume a $\rho-$ordering has been built by this convention, we introduce the following definition.
 
-\begin{definition*}
+\begin{definition}
 The $\rho-$ordering of $S$ formed by pulling elements from left to right in (a choice of) $T_s$ is call the \textbf{canonical $\rho$-ordering} of $S$ (with respect to $T_s$).
-\end{definition*}
+\end{definition}
 
 The above proposition quickly leds to a recursive contruction for a $\rho-$ordering of $S$. Indeed, to build a $\rho-$ordering of $S$ from the above, it suffices only to make a choice of centres for each of $B^k_i$'s.
 
-\begin{proposition*}
+\begin{proposition}
 Let be $S$ a compact subset of an ultrametric space $(M, \rho)$ and let $\Gamma_S$ be the set of distances in $S$. Let $S_{\gamma_k}$ be the partition of $S$ as described above for $\gamma_k \in \Gamma_S$ with $k < \infty$, where the elements are indexed according to a $\rho_k$-ordering of $S_{\gamma_k}$. Suppose each of the element of $S_{\gamma_k}$ have also been partitioned into closed balls of radius $\gamma_{k+1}$, $B^k_i =\cup_{j=1}^{l_i} B^{k+1}_{i,j}, \forall i$.\\
 
 Let $x_{i,j}$ denote a choice of centre for the element $B^{k+1}_{i,j}$. Then the first $\beta(k+1)$ elements of a $\rho-$ordering of $S$ can be found by forming a matrix, $A_k$, whose $(i,j)^{th}$-entry is $x_{i,j}$, if $j \leq l_i$ and * otherwise, and then concatenating the rows.
-\end{proposition*}
+\end{proposition}
 
 
 \begin{proof}
@@ -204,9 +204,9 @@ We are able to make two statements following this example. The first is that in 
 
 The second takeaway is that we found the start of a $\rho-$ordering of $S=(\mathbb{Z}, \lvert \cdot \rvert_3)$ was given by taking the integers starting at $0$ in their natural order. If we had continued building the ordering, we would have continued to find this. The fact that the natural ordering on the integers is a $\rho_p-$ordering, where $\rho_p$ is the $p-$adic metric for any prime $p$, is well known (cf. $\ldots$), but we give an alternate proof of it here: 
 
-\begin{corollary*} 
+\begin{corollary} 
 Let $S$ be the ultrametric space $(\mathbb{Z}, \rho_p)$, where $\rho_p$ is  $p-$adic metric for any prime $p$. The a $\rho_p-$ordering of $S$ can be found by taking the integers, starting at $0$, in their natural order.
-\end{corollary*}
+\end{corollary}
 
 \begin{proof}
 We prove the above by induction on $k$. First note that for any choice of prime, the elements of $S_{\gamma_1}$ are the cosets of $\mathbb{Z}$ modulo $p$, so that $A_0$ has $p$ columns. Since $\{0,1,2\ldots,p-1\}$ are distributed among each of these cosets, without loss of generality the first row of $A_0$ is given by $[0,1,2,\ldots, p-1]$ in order.\\
@@ -281,36 +281,36 @@ So that a $\rho_2-$ordering of $S=\mathbb{Z}_{(2)} \setminus 4\mathbb{Z}$ starts
 \end{example}
 
 
-%\begin{corollary*}
+%\begin{corollary}
 %Interweaving the bottom row of the lattice of closed balls for a set $S$ gives a $\rho$-ordering of $S$. 
-%\end{corollary*}
+%\end{corollary}
 In the two propositions above, there was notational difficulty that arose when there was an unequal number of children between the vertices on a given level of $T_s$. This difficulty is, in fact, more than a notational inconvenience, and the situation simplifies considerably when it is not the case. We are far from the first to observe this. Amice noted this as far back as her 1964 paper, and it has been observed more recently in several papers by Fares and colleagues. The following section discusses this in more detail, first by supplying some preliminary lemmas and then showing how calculations are simplified in this setting.
 
 \section*{Semi-regularity}
 In this section, we restrict to the case where in the tree $T_s$, for $S$ some compact subset of an ultrametric space, every vertex on a given level has the same number of children. In this case, we can attach another sequence to $S$, which we call the $\alpha-$sequence of $S$ and which describes, for each level $k \in \mathbb{N}$, the size of the partitions on that level. We develop some preliminary lemmas, which we then use to derive formulae for this special case.
 
-\begin{definition*}
+\begin{definition}
 Let $S$ be as above, a compact subset of an ultrametric space $(M, \rho)$. We say that $S$ is \textbf{semi-regular} if $T_{B^k_i} \cong T_{B^k_j}$, $\forall k \in \mathbb{N}$ and  $i,j \in \beta(k)$, and where the isomorphism is understood as an isomorphism of trees. That is, $S$ is semi-regular if each ball of radius $\gamma_k$ breaks into the same number of balls of radius $\gamma_{k+1}$, for all $k$. If there exists an $n \in \mathbb{N}$ such that $T_{B^N_i} \cong T_{B^N_j}$ for all $N \geq n$, i.e.  each ball of radius $\gamma_N$ breaks into the same number of balls of radius $\gamma_{N+1}$ for $N \geq n$, then we say $S$ is \textbf{eventually semi-regular}.
-\end{definition*}
+\end{definition}
 
-\begin{definition*}
+\begin{definition}
 Suppose $S$ is a compact subset of an ultrametric space and $S$ is semi-regular. The \textbf{$\alpha$-sequence} of $S$ is the sequence given by $\alpha(k)=\frac{\beta(k+1)}{\beta(k)}$, which is in $\mathbb{N}$ for each $k$. That is, if $B^k_i$ is an element of $S_{\gamma_k}$, then $\alpha(k)$ is equal to the number of children of $B^k_i$ in $T_s$. Since $S$ is semi-regular, this number does not depend on $i$.
-\end{definition*}
+\end{definition}
 
 
-\begin{lemma*}
+\begin{lemma}
 $\lfloor\frac{n}{q} \rfloor$ counts the numbers strictly less than $n$ that are congruent to $n \mod q$.
-\end{lemma*}
+\end{lemma}
 
 \begin{proof}
 (sketch) Every multiple of $q$ produces exactly one of the numbers from $1$ to $q$ and exactly one of those is the residue class of $n$ modulo $q$. The remainder is the residue class of $n$ itself and since we only want the numbers strictly less than $n$, we ignore this by taking the floor.
 \end{proof}
 
 
-\begin{lemma*}
+\begin{lemma}
 \[\lfloor\frac{n}{b} \rfloor - \lfloor \frac{n}{ab} \rfloor = \sum_{k=1}^{a-1} \lfloor \frac{n + kb}{ab} \rfloor\] for $n,a,b \in \mathbb{N}$. In particular, 
 \[\lfloor\frac{n}{b} \rfloor - \lfloor \frac{n}{2b} \rfloor= \lfloor \frac{n+b}{2b} \rfloor\] for  $n,b \in \mathbb{N}$.
-\end{lemma*}
+\end{lemma}
 
 \begin{proof}
 \[\lfloor\frac{n}{b} \rfloor - \lfloor \frac{n}{ab} \rfloor = \lfloor a \cdot \frac{n}{ab} \rfloor - \lfloor \frac{n}{ab} \rfloor  = \sum_{k=0}^{a-1} \lfloor \frac{n}{ab} + \frac{k}{a} \rfloor - \lfloor \frac{n}{ab} \rfloor \text{ (*)}\]
@@ -318,19 +318,19 @@ $\lfloor\frac{n}{q} \rfloor$ counts the numbers strictly less than $n$ that are 
 where the final step in (*) is due to Hermite's identity: $\lfloor nx \rfloor = \sum_{k=0}^{n-1} \lfloor x + \frac{k}{n} \rfloor$, for $n \in \mathbb{N}$ and $x \in \mathbb{R}$.
 \end{proof}                                                                                                              
 
-\begin{lemma*}
+\begin{lemma}
 If $S$ is semi-regular and $\delta$ denotes the canonical $\rho$-ordering of $S$, that is, a $\rho-$ordering formed by pulling from left to right in $T_s$, then \[\rho(\delta(n),\delta(m))=\gamma_k\] if, and only if, \[ n=m \mod \beta(k) \text{  and } n \neq m \mod \beta(k+1)\]
-\end{lemma*}
+\end{lemma}
 
 \begin{proof}
 Since $S$ is semi-regular, every sequence of $\beta(k)$ terms in $\delta$ will be from each of distinct elements of $S_{\gamma_k}$ (for any $k$). Moreover, since $\delta$ is a canonical $\rho-$ordering, we always pull from the elements of $S_{\gamma_k}$ in the same order. Then $\delta(n)$ and $\delta(m)$ are descendents of some $B^k_j$ if, and only if, $n = m \mod \beta(k)$. Then the result follows since $\rho(\delta(n),\delta(m))=\gamma_k$ if, and only if, $B^k_i$ for some $i \in 1,\ldots, \beta(k)$ is the join of $B^n_i \ni \delta(n)$ and $B^m_{i'} \ni \delta(m)$.  \\ 
 \end{proof}
 
 
-\begin{proposition*}
+\begin{proposition}
 If $S$ is a semi-regular ultrametric space, $\sigma$ is the characteristic sequence of $S$, $\beta$ is the structure sequence of $S$, and $\alpha$ is the sequence describing the semi-regularity, then
 \[v_{\gamma_k}(\sigma(n)) =  \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor = \sum_{j=1}^{\alpha(k)-1} \lfloor \frac{n + j\cdot \beta(k)}{\alpha(k)\beta(k)} \rfloor\]
-\end{proposition*}
+\end{proposition}
 
 \begin{proof}
 The exponent of $\gamma_k$ in the $n^{th}$ term of the characteristic sequence is the number of $m$ strictly less than $n$ such that $\rho(\sigma(n),\sigma(m))=\gamma_k$. By the lemma above, this the number of $m <n$ such that $m = n \mod \beta(k)$  and $m \neq n \mod \beta(k+1)$, which by the previous lemma is $\lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor$. Then we have:
@@ -362,9 +362,9 @@ since $\lfloor \frac{n}{p^k} \rfloor = 0$ if $ p^k > n \iff log(p^k) > log(n) \i
 
 Some comment about how the above starts to build up a toolkit independent of  algebraic structure in $S$.
 
-\begin{corollary*}
+\begin{corollary}
 If $G$ is a compact ultrametric group, then $G$  is semi-regular.
-\end{corollary*}
+\end{corollary}
 
 \begin{proof}
 Since $G$ is a group, each ball centred at $0$ is in fact a subgroup of $G$. Then each set of elements of $S_{\gamma_k}$ is a collection of cosets of $G/B(0,\gamma_k)$. Since $G$ is assumed to be compact, $G/B(0,\gamma_k)$ is finite and so Lagrange's theorem implies the result.
@@ -372,20 +372,20 @@ Since $G$ is a group, each ball centred at $0$ is in fact a subgroup of $G$. The
 
 Semi-regularity gives a notion of translation invariance to ultrametric spaces that are not themselves groups. In the previous section, we observed that spaces which admitted both translation invariance and scaling had valuative capacity that could be computed explicity via the subadditivity formula. Is there a way to define this for ultrametric which are not normed vector spaces?
 
-\begin{definition*}
+\begin{definition}
 Let $S$ be a semi-regular compact subset of an ultrametric space. If there exists a $q \in \mathbb{N}$ such that $\alpha(n) = q$, for all $n$, then $S$ is said to be \textbf{regular}. If there exists a $q \text{ and } N$ in $\mathbb{N}$ such that $\alpha(n) = q$, for all $n \geq N$, then $S$ is said to be $\textbf{eventually regular}$.
-\end{definition*}
+\end{definition}
 
 Alt.:
-\begin{definition*}
+\begin{definition}
 Let $S$ be a semi-regular compact subset of an ultrametric space. If there exists a $q_1,\ldots,q_m \in \mathbb{N}$ such that $\alpha(n) = q_i$ if, and only if, $n = i \mod m$, that is, $\alpha$ has an infinitely-repeating finite subsequence of length $m$, then we say $S$ is $\textbf{periodic}$. If $m=1$, then $S$ is $\textbf{regular}$. 
-\end{definition*}
+\end{definition}
 
 $S$ is regular just in case the $\alpha-$sequence of $S$ is constant. In what follows, we assume that $S$ is regular, but the results carry over to the case where $S$ is peroidic with the obvious adjustments. To make use of regularity in $S$ we should, before continuing, also put some constraints on our sequence of distances $\Gamma_S$.
 
-\begin{definition*}
+\begin{definition}
 Let $S$ be a compact subset of an ultrametric space and $\Gamma_S$ is the sequence of decreasing distances in $S$. Then we say $S$ is \textbf{well-behaved} (I guess - or tame? reasonable?), if $S$ is semi-regular and $\gamma_k = \alpha(k)^{c_k}$ for all $k \in \mathbb{N}$ and some $c_k \in \mathbb{Z}$.
-\end{definition*}
+\end{definition}
 
 \begin{example}
 Any ultrametric space where $\rho$ is induced from a valuation domain.
@@ -403,13 +403,13 @@ Note that the coefficient $ (c_{k+1} - c_k)$  is always positive: since $\Gamma$
 
 \[\omega(S) = \lim_{n\to\infty} \sum_{k=0}^{\lceil log_q(n) \rceil} (c_{k+1} - c_k) \cdot(\lfloor\frac{n}{q^{k+1}}\rfloor)\]
 
-%\begin{corollary*}
+%\begin{corollary}
 %If $S$ is a (eventually) semi-regular ultrametric space and the $\alpha$ sequence of $S$ is (eventually)  periodic, then the valuative capacity of $S$ is algebraic.
-%\end{corollary*}
+%\end{corollary}
 
-%\begin{corollary*}
+%\begin{corollary}
 %Suppose $S$ and $T$ are compact subsets of an ultrametric space $M$ with $\Gamma_S = \Gamma_T$ and $\mid S_{\gamma_k}\mid =\mid T_{\gamma_k}\mid$, $\forall k$. Then $\omega(S) = \omega(T)$. 
-%\end{corollary*}
+%\end{corollary}
 %\begin{itemize}
 %\item i think this coincides with translation invariance when there is a group operation
 %\end{itemize}
@@ -417,14 +417,14 @@ Note that the coefficient $ (c_{k+1} - c_k)$  is always positive: since $\Gamma$
 
 %Semi-regularity in $S$ reflects horizontal similarity on every level of $T_S$, and so we expect semi-regularity to simplify the calculation of valuative capacity.
 
-%\begin{proposition*}
+%\begin{proposition}
 %Let $S$ be a semi-regular, compact subset of an ultrametric space. Let $\Gamma_S$ be the set of distances in $S$ and let $B$ be the first element of $S_{\gamma_1}$. Let $\sigma^S(i)$  be the characteristic sequence of $S$ and $\sigma^B(i)$ be the characteristic sequence of $B$. Then,
 
 %\[\sigma^S(\beta(0) \cdot n)=\gamma_0^c \cdot \sigma^{B}(n)\]
 
 %where $c$ counts the numbers in $1$ to $\beta(0) \cdot n$ that are not divisible by $\beta(0)$.
 
-%\end{proposition*}
+%\end{proposition}
 
 %\begin{proof}
 %(sketch)
