@@ -211,7 +211,7 @@ Let $S$ be the ultrametric space $(\mathbb{Z}, \rho_p)$, where $\rho_p$ is  $p-$
 \begin{proof}
 We prove the above by induction on $k$. First note that for any choice of prime, the elements of $S_{\gamma_1}$ are the cosets of $\mathbb{Z}$ modulo $p$, so that $A_0$ has $p$ columns. Since $\{0,1,2\ldots,p-1\}$ are distributed among each of these cosets, without loss of generality the first row of $A_0$ is given by $[0,1,2,\ldots, p-1]$ in order.\\
 
-Now suppose that the first row of $A_k$ is given by $[0,1,2,\ldots,n]$ for $0 \leq k < k+1$. We show the first row of $A_{k+1}$, and therefore the first $n'$ elements in a $\rho_p-$ordering of $S$, where $n'$ is the column dimension of $A_{k+1}$, can be obtained as $[0,1,2,\ldots,n,n+1,\ldots,n']$. First note that each closed ball of radius $p^k = \gamma_k$ is in fact a coset of $\mathbb{Z}$ modulo $p^k$, of which there are $p$. Then for any $k$, $A_k$ is a matrix with $p^k$ columns and $p$ rows. In particular, $n=p^k-1$ and $n'=p^{k+1}-1$. Let $i \in \{0,1,\ldots,p^{k}-1\}$ be arbitrary. Then $i$ is in exactly one of the cosets of $\mathbb{Z}$ modulo $p^k$ and since the first row of $A_k$ is $[0,1,2,\ldots,p^k-1]$, it must have been chosen as our representative of this coset. If we split $p^k\mathbb{Z}+i$ into balls of radius $p^{k+1}$, we have \[p^k\mathbb{Z}+i = \bigcup_{j=0}^{p-1} p^{k+1}\mathbb{Z} + (p^kj + i) \]
+Now suppose that the first row of $A_k$ is given by $[0,1,2,\ldots,n]$ for $0 \leq k < k+1$. We show the first row of $A_{k+1}$, and therefore the first $n'$ elements in a $\rho_p-$ordering of $S$, where $n'$ is the column dimension of $A_{k+1}$, can be obtained as $[0,1,2,\ldots,n,n+1,\ldots,n']$. First note that each closed ball of radius $p^k = \gamma_k$ is in fact a coset of $\mathbb{Z}$ modulo $p^k$, of which there are $p$. Then for any $k$, $A_k$ is a matrix with $p^k$ columns and $p$ rows. In particular, $n=p^k-1$. Let $i \in \{0,1,\ldots,p^{k}-1\}$ be arbitrary. Then $i$ is in exactly one of the cosets of $\mathbb{Z}$ modulo $p^k$ and since the first row of $A_k$ is $[0,1,2,\ldots,p^k-1]$, it must have been chosen as our representative of this coset. If we split $p^k\mathbb{Z}+i$ into balls of radius $p^{k+1}$, we have \[p^k\mathbb{Z}+i = \bigcup_{j=0}^{p-1} p^{k+1}\mathbb{Z} + (p^kj + i) \]
 since there will be $p$ elements in the partition, each of which will be equal to $i$ modulo $p^k$ and distinct modulo $p^{k+1}$. Then, there is a choice of centres such that the $i^{th}$ column of $A_{k}$ is \[[i,p^k +i, 2p^k +i,\ldots, (p-1)p^k +i]^T\]
 filling this in for each $i$, we see that $A_k$ can be obtained as:
 \[A_k=
@@ -287,14 +287,14 @@ So that a $\rho_2-$ordering of $S=\mathbb{Z}_{(2)} \setminus 4\mathbb{Z}$ starts
 In the two propositions above, there was notational difficulty that arose when there was an unequal number of children between the vertices on a given level of $T_s$. This difficulty is, in fact, more than a notational inconvenience, and the situation simplifies considerably when it is not the case. We are far from the first to observe this. Amice noted this as far back as her 1964 paper, and it has been observed more recently in several papers by Fares and colleagues. The following section discusses this in more detail, first by supplying some preliminary lemmas and then showing how calculations are simplified in this setting.
 
 \section*{Semi-regularity}
-In this section, we restrict to the case where in the tree $T_s$, for $S$ some compact subset of an ultrametric space, every vertex on a given level has the same number of children. In this case, we can attach another sequence to $S$, which we call the $\alpha-$sequence of $S$ and which describes, for each level $k \in \mathbb{N}$, the size of the paritions on that level. We develop some preliminary lemmas, which we then use to derive formulae for this special case.
+In this section, we restrict to the case where in the tree $T_s$, for $S$ some compact subset of an ultrametric space, every vertex on a given level has the same number of children. In this case, we can attach another sequence to $S$, which we call the $\alpha-$sequence of $S$ and which describes, for each level $k \in \mathbb{N}$, the size of the partitions on that level. We develop some preliminary lemmas, which we then use to derive formulae for this special case.
 
 \begin{definition*}
-Let $S$ be as above, a compact subset of an ultrametric space $(M, \rho)$. We say that $S$ is \textbf{semi-regular} if $T_{B^k_i} \cong T_{B^k_j}$, $\forall k \in \mathbb{N}$ and  $i,j \in \beta(k)$, and the isomorphism is understood as an isomorphism of trees. That is, $S$ is semi-regular if each ball of radius $\gamma_k$ breaks into the same number of balls of radius $\gamma_{k+1}$, for all $k$. If there exists an $n \in \mathbb{N}$ such that $T_{B^N_i} \cong T_{B^N_j}$, i.e.  each ball of radius $\gamma_N$ breaks into the same number of balls of radius $\gamma_{N+1}$, for all $N \geq n$, then we say $S$ is \textbf{eventually semi-regular}.
+Let $S$ be as above, a compact subset of an ultrametric space $(M, \rho)$. We say that $S$ is \textbf{semi-regular} if $T_{B^k_i} \cong T_{B^k_j}$, $\forall k \in \mathbb{N}$ and  $i,j \in \beta(k)$, and where the isomorphism is understood as an isomorphism of trees. That is, $S$ is semi-regular if each ball of radius $\gamma_k$ breaks into the same number of balls of radius $\gamma_{k+1}$, for all $k$. If there exists an $n \in \mathbb{N}$ such that $T_{B^N_i} \cong T_{B^N_j}$ for all $N \geq n$, i.e.  each ball of radius $\gamma_N$ breaks into the same number of balls of radius $\gamma_{N+1}$ for $N \geq n$, then we say $S$ is \textbf{eventually semi-regular}.
 \end{definition*}
 
 \begin{definition*}
-Suppose $S$ is a compact subset of an ultrametric space and $S$ is semi-regular. The \textbf{$\alpha$-sequence} of $S$ is the sequence given by $\alpha(k)=\frac{\beta(k+1)}{\beta(k)}$. That is, if $B^k_i$ is an element of $S_{\gamma_k}$, the $\alpha(k)$ is equal to the number of children of $B^k_i$ in $T_s$. Since $S$ is semi-regular, this number does not depend on $i$ (although it may very well depend on $k$). 
+Suppose $S$ is a compact subset of an ultrametric space and $S$ is semi-regular. The \textbf{$\alpha$-sequence} of $S$ is the sequence given by $\alpha(k)=\frac{\beta(k+1)}{\beta(k)}$, which is in $\mathbb{N}$ for each $k$. That is, if $B^k_i$ is an element of $S_{\gamma_k}$, then $\alpha(k)$ is equal to the number of children of $B^k_i$ in $T_s$. Since $S$ is semi-regular, this number does not depend on $i$.
 \end{definition*}
 
 
@@ -319,12 +319,11 @@ where the final step in (*) is due to Hermite's identity: $\lfloor nx \rfloor = 
 \end{proof}                                                                                                              
 
 \begin{lemma*}
-If $S$ is semi-regular and $\delta$ denotes the canonical $\rho$-ordering of $S$, that is, a $\rho-$ordering formed by pulling from left to right in $T_s$, then \[\rho(\delta(n),\delta(m))=\gamma_k\] if and only if \[ n=m \mod \beta(k) \text{  and } n \neq m \mod \beta(k+1)\]
+If $S$ is semi-regular and $\delta$ denotes the canonical $\rho$-ordering of $S$, that is, a $\rho-$ordering formed by pulling from left to right in $T_s$, then \[\rho(\delta(n),\delta(m))=\gamma_k\] if, and only if, \[ n=m \mod \beta(k) \text{  and } n \neq m \mod \beta(k+1)\]
 \end{lemma*}
 
 \begin{proof}
-%(forward direction) Suppose $\rho(\delta(n),\delta(m))=\gamma_k$, then the diameter of the smallest ball containing both $\delta(n)$ and $\delta(m)$ is $\gamma(k)$. \\
-%(backward direction) Suppose $n=m \mod \beta(k) \text{  and } n \neq m \mod \beta(k+1)$, then 
+Since $S$ is semi-regular, every sequence of $\beta(k)$ terms in $\delta$ will be from each of distinct elements of $S_{\gamma_k}$ (for any $k$). Moreover, since $\delta$ is a canonical $\rho-$ordering, we always pull from the elements of $S_{\gamma_k}$ in the same order. Then $\delta(n)$ and $\delta(m)$ are descendents of some $B^k_j$ if, and only if, $n = m \mod \beta(k)$. Then the result follows since $\rho(\delta(n),\delta(m))=\gamma_k$ if, and only if, $B^k_i$ for some $i \in 1,\ldots, \beta(k)$ is the join of $B^n_i \ni \delta(n)$ and $B^m_{i'} \ni \delta(m)$.  \\ 
 \end{proof}
 
 
@@ -334,12 +333,12 @@ If $S$ is a semi-regular ultrametric space, $\sigma$ is the characteristic seque
 \end{proposition*}
 
 \begin{proof}
-The exponent of $\gamma_k$ in the $n^{th}$ term of the characteristic sequence is the number of $m$ strictly less than $n$ such that $\rho(\sigma(n),\sigma(m))=\gamma_k$. By the lemma, this the number of $m <n$ such that $m = n \mod \beta(k)$  and $m \neq n \mod \beta(k+1)$. By the following lemma, this is $\lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor$. Then we have:
+The exponent of $\gamma_k$ in the $n^{th}$ term of the characteristic sequence is the number of $m$ strictly less than $n$ such that $\rho(\sigma(n),\sigma(m))=\gamma_k$. By the lemma above, this the number of $m <n$ such that $m = n \mod \beta(k)$  and $m \neq n \mod \beta(k+1)$, which by the previous lemma is $\lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor$. Then we have:
 \begin{flalign*}
-v_{\gamma_k}(\sigma(n)) & \\
-= \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor & \\
-= \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k)\alpha(k)}\rfloor & \\
-= \sum_{j=1}^{\alpha(k)-1} \lfloor \frac{n + j\cdot \beta(k)}{\alpha(k)\beta(k)} \rfloor
+ v_{\gamma_k}(\sigma(n)) & \\
+ = \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor & \\
+ = \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k)\alpha(k)}\rfloor\text{,} & \text{ because } S \text{ is semi-regular}\\
+ = \sum_{j=1}^{\alpha(k)-1} \lfloor \frac{n + j\cdot \beta(k)}{\alpha(k)\beta(k)} \rfloor
 \end{flalign*}
 \end{proof}
 
@@ -358,8 +357,51 @@ and since $\gamma_k = p^{-k}$, $\forall k$, we have
 \[ =  \sum_{k=1}^{\infty} \lfloor \frac{n}{p^{k}}\rfloor \]
 \[= v_{p}(n!) \]
 
-since $\lfloor \frac{n}{p^k} \rfloor = 0$ if $ p^k > n \iff log(p^k) > log(n) \iff k > log_p(n)$
+since $\lfloor \frac{n}{p^k} \rfloor = 0$ if $ p^k > n \iff log(p^k) > log(n) \iff k > log_p(n)$, so that we are able to recover the well-known Legendre's formula.
 \end{example}
+
+Some comment about how the above starts to build up a toolkit independent of  algebraic structure in $S$.
+
+\begin{corollary*}
+If $G$ is a compact ultrametric group, then $G$  is semi-regular.
+\end{corollary*}
+
+\begin{proof}
+Since $G$ is a group, each ball centred at $0$ is in fact a subgroup of $G$. Then each set of elements of $S_{\gamma_k}$ is a collection of cosets of $G/B(0,\gamma_k)$. Since $G$ is assumed to be compact, $G/B(0,\gamma_k)$ is finite and so Lagrange's theorem implies the result.
+\end{proof}
+
+Semi-regularity gives a notion of translation invariance to ultrametric spaces that are not themselves groups. In the previous section, we observed that spaces which admitted both translation invariance and scaling had valuative capacity that could be computed explicity via the subadditivity formula. Is there a way to define this for ultrametric which are not normed vector spaces?
+
+\begin{definition*}
+Let $S$ be a semi-regular compact subset of an ultrametric space. If there exists a $q \in \mathbb{N}$ such that $\alpha(n) = q$, for all $n$, then $S$ is said to be \textbf{regular}. If there exists a $q \text{ and } N$ in $\mathbb{N}$ such that $\alpha(n) = q$, for all $n \geq N$, then $S$ is said to be $\textbf{eventually regular}$.
+\end{definition*}
+
+Alt.:
+\begin{definition*}
+Let $S$ be a semi-regular compact subset of an ultrametric space. If there exists a $q_1,\ldots,q_m \in \mathbb{N}$ such that $\alpha(n) = q_i$ if, and only if, $n = i \mod m$, that is, $\alpha$ has an infinitely-repeating finite subsequence of length $m$, then we say $S$ is $\textbf{periodic}$. If $m=1$, then $S$ is $\textbf{regular}$. 
+\end{definition*}
+
+$S$ is regular just in case the $\alpha-$sequence of $S$ is constant. In what follows, we assume that $S$ is regular, but the results carry over to the case where $S$ is peroidic with the obvious adjustments. To make use of regularity in $S$ we should, before continuing, also put some constraints on our sequence of distances $\Gamma_S$.
+
+\begin{definition*}
+Let $S$ be a compact subset of an ultrametric space and $\Gamma_S$ is the sequence of decreasing distances in $S$. Then we say $S$ is \textbf{well-behaved} (I guess - or tame? reasonable?), if $S$ is semi-regular and $\gamma_k = \alpha(k)^{c_k}$ for all $k \in \mathbb{N}$ and some $c_k \in \mathbb{Z}$.
+\end{definition*}
+
+\begin{example}
+Any ultrametric space where $\rho$ is induced from a valuation domain.
+\end{example}
+
+If $S$ is regular with $\alpha(k)=q$, for all $k$:
+\[v_{\gamma_k}(\sigma(n)) =  \lfloor\frac{n}{q^k}\rfloor - \lfloor\frac{n}{q^{k+1}}\rfloor \]
+\[v_{q^{c_k}}(\sigma(n)) =  \lfloor\frac{n}{q^k}\rfloor - \lfloor\frac{n}{q^{k+1}}\rfloor \]
+\[v_{q}(\sigma(n)) =  \sum_{k=0}^{\infty} c_k \cdot(\lfloor\frac{n}{q^k}\rfloor - \lfloor\frac{n}{q^{k+1}}\rfloor) \]
+\[v_{q}(\sigma(n)) =  \sum_{k=0}^{\lceil log_q(n) \rceil} c_k \cdot(\lfloor\frac{n}{q^k}\rfloor - \lfloor\frac{n}{q^{k+1}}\rfloor) \]
+\[=  c_0{n} - c_0\lfloor\frac{n}{q}\rfloor + c_1\lfloor\frac{n}{q}\rfloor - c_1\lfloor\frac{n}{q^{2}}\rfloor  + c_2\lfloor\frac{n}{q^2}\rfloor - c_2\lfloor\frac{n}{q^{3}}\rfloor \ldots + \lceil log_q(n) \rceil \lfloor\frac{n}{q^{\lceil log_q(n) \rceil}}\rfloor - \lceil log_q(n) \rceil\lfloor\frac{n}{q^{\lceil log_q(n) \rceil}}\rfloor  \]
+\[v_{q}(\sigma(n)) =  \sum_{k=0}^{\lceil log_q(n) \rceil} (c_{k+1} - c_k) \cdot(\lfloor\frac{n}{q^{k+1}}\rfloor) \]
+
+Note that the coefficient $ (c_{k+1} - c_k)$  is always positive: since $\Gamma$ is (strictly) decreasing and $\gamma_k=q^{c_k}$, the sequence $c_k$ is  also be strictly descreasing (since $\gamma_k=q^{c_k}$ implies $log_q(\gamma_k)=c_k$ and log is a monotone function). The above implies that:
+
+\[\omega(S) = \lim_{n\to\infty} \sum_{k=0}^{\lceil log_q(n) \rceil} (c_{k+1} - c_k) \cdot(\lfloor\frac{n}{q^{k+1}}\rfloor)\]
 
 %\begin{corollary*}
 %If $S$ is a (eventually) semi-regular ultrametric space and the $\alpha$ sequence of $S$ is (eventually)  periodic, then the valuative capacity of $S$ is algebraic.
@@ -372,9 +414,6 @@ since $\lfloor \frac{n}{p^k} \rfloor = 0$ if $ p^k > n \iff log(p^k) > log(n) \i
 %\item i think this coincides with translation invariance when there is a group operation
 %\end{itemize}
 
-%\begin{notation*}
-%If $S$ is (eventually) semi-regular, then the structure sequence of $B^1_1$ (respectively, $B^N_1$) is also an invariant of $S$, which we denote by $\alpha^S(i)$.\\
-%\end{notation*}
 
 %Semi-regularity in $S$ reflects horizontal similarity on every level of $T_S$, and so we expect semi-regularity to simplify the calculation of valuative capacity.
 
