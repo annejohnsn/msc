@@ -55,21 +55,32 @@ Let $S$ be a subset of an ultrametric space. The \textbf{diameter of $S$} is $di
 \end{definition}
 
 \begin{proposition}
-	Let $B(a, r)$ be a (closed) ball in an ultrametric space $(M,\rho)$. Then the diameter of $B$ is less than or equal to the radius of $B$.    
+	Let $B=B(a, r)$ be a (closed) ball in an ultrametric space $(M,\rho)$. Then the diameter of $B$ is less than or equal to the radius of $B$.    
 \end{proposition}
 
 \begin{proof}
-Suppose $d = diam(B)$. If $d > r$, this would imply there exists $x,y$ in $B(a,r)$ such that $\rho(x,y) > r$, but this would mean $\rho(x,y)$ is strictly greater than $\max(\rho(x,a), \rho(y,a))$, which is a contradiction since $\rho$ is an ultrametric.
+Suppose $d = diam(B) > r$. This would imply there exists $x,y$ in $B$ such that $\rho(x,y) > r$, in particular $\rho(x,y)$ is strictly greater than $\max(\rho(x,a), \rho(y,a))$, which is a contradiction since $\rho$ is an ultrametric.
 \end{proof}
 
 \begin{proposition}
 	 All triangles in an ultrametric space $(M,\rho)$ are either equilateral or isosceles, with at most one short side. 
 \end{proposition}
 
+\begin{proof}
+Let $x,y$, and $z$ be three points in an ultrametric space $(M,\rho)$. We show that $\rho(x,y) \neq \rho(x,z)$ and $\rho(x,y) \neq \rho(y,z)$ implies $\rho(x,y) < \rho(x,z) = \rho(y,z)$.\\
+
+If $\rho(x,z) \neq \rho(y,z)$, then without loss, $\rho(x,z) > \rho(y,z)$. At the same time, the ultrametric inequality implies $\rho(x,y) \leq \max(\rho(x,z), \rho(y,z))$ and  $\rho(y,z) \leq \max(\rho(x,y), \rho(x,z))$. The first inequality implies $\rho(x,y) < \rho(x,z)$, which means the second inequality implies $\rho(y,z) < \rho(x,z)$. This is a contradiction, so we must have $\rho(x,z) = \rho(y,z)$.\\
+
+To see that $\rho(x,y) < \rho(x,z)$, simply note that $\rho(x,y) \leq \max(\rho(x,z), \rho(y,z))$
+\end{proof}
 
 \begin{proposition}
-	If $(M, \rho)$ is an ultrametric space and $B_{r_1}(x_0)$ and $B_{r_2}(y_0)$ are balls in $(M, \rho)$, then either $B_{r_1}(x_0) \cap B_{r_2}(y_0) = \emptyset$, $B_{r_1}(x_0) \subseteq B_{r_2}(y_0)$, or $B_{r_2}(x_0) \subseteq B_{r_1}(x_0)$. That is, in an ultrametric space, all balls are either comparable or disjoint.
+	If $(M, \rho)$ is an ultrametric space and $B(x, r_1)$ and $B(y, r_2)$ are balls in $(M, \rho)$, then either $B(x, r_1) \cap B(y, r_2) = \emptyset$, $B(x, r_1) \subseteq B(y, r_2)$, or $B(x, r_1) \subseteq B(x, r_1)$. That is, in an ultrametric space, all balls are either comparable or disjoint.
 \end{proposition}
+
+\begin{proof}
+Suppose $B(x, r_1) \cap B(y, r_2) \neq \emptyset$ and let $z$ be a point in the intersection. If there exists an $a \in B(y, r_2)$ such that
+\end{proof}
 
 \begin{proposition}
  The distance between any two balls in an ultrametric is constant. That is, if $B_{r_1}(x_0)$ and $B_{r_2}(y_0)$ are two balls in an ultrametric space $(M,\rho)$, then there exists a $c \in \mathbb{R}_{\geq 0}$ such that  $\rho(x,y)=c$, $\forall x \in B_{r_1}(x_0)$ and $\forall y \in B_{r_2}(y_0)$
