@@ -83,29 +83,63 @@ Suppose $B(x, r_1) \cap B(y, r_2) \neq \emptyset$ and let $z$ be a point in the 
 \end{proof}
 
 \begin{proposition}
- The distance between any two balls in an ultrametric is constant. That is, if $B_{r_1}(x_0)$ and $B_{r_2}(y_0)$ are two balls in an ultrametric space $(M,\rho)$, then there exists a $c \in \mathbb{R}_{\geq 0}$ such that  $\rho(x,y)=c$, $\forall x \in B_{r_1}(x_0)$ and $\forall y \in B_{r_2}(y_0)$
+ The distance between any two distinct balls in an ultrametric is constant. That is, if $B(x_0, r_1)$ and $B(y_0, r_2)$ are two balls in an ultrametric space with $B(x_0, r_1) \cap B(y_0, r_2) = \emptyset$, then there exists a $c \in \mathbb{R}_{\geq 0}$ such that  $\rho(x,y)=c$, $\forall x \in B(x_0, r_1)$ and $\forall y \in B(y_0, r_2)$.
 \end{proposition}
 
 \begin{proof}
-Write a proof - this is because all triangesl are isosceles.
+Suppose $\rho(x_0, y_0)=c$ and let $x \in B(x_0, r_1)$ and $y \in B(y_0, r_2)$ be arbitrary. Consider the triangle formed by $(x_0, y_0,y)$. Since $\rho(x_0,y_0)=c$ and  $\rho(y,y_0) \leq r_2 < c$, we must have $\rho(x_0, y)=c$ because triangles in an ultrametric space have at most one short side. Now consider the triangle formed by  $(x_0, x,y)$. Since $\rho(x_0, y)=c$ and  $\rho(x,x_0) \leq r_1 < c$, we must have $\rho(x, y)=c$.
 \end{proof}
 
 \begin{proposition}
- Every point of a ball in an ultrametric is at its centre. That is, if $B_r(x_0)$ is a ball in an ultrametric space $(M,\rho)$, then $B_r(x)=B_r(x_0)$,  $\forall x \in B_r(x_0)$
+ Every point of a ball in an ultrametric is at its centre. That is, if $B(x_0, r)$ is a ball in an ultrametric space $(M,\rho)$, then $B(x, r)=B(x_0, r)$,  $\forall x \in B(x_0, r)$
 \end{proposition}
+
+\begin{proof}
+Let $a \in B(x, r)$. Then $\rho(a,x) \leq r$ and since \[\rho(a,x_0) \leq \max(\rho(a,x), \rho(x,x_0)) \leq r\] we must have $a \in B(x_0, r)$ and  $B(x, r) \subseteq B(x_0, r)$ A similar argument shows $B(x_0, r) \subseteq B(x, r)$.
+\end{proof}
 
 
 \begin{proposition}
 Let $B(a, r)$ be a closed ball in an ultrametric space. Then there exists $ r' > r \in \mathbb{R}$ such that $B(a, r) = \{x \in M \mid \rho(x,a) < r'\} $; that is, every closed ball is also an open ball with the same centre and  slightly larger radius.
 \end{proposition}
 
+The following proposition is  easy to see, although the result is both unintuitive and  rather important for our purposes. 
 
 \begin{proposition}
-\cite{ar} If $S$ is a compact subset of an ultrametric space and $\Gamma_S$ is the set of all distances occurring between points of $S$, then $\Gamma_S$ is a discrete subset of $\mathbb{R}$. In particular if $\mid \Gamma_S\mid = \infty$, then the elements of $\Gamma_S$ can be indexed by $\mathbb{N}$.
+Suppose $S$ is a compact subset of an ultrametric space $(M, \rho)$ and that $\cup_{i \in I} B(x_i,r_i)$ is a cover of $S$ by (closed) balls in $S$. Then there exists $i_1,\ldots, i_n$, a finite subset of $I$, such that  $\cup_{j=1}^{j=n} B(x_{i_j},r_{i_j})$ is a partition of $S$.
 \end{proposition}
 
 \begin{proof}
-This is not standard - there is a proof in \cite{ar} on page 72
+Since $S$ is compact, $\cup_{i \in I} B(x_i,r_i)$ contains a finite subcover of $S$. Say this subcover is given by the elements  $i_1,\ldots, i_{n'}$, and suppose this is not a partition. That is, suppose for some $i_i, i_j$, $ B(x_{i_i},r_{i_i}) \cap  B(x_{i_j},r_{i_j}) \neq \emptyset$. Then, without loss of generality, we must have $ B(x_{i_i},r_{i_i}) \subseteq  B(x_{i_j},r_{i_j})$, so that the removal of $ B(x_{i_i},r_{i_i})$ is still a cover of $S$. We continue this process a finite number of times, since the subcover was finite to begin with, to arrive at a partition of $S$.
+\end{proof}
+
+In fact, a slightly stronger statement then the above is true:
+
+\begin{corollary}
+Suppose $S$ is a compact subset of an ultrametric space $(M, \rho)$ and that $B(x_0,r)$ is a (closed) ball in $S$. Then, there exists a finite partition of $S$ having $B(x_0,r)$ as an element.
+\end{corollary}
+
+\begin{proof}
+Let $\mathcal{C}$ be the cover of $S$ given by $\cup_{x\in S} B(x,r) \cap S$. From the proposition, we can select a finite subcover of $\mathcal{C}$ that is a partition of $S$. Suppose $B(y,r) \cap S$ is the element in this partition containing $x_0$. Then  since $B(y,r)$ and $B(x_0,r)$ are equal in $M$, $B(y,r) \cap S = B(x_0,r) \cap S = B(x_0,r)$.
+\end{proof}
+
+\begin{proposition}
+\cite{ar} Let $S$ be a  group equipped with a (right) invariant ultrametric, $\rho$. If $B=B(0,r)$ is a (closed) ball centred at the neutral element of $S$, then $B$ is a subgroup of $S$.
+\end{proposition}
+
+\begin{proof}
+Let $x,y \in B$. Then \[\rho(x-y,0) = \rho(x,y)  \leq \max(\rho(x,0), \rho(y,0)) \leq r,\]
+so that $x-y \in B$.
+\end{proof}
+
+\begin{proposition}
+\cite{ar} If $S$ is a compact subset of an ultrametric space and $\Gamma_S$ is the set of all distances occurring between points of $S$, then $\{\Gamma_S \setminus 0\}$ is a discrete subset of $\mathbb{R}^+$. In particular,  if $S$ is compact, then $\Gamma_S$ is countable.
+\end{proposition}
+
+\begin{proof}
+If $S = \{a\}$, then $\{\Gamma_S \setminus 0\} = \emptyset$ and we are done. Suppose then $S$ has at least two points and let $\phi_a: S \setminus \{a\} \rightarrow \mathbb{R}^+$ be the function given by $x \mapsto \rho(x,a)$. Recall that all triangles in an ultrametric space are isosceles, so that  $\rho(x,y) < \rho(x,a)$ implies $\rho(x,a) = \rho(y,a)$.  Then $\phi_a$ is locally-constant for all $a$ $\ldots$ Then $Im(\phi_a)$ is discrete for all $a$ (this is all from \cite{ar}) and their union is equal to $\{\Gamma_S \setminus 0\}$.\\
+
+We show the union of $Im(\phi_a)$ over $a \in S$ is still discrete.  Let $\mathcal{U} = \bigcup_{a \in S} Im(\phi_a)$. Let $p \in \mathcal{U}$ be arbitrary and consider the function $\epsilon \mapsto \lvert B(p,\epsilon) \cap \mathcal{U} \rvert$. Wts this always has finite image and the function is monotone decreasing.
 \end{proof}
 
 It will become useful to write the set of distances occuring in $S$ as a sequence, put in decreasing order. We use the following notation to represent such a sequence 
