@@ -137,9 +137,8 @@ so that $x-y \in B$.
 \end{proposition}
 
 \begin{proof}
-If $S = \{a\}$, then $\{\Gamma_S \setminus 0\} = \emptyset$ and we are done. Suppose then $S$ has at least two points and let $\phi_a: S \setminus \{a\} \rightarrow \mathbb{R}^+$ be the function given by $x \mapsto \rho(x,a)$. Recall that all triangles in an ultrametric space are isosceles, so that  $\rho(x,y) < \rho(x,a)$ implies $\rho(x,a) = \rho(y,a)$.  Then $\phi_a$ is locally-constant for all $a$ $\ldots$ Then $Im(\phi_a)$ is discrete for all $a$ (this is all from \cite{ar}) and their union is equal to $\{\Gamma_S \setminus 0\}$.\\
+If $S = \{a\}$, then $\{\Gamma_S \setminus 0\} = \emptyset$ and we are done. Suppose then $S$ has at least two points and let $\mathcal{U}= \{\Gamma_S \setminus 0\}$. Let $p \in S$ be arbitrary and consider the function $\phi_p: \mathbb{R}_{\geq 0} \rightarrow \mathbb{R}$ given by $\epsilon \mapsto B(p,\epsilon) \cap \mathcal{U}$. We show $\phi_p$ is locally constant for all $p \in \mathcal{U}$.
 
-We show the union of $Im(\phi_a)$ over $a \in S$ is still discrete.  Let $\mathcal{U} = \bigcup_{a \in S} Im(\phi_a)$. Let $p \in \mathcal{U}$ be arbitrary and consider the function $\epsilon \mapsto \lvert B(p,\epsilon) \cap \mathcal{U} \rvert$. Wts this always has finite image and the function is monotone decreasing.
 \end{proof}
 
 It will become useful to write the set of distances occuring in $S$ as a sequence, put in decreasing order. We use the following notation to represent such a sequence 
