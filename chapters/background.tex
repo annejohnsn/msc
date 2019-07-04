@@ -131,6 +131,7 @@ Suppose $B(x_0, r_1) \cap B(y_0, r_2) \neq \emptyset$ and let $z$ be a point in 
 Suppose $\rho(x_0, y_0)=c$ and let $x \in B(x_0, r_1)$ and $y \in B(y_0, r_2)$ be arbitrary. Consider the triangle formed by $(x_0, y_0,y)$. Since $\rho(x_0,y_0)=c$ and  $\rho(y,y_0) \leq r_2 < c$, we must have $\rho(x_0, y)=c$ because triangles in an ultrametric space have at most one short side. Now consider the triangle formed by  $(x_0, x,y)$. Since $\rho(x_0, y)=c$ and  $\rho(x,x_0) \leq r_1 < c$, we must have $\rho(x, y)=c$.
 \end{proof}
 
+
 Before moving on, we give another example of an ultrametric space, showing again the quick and unusal implications of Proposition $4$.\\
 
 \begin{example}
@@ -149,7 +150,7 @@ Suppose $S$ is a compact subset of an ultrametric space $(M, \rho)$ and that $\c
 \end{proposition}
 
 \begin{proof}
-Since $S$ is compact, $\cup_{i \in I} B(x_i,r_i)$ contains a finite subcover of $S$. Say this subcover is given by the elements  $i_1,\ldots, i_{n'}$, and suppose this is not a partition. That is, suppose for some $i_i, i_j$, $ B(x_{i_i},r_{i_i}) \cap  B(x_{i_j},r_{i_j}) \neq \emptyset$. Then, without loss of generality, we must have $ B(x_{i_i},r_{i_i}) \subseteq  B(x_{i_j},r_{i_j})$, so that the removal of $ B(x_{i_i},r_{i_i})$ is still a cover of $S$. We continue this process a finite number of times, since the subcover was finite to begin with, to arrive at a partition of $S$.
+Since $S$ is compact, $\cup_{i \in I} B(x_i,r_i)$ contains a finite subcover of $S$. Say this subcover is given by the elements  $i_1,\ldots, i_{n'} \in I$, and suppose this is not a partition. That is, suppose for some $i_i, i_j$, $ B(x_{i_i},r_{i_i}) \cap  B(x_{i_j},r_{i_j}) \neq \emptyset$. Then, without loss of generality, we must have $ B(x_{i_i},r_{i_i}) \subseteq  B(x_{i_j},r_{i_j})$, so that the removal of $ B(x_{i_i},r_{i_i})$ is still a cover of $S$. We continue this process a finite number of times, since the subcover was finite to begin with, to arrive at a partition of $S$.
 \end{proof}
 
 In fact, a slightly stronger statement then the above is true:
@@ -165,11 +166,13 @@ Let $\mathcal{C}$ be the cover of $S$ given by $\cup_{x\in S} B(x,r) \cap S$. Fr
 We end this section by making a few comments about the set of distances that occur between the points of a compact ultrametric space.\\
 
 \begin{proposition}
-\cite{ar} Let $S$ is a compact subset of an ultrametric space. For $a \in S$, let $\phi_a: S \setminus \{a\} \rightarrow \mathbb{R}$ be the function defined by $\phi_a(x)=\rho(a,x)$. Then $Im(\phi_a)$ is a discrete subset of $\mathbb{R}$ for all $a \in S$.
+\cite{ar} Let $S$ is a compact subset of an ultrametric space. For $a \in S$, let $\phi_a: S \setminus \{a\} \rightarrow \mathbb{R}$ be the function defined by $\phi_a(x)=\rho(x,a)$. Then $Im(\phi_a)$ is a discrete subset of $\mathbb{R}$ for all $a \in S$.
 \end{proposition}
 
 \begin{proof}
-Robert 72
+\cite{ar} %Recall that all triangles in an ultrametric space are isosceles with one short side. In particular, for $x,y,a \in S$, for $S$ some compact subset of an ultrametric space $(M,\rho)$, \[ \rho(x,y) < \rho(x,a) \text{ implies } \rho(y, a) = \rho(x,a)\] 
+%so that if $r \in \mathbb{R}, 0 < r < \rho(x,a)$, then $\phi_a$ restricted to $B(x,r)$ is constant for any $a \in S$. That is, $\phi_a$ is locally constant. 
+%The fibers, $\phi_a^{-1}(c) = \{x \in S \mid \rho(x,a) =c \}$ for $c \in Im(\phi_a)$, form an open partition of $S$.
 \end{proof}
 
 
