@@ -308,6 +308,7 @@ $\lfloor\frac{n}{q} \rfloor$ counts the numbers strictly less than $n$ that are 
 
 
 \begin{lemma}
+\label{semi-regular formula}
 \[\lfloor\frac{n}{b} \rfloor - \lfloor \frac{n}{ab} \rfloor = \sum_{k=1}^{a-1} \lfloor \frac{n + kb}{ab} \rfloor\] for $n,a,b \in \mathbb{N}$. In particular, 
 \[\lfloor\frac{n}{b} \rfloor - \lfloor \frac{n}{2b} \rfloor= \lfloor \frac{n+b}{2b} \rfloor\] for  $n,b \in \mathbb{N}$.
 \end{lemma}
@@ -381,15 +382,7 @@ Alt.:
 Let $S$ be a semi-regular compact subset of an ultrametric space. If there exists a $q_1,\ldots,q_m \in \mathbb{N}$ such that $\alpha(n) = q_i$ if, and only if, $n = i \mod m$, that is, $\alpha$ has an infinitely-repeating finite subsequence of length $m$, then we say $S$ is $\textbf{periodic}$. If $m=1$, then $S$ is $\textbf{regular}$. 
 \end{definition}
 
-$S$ is regular just in case the $\alpha-$sequence of $S$ is constant. In what follows, we assume that $S$ is regular, but the results carry over to the case where $S$ is peroidic with the obvious adjustments. To make use of regularity in $S$ we should, before continuing, also put some constraints on our sequence of distances $\Gamma_S$.
-
-\begin{definition}
-Let $S$ be a compact subset of an ultrametric space and $\Gamma_S$ is the sequence of decreasing distances in $S$. Then we say $S$ is \textbf{well-behaved} (I guess - or tame? reasonable?), if $S$ is semi-regular and $\gamma_k = \alpha(k)^{c_k}$ for all $k \in \mathbb{N}$ and some $c_k \in \mathbb{Z}$.
-\end{definition}
-
-\begin{example}
-Any ultrametric space where $\rho$ is induced from a valuation domain.
-\end{example}
+$S$ is regular just in case the $\alpha-$sequence of $S$ is constant. In what follows, we assume that $S$ is regular, but the results carry over to the case where $S$ is peroidic with the necessary adjustments. 
 
 If $S$ is regular with $\alpha(k)=q$, for all $k$:
 \[v_{\gamma_k}(\sigma(n)) =  \lfloor\frac{n}{q^k}\rfloor - \lfloor\frac{n}{q^{k+1}}\rfloor \]

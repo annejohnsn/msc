@@ -43,7 +43,7 @@ We take for granted that  $(V,\rho_N)$ is a metric space and also note that
  If $(V, N)$ is a normed vector space, then the metric induced by $N$ is denoted $\rho_N$.
 \end{notation*}
 
-\texthl{When ultrametric spaces come from spaces with algebraic structure, such as normed vector spaces, some of this structure carries over into metric spaces structure in a rather nice way:}\\
+When ultrametric spaces come from spaces with algebraic structure, such as normed vector spaces, some of this structure carries over into metric spaces structure in a rather nice way:\\
 
 \begin{proposition}
 \cite{ar} Let $S$ be a  group equipped with a (right) invariant ultrametric, $\rho$. If $B=B(0,r)$ is a (closed) ball centred at the neutral element of $S$, then $B$ is a subgroup of $S$.
@@ -54,6 +54,23 @@ Let $x,y \in B$. Then \[\rho(x-y,0) = \rho(x,y)  \leq \max(\rho(x,0), \rho(y,0))
 so that $x-y \in B$.
 \end{proof}
 
+The canoncial example of an ultrametric space, and one which is derived from a norm, is $p-$adic integers, $\mathbb{Z}_p$ for any prime $p$. 
+\begin{definition}
+$p-$adic valuation
+\end{definition}
+
+It is easy to see that the $p-$adic valuation exhibits the following properites, which makes it nice to work with:
+
+\begin{itemize}
+\item $v_p(ab) = v_p(a) + v_p(b)$
+\item $another one$
+\end{itemize}
+
+\begin{example} $\mathbb{Z}_p$ \end{example}
+
+We give a second example below, showing a space that does not readily come equipped with algebraic structure:
+
+\begin{example} snowflake metric \end{example}
 
 Ultrametric spaces exhibit properties much unlike traditional metric spaces, and we review of few of these below. Of particular interest to us is the behavior between (closed) balls in an ultrametric space.\\
 
@@ -63,7 +80,7 @@ Ultrametric spaces exhibit properties much unlike traditional metric spaces, and
 In the above notation, we break from  convention in that we denote a closed ball without using any decoration and in that we omit any notation for an open ball. This because, for the most part, the notion of open and closed ball in an ultrametric space overlap, although we will need a few more facts before showing this.\\
 
 \begin{definition}
-Let $S$ be a subset of an ultrametric space. \texthl{ The \textbf{diameter of $S$} is $diam(S) = \sup\limits_{x,y\in S}\rho(x,y)$. Note that if $S$ is compact, $diam(S) = \max\limits_{x,y\in S}\rho(x,y)$.}
+Let $S$ be a subset of an ultrametric space. The \textbf{diameter of $S$} is $diam(S) = \sup\limits_{x,y\in S}\rho(x,y)$. Note that if $S$ is compact, $diam(S) = \max\limits_{x,y\in S}\rho(x,y)$.
 \end{definition}
 
 \begin{proposition}
@@ -74,7 +91,7 @@ Let $S$ be a subset of an ultrametric space. \texthl{ The \textbf{diameter of $S
 Suppose $d = diam(B) > r$. This would imply there exists $x,y$ in $B$ such that $\rho(x,y) > r$, in particular $\rho(x,y)$ is strictly greater than $\max(\rho(x,a), \rho(y,a))$, which is a contradiction since $\rho$ is an ultrametric.
 \end{proof}
 
-\texthl{In the following proposition, we describe the triangles in an ultrametric space, and the result is more or less a restatement, in geometric terms, of the ultrametric inequality.}\\
+In the following proposition, we describe the triangles in an ultrametric space, and the result is more or less a restatement, in geometric terms, of the ultrametric inequality.\\
 
 \begin{proposition}
 	 All triangles in an ultrametric space $(M,\rho)$ are either equilateral or isosceles, with at most one short side. 
@@ -88,7 +105,7 @@ If $\rho(x,z) \neq \rho(y,z)$, then without loss, $\rho(x,z) > \rho(y,z)$. At th
 To see that $\rho(x,y) < \rho(x,z)$, simply note that $\rho(x,y) \leq \max(\rho(x,z), \rho(y,z))$
 \end{proof}
 
-\texthl{With this result in hand, we are able to quickly demonstrate some of the properties of (closed) balls, which are of fundamental importance to us. We see below that the ultrametric inequality, perhaps innocuous on the surface, quickly implies ultrametric balls are markedly different from their archimedean counterparts.}\\
+With this result in hand, we are able to quickly demonstrate some of the properties of (closed) balls, which are of fundamental importance to us. We see below that the ultrametric inequality, perhaps innocuous on the surface, quickly implies ultrametric balls are markedly different from their archimedean counterparts.\\
 
 \begin{proposition}
  Every point of a ball in an ultrametric is at its centre. That is, if $B(x_0, r)$ is a ball in an ultrametric space $(M,\rho)$, then $B(x, r)=B(x_0, r)$,  $\forall x \in B(x_0, r)$
@@ -103,18 +120,29 @@ Let $a \in B(x, r)$. Then $\rho(a,x) \leq r$ and since \[\rho(a,x_0) \leq \max(\
 \end{proposition}
 
 \begin{proof}
-Suppose $B(x_0, r_1) \cap B(y_0, r_2) \neq \emptyset$ and let $z$ be a point in the intersection. \texthl{We show that if there exists an $a \in B(y_0, r_2)$ such that $a \notin B(x_0,r_1)$, then $B(x_0, r_1) \subseteq B(y_0, r_2)$. Let $x \in B(x_0, r_1)$. Then we must have $\rho(x,z) < \rho(x,a)$, since $z \in B(x_0, r_1) = B(x,r_1)$ and $a$ is not. Since the triangle with vertices $(a,x,z)$ is isocolces with at most one short side, we must have $\rho(x,a) = \rho(a,z) \leq r_2$, since $a \in B(y_0, r_1) = B(z,r_2)$. Then $x \in B(y_0, r_1)$. }
+Suppose $B(x_0, r_1) \cap B(y_0, r_2) \neq \emptyset$ and let $z$ be a point in the intersection. We show that if there exists an $a \in B(y_0, r_2)$ such that $a \notin B(x_0,r_1)$, then $B(x_0, r_1) \subseteq B(y_0, r_2)$. Let $x \in B(x_0, r_1)$. Then we must have $\rho(x,z) < \rho(x,a)$, since $z \in B(x_0, r_1) = B(x,r_1)$ and $a$ is not. Since the triangle with vertices $(a,x,z)$ is isocolces with at most one short side, we must have $\rho(x,a) = \rho(a,z) \leq r_2$, since $a \in B(y_0, r_1) = B(z,r_2)$. Then $x \in B(y_0, r_1)$. 
 \end{proof}
 
 \begin{proposition}
- The distance between any two \texthl{non-overlapping} balls in an ultrametric is constant. That is, if $B(x_0, r_1)$ and $B(y_0, r_2)$ are two balls in an ultrametric space with $B(x_0, r_1) \cap B(y_0, r_2) = \emptyset$, then there exists a $c \in \mathbb{R}_{\geq 0}$ such that  $\rho(x,y)=c$, $\forall x \in B(x_0, r_1)$ and $\forall y \in B(y_0, r_2)$.
+ The distance between any two non-overlapping balls in an ultrametric is constant. That is, if $B(x_0, r_1)$ and $B(y_0, r_2)$ are two balls in an ultrametric space with $B(x_0, r_1) \cap B(y_0, r_2) = \emptyset$, then there exists a $c \in \mathbb{R}_{\geq 0}$ such that  $\rho(x,y)=c$, $\forall x \in B(x_0, r_1)$ and $\forall y \in B(y_0, r_2)$.
 \end{proposition}
 
 \begin{proof}
 Suppose $\rho(x_0, y_0)=c$ and let $x \in B(x_0, r_1)$ and $y \in B(y_0, r_2)$ be arbitrary. Consider the triangle formed by $(x_0, y_0,y)$. Since $\rho(x_0,y_0)=c$ and  $\rho(y,y_0) \leq r_2 < c$, we must have $\rho(x_0, y)=c$ because triangles in an ultrametric space have at most one short side. Now consider the triangle formed by  $(x_0, x,y)$. Since $\rho(x_0, y)=c$ and  $\rho(x,x_0) \leq r_1 < c$, we must have $\rho(x, y)=c$.
 \end{proof}
 
-The following proposition is  easy to see, although the result is both unintuitive and  rather important for our purposes. \\
+Before moving on, we give another example of an ultrametric space, showing again the quick and unusal implications of Proposition $4$.\\
+
+\begin{example}
+Let $S$ be a compact subset of an ultrametric space, $(M,\rho)$, and then let $\textbf{Triag}_S$ be the space whose points are the set of distinct (up to labeling) triangles in $S$. If $t$ is an element of $\textbf{Triag}_S$, denote by $long_t$ the length of the long side of $t$ and by $short_t$  the length of the short side of $t$. Then define $\Delta_S(t,t') = \lvert long_t - long_{t'}\rvert + \lvert short_t - short_{t'} \rvert$, for $t$ and $t' \in \textbf{Triag}_S$. Now note $long_t$ and $short_t$ are in $\mathbb{R}$ and so $\Delta_S(t,t')$ is always in $\mathbb{R}_{\geq 0}$. It's also clear that $\Delta_S(t,t') = 0$ if, and only if, $t$ and $t'$ have the same length sides, in which case they are equal in $\textbf{Triag}_S$. Now let $t_a, t_b$ and $t$ be any three points in $\textbf{Triag}_S$. Without loss of generality, assume $\max(\Delta_S(t_a,t), \Delta_S(t_b,t))=\Delta_S(t_b,t)$, that is,
+\[ \lvert long_{t_a} - long_{t}\rvert + \lvert short_{t_a} - short_{t} \rvert \leq \lvert long_{t} - long_{t_b}\rvert + \lvert short_{t} - short_{t_b} \rvert \]
+We must show
+\[\lvert long_{t_a} - long_{t_b}\rvert + \lvert short_{t_a} - short_{t_b} \rvert \leq \lvert long_{t} - long_{t_b}\rvert + \lvert short_{t} - short_{t_b} \rvert\]
+You can easily construct a counter example with all equilateral triangles (which abouts to the fact that $\mathbb{R}$ is not normally an ultrametric space)
+\end{example}
+Note that an analogous construction would not work on the set of line segments in $S$.\\
+
+The following proposition is  easy to see, although the result is both unintuitive and important for our purposes. \\
 
 \begin{proposition}
 Suppose $S$ is a compact subset of an ultrametric space $(M, \rho)$ and that $\cup_{i \in I} B(x_i,r_i)$ is a cover of $S$ by (closed) balls in $S$. Then there exists $i_1,\ldots, i_n$, a finite subset of $I$, such that  $\cup_{j=1}^{j=n} B(x_{i_j},r_{i_j})$ is a partition of $S$.
@@ -169,6 +197,19 @@ $$\Gamma_S = \{\gamma_0 = d =diam(S), \gamma_1, \gamma_2, \ldots, \gamma_\infty 
 where $\gamma_i \in  \Gamma_S$ if and only if $\exists x,y \in S$ such that $\rho(x,y) = \gamma_i$ and  $\gamma_i < \gamma_j$ if and only if $i > j$. 
 \end{notation*}
 
+
+To make use of regularity in $S$ we should, before continuing, also put some constraints on our sequence of distances $\Gamma_S$.
+
+\begin{definition}
+Let $S$ be a compact subset of an ultrametric space and $\Gamma_S$ is the sequence of decreasing distances in $S$. Then we say $S$ is \textbf{well-behaved} (I guess - or tame? reasonable?), if $S$ is semi-regular and $\gamma_k = \alpha(k)^{c_k}$ for all $k \in \mathbb{N}$ and some $c_k \in \mathbb{Z}$.
+\end{definition}
+
+\begin{example}
+Any ultrametric space where $\rho$ is induced from a valuation domain.
+\end{example}
+
+
+
 \newpage
 \section*{$\rho$-orderings, $\rho$-sequences, and valuative capacity}
 
@@ -211,13 +252,14 @@ Suppose $S$ is a finite subset of $(\mathbb{Z}, \lvert \cdot \rvert_2)$, $S=\{0,
 \end{proposition}
 
 \begin{proof}
-	Since $d$ is the diameter of $S$, the $n^{th}$ term of the $\rho$-sequence of $S$ is bounded by $d^n$ and so $ \lim_{n\to\infty} \gamma(n)^{1/n}=d$ if and only if $\gamma(n)=d^n$, $\forall n$. This implies $\rho(a_n, a_i) = d$, $\forall n$ and $\forall i < n$, but then $\rho(a_i,a_j)=d$, $\forall i,j$, since the $\rho$-sequence is maximized at each $n$. This means $\omega(S) < d$ would imply that the cover of $S$, $\cup_{a_i} B_d(a_i)$ is in fact an infinite partition, contradicting the compactness of $S$. Then  $\omega(S)= \lim_{n\to\infty} \gamma(n)^{1/n}<d$. 
+	Since $d$ is the diameter of $S$, the $n^{th}$ term of the $\rho$-sequence of $S$ is bounded by $d^n$ and so $ \lim_{n\to\infty} \gamma(n)^{1/n}=d$ if, and only if, $\gamma(n)=d^n$, $\forall n$. This implies $\rho(a_n, a_i) = d$, $\forall n$ and $\forall i < n$, but then $\rho(a_i,a_j)=d$, $\forall i,j$, since the $\rho$-sequence is maximized at each $n$. This means $\omega(S) < d$ would imply that the cover of $S$, $\cup_{a_i} B_d(a_i)$ is in fact an infinite partition, contradicting the compactness of $S$. Then  $\omega(S)= \lim_{n\to\infty} \gamma(n)^{1/n}<d$. 
 \end{proof}
 
-This doesn't work because  $\cup_{a_i} B_d(a_i)$  could fail to be a cover -when does this happen
+This doesn't work because  $\cup_{a_i} B_d(a_i)$  could fail to be a cover - the $\rho-$ ordering will be a dense subset under mild conditions - then being compact should imply a contradiction since we should have $\overline{S}=S$ for $S$ compact.
 
 
 \begin{proposition}
+\label{translation invariance}
 	(translation invariance) If $(M, \rho)$ be a compact ultrametric space and s also a topological group for which $\rho$ is (left) invariant under the group operation, then $\omega$ is also (left)-invariant. That\ is, if $\rho(x,y)=\rho(gx,gy)$, $ \forall g,x,y \in M$, then $\omega(gS)=\omega(S)$, for $S \subseteq M$.	
 \end{proposition}
 
