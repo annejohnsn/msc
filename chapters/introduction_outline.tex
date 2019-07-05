@@ -1,54 +1,52 @@
 
 In the course of developing a generalized factorial function, Manjul Bhargava introduced the notion of $p-$orderings of a Dedekind domain \cite{mb1, mb2}, a combinatorial concept which, along with his generalized factorial, provided deep and perhaps unexpected results in number theory. The concepts laid down in these papers have enriched the theory of integer-valued polynomials \cite{mb3, kj2} and have also provided a natural framework to extend many classical results in analysis to a $p-$adic setting, such as polynomial approximation and mapping theorems \cite{mb1, mb2,mb3}. In this thesis, we examine how a tool based on $p-$orderings can extend another concept from classical analysis, namely the \textit{valuative capacity} of a set, to non-archimedean settings.\\
 
-The historical background to this work comes in two parts. On the one hand, there is the background on valuative capacity from potential theory, and secondly, there is the background from Bhargava's $p-$orderings. We give a brief summary of each here. A similar treatment is found in, for example, \cite{fp}. Jean-Luc Chabert was the first to draw a connection between the two, and many of the known results in this area stem from his work or that of his colleagues. Building on the result in \cite{kj}, we extend the work by Chabert (and colleagues) by studying valuative capacity in a more general setting, namely that of an ultrametric space, which may or may not also be a local field. In doing so, we show many properties of capacities are in fact independent of the algebraic structure of a space, although the such structure, when it exists, can act as a useful probe.\\
+The historical background to this work comes in two parts. On the one hand, there is the background on logarithmic capacity from potential theory, and secondly, there is the background from Bhargava's $p-$orderings. We give a brief summary of each here. A similar treatment, with slightly different perspective, is found in \cite{fp}. Jean-Luc Chabert was the first to draw a connection between the two, and many of the known results in this area stem from his work or that of his colleagues. Building on the result in \cite{kj}, we extend the work by Chabert and colleagues by studying valuative capacity in a more general setting, namely that of an ultrametric space, which may or may not also be a local field. In doing so, we show many properties of capacities are in fact independent of the algebraic structure of a space, although the such structure, when it exists, can act as a useful probe.\\
 
-The theory of capacity has been developed as a topic in potential theory in a variety of settings. Classically, the notion of capacity was developed over both the complex plane and $\mathbb{R}^n$, although the theory has been further developed in a rather general way by Rumely for Berkovich spaces. A  signficant body of work on the analytic properties of capacity can be found for a number of contexts. For example, such a treatment of the subject over $\mathbb{C}$ can be found in XX(Wermer and Randsford) and over Berovich spaces in XX(rumely) and over $\mathbb{Q}_p$ in XX (DG Cantor). We give a brief account of capacity over the complex plane here, presenting only the most essential definitions and results.   One advantage of tracing the historical roots of capacity back to $\mathbb{C}$ is that the theory in this setting also comes equipped with a physical interpretation. As we are about to see, capacity, in the classical sense, gives a mathematical model for the amount of electrostatic charge a conductor can hold. The exposition below is closely based on Ransford:
+\section{Logarithmic capacity}
+The theory of capacity has been developed as a topic in potential theory in a variety of settings. Classically, the notion of capacity was developed over both $\mathbb{C}$ and $\mathbb{R}^n$, although the theory has been further developed in a rather general way by Rumely for Berkovich spaces. A  signficant body of work on the analytic properties of capacity can be found for a number of contexts. For example, such a treatment of the subject over $\mathbb{C}$ can be found in \cite{wer} and \cite{rand}, over Berovich spaces in \cite{rum}, and over $\mathbb{Q}_p$ in \cite{dgc}. We give a brief account of capacity over $\mathbb{C}$ here, presenting only the most essential definitions and results.   One advantage of tracing the historical roots of capacity back to $\mathbb{C}$ is that the theory in this setting also comes equipped with a physical interpretation. As we are about to see, capacity, in the classical sense, gives a mathematical model for the amount of electrostatic charge a conductor can hold. The exposition below is closely based on Ransford \cite{rand}.\\
+
+Even restricting ourself to the definition of capacity of subsets of $\mathbb{C}$, we find two paths - one which will give us some physical interpretation and one which will lead more naturally to $p-$orderings. We start with the former.\\
 
 \begin{definition} 
-From Ransford:
-Let $\mu$ be a finite Borel measure on $\mathbb{C}$ and suppose $\mu$ has compact support.  We associate to $\mu$ a function
-\[p_\mu (x) =\int \log \lvert x - y \rvert d\mu(y)\] called the \textbf{potential} function of $\mu$. The \textbf{energy} of $\mu$ is 
+\cite{rand} Let $\mu$ be a finite Borel measure on $\mathbb{C}$ and suppose $\mu$ has compact support.  We associate to $\mu$ a function
+\[p_\mu (x) =\int \log \lvert x - y \rvert d\mu(y)\] called the \textbf{potential function} of $\mu$. The \textbf{energy} of $\mu$ is 
 \[I(\mu) =\int \int \log \lvert x - y \rvert d\mu(y) d\mu(x)\]
 \end{definition}
 
-"think of $\mu$ as being a charge distribution, the potential function of $\mu$ as being the potential energy at each point and the energy of $\mu$ as being the integral"
-" a charge placed upon a conductor will distribute itself so as to minimize the energy, so we consider probability measures on compact sets maximizing the energy"
-
-%\begin{definition}
-%probability measure
-%\end{definition}
+This gives at once the physical interpretation promised above. We interpret the potential function of a measure as giving the potential energy of a point. Viewing the measure as a charge distribution, the double integral gives back the total energy in the system. Now we come upon a physical reality: particles in a conductor will naturally distribute themselves as to minimize the energy. This leads to the definition below:\\
 
 \begin{definition}
-Randsford: Let $K$ be a compact subset of $\mathbb{C}$ and let $\mathcal{P}(K)$ be the set of Borel probability measures on $K$. If $\nu \in \mathcal{P}(K)$ is such that 
+\cite{rand} Let $K$ be a compact subset of $\mathbb{C}$ and let $\mathcal{P}(K)$ be the set of Borel probability measures on $K$. If $\nu \in \mathcal{P}(K)$ is such that 
 \[I(\nu) = \sup_{\mu \in \mathcal{P}(k)} I(\mu)\] then $\nu$ is a \textbf{equilibrium measure} for $K$.
 \end{definition}
 
+We state the following proposition without proof. A sketch of the proof can be found in \cite{fp} and the full details can be found in \cite{rand}.\\
+
 \begin{proposition}
-Randsford 3.3.2: The equilibrium measure exists for every compact set $K \in \mathbb{C}$. When finite, the equilibrium measure is unique and isometry-invariant.
+\cite{rand} The equilibrium measure exists for every compact set $K \in \mathbb{C}$. When finite, the equilibrium measure is unique and isometry-invariant.
 \end{proposition}
 
-\begin{proof}
-$\mathcal{P}(k)$ is a topological space and and every sequence has a weak-* convergent subsequence - cf Randsford and FP.
-\end{proof}
-
+We are now ready to give our first definition of capacity.\\
 
 \begin{definition}
-Randsford: Let $K$ be a compact subset of $\mathbb{C}$. The logarithmic capacity of $E$ is 
+\cite{rand} Let $K$ be a compact subset of $\mathbb{C}$. The logarithmic capacity of $E$ is 
 \[C(K) = e^{I(\nu)}\] where $\nu$ is the equilibrium measure on $K$.
 \end{definition}
 
+We present below a few results on capacity in $\mathbb{C}$. We will see similar results on capacity reappear in the remainder of this work, although the context, and the proofs (omitted here), bear little resemblence to the present case.\\ 
+
 \begin{proposition}
-Randsford: 5.1.2
+[\textbf{Randsford, 5.1.2}] Let $K,  K_1,K_2$ be compact subsets of $\mathbb{C}$.
 \begin{enumerate}
-\item $K_1 \subseteq K_2$, then $C(K_1) \leq C(K_2)$
-\item $C(\alpha K + \beta) = \lvert \alpha \rvert C(K)$ for all $\alpha, \beta \in \mathbb{C}$
+\item $K_1 \subseteq K_2$, then $C(K_1) \leq C(K_2)$.
+\item $C(\alpha K + \beta) = \lvert \alpha \rvert C(K)$ for all $\alpha, \beta \in \mathbb{C}$.
 \item $C(K) = C(\delta_eK)$, where $\delta_e$ is the exterior boundary of $K$.
 \end{enumerate}
 \end{proposition}
 
 \begin{proposition}
-Randsford: 5.1.4
+[\textbf{Randsford, 5.1.4}] 
 Suppose $\{B_n\}$ is a sequence of Borel subsets of $\mathbb{C}$. Let $B=\cup_n B_n$ and $d \geq 0$. 
 \begin{enumerate}
 \item If $diam(b) \leq d$, then $C(B) \leq d$ and \[\frac{1}{log(\frac{d}{C(B)})} \leq \sum_n \frac{1}{log(\frac{d}{C(B_n)})}\]
@@ -56,20 +54,24 @@ Suppose $\{B_n\}$ is a sequence of Borel subsets of $\mathbb{C}$. Let $B=\cup_n 
 \end{enumerate}
 \end{proposition}
 
-The degree to and manner in which the propositions above remain true in the context of a general ultrametric space form a substantial extent of the remainder of this work.
-
-A second path to capacity, not through measures:
-The following definition is due to Fekete XX (definition below from Cantor). 
-%Cantor claims that transfinite diameter is also known as logarithmic capacity, Chebychev constant and that the negative log of the transfinite diameter is the Robbin's constant.
+We now know show an alternate definition of capacity, still over $\mathbb{C}$, which starts with the following two definitions due to Fekete \cite{fek}.\\ 
 
 \begin{definition}
-Let $K \subseteq \mathbb{C}$ be a compact subset. The \textbf{transfinite diameter} of $E$ is \[ \lim_{n\to\infty} \sup_z \prod_{i < j} \lvert z_i - z_j \rvert^{\frac{2}{(n(n-1))}} \] where the supremum is taken over all $n-$tuples in $E^n$. If $(z_1,\ldots,z_n)$ is an $n-$tuple attaining this supremum, we say $(z_1,\ldots,z_n)$ is a \textbf{Fekete n-tuple}.
+Let $K \subseteq \mathbb{C}$ be a compact subset. Fix $n \in \mathbb{N}$, and for $z = (z_1,\ldots,z_n) \in K^n$, consider
+\[\prod_{i < j} \lvert z_i - z_j \rvert^{\frac{2}{(n(n-1))}} \]
+An element $z = (z_1,\ldots,z_n) \in K^n$ is called a \textbf{Fekete n-tuple} if $z$ maximizes the above over all $n-$tuples in $K$.
 \end{definition}
 
-Since $K$ is compact, the supremum is allows attained and lies in $\delta_e K$ (maximum principal)
+Note that since $K$ is compact by assumption, a Fekete $n-$tuple exists for each $n$.\\
+
+\begin{definition}
+Let $K \subseteq \mathbb{C}$ be a compact subset. The \textbf{transfinite diameter} of $K$ is \[ \lim_{n\to\infty}\max_z  \prod_{i < j} \lvert z_i - z_j \rvert^{\frac{2}{(n(n-1))}}\] where the maximum is taken over all $n-$tuples in $K$. 
+\end{definition}
+
+The following proposition shows the relation to capacity.\\
 
 \begin{proposition}
-Randsford 5.5.2 [Fekete-Szeg\"o Theorem] If $K$ is a compact subset of $\mathbb{C}$ then the transfinite diameter of $K$ is equal to the logarithmic capacity of $K$.
+\textbf{[Fekete-Szeg\"o Theorem]} If $K$ is a compact subset of $\mathbb{C}$, then the transfinite diameter of $K$ is equal to the logarithmic capacity of $K$.
 \end{proposition}
 
 %\begin{definition}
@@ -81,16 +83,17 @@ Randsford 5.5.2 [Fekete-Szeg\"o Theorem] If $K$ is a compact subset of $\mathbb{
 %\[\inf_{\mu \in \mathcal{P}(E)} \int \int \log \lvert x-y \rvert^{-1} d\mu(y) d\mu(x) \]
 %\end{definition}
 
-Over $\mathbb{C}$ as you obtain points that maximize the energy in a system, you forcibly have to change them as you go (add new points). Remarkably, this is not the case over the $p-$adics - we have persistence in orderings.
+We end this section with an observation about the points $z_i$ in $\mathbb{C}$ making up a Fekete n-tuple. For $n \geq 2$, if $(z_1,\ldots,z_{n+1})$ is a Fekete $(n+1)-$tuple, then $(z_1,\ldots,z_n)$ is not a Fekete $n-$tuple. In physical terms, we note that the placement of a new charge in a conductor will change the location of the existing charges in that conductor. Remarkably, this is not the case in ultrametric spaces. Indeed, we are able to build the analogous structure, which we call a $p-$ordering or more generally a $\rho-$ordering, \textit{recursively}, that is by reusing the points from the previous iteration. 
 
-p-ordering background:
-define: 
-p-adic valuation
-p-ordering
-p-sequence, characteristic sequence
-shuffles\\
+\section{P-orderings}
+%p-ordering background:
+%define: 
+%p-adic valuation
+%p-ordering
+%p-sequence, characteristic sequence%
+%shuffles\\
 
-Connection due to JLC:
-\begin{definition}
-\[\inf_{\mu \in \mathcal{P}(\overline{E})} \int \int v_p(x-y)d \mu (x)d \mu (y) = \lim_{n\to\infty} \frac{w_E(n,p)}{n}\]
-\end{definition}
+%Connection due to JLC:
+%\begin{definition}
+%\[\inf_{\mu \in \mathcal{P}(\overline{E})} \int \int v_p(x-y)d \mu (x)d \mu (y) = \lim_{n\to\infty} \frac{w_E(n,p)}{n}\]
+%\end{definition}

@@ -1,0 +1,66 @@
+with(LinearAlgebra):
+with(combinat, cartprod):
+with(padic):
+
+ComputePadicProductOrdering := proc (m, components)
+# Given a list of primes, p_1,...,p_n, compute the first m terms of a p-infinity ordering of Z_p1 x ... x Z_pn, where p-infinity(x,y)=max(p_j(x_j,y_j)) and p_j is the p_j-adic metric.
+# arg m; an integer indicating the number of elements of the ordering to return
+# arg components; a list of prime numbers indicating the components of the product space
+# return; a matrix where each row is an element in the product space and the i-th row is the i-th element in an ordering
+
+    local numberOfComponents, co_primes, i, n, T, M, v, distances, j, M1, newBlock;
+
+    #will end up with one column per component in the product space
+    numberOfComponents := nops(components);
+		
+    #the ordering will start with the cartestian product of coprime elts from each component
+    #everything up to p-1 is coprime    
+    co_primes := [[seq(i, i = 0 .. (components[1]-1))]]; 	
+    for n from 2 to numberOfComponents do 
+        co_primes := [op(co_primes), [seq(i, i = 0 .. (components[n]-1))]];	
+    od;  
+	
+    #then take the cartestian product to get the first <product of elements in components> elements in the ordering
+    T := cartprod(co_primes);
+    M := Matrix([T['nextvalue']()]);	
+    while not T['finished'] do
+       	M := <M; T['nextvalue']()>;
+    end do;	
+
+    #make a list to keep track of the exponent of each prime; start by take each prime to the power -1
+    v := Vector[row](1 .. numberOfComponents, 1);
+    v := convert(v, list);
+
+    #keep adding rows until you have enough points in the ordering
+    while RowDimension(M) < m do 
+        #take each prime to the power of minus the elements in v
+        distances := zip(proc (x, y) options operator, arrow; x^(-y) end proc, components, v); 
+        #check each column to see if the max distance was achieved        
+		    for j from 1 to numberOfComponents do
+			      #if it was then split this column
+            if distances[j] = max(distances) then
+				    #take a snapshot of M before you start - this is what you have to add to
+	        	M1 := copy(M, deep);
+				    #create p-1 new blocks
+ 	        	for i from 1 to (components[j]-1) do  
+                    newBlock := copy(M1, deep);
+                    newBlock(1..RowDimension(newBlock), j) := Column(newBlock, [j]) +~ (i*components[j]^v[j]);
+                    #add the new block to the master matrix
+                    M := Matrix([[M],[newBlock]]);
+                od; 
+                #update the vector of exponents
+                v[j] := v[j]+1; 
+            end if;
+        od;
+    end do;
+  return M[1..m,]; 
+end proc; 
+
+
+
+
+
+
+
+
+

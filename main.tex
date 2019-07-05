@@ -9,6 +9,7 @@
 \usepackage{fancyvrb}
 \usepackage{tikz}
 \usepackage{tikz-qtree}
+\usepackage{listings}
 \usepackage{multicol}
 \usepackage{amsthm}
 \usepackage{amsmath }
@@ -21,7 +22,55 @@
 \usepackage{geometry}
 \usepackage{setspace}
 \usepackage{enumerate}
-\makenomenclature
+%%
+%% Maple definitions (c) 2008 Alexander Shapiro
+%%
+\lstdefinelanguage{Maple}
+{keywords={and,assuming,break,by,catch,description,do,done, elif,else,end,error,export,fi,finally,for,from,global,if, implies,in,intersect,local,minus,mod,module,next,not,od,%
+option,options,or,proc,quit,read,return,save,stop,subset,then, to,try,union,use,uses,while,xor},
+sensitive=true,
+morecomment=[l]\#,
+morestring=[b]",
+morestring=[d]"
+}[keywords,comments,strings]
+
+\definecolor{mygreen}{RGB}{34,139,34}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ 
+   xleftmargin=-25pt,
+   xrightmargin=-25pt,
+   framesep=0pt,
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\small,        % the size of the fonts that are used for the code
+  breakatwhitespace=true,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+%  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+%  deletekeywords={...},            % if you want to delete keywords from the given language
+%  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+%  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+%  firstnumber=5,                % start line enumeration with line 1000
+  frame=single,	                   % adds a frame around the code
+  keepspaces=false,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\bfseries\color{blue},       % keyword style
+  language=Maple,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\color{black}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
@@ -95,22 +144,27 @@
 %\chapter*{feb_presentation}
 %\input{feb_presentation/presentation}
 
-%\appendix
-%\chapter{Appendix}
-%\input{chapters/appendix}	
+\appendix
+\chapter{Appendix}
+\input{chapters/appendix}	
+
 \begin{thebibliography}{9}
-\bibitem[Ro]{ar} Alain M. Robert, A course in p-adic analysis.
-\bibitem[Ru]{rum} Rumely.
-\bibitem[B1]{mb1} Manjul Bhargava, The factorial function and generlizations
-\bibitem[B2]{mb2} $P$-orderings and polynomial functions on arbitrary subsets of Dedekind rings.
-\bibitem[B3]{mb3} On $ P$-orderings, rings of integer-valued polynomials, and ultrametric analysis
+\bibitem[A]{na} Nate Ackerman,  Completeness in Generalized Ultrametric Spaces
+\bibitem[B1]{mb1} Manjul Bhargava. The factorial function and generlizations
+\bibitem[B2]{mb2} Manjul Bhargava. $P$-orderings and polynomial functions on arbitrary subsets of Dedekind rings.
+\bibitem[B3]{mb3} Manjul Bhargava. On $ P$-orderings, rings of integer-valued polynomials, and ultrametric analysis
+\bibitem[C]{dgc}  D.G. Cantor. On an extension of the definition of transfinite diameter and some applications.  
+\bibitem[F]{fek} Fekete.
 \bibitem[J1]{kj} Keith Johnson, P-orderings and Fekete sets
 \bibitem[J2]{kj2} Keith Johnson, something else
+\bibitem[Ra]{rand} Thomas Randsford. Potential theory in the complex plane.
+\bibitem[Ro]{ar} Alain M. Robert, A course in p-adic analysis.
+\bibitem[BR]{rum} Matthew Baker and Robert Rumely. Potential theory and dynamics on the Berkovich Projective Line.
 \bibitem[S]{sim} EQUILIBRIUM MEASURES AND CAPACITIES INSPECTRAL THEORY
-\bibitem[A]{na} Nate Ackerman,  Completeness in Generalized Ultrametric Spaces
 \bibitem[GV]{gvdp} Lothar Gerritzen and Marius van der Put, Schottky Groups and Mumford Curves.
 \bibitem[FP]{fp} Youssef Fares and Samuel Petite. The valuative capcity of subshifts of finite type.
 \bibitem[EF]{ef} Sabine Evrard and Youssef Fares. $p$-adic subsets whose factorials satisfy a genearlized Legendre formula.
 \bibitem[CEF]{cef} Jean-Luc Chabert, Sabine Evrard and Youssef Fares. Regular subsets of valued fields and Bhargava’s $v$-orderings
+\bibitem[W]{wer} John Wermer. Potential Theory.
 \end{thebibliography}
 \end{document} 

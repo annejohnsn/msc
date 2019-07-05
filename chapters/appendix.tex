@@ -1,58 +1,9 @@
-with(LinearAlgebra):
-with(combinat, cartprod):
-with(padic):
-
-ComputePadicProductOrdering := proc (m, components)
-# Given a list of primes, p_1,...,p_n, compute the first m terms of a 
-# p-infinity ordering of Z_p1 x ... x Z_pn, where p-infinity(x,y)=max(p_j(x_j,y_j))
-# and p_j is the p_j-adic metric.
-#
-# arg m; an integer indicating the number of elements of the ordering to return
-# arg components; a list of prime numbers indicating the components of the product space
-# 
-# return; a matrix where each row is an element in the product space and the i-th row is the i-th element in an ordering
-
-    local numberOfComponents, co_primes, i, n, T, M, v, distances, j, M1, newBlock;
-
-    #will end up with one column per component in the product space
-    numberOfComponents := nops(components);
-		
-    # the ordering will start with the cartestian product of coprime elts from each component
-    co_primes := [[seq(i, i = 0 .. (components[1]-1))]]; #everything up to p-1 is coprime	
-    for n from 2 to numberOfComponents do 
-        co_primes := [op(co_primes), [seq(i, i = 0 .. (components[n]-1))]];	
-    od;  
-	
-    #then take the cartestian product to get the first <product of elements in components> elements in the ordering
-    T := cartprod(co_primes);
-    M := Matrix([T['nextvalue']()]);	
-    while not T['finished'] do
-       	M := <M; T['nextvalue']()>;
-    end do;	
-
-    #make a list to keep track of the exponent of each prime; start by take each prime to the power -1
-    v := Vector[row](1 .. numberOfComponents, 1);
-    v := convert(v, list);
+\newpage
+\lstinputlisting{code/Padic_Product_Ordering.txt}
 
 
-    while RowDimension(M) < m do #keep adding rows until you have enough points in the ordering
-        distances := zip(proc (x, y) options operator, arrow; x^(-y) end proc, components, v); #take each prime to the power of minus the elements in v
-        for j from 1 to numberOfComponents do #check each column to see if the max distance was achieved
-            if distances[j] = max(distances) then# if it was then split this column
-	        M1 := copy(M, deep); #take a snapshot of M before you start - this is what you have to add to
- 	        for i from 1 to (components[j]-1) do  #create p-1 new blocks
-                    newBlock := copy(M1, deep);
-                    newBlock(1..RowDimension(newBlock), j) := Column(newBlock, [j]) +~ (i*components[j]^v[j]);
-                    M := Matrix([[M],[newBlock]]); #add the new block to the master matrix
-                od; 
-                v[j] := v[j]+1; #update the vector of exponents
-            end if;
-        od;
-    end do;
-  return M[1..m,]; 
-end proc; 
-
-
+\newpage
+\begin{lstlisting}
 ComputePartialRhoSeq := proc (S, rho) #rho and S must be compatible
 # Given an m by n matrix S whose columns represent points of an n-component product space
 # and that has as its i-th row the i-th term in a rho-ordering of that space
@@ -78,8 +29,10 @@ ComputePartialRhoSeq := proc (S, rho) #rho and S must be compatible
 
 	return partialSum
 end proc;
+\end{lstlisting}
 
-
+\newpage
+\begin{lstlisting}
 FastPartialRhoSeq := proc (A, p:=[2,3]) 
 	local g, h,computePowers,n, shortA, primeExponents,i, thisPrime, thisPrimeIndex,B, G, powers, powersOfG, thisPrimeSum;
 	
@@ -149,7 +102,77 @@ FastPartialRhoSeq := proc (A, p:=[2,3])
 	return primeExponents;
 	
 end proc;
+\end{lstlisting}
 
+\newpage
+\begin{lstlisting}
+FastPartialRhoSeq := proc (A, p:=[2,3]) 
+	local g, h,computePowers,n, shortA, primeExponents,i, thisPrime, thisPrimeIndex,B, G, powers, powersOfG, thisPrimeSum;
+	
+	#=== Some helper functions ===#
+	#Return the index of every instance of p-multiples in a list 
+	#Use to find the index of a given prime in A
+	h := proc(i,L,p) if L[i] mod p = 0 then return i else return NULL fi; end proc;	
 
+	#Count the number of times the mth element has appeared as a factor for the 1..m first elements in a list
+	#<and raise the mth element to that number>
+	#Use to compute the (decreasing) sequence of distances in A or a subset of A
+	g := proc(m, L)
+		local basePrime;
+		
+		basePrime := L[m];
+		
+		#since we just want the exponent not actual distance just compute what power this would be
+		return ordp(mul(L[1..m]), basePrime); 
+		#return Fraction(1,basePrime^ordp(mul(L[1..m]), basePrime));
 
+	end proc;
+	
+	#Compute the appropriate power of an element of G
+	computePowers := proc(m, L)
+		local power;
+	
+		if m=nops(L) then
+			power:= L[-1]-1;
+		else 
+			power:= mul(L[(m+1)..nops(L)])* (L[m]-1);
+		end if;
+		return power
+	end proc;
+	
+	#compute n, then create a copy of A with the first element deleted to ease the indexing
+	n := mul(A);
+	shortA := A[2..nops(A)];
 
+	#=== compute the terms corrsponding to each prime given ==#
+	primeExponents := Vector();
+	for i from 1 to nops(p) do
+		#pull out the prime 
+		thisPrime := p[i];
+
+		#first get the index in A of this prime
+		thisPrimeIndex := map(h, [seq(i, i=1..nops(shortA))], shortA, thisPrime);
+		B:= shortA[thisPrimeIndex];
+
+		#then find the (exponents for the) distances occuring with this prime
+		G:= map(g,[seq(i, i=1..nops(B))],B);
+	
+		#Figure out what power each distance should be raised to
+		powers := map(computePowers,thisPrimeIndex, shortA);
+	
+		#raise each element in G to the given powers
+   		#powersOfG:= zip(proc (x, y) options operator, arrow; x^(y) end proc, G, powers); 
+		powersOfG:= zip(proc (x, y) options operator, arrow; x*(y) end proc, G, powers); 
+		
+		#the exponent of this prime in the nth partial will be -([the sum of the elements in powers]/n)
+		#where n is the product of elements in A (including the first element)
+
+		thisPrimeSum := add(powersOfG);
+		primeExponents(i) := thisPrimeSum/n; 
+		
+ 	end do;
+
+	return primeExponents;
+	
+end proc;
+\end{lstlisting}
