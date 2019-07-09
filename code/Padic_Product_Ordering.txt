@@ -49,7 +49,7 @@ ComputePadicProductOrdering := proc (m, components)
                     M := Matrix([[M],[newBlock]]);
                 od; 
                 #update the vector of exponents
-                v[j] := v[j]+1; 
+                v[j] := v[j] + 1; 
             end if;
         od;
     end do;

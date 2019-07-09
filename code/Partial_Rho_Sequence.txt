@@ -9,21 +9,21 @@ ComputePartialRhoSeq := proc (S, rho)
 # arg rho; a compatible metric on the points (rows) in S
 # return; a real number, correpsonding to the (m-1)-th term of the partial rho-sequence
 
-	local lastTerm, f, distances, nthTerm;
+    local lastTerm, f, distances, nthTerm;
 
-	#find the last element in the ordering 
-	lastTerm := S[RowDimension(S),]; 
+    #find the last element in the ordering 
+    lastTerm := S[RowDimension(S),]; 
 
-	#make a function that calculates the distance from the i-th row of S to the last term in the ordering
-	f := proc (i) options operator, arrow; rho(op(convert(lastTerm, list)), op(convert(S[i,], list))) end proc; 
+    #make a function that calculates the distance from the i-th row of S to the last term in the ordering
+    f := proc (i) options operator, arrow; rho(op(convert(lastTerm, list)), op(convert(S[i,], list))) end proc; 
 
-	#run over each row to get the set of all m-1 distances
-	distances := map(f, [seq(i, i = 1 .. (RowDimension(S)-1))]);
+    #run over each row to get the set of all m-1 distances
+    distances := map(f, [seq(i, i = 1 .. (RowDimension(S)-1))]);
 
-	#multiply them to get the (m-1)-th term of the rho-ordering
-	partialSum:= mul(distances);
+    #multiply them to get the (m-1)-th term of the rho-ordering
+    partialSum := mul(distances);
 
-	return partialSum
+    return partialSum
 end proc;
 
 

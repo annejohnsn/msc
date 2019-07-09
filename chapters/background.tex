@@ -216,19 +216,30 @@ Any ultrametric space where $\rho$ is induced from a valuation domain.
 \newpage
 \section*{$\rho$-orderings, $\rho$-sequences, and valuative capacity}
 
-In what follows let $S$ be a compact subset of an ultrametric space $(M,\rho)$.
+We now come to the central theme of this work. The observation that an analogous notion of $p-$ordering can be defined for a general ultrametric space, and that these structures coincide with Fekete $n-$tuples, is due to \cite{kj}. The exploration of this idea makes up the remainder of this work. \\ 
+
+In what follows, we let $S$ be a compact subset of an ultrametric space $(M,\rho)$.\\
 
 \begin{definition}
-	\cite{kj} A \textbf{$\rho$-ordering} of $S$ is a sequence $\{a_i\}_{i=0}^\infty \subseteq S$ such that $\forall n > 0$, $a_n$ maximizes $\prod_{i=0}^{n-1} \rho(s,a_i)$ over $s \in S$. 
+	\cite{kj} A \textbf{$\rho$-ordering} of $S$ is a sequence $\{a_i\}_{i=0}^\infty$ in $S$ such that $a_0$ is arbitrary and $\forall n > 0$, $a_n$ maximizes $\prod_{i=0}^{n-1} \rho(s,a_i)$ over $s \in S$. 
 \end{definition}
 
 \begin{example}
-Suppose $S$ is a finite subset of $(\mathbb{Z}, \lvert \cdot \rvert_2)$, $S=\{0,2,8,3\}$. Then a $\rho-$ordering of $S$ starts (arbitrarily) with $a_0=0$ , which forces $a_1=3$, since $\rho(0,3)=1=diam(S)$. The sequence continues $a_2=2$ and $a_3=8$, but after this point the sequence becomes arbitrary because  $\prod_{i=0}^{n-1} \rho(s,a_i)$ will contain a $0$, given by the repeated term. Indeed, for any finite subset $S$ with $\lvert S \rvert = n$, the $\rho-$ordering of $S$ is arbitrary from the $n^{th}$ point on. 
+Suppose $S$ is a finite subset of $(\mathbb{Z}, \rho_2)$, $S=\{0,2,8,3\}$. Then a $\rho-$ordering of $S$ starts (arbitrarily) with $a_0=0$ , which forces $a_1=3$, since $\rho(0,3)=1=diam(S)$. The sequence continues $a_2=2$ and $a_3=8$, but after this point the sequence becomes arbitrary because  $\prod_{i=0}^{n-1} \rho(s,a_i)$ will contain a $0$, given by the repeated term. Indeed, for any finite subset $S$ with $\lvert S \rvert = n$, the $\rho-$ordering of $S$ is arbitrary from the $n^{th}$ point on. 
 \end{example}
 
 \begin{definition}
-	\cite{kj} The \textbf{$\rho$-sequence} of $S$ is the sequence whose $0^{th}$-term is $1$ and whose $n^{th}$ term, for $n >0$, is $\prod_{i=o}^{n-1} \rho(a_n,a_i)$.
+	\cite{kj} Let $\sigma(i)$ be a $\rho-$ordering of $S$. The \textbf{$\rho$-sequence} of $S$ is defined by letting $a_0=1$  and $a_n=\prod_{i=0}^{n-1} \rho(\sigma(n),\sigma(i))$, for $n > 0$.
 \end{definition}
+
+\begin{itemize}
+\item this gives back the n-th diameter - the limit is the transfinite diameter and we take it as the definition of capacity
+\item clean up all the sequence definitions to use the same format
+\item check the historical background and this section to make sure you've said enough about fekete n-tuples and p-orderings corresponding
+\item go through the JLC chabert reference
+\item check that youve used the same notation for closed balls
+\end{itemize}
+
 
 \begin{proposition}
 	\cite{kj} The $\rho$-sequence of $S$ is well-defined so long as $S$ is compact and $\rho$ is an ultrametric. That is, the $\rho$-sequence of a compact subset of an ultrametric spaces does not depend on the choice of $\rho$-ordering of $S$.
@@ -260,6 +271,7 @@ Suppose $S$ is a finite subset of $(\mathbb{Z}, \lvert \cdot \rvert_2)$, $S=\{0,
 
 This doesn't work because  $\cup_{a_i} B_d(a_i)$  could fail to be a cover - the $\rho-$ ordering will be a dense subset under mild conditions - then being compact should imply a contradiction since we should have $\overline{S}=S$ for $S$ compact.
 
+Make a comment about algebraic structure here
 
 \begin{proposition}
 \label{translation invariance}
@@ -271,11 +283,11 @@ This doesn't work because  $\cup_{a_i} B_d(a_i)$  could fail to be a cover - the
 \end{proof}	
 
 \begin{example}
-	With the notation of the previous section, note that for $x,y \in (\mathbb{Z}_p, \mid \cdot \mid_p)$, $\rho_p(x,y) = \mid x - y \mid_p = p^{-\nu_p(x-y)} = p^{-\nu_p((a+x)-(a+y))} =  \mid (a+x) - (a+y) \mid_p = \rho_p(a+x,a+y)$ so that $\omega(a+S) = \omega(S)$ for $S \subseteq (\mathbb{Z}_p, \mid \cdot \mid_p)$.
+	With the notation of the previous section, note that $\rho_p$ is translation invariant since for $x,y \in (\mathbb{Z}_p, \rho_p)$, $\rho_p(x,y) = p^{-v_p(x-y)} = p^{-v_p((a+x)-(a+y))} = \rho_p(a+x,a+y)$. Then $\omega(a+S) = \omega(S)$ for $S \subseteq (\mathbb{Z}_p, \rho_p)$.
 \end{example}
 
 \begin{proposition}
-	Let $(V, N)$ be a normed vector space and suppose $N$ satisfies the strong triangle identity. Then if $N$ is multiplicative, so is $\omega$. That is, if $N(gx)=N(g)N(x)$,$\forall g,x \in V$, then $\omega(gS) = N(g)  \omega(S)$, for $g \in V$ and $S \subseteq M$. 
+(scaling)	Let $(V, N)$ be a normed vector space and suppose $N$ satisfies the strong triangle identity, so that $(V,\rho_N)$ is an ultrametric space. Then if $N$ is multiplicative, so is $\omega$. That is, if $N(gx)=N(g)N(x)$,$\forall g,x \in V$, then $\omega(gS) = N(g)  \omega(S)$, for $g \in V$ and $S \subseteq M$. 
 \end{proposition}
 
 \begin{proof}
@@ -289,10 +301,10 @@ This doesn't work because  $\cup_{a_i} B_d(a_i)$  could fail to be a cover - the
 
 
 \begin{example}
-	Since $\mid \cdot \mid_p$ is multiplicative, $\omega(mS) = \mid m \mid_p  \omega(S)$ for $m \in \mathbb{Z}_p$ and $S \subseteq \mathbb{Z}$. In particular, $\omega(p\mathbb{Z}) = \mid p \mid_p \omega(\mathbb{Z}) = \frac{1}{p}\cdot p^{\frac{1}{1-p}} = p^{-p/p-1}.$
+	Since $\rho_p$ is multiplicative, $\omega(mS) = v_p(m)\cdot \omega(S)$ for $m \in \mathbb{Z}_p$ and $S \subseteq \mathbb{Z}$. In particular, $\omega(p\mathbb{Z}) = \frac{1}{p}\cdot \omega(\mathbb{Z})$. %= \frac{1}{p}\cdot p^{\frac{1}{1-p}} = p^{-p/p-1}.$
 \end{example}
 
-The following proposition is from \cite{kj}, where it is given for some $S$  written as the union of two subsets, although it is easily seen to be true for $S$ equal to any finite union, so long as the other assumptions remain satisfied.
+This is important and you should say so. The following proposition is from \cite{kj}, where it is given for some $S$  written as the union of two subsets, although it is easily seen to be true for $S$ equal to any finite union, so long as the other assumptions remain satisfied.
 
 \begin{proposition}
 	\cite{kj}(subadditivity) If  $diam(S) := \max_{x,y \in S} \rho(x,y)=d$ and $S=\cup_i^n A_i$ for $A_i$ compact subsets of $M$ with $\rho(A_i, A_j)=d, \forall i,j$, then \[\frac{1}{log(\omega(S)/d) } = \sum_{i=1}^n \frac{1}{log(\omega(A_i)/d)}\] 
@@ -300,12 +312,15 @@ The following proposition is from \cite{kj}, where it is given for some $S$  wri
 
 
 \begin{example}
-
+$\omega(\mathbb{Z})$
 \end{example}
 
 \begin{corollary}
 	Suppose $S = \cup_i^n S_i$ with $\rho(S_i, S_j)=d=diam(S)$ and also $\omega(S_i)=\omega(S_j)$, $\forall i,j$ .  Let $r \in \mathbb{R}$ be such that $\omega(S_i)=r\omega(S)$, $\forall i$. Then $\omega(S) = r^{\frac{1}{n-1}}\cdot d$. In particular if $S = \mathbb{Z}$ and $(M,\rho)= (\mathbb{Z}, \mid \cdot\mid_p)$ then $\omega(S)=(\frac{1}{p})^{1/p-1}$ for any prime $p$. 
 \end{corollary}
+
+\begin{example}
+\end{example}
 
 \begin{corollary}
 	(Joins of computable sets are computable) Let  $\Gamma_M = \{\gamma_0, \gamma_1,\ldots, \gamma_\infty=0\}$ be the set of distances in $M$. Suppose that $S = B_{\gamma_i}(x)$,  for some $x$ and $i$, is the union of $2$ or more balls of radius $\gamma_{i+1}$, i.e., $S=\cup_{j=1}^n B_{\gamma_{i+1}} (x_j)$ is a join in the lattice of open sets in $M$, then 

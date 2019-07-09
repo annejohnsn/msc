@@ -1,12 +1,12 @@
 
 In the course of developing a generalized factorial function, Manjul Bhargava introduced the notion of $p-$orderings of a Dedekind domain \cite{mb1, mb2}, a combinatorial concept which, along with his generalized factorial, provided deep and perhaps unexpected results in number theory. The concepts laid down in these papers have enriched the theory of integer-valued polynomials \cite{mb3, kj2} and have also provided a natural framework to extend many classical results in analysis to a $p-$adic setting, such as polynomial approximation and mapping theorems \cite{mb1, mb2,mb3}. In this thesis, we examine how a tool based on $p-$orderings can extend another concept from classical analysis, namely the \textit{valuative capacity} of a set, to non-archimedean settings.\\
 
-The historical background to this work comes in two parts. On the one hand, there is the background on logarithmic capacity from potential theory, and secondly, there is the background from Bhargava's $p-$orderings. We give a brief summary of each here. A similar treatment, with slightly different perspective, is found in \cite{fp}. Jean-Luc Chabert was the first to draw a connection between the two, and many of the known results in this area stem from his work or that of his colleagues. Building on the result in \cite{kj}, we extend the work by Chabert and colleagues by studying valuative capacity in a more general setting, namely that of an ultrametric space, which may or may not also be a local field. In doing so, we show many properties of capacities are in fact independent of the algebraic structure of a space, although the such structure, when it exists, can act as a useful probe.\\
+The historical background to this work comes in two parts. On the one hand, there is the background on logarithmic capacity from potential theory, and secondly, there is the background from Bhargava's $p-$orderings. We give a brief summary of each here. A similar treatment, with slightly different perspective, is found in \cite{fp}. Jean-Luc Chabert was the first to draw a connection between the two, and many of the known results in this area stem from his work or that of his colleagues. Building on the result in \cite{kj}, we extend the work by Chabert and colleagues by studying valuative capacity in a more general setting, namely that of an ultrametric space, which may or may not also be a local field. In doing so, we show many properties of capacities are in fact independent of the algebraic structure of a space, although such structure, when it exists, can act as a useful probe.\\
 
 \section{Logarithmic capacity}
-The theory of capacity has been developed as a topic in potential theory in a variety of settings. Classically, the notion of capacity was developed over both $\mathbb{C}$ and $\mathbb{R}^n$, although the theory has been further developed in a rather general way by Rumely for Berkovich spaces. A  signficant body of work on the analytic properties of capacity can be found for a number of contexts. For example, such a treatment of the subject over $\mathbb{C}$ can be found in \cite{wer} and \cite{rand}, over Berovich spaces in \cite{rum}, and over $\mathbb{Q}_p$ in \cite{dgc}. We give a brief account of capacity over $\mathbb{C}$ here, presenting only the most essential definitions and results.   One advantage of tracing the historical roots of capacity back to $\mathbb{C}$ is that the theory in this setting also comes equipped with a physical interpretation. As we are about to see, capacity, in the classical sense, gives a mathematical model for the amount of electrostatic charge a conductor can hold. The exposition below is closely based on Ransford \cite{rand}.\\
+The theory of capacity has been developed as a topic in potential theory in a variety of settings. Classically, the notion of capacity was developed over both $\mathbb{C}$ and $\mathbb{R}^n$, although the theory has been further developed in a rather general way by Rumely for Berkovich spaces. A  signficant body of work on the analytic properties of capacity can be found for a number of different contexts. For example, such a treatment of the subject over $\mathbb{C}$ can be found in \cite{wer} and \cite{rand}, over Berovich spaces in \cite{rum}, and over $\mathbb{Q}_p$ in \cite{dgc}. We give a brief account of capacity over $\mathbb{C}$ here, presenting only the most essential definitions and results.   One advantage of tracing the historical roots of capacity back to $\mathbb{C}$ is that the theory in this setting also comes equipped with a physical interpretation. As we are about to see, capacity, in the classical sense, gives a mathematical model for the amount of electrostatic charge a conductor can hold. The exposition below is closely based on Ransford \cite{rand}.\\
 
-Even restricting ourself to the definition of capacity of subsets of $\mathbb{C}$, we find two paths - one which will give us some physical interpretation and one which will lead more naturally to $p-$orderings. We start with the former.\\
+Even restricting ourself to the definition of capacity of subsets of $\mathbb{C}$, we find two paths, one which will give us some physical interpretation and one which will lead more naturally to $p-$orderings. We start with the former.\\
 
 \begin{definition} 
 \cite{rand} Let $\mu$ be a finite Borel measure on $\mathbb{C}$ and suppose $\mu$ has compact support.  We associate to $\mu$ a function
@@ -14,13 +14,15 @@ Even restricting ourself to the definition of capacity of subsets of $\mathbb{C}
 \[I(\mu) =\int \int \log \lvert x - y \rvert d\mu(y) d\mu(x)\]
 \end{definition}
 
-This gives at once the physical interpretation promised above. We interpret the potential function of a measure as giving the potential energy of a point. Viewing the measure as a charge distribution, the double integral gives back the total energy in the system. Now we come upon a physical reality: particles in a conductor will naturally distribute themselves as to minimize the energy. This leads to the definition below:\\
+\hl{comment from Keith:  is the integral over $\mathbb{C}$ (resp $\mathbb{C}^2$) or $supp(\mu)$?}\\
+This gives at once the physical interpretation promised above. We interpret the potential function of a measure as giving the potential energy of a point. Viewing the measure as a charge distribution, the double integral gives back the total energy in the system. Now we come upon a physical reality: charged particles in a conductor will naturally distribute themselves as to minimize the energy. This leads to the definition below:\\
 
 \begin{definition}
 \cite{rand} Let $K$ be a compact subset of $\mathbb{C}$ and let $\mathcal{P}(K)$ be the set of Borel probability measures on $K$. If $\nu \in \mathcal{P}(K)$ is such that 
 \[I(\nu) = \sup_{\mu \in \mathcal{P}(k)} I(\mu)\] then $\nu$ is a \textbf{equilibrium measure} for $K$.
 \end{definition}
 
+\hl{comment from Keith:  explain why its a sup when you're minimizing the energy}\\
 We state the following proposition without proof. A sketch of the proof can be found in \cite{fp} and the full details can be found in \cite{rand}.\\
 
 \begin{proposition}
@@ -34,7 +36,7 @@ We are now ready to give our first definition of capacity.\\
 \[C(K) = e^{I(\nu)}\] where $\nu$ is the equilibrium measure on $K$.
 \end{definition}
 
-We present below a few results on capacity in $\mathbb{C}$. We will see similar results on capacity reappear in the remainder of this work, although the context, and the proofs (omitted here), bear little resemblence to the present case.\\ 
+We present below a few results on capacity in $\mathbb{C}$, some of which will reappear in the remainder of this work, although the context, and the proofs (omitted here), bear little resemblence to the present case.\\ 
 
 \begin{proposition}
 [\textbf{Randsford, 5.1.2}] Let $K,  K_1,K_2$ be compact subsets of $\mathbb{C}$.
@@ -54,24 +56,24 @@ Suppose $\{B_n\}$ is a sequence of Borel subsets of $\mathbb{C}$. Let $B=\cup_n 
 \end{enumerate}
 \end{proposition}
 
-We now know show an alternate definition of capacity, still over $\mathbb{C}$, which starts with the following two definitions due to Fekete \cite{fek}.\\ 
+We now know show an equivalent way of  defining of capacity, still over $\mathbb{C}$, which starts with the following two definitions due to Fekete \cite{fek}.\\ 
 
 \begin{definition}
 Let $K \subseteq \mathbb{C}$ be a compact subset. Fix $n \in \mathbb{N}$, and for $z = (z_1,\ldots,z_n) \in K^n$, consider
-\[\prod_{i < j} \lvert z_i - z_j \rvert^{\frac{2}{(n(n-1))}} \]
-An element $z = (z_1,\ldots,z_n) \in K^n$ is called a \textbf{Fekete n-tuple} if $z$ maximizes the above over all $n-$tuples in $K$.
+\[\delta_n(z) = \prod_{j < i} \lvert z_i - z_j \rvert^{\frac{2}{(n(n-1))}} \]
+An element $z = (z_1,\ldots,z_n) \in K^n$ is called a \textbf{Fekete n-tuple} if $z$ maximizes $\delta_n$ over all $n-$tuples in $K$.
 \end{definition}
 
 Note that since $K$ is compact by assumption, a Fekete $n-$tuple exists for each $n$.\\
 
 \begin{definition}
-Let $K \subseteq \mathbb{C}$ be a compact subset. The \textbf{transfinite diameter} of $K$ is \[ \lim_{n\to\infty}\max_z  \prod_{i < j} \lvert z_i - z_j \rvert^{\frac{2}{(n(n-1))}}\] where the maximum is taken over all $n-$tuples in $K$. 
+Let $K \subseteq \mathbb{C}$ be a compact subset. The \textbf{transfinite diameter} of $K$ is \[ \lim_{n\to\infty} [ \max_z \text{ } \delta_n(z)]\] where the maximum is taken over all $n-$tuples in $K$. That is, the transfinite diameter of $K$ is $ \lim_{n\to\infty} \delta_n(z)$, where $z$ is a Fekete $n-$tuple for each $n$.
 \end{definition}
 
 The following proposition shows the relation to capacity.\\
 
 \begin{proposition}
-\textbf{[Fekete-Szeg\"o Theorem]} If $K$ is a compact subset of $\mathbb{C}$, then the transfinite diameter of $K$ is equal to the logarithmic capacity of $K$.
+\textbf{[Fekete-Szeg\"o Theorem]}\cite{fek} If $K$ is a compact subset of $\mathbb{C}$, then the transfinite diameter of $K$ is equal to the logarithmic capacity of $K$.
 \end{proposition}
 
 %\begin{definition}
@@ -83,17 +85,56 @@ The following proposition shows the relation to capacity.\\
 %\[\inf_{\mu \in \mathcal{P}(E)} \int \int \log \lvert x-y \rvert^{-1} d\mu(y) d\mu(x) \]
 %\end{definition}
 
-We end this section with an observation about the points $z_i$ in $\mathbb{C}$ making up a Fekete n-tuple. For $n \geq 2$, if $(z_1,\ldots,z_{n+1})$ is a Fekete $(n+1)-$tuple, then $(z_1,\ldots,z_n)$ is not a Fekete $n-$tuple. In physical terms, we note that the placement of a new charge in a conductor will change the location of the existing charges in that conductor. Remarkably, this is not the case in ultrametric spaces. Indeed, we are able to build the analogous structure, which we call a $p-$ordering or more generally a $\rho-$ordering, \textit{recursively}, that is by reusing the points from the previous iteration. 
+We end this section with an observation about the points $z_i$ in $\mathbb{C}$ making up a Fekete n-tuple. For $n \geq 2$, if $(z_1,\ldots,z_{n+1})$ is a Fekete $(n+1)-$tuple, then $(z_1,\ldots,z_n)$ is not in general a Fekete $n-$tuple. In physical terms, we note that the placement of a new charge in a conductor will almost always change the location of the existing charges in that conductor. Remarkably, this is not the case in ultrametric spaces. Indeed, we are able to build the analogous structure, which we call a $p-$ordering or more generally a $\rho-$ordering, \textit{recursively}, that is by reusing the points from the previous iteration.\\ 
 
 \section{P-orderings}
-%p-ordering background:
-%define: 
-%p-adic valuation
-%p-ordering
-%p-sequence, characteristic sequence%
-%shuffles\\
 
-%Connection due to JLC:
-%\begin{definition}
-%\[\inf_{\mu \in \mathcal{P}(\overline{E})} \int \int v_p(x-y)d \mu (x)d \mu (y) = \lim_{n\to\infty} \frac{w_E(n,p)}{n}\]
-%\end{definition}
+The development of $p-$ordering was motivated by the observation that the factorial function had important number-theoretic applications, yet was only defined for the set $\mathbb{Z}$. In order to generalize the factorial, Bhargava defined it via an invariant, called the $p-$sequence, which could be attached to any subset of a Dedekind domain \footnote{In fact, Bhargava associated $p-$ sequences to the more general class of Dedekind rings, which are locally principal, Noetherian rings in which all nonzero
+primes are maximal.}    \cite{mb1}.\\
+
+We cannot go much further without introducing the following definition. 
+
+\begin{definition}
+Let $z \in \mathbb{Z}$ and let $p$ be any prime. The \textbf{$p-$adic valuation} of $z$, denoted $v_p(z)$, is the largest $n \in \mathbb{N}$ such that $p^n$ divides $z \neq 0$ and $v_p(z) = \infty$ if $z=0$. That is,
+\[
+v_p(z) = 
+\begin{cases}
+ \max\{n \in \mathbb{N}; p^n \mid z\}, & \text{ if } z \neq 0 \\
+         \infty, & \text{ otherwise }
+\end{cases}
+\]
+For $z_1,z_2 \in \mathbb{Z}$,  we define the \textbf{$p-$adic metric} by 
+\[\rho_p(z_1,z_2) = p^{-v_p(z_1-z_2)}\]
+where $p^\infty$ is taken to be $0$. 
+\end{definition}
+
+That the $p-$adic metric defined above is truly a metric is easy to see. We will see in the next chapter that it is in fact not just a metric, but also an ultrametric, since it satistfies a strengthen version of the triangle identity. We are now ready to define $p-$orderings, and not long after, to give the connection to Fekete $n-$tuples.
+
+\begin{definition}
+\cite{mb1} Let $S$ be a subset of $\mathbb{Z}$  and let $p$ be any prime.\footnote{To apply the definition to a general Dedekind domain, we replace the usual primes with the set of primes ideals in the ring of interest.} A \textbf{$p$-ordering} of $S$ is a sequence, $\{a_i\}_{i\geq 0}$ in $S$, such that $a_0$ is arbitrary and for $i >0$, $a_i$ minimizes 
+\[ v_p (\prod_{j < i} (a_i - a_j) )\] over $z \in S$.
+\end{definition}
+
+
+A $p-$ordering in $S$, like a Fekete $n-$tuple in $\mathbb{C}$, is not unique. Indeed, in most of the examples we will explore, there will be infinitely-many choices at each stage of the construction. Nonetheless, $p-$orderings give rise to $p-$sequences, which are invariants of $S$:\\
+
+\begin{definition}
+\cite{mb1} Let $S$ be a subset of $\mathbb{Z}$ and let $p$ be any prime. Suppose $\{a_i\}_{i\geq 0}$ is a $p-$ordering of $S$. The \textbf{p-sequence}, occasionally the \textbf{characteristic sequence}, of $S$ is the sequence defined by $a_0=1$ and for $i > 0,$\[\delta(i) = \prod_{j=0}^{i-1} v_p(a_i, a_j)\]
+\end{definition}
+
+It is a fact, not entirely obvious, that the $p-$sequence of $S$ is independent of the $p-$ordering used in its construction \cite{mb1}. To define the generalized factorial, Bhargava considered the product of $p-$sequences taken over each prime $p$ for arbitrary subsets of $\mathbb{Z}$.  We will go in another direction.\\
+
+Suppose we were to generalize our definition of Fekete $n-$tuple in the obvious way, as below. 
+
+\begin{definition}
+\cite{kj} Let $(M, \rho)$ be a metric space and suppose $S \subseteq M$ is a compact subset. Fix $n \in \mathbb{N}$, and for $z = (z_1,\ldots,z_n) \in S^n$, consider
+\[\delta_n(z) = \prod_{j < i} \rho(z_i - z_j)^{\frac{2}{(n(n-1))}} \]
+An element $z = (z_1,\ldots,z_n) \in S^n$ is called a \textbf{generalized Fekete n-tuple} if $z$ maximizes $\delta_n$ over all $n-$tuples in $S$.
+\end{definition}
+
+What is the connection to $p-$orderings and $p-$sequences? Jean-Luc Chabert answered this question not just for the case $M=\mathbb{Z}$ and $\rho=\rho_p$, but in the case that $M$ is any rank-one valuation domain. 
+
+
+%Of course, if an element minimizes the $p-$adic valuation of product of differences in $S$, it is plain from the definition that the same element will maximize the product of $p-$adic distances in $S$, so that the above definition already bears some resemblence to the previous section. Indeed, 
+%\[ v_p (\prod_{j < i} (a_i - a_j) ) = \sum_{i < j} v_p(a_i - a_j) = - log_p \rho_p(a_i - a_j)\]\\
+
