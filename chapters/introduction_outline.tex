@@ -108,7 +108,7 @@ For $z_1,z_2 \in \mathbb{Z}$,  we define the \textbf{$p-$adic metric} by
 where $p^\infty$ is taken to be $0$. 
 \end{definition}
 
-That the $p-$adic metric defined above is truly a metric is easy to see. We will see in the next chapter that it is in fact not just a metric, but also an ultrametric, since it satistfies a strengthen version of the triangle identity. We are now ready to define $p-$orderings, and not long after, to give the connection to Fekete $n-$tuples.
+That the $p-$adic metric defined above is truly a metric is easy to see. We will see in the next chapter that it is in fact not just a metric, but also an ultrametric, since it satistfies a strengthen version of the triangle identity. The strong triangle identity is not the only nice property enjoyed by the $p-$adic valuation though. Like the logarithm, the $p-$adic valuation also satisfies: $v_p(x \cdot y) = v_p(x) + v_p(y)$ for any prime $p$ and $x,y$ in $\mathbb{Z}$. We are now ready to define $p-$orderings, and not long after, to give the connection to Fekete $n-$tuples.
 
 \begin{definition}
 \cite{mb1} Let $S$ be a subset of $\mathbb{Z}$  and let $p$ be any prime.\footnote{To apply the definition to a general Dedekind domain, we replace the usual primes with the set of primes ideals in the ring of interest.} A \textbf{$p$-ordering} of $S$ is a sequence, $\{a_i\}_{i\geq 0}$ in $S$, such that $a_0$ is arbitrary and for $i >0$, $a_i$ minimizes 
@@ -132,9 +132,19 @@ Suppose we were to generalize our definition of Fekete $n-$tuple in the obvious 
 An element $z = (z_1,\ldots,z_n) \in S^n$ is called a \textbf{generalized Fekete n-tuple} if $z$ maximizes $\delta_n$ over all $n-$tuples in $S$.
 \end{definition}
 
-What is the connection to $p-$orderings and $p-$sequences? Jean-Luc Chabert answered this question not just for the case $M=\mathbb{Z}$ and $\rho=\rho_p$, but in the case that $M$ is any rank-one valuation domain. 
+What then is the connection to $p-$orderings and $p-$sequences? Jean-Luc Chabert drew the first connection between these objects when he studied the limit of these sequences not just for the case $M=\mathbb{Z}$ and $\rho=\rho_p$, but in the case that $M$ is any rank-one valuation domain \cite{jlc}. We repeat his theorem 4.2 from \cite{jlc} below,
 
+\begin{proposition}
+Let $E$ be a subset of $V$, a rank-one valuation domain with valuation $v$. If $\{a_i\}_{i \geq 0}$ is $v-$ordering \footnote{A $v-$ordering of $E$ is exactly as expected: a sequence of distinct element $\{a_i\}_{i \geq 0}$ in $E$ is $v-$ordering of $E$ if for $n >0$,
+\[ v(\prod_{k=0}^{n-1} (a_n-a_k) ) \leq v(\prod_{k=0}^{n-1} (x-a_k)  \] for each $x \in E$.} of $E$, then
+\[\lim_{n\to\infty} \frac{1}{n} \sum_{k=0}^{n-1} v(a_n-a_k) =\frac{2}{n(n+1)} \inf_{x_0, \ldots, x_n \in E} v (\prod_{0\leq j < i \leq n} (x_i-x_j))\]
+\end{proposition}
 
-%Of course, if an element minimizes the $p-$adic valuation of product of differences in $S$, it is plain from the definition that the same element will maximize the product of $p-$adic distances in $S$, so that the above definition already bears some resemblence to the previous section. Indeed, 
-%\[ v_p (\prod_{j < i} (a_i - a_j) ) = \sum_{i < j} v_p(a_i - a_j) = - log_p \rho_p(a_i - a_j)\]\\
+Chabert called this limit the valuative capacity of $E$, and we shall do the same. Of course, if $v$ is the $p-$adic valuation, then minimizing $v_p(x,a)$ will maximize $\rho_p(x,a)$. 
 
+\begin{itemize}
+\item show p-orderings are generalized FNTs and satisfy the recursive property as promised
+\item show (state) this is actually true more generally as lead-in to next section
+\item create better transition or reorganization/flow with above theorem
+\end{itemize}
+%This marks the first and last result we present about a metric space. From this point on, we will dwell in the world of ultrametric spaces.
