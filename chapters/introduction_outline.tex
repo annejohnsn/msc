@@ -4,17 +4,16 @@ In the course of developing a generalized factorial function, Manjul Bhargava in
 The historical background to this work comes in two parts. On the one hand, there is the background on logarithmic capacity from potential theory, and secondly, there is the background from Bhargava's $p-$orderings. We give a brief summary of each here. A similar treatment, with slightly different perspective, is found in \cite{fp}. Jean-Luc Chabert was the first to draw a connection between the two, and many of the known results in this area stem from his work or that of his colleagues. Building on the result in \cite{kj}, we extend the work by Chabert and colleagues by studying valuative capacity in a more general setting, namely that of an ultrametric space, which may or may not also be a local field. In doing so, we show many properties of capacity are in fact independent of the algebraic structure of a space, although such structure, when it exists, can act as a useful probe.\\
 
 \section{Logarithmic capacity}
-The theory of capacity has been developed as a topic in potential theory in a variety of settings. Classically, the notion of capacity was developed over both $\mathbb{C}$ and $\mathbb{R}^n$, although the theory has been further developed in a rather general way by Rumely for Berkovich spaces. A  signficant body of work on the analytic properties of capacity can be found for a number of different contexts. For example, such a treatment of the subject over $\mathbb{C}$ can be found in \cite{wer} and \cite{rand}, over Berkovich spaces in \cite{rum}, and over $\mathbb{Q}_p$ in \cite{dgc}. We give a brief account of capacity over $\mathbb{C}$ here, presenting only the most essential definitions and results.   One advantage of tracing the historical roots of capacity back to $\mathbb{C}$ is that the theory in this setting also comes equipped with a physical interpretation. As we are about to see, capacity, in the classical sense, gives a mathematical model for the amount of electrostatic charge a conductor can hold. The exposition below is closely based on Ransford \cite{rand}.\\
+The theory of capacity has been developed as a topic in potential theory in a variety of settings. Classically, the notion of capacity was developed over both $\mathbb{C}$ and $\mathbb{R}^n$, although the theory has been further developed in a rather general way by Rumely for Berkovich spaces. A  signficant body of work on the analytic properties of capacity can be found for a number of different contexts. For example, such a treatment of the subject over $\mathbb{C}$ can be found in \cite{wer} and \cite{rand}, over Berkovich spaces in \cite{rum}, and over $\mathbb{Q}_p$ in \cite{dgc}. We give a brief account of capacity over $\mathbb{C}$ here, presenting only the most essential definitions and results.   One advantage of tracing the historical roots of capacity back to $\mathbb{C}$ is that the theory in this setting also comes equipped with a physical interpretation. As we are about to see, capacity in the classical sense gives a mathematical model for the amount of electrostatic charge a conductor can hold. The exposition below is closely based on Ransford \cite{rand}.\\
 
-Even restricting ourself to the definition of capacity of subsets of $\mathbb{C}$, we find two paths, one which will give us some physical interpretation and one which will lead more naturally to $p-$orderings. We start with the former.\\
+Even restricting ourself to the definition of capacity of subsets of $\mathbb{C}$, we find two paths, one which will give us some physical interpretation, and one which will lead more naturally to $p-$orderings. We start with the former.\\
 
 \begin{definition} 
-\cite{rand} Let $\mu$ be a finite Borel measure on $\mathbb{C}$ and suppose $\mu$ has compact support.  We associate to $\mu$ a function
+\cite{rand} Let $\mu$ be a finite Borel measure on $\mathbb{C}$ and suppose $\mu$ has compact support.  We associate to $\mu$ a function, $p_{\mu}:\mathbb{C} \rightarrow [-\infty, \infty)$, given by
 \[p_\mu (x) =\int \log \lvert x - y \rvert d\mu(y)\] called the \textbf{potential function} of $\mu$. The \textbf{energy} of $\mu$ is 
 \[I(\mu) =\int \int \log \lvert x - y \rvert d\mu(y) d\mu(x)\]
 \end{definition}
 
-\hl{comment from Keith:  is the integral over $\mathbb{C}$ (resp $\mathbb{C}^2$) or $supp(\mu)$? - does it matter? check measure theory notes.}\\
 This gives at once the physical interpretation promised above. We interpret the potential function of a measure as giving the potential energy of a point. Viewing the measure as a charge distribution, the double integral gives back the total energy in the system. Now we come upon a physical reality: charged particles in a conductor will naturally distribute themselves as to minimize the energy. This leads to the definition below:\\
 
 \begin{definition}
@@ -33,9 +32,9 @@ We are now ready to give our first definition of capacity.\\
 
 \begin{definition}
 \cite{rand} Let $K$ be a compact subset of $\mathbb{C}$. The logarithmic capacity of $E$ is 
-\[C(K) = e^{I(\nu)}\] where $\nu$ is the equilibrium measure on $K$.
+\[C(K) = e^{I(\nu)}\] where $\nu$ is an equilibrium measure on $K$. If $I(\nu)=-\infty$, then we understand that $C(K) =0$.
 \end{definition}
-\hl{comment from myself: probably should say something about when it's finite since you refer to \textit{the} equilibrium measure}\\
+
 We present below a few results on capacity in $\mathbb{C}$, some of which will reappear in the remainder of this work, although the context, and the proofs (omitted here), bear little resemblence to the present case.\\ 
 
 \begin{proposition}
@@ -43,7 +42,7 @@ We present below a few results on capacity in $\mathbb{C}$, some of which will r
 \begin{enumerate}
 \item $K_1 \subseteq K_2$, then $C(K_1) \leq C(K_2)$.
 \item $C(\alpha K + \beta) = \lvert \alpha \rvert C(K)$ for all $\alpha, \beta \in \mathbb{C}$.
-\item $C(K) = C(\delta_eK)$, where $\delta_e$ is the exterior boundary of $K$.
+\item $C(K) = C(\delta_eK)$, where $\delta_e$ is the exterior boundary\footnote{The exterior boundary of a compact set is the boundary of the unbounded, connected component of $U = \mathbb{C}\setminus K$.}
 \end{enumerate}
 \end{proposition}
 
@@ -52,11 +51,11 @@ We present below a few results on capacity in $\mathbb{C}$, some of which will r
 Suppose $\{B_n\}$ is a sequence of Borel subsets of $\mathbb{C}$. Let $B=\cup_n B_n$ and $d \geq 0$. 
 \begin{enumerate}
 \item If $diam(b) \leq d$, then $C(B) \leq d$ and \[\frac{1}{log(\frac{d}{C(B)})} \leq \sum_n \frac{1}{log(\frac{d}{C(B_n)})}\]
-\item If $dist(B_j, B_k) \geq d$ whenever $j \neq k$, then \[\frac{1}{log^+(\frac{d}{C(B)})} \geq \sum_n \frac{1}{log^+(\frac{d}{C(B_n)})}\]
+\item If $dist(B_j, B_k) \geq d$ whenever $j \neq k$, then \[\frac{1}{log^+(\frac{d}{C(B)})} \geq \sum_n \frac{1}{log^+(\frac{d}{C(B_n)})}\] where $log^+(x) = \max(log(x),0)$.
 \end{enumerate}
 \end{proposition}
 
-\hl{comment from Keith: explain $log^+$}
+
 
 We now know show an equivalent way of  defining of capacity, still over $\mathbb{C}$, which starts with the following two definitions due to Fekete \cite{fek}.\\ 
 
@@ -135,7 +134,7 @@ Suppose we were to generalize our definition of Fekete $n-$tuple in the obvious 
 \[\delta_n(z) = \prod_{j < i} \rho(z_i - z_j)^{\frac{2}{(n(n-1))}} \]
 An element $z = (z_1,\ldots,z_n) \in S^n$ is called a \textbf{generalized Fekete n-tuple} if $z$ maximizes $\delta_n$ over all $n-$tuples in $S$.
 \end{definition}
-
+%This marks the first and last result we present about a metric space. From this point on, we will dwell in the world of ultrametric spaces.
 What then is the connection to $p-$orderings and $p-$sequences? Suppose $S$ is a subset of $\mathbb{Z}$ and that $\{a_i\}_{i \geq 0}$ is a $p-$ordering of $S$ for some prime $p$. Then of course from the definition of $p-$orderings, we know that for $i >0$, 
 \[ v_p (\prod_{j < i} (a_i - a_j) ) \leq v_p (\prod_{j < i} (z - a_j) )\] for $z \in S$. Something more is true though, namely,
 \[ v_p (\prod_{j < i} (a_i - a_j) ) \leq v_p (\prod (x_i - x_j) )\] for $x_i, x_j \in S$ \cite{mb1}.
@@ -149,5 +148,11 @@ Let $E$ be a subset of $V$, a rank-one valuation domain with valuation $v$. If $
 \[\lim_{n\to\infty} \frac{1}{n} \sum_{k=0}^{n-1} v(a_n-a_k) =\frac{2}{n(n+1)} \inf_{x_0, \ldots, x_n \in E} v (\prod_{0\leq j < i \leq n} (x_i-x_j))\]
 \end{proposition}
 
-Chabert called this limit the valuative capacity of $E$, and we shall do the same. 
-%This marks the first and last result we present about a metric space. From this point on, we will dwell in the world of ultrametric spaces.
+Chabert called this limit the valuative capacity of $E$, and we shall do the same. By replacing the notion of $p-$ordering (or $v-$ordering) with the more general notion of $\rho-$ordering, we are able to give a definition of valuative capacity for a general ultrametric space, without appealing to any algebraic (or measure-theoretic) structure. The following result by Johnson in \cite{kj} provides the foundation for the rest of this work:
+
+\begin{proposition} (\cite{kj}, Theorem 1)
+If S is a compact subset of an ultrametric space $(M, \rho)$, then the first n terms of a $\rho$-ordering of $S$ always give a Fekete $n$-tuple of $S$ and all Fekete
+$n$-tuples of $S$ arise in this way.
+\end{proposition}
+
+We explore some consequences of the above in the remainder of this thesis. 
