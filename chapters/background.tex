@@ -46,31 +46,27 @@ We take for granted that  $(V,\rho_N)$ is a metric space and also note that
 When ultrametric spaces come from spaces with algebraic structure, such as normed vector spaces, some of this structure carries over into metric spaces structure in a rather nice way:\\
 
 \begin{proposition}
-\cite{ar} Let $S$ be a  group equipped with a (right) invariant ultrametric, $\rho$. If $B=B(0,r)$ is a (closed) ball centred at the neutral element of $S$, then $B$ is a subgroup of $S$.
+\cite{ar} Let $S$ be a  group equipped with a (right) invariant ultrametric, $\rho$. If $B=B(0,r)$ is a (closed) ball centred at the neutral element of $S$, that is $B=\{x \in S; \rho(x,0) \leq r\}$, then $B$ is a subgroup of $S$.
 \end{proposition}
 
 \begin{proof}
 Let $x,y \in B$. Then \[\rho(x-y,0) = \rho(x,y)  \leq \max(\rho(x,0), \rho(y,0)) \leq r,\]
 so that $x-y \in B$.
 \end{proof}
+ 
+In the previous chapter, we claimed that the $p-$adic metric was an ultrametric on the set $\mathbb{Z}$. Indeed, $(\mathbb{Z}, \rho_p)$ and closely related space of $p-$adic integers, denoted $\mathbb{Z}_{(p)}$, are the canonical examples of an ultrametric space. \\
 
-The canoncial example of an ultrametric space, and one which is derived from a norm, is $p-$adic integers, $\mathbb{Z}_p$ for any prime $p$. 
-\begin{definition}
-$p-$adic valuation
-\end{definition}
+\begin{example} 
+Let $p$ be any prime and consider the metric space $(\mathbb{Z}, \rho_p)$. To see that $(\mathbb{Z}, \rho_p)$ is an ultrametric space, we must show that $\rho_p$ satisfies the ultrametric inequality, or equivalently, that $p-$adic absolute value satisfies the strong triangle inequality. Let $x,y$ be in $\mathbb{Z}$ and suppose $v_p(x)= n_x$ and $v_p(y)= n_y$. Then if $n=\min(n_x,n_y)$, $p^n $ divides $x$ and $p^n$ divides $y$, so $p^n$ divides $x +y$. We see now that $v_p(x+y) \geq \min(v_p(x),  v_p(y))$ and in turn $\lvert x + y \rvert_p \leq \max(\lvert x \rvert_p, \lvert y \rvert_p)$.
+\end{example}
 
-It is easy to see that the $p-$adic valuation exhibits the following properites, which makes it nice to work with:
+\begin{example}
+Let $p$ be any prime. If 
+\[z = \sum_{i \geq 0} b_ip^i\]
+is such that $b_i \in \{0,\ldots,p-1\}$ for all $i$, then we say that $z$ is a \textbf{$p-$adic integer}. If $z = \sum_{i \geq 0} b_ip^i$, we note that if only a finite number of the coefficients of $z$ are non-zero, then $\sum_{i \geq 0} b_ip^i$ is a representation in base $p$ of some element of $\mathbb{Z}$. We can define the $p-$adic order of $p-$adic integer, denoted $ord_p(z)$, in a way that agrees with the $p-$adic valuation when $\sum_{i \geq 0} b_ip^i$ is in $\mathbb{Z}$ by letting $ord_p(z)$ be the smallest $i$ such that $b_i \neq 0$. The $p-$adic integers are both a ring\footnote{The ring operations carry over on the coefficients of $p-$adic integers in the expected way from $\mathbb{Z}/p\mathbb{Z}$, as long as special care is taken to keep track of carries.} and an ultrametric space with the metric induced by $ord_p(z)$.
+\end{example} 
 
-\begin{itemize}
-\item $v_p(ab) = v_p(a) + v_p(b)$
-\item $another one$
-\end{itemize}
-
-\begin{example} $\mathbb{Z}_p$ \end{example}
-
-We give a second example below, showing a space that does not readily come equipped with algebraic structure:
-
-\begin{example} snowflake metric \end{example}
+In what follows, we will often refer to $p-$adic spaces and it will not make much of a difference whether the reader prefers to think of being in $(\mathbb{Z}, \rho_p)$ or $\mathbb{Z}_{(p)}$. The reason is this: when forming $\rho_p-$orderings of subsets of either space we are always able to do so by selecting elements with finite number of non-zero coefficients, that is, by selecting elements from $\mathbb{Z}$ itself. \\
 
 Ultrametric spaces exhibit properties much unlike traditional metric spaces, and we review of few of these below. Of particular interest to us is the behavior between (closed) balls in an ultrametric space.\\
 
@@ -124,24 +120,12 @@ Suppose $B(x_0, r_1) \cap B(y_0, r_2) \neq \emptyset$ and let $z$ be a point in 
 \end{proof}
 
 \begin{proposition}
- The distance between any two non-overlapping balls in an ultrametric is constant. That is, if $B(x_0, r_1)$ and $B(y_0, r_2)$ are two balls in an ultrametric space with $B(x_0, r_1) \cap B(y_0, r_2) = \emptyset$, then there exists a $c \in \mathbb{R}_{\geq 0}$ such that  $\rho(x,y)=c$, $\forall x \in B(x_0, r_1)$ and $\forall y \in B(y_0, r_2)$.
+ The distance between any two non-overlapping balls in an ultrametric is constant. That is, if $B(x_0, r_1)$ and $B(y_0, r_2)$ are two balls in an ultrametric space with $B(x_0, r_1) \cap B(y_0, r_2) = \emptyset$, then there exists a $c \in \mathbb{R}_{> 0}$ such that  $\rho(x,y)=c$, $\forall x \in B(x_0, r_1)$ and $\forall y \in B(y_0, r_2)$.
 \end{proposition}
 
 \begin{proof}
 Suppose $\rho(x_0, y_0)=c$ and let $x \in B(x_0, r_1)$ and $y \in B(y_0, r_2)$ be arbitrary. Consider the triangle formed by $(x_0, y_0,y)$. Since $\rho(x_0,y_0)=c$ and  $\rho(y,y_0) \leq r_2 < c$, we must have $\rho(x_0, y)=c$ because triangles in an ultrametric space have at most one short side. Now consider the triangle formed by  $(x_0, x,y)$. Since $\rho(x_0, y)=c$ and  $\rho(x,x_0) \leq r_1 < c$, we must have $\rho(x, y)=c$.
 \end{proof}
-
-
-Before moving on, we give another example of an ultrametric space, showing again the quick and unusal implications of Proposition $4$.\\
-
-\begin{example}
-Let $S$ be a compact subset of an ultrametric space, $(M,\rho)$, and then let $\textbf{Triag}_S$ be the space whose points are the set of distinct (up to labeling) triangles in $S$. If $t$ is an element of $\textbf{Triag}_S$, denote by $long_t$ the length of the long side of $t$ and by $short_t$  the length of the short side of $t$. Then define $\Delta_S(t,t') = \lvert long_t - long_{t'}\rvert + \lvert short_t - short_{t'} \rvert$, for $t$ and $t' \in \textbf{Triag}_S$. Now note $long_t$ and $short_t$ are in $\mathbb{R}$ and so $\Delta_S(t,t')$ is always in $\mathbb{R}_{\geq 0}$. It's also clear that $\Delta_S(t,t') = 0$ if, and only if, $t$ and $t'$ have the same length sides, in which case they are equal in $\textbf{Triag}_S$. Now let $t_a, t_b$ and $t$ be any three points in $\textbf{Triag}_S$. Without loss of generality, assume $\max(\Delta_S(t_a,t), \Delta_S(t_b,t))=\Delta_S(t_b,t)$, that is,
-\[ \lvert long_{t_a} - long_{t}\rvert + \lvert short_{t_a} - short_{t} \rvert \leq \lvert long_{t} - long_{t_b}\rvert + \lvert short_{t} - short_{t_b} \rvert \]
-We must show
-\[\lvert long_{t_a} - long_{t_b}\rvert + \lvert short_{t_a} - short_{t_b} \rvert \leq \lvert long_{t} - long_{t_b}\rvert + \lvert short_{t} - short_{t_b} \rvert\]
-You can easily construct a counter example with all equilateral triangles (which abouts to the fact that $\mathbb{R}$ is not normally an ultrametric space)
-\end{example}
-Note that an analogous construction would not work on the set of line segments in $S$.\\
 
 The following proposition is  easy to see, although the result is both unintuitive and important for our purposes. \\
 
@@ -150,7 +134,7 @@ Suppose $S$ is a compact subset of an ultrametric space $(M, \rho)$ and that $\c
 \end{proposition}
 
 \begin{proof}
-Since $S$ is compact, $\cup_{i \in I} B(x_i,r_i)$ contains a finite subcover of $S$. Say this subcover is given by the elements  $i_1,\ldots, i_{n'} \in I$, and suppose this is not a partition. That is, suppose for some $i_i, i_j$, $ B(x_{i_i},r_{i_i}) \cap  B(x_{i_j},r_{i_j}) \neq \emptyset$. Then, without loss of generality, we must have $ B(x_{i_i},r_{i_i}) \subseteq  B(x_{i_j},r_{i_j})$, so that the removal of $ B(x_{i_i},r_{i_i})$ is still a cover of $S$. We continue this process a finite number of times, since the subcover was finite to begin with, to arrive at a partition of $S$.
+Since $S$ is compact, $\cup_{i \in I} B(x_i,r_i)$ contains a finite subcover of $S$. Say this subcover is given by the elements  $i_1,\ldots, i_{n'} \in I$, and suppose this is not a partition. That is, suppose for some $i_i, i_j$, $ B(x_{i_i},r_{i_i}) \cap  B(x_{i_j},r_{i_j}) \neq \emptyset$. Then, without loss of generality, we must have $ B(x_{i_i},r_{i_i}) \subseteq  B(x_{i_j},r_{i_j})$, so that the removal of $ B(x_{i_i},r_{i_i})$ is still a cover of $S$. We continue this process a finite number of times, since the subcover was finite to begin with, to arrive at a finite partition of $S$.
 \end{proof}
 
 In fact, a slightly stronger statement then the above is true:
@@ -166,30 +150,35 @@ Let $\mathcal{C}$ be the cover of $S$ given by $\cup_{x\in S} B(x,r) \cap S$. Fr
 We end this section by making a few comments about the set of distances that occur between the points of a compact ultrametric space.\\
 
 \begin{proposition}
-\cite{ar} Let $S$ is a compact subset of an ultrametric space. For $a \in S$, let $\phi_a: S \setminus \{a\} \rightarrow \mathbb{R}$ be the function defined by $\phi_a(x)=\rho(x,a)$. Then $Im(\phi_a)$ is a discrete subset of $\mathbb{R}$ for all $a \in S$.
+\cite{ar} Let $S$ be a compact subset of an ultrametric space, $(M, \rho)$
+\begin{enumerate}[(i)]
+\item For $m \in (M \setminus S)$, let $f_m:S \rightarrow \mathbb{R}$, be the function defined by $f_m(s) = \rho(m,s)$. Then $Im(f_m)$ is finite for all $m \in (M \setminus S)$.
+\item For $a \in S$, let $\phi_a: S \setminus \{a\} \rightarrow \mathbb{R}$ be the function defined by $\phi_a(x)=\rho(x,a)$. Then $Im(\phi_a)$ is a discrete subset of $\mathbb{R}$ for all $a \in S$.
+\end{enumerate}
 \end{proposition}
 
 \begin{proof}
-\cite{ar} %Recall that all triangles in an ultrametric space are isosceles with one short side. In particular, for $x,y,a \in S$, for $S$ some compact subset of an ultrametric space $(M,\rho)$, \[ \rho(x,y) < \rho(x,a) \text{ implies } \rho(y, a) = \rho(x,a)\] 
-%so that if $r \in \mathbb{R}, 0 < r < \rho(x,a)$, then $\phi_a$ restricted to $B(x,r)$ is constant for any $a \in S$. That is, $\phi_a$ is locally constant. 
-%The fibers, $\phi_a^{-1}(c) = \{x \in S \mid \rho(x,a) =c \}$ for $c \in Im(\phi_a)$, form an open partition of $S$.
-\end{proof}
-
-
-\begin{corollary}
-\cite{ar} Let $B(a, r)$ be a closed ball in an ultrametric space. Then there exists $ r' > r \in \mathbb{R}$ such that $B(a, r) = \{x \in M \mid \rho(x,a) < r'\} $; that is, every closed ball is also an open ball with the same centre and  slightly larger radius.
-\end{corollary}
-
-\begin{proof}
+\cite{ar} 
+\begin{enumerate}[(i)]
+\item The fibers of $f_m$, $f_m^{-1}(s)$, for $s \in S$, form a cover of $S$. In fact, they form an open partition. Since $S$ is compact by assumption, we must have that this partition is finite, and so the image of $f_m$ was also finite.
+\item Let $\epsilon >0$. Let $B^0(a,\epsilon)$ be the \textit{open} ball, $B^0(a,\epsilon)= \{x \in S; \rho(x,\epsilon) < \epsilon\}$. Then $(S\setminus B^0(a,\epsilon))$ is compact, and so from the above we know that $\phi_{a}$ restricted to $(S\setminus B^0(a,\epsilon))$ has finite range (let $M = S$ and $S = (S\setminus B^0(a, \epsilon))$ and apply (\textit{i})). Then the sets \[ [\epsilon, \infty) \cap \{\rho(s,a); s \in S, x \neq a\} \] are finite and $Im(\phi_a)$ is discrete.
+\end{enumerate}
 \end{proof}
 
 \begin{corollary}
-\cite{ar} If $S$ is a compact subset of an ultrametric space and $\Gamma_S$ is the set of all distances occurring between points of $S$, then $\Gamma_S$ is countable; that is, there is an injective function from $\Gamma_S \mapsto \mathbb{N}$.
+Let $(S,\rho)$ be a compact ultrametric space. If $\Gamma_S$ is the set of distances in $S$, that is, $\Gamma_S \subseteq \mathbb{R}_{\geq 0}$ and $r \in \Gamma_S$ if and only if $\exists x,y \in S$ such that $\rho(x,y)=r$, then $0$ is the only limit point in $\Gamma_S$. That is, $\Gamma_S \setminus 0$ is a discrete subset of $\mathbb{R}.
 \end{corollary}
 
 \begin{proof}
-%Most recent working idea: create an ultrametric space, $\textbf{Triag}_S$, whose points are the set of distinct (up to labeling) triangles in $S$. Show that an infinite number of limit points in $\Gamma_S$ implies there exists some $t \in \textbf{Triag}_S$ such that $\phi_T$ is not discrete.
+Suppose $\l\neq 0$ is a limit point of $\Gamma_S$. There there exists $b,x \in S$ such that $\rho(b,x) = l$ and for all $\epsilon >0$, there exists $a_\epsilon$ and $x_\epsilon$ such that $l - \epsilon <  \rho(a_\epsilon, x_\epsilon) < l + \epsilon$. Let us denote $\rho(a_\epsilon, x_\epsilon)$ by $l_\epsilon$.\\
+
+Let $\epsilon >0 $ and suppose $B(a_\epsilon, l_\epsilon) \cap B(b,l) \neq \emptyset$. Then, if $l_\epsilon < l$, we must have $B(a_\epsilon, l_\epsilon) \subset B(b,l)$, and so $\rho(a_\epsilon, b) \leq l$. Then $l \in Im(\phi_{a_\epsilon})$ by considering the triangle with vertices $a,b,x$. Since we know that $\phi_{a_\epsilon}$ has discrete image, we must have some $\epsilon$ such that $B(a_\epsilon, l_\epsilon) \cap B(b,l) = \emptyset$ (if $l_\epsilon > l$, then we appeal to the fact that $\phi_{b}$ has discrete image).
 \end{proof}
+
+Now we immediately get the following corollary.\\
+\begin{corollary}
+\cite{ar} Let $B(a, r)$ be a closed ball in an compact ultrametric space. Then there exists $ r' > r \in \mathbb{R}$ such that $B(a, r) = \{x \in M \mid \rho(x,a) < r'\} $; that is, every closed ball is also an open ball with the same centre and  slightly larger radius.
+\end{corollary}
 
 It will become useful to write the set of distances occuring in $S$ as a sequence, put in decreasing order. 
 
@@ -201,16 +190,23 @@ where $\gamma_i \in  \Gamma_S$ if and only if $\exists x,y \in S$ such that $\rh
 \end{notation*}
 
 
-To make use of regularity in $S$ we should, before continuing, also put some constraints on our sequence of distances $\Gamma_S$.
+%To make use of regularity in $S$ we should, before continuing, also put some constraints on our sequence of distances $\Gamma_S$.
 
-\begin{definition}
-Let $S$ be a compact subset of an ultrametric space and $\Gamma_S$ is the sequence of decreasing distances in $S$. Then we say $S$ is \textbf{well-behaved} (I guess - or tame? reasonable?), if $S$ is semi-regular and $\gamma_k = \alpha(k)^{c_k}$ for all $k \in \mathbb{N}$ and some $c_k \in \mathbb{Z}$.
-\end{definition}
+%\begin{definition}
+%Let $S$ be a compact subset of an ultrametric space and $\Gamma_S$ is the sequence of decreasing distances in $S$. Then we say $S$ is \textbf{well-behaved} (I guess - or tame? reasonable?), if $S$ is semi-regular and $\gamma_k = \alpha(k)^{c_k}$ for all $k \in \mathbb{N}$ and some $c_k \in \mathbb{Z}$.
+%\end{definition}
 
-\begin{example}
-Any ultrametric space where $\rho$ is induced from a valuation domain.
-\end{example}
+%\begin{example}
+%Any ultrametric space where $\rho$ is induced from a valuation domain.
+%\end{example}
 
+%Before moving on, we give another example of an ultrametric space, showing again the quick and unusal implications of Proposition $4$.\\
+
+%\begin{example}
+%Let $S$ be a compact subset of an rational ultrametric space, $(M,\rho)$, and let $\textbf{Triag}_S$ be the space whose points are the set of distinct (up to labeling) triangles in $S$. Note that these are uniquely identified by their (two) long and  (one) short sides, so we may represent a point in $\textbf{Triag}_S$ by an ordered pair $(a,b)$ where it is understood that $a\leq b$. We could then think of the points in $\textbf{Triag}_S$ as being points in some subset of a triangular region in the rational plane (bounded by the half-lines at $y=0$ (not included) and $x=y$ (included). 
+%"In geometry and group theory, a lattice in R n {\displaystyle \mathbb {R} ^{n}} \mathbb {R} ^{n} is a subgroup of the additive group R n {\displaystyle \mathbb {R} ^{n}} \mathbb {R} ^{n} which is isomorphic to the additive group Z n {\displaystyle \mathbb {Z} ^{n}} \mathbb {Z} ^{n}, and which spans the real vector space R n {\displaystyle \mathbb {R} ^{n}} \mathbb {R} ^{n}."
+
+%\end{example}
 
 
 \newpage

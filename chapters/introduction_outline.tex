@@ -38,17 +38,16 @@ We are now ready to give our first definition of capacity.\\
 We present below a few results on capacity in $\mathbb{C}$, some of which will reappear in the remainder of this work, although the context, and the proofs (omitted here), bear little resemblence to the present case.\\ 
 
 \begin{proposition}
-[\textbf{Randsford, 5.1.2}] Let $K,  K_1,K_2$ be compact subsets of $\mathbb{C}$.
+(\cite{rand}, 5.1.2) Let $K,  K_1,K_2$ be compact subsets of $\mathbb{C}$.
 \begin{enumerate}
 \item $K_1 \subseteq K_2$, then $C(K_1) \leq C(K_2)$.
 \item $C(\alpha K + \beta) = \lvert \alpha \rvert C(K)$ for all $\alpha, \beta \in \mathbb{C}$.
-\item $C(K) = C(\delta_eK)$, where $\delta_e$ is the exterior boundary\footnote{The exterior boundary of a compact set is the boundary of the unbounded, connected component of $U = \mathbb{C}\setminus K$.}
+\item $C(K) = C(\delta_eK)$, where $\delta_e$ is the exterior boundary.\footnote{The exterior boundary of a compact subset, K, of $\mathbb{C}$ is the boundary of the unbounded, connected component of $U = \mathbb{C}\setminus K$.}
 \end{enumerate}
 \end{proposition}
 
 \begin{proposition}
-[\textbf{Randsford, 5.1.4}] 
-Suppose $\{B_n\}$ is a sequence of Borel subsets of $\mathbb{C}$. Let $B=\cup_n B_n$ and $d \geq 0$. 
+(\cite{rand}, 5.1.4) Suppose $\{B_n\}$ is a sequence of Borel subsets of $\mathbb{C}$. Let $B=\cup_n B_n$ and $d \geq 0$. 
 \begin{enumerate}
 \item If $diam(b) \leq d$, then $C(B) \leq d$ and \[\frac{1}{log(\frac{d}{C(B)})} \leq \sum_n \frac{1}{log(\frac{d}{C(B_n)})}\]
 \item If $dist(B_j, B_k) \geq d$ whenever $j \neq k$, then \[\frac{1}{log^+(\frac{d}{C(B)})} \geq \sum_n \frac{1}{log^+(\frac{d}{C(B_n)})}\] where $log^+(x) = \max(log(x),0)$.
@@ -60,11 +59,10 @@ Suppose $\{B_n\}$ is a sequence of Borel subsets of $\mathbb{C}$. Let $B=\cup_n 
 We now know show an equivalent way of  defining of capacity, still over $\mathbb{C}$, which starts with the following two definitions due to Fekete \cite{fek}.\\ 
 
 \begin{definition}
-Let $K \subseteq \mathbb{C}$ be a compact subset. Fix $n \in \mathbb{N}$, and for $z = (z_1,\ldots,z_n) \in K^n$, consider
+\cite{fek} Let $K \subseteq \mathbb{C}$ be a compact subset. Fix $n \in \mathbb{N}$, and for $z = (z_1,\ldots,z_n) \in K^n$, consider
 \[\delta_n(z) = \prod_{j < i} \lvert z_i - z_j \rvert^{\frac{2}{(n(n-1))}} \]
 An element $z = (z_1,\ldots,z_n) \in K^n$ is called a \textbf{Fekete n-tuple} if $z$ maximizes $\delta_n$ over all $n-$tuples in $K$.
 \end{definition}
-
 Note that since $K$ is compact by assumption, a Fekete $n-$tuple exists for each $n$.\\
 
 \begin{definition}
@@ -74,7 +72,7 @@ Let $K \subseteq \mathbb{C}$ be a compact subset. The \textbf{transfinite diamet
 The following proposition shows the relation to capacity.\\
 
 \begin{proposition}
-\textbf{[Fekete-Szeg\"o Theorem]}\cite{fek} If $K$ is a compact subset of $\mathbb{C}$, then the transfinite diameter of $K$ is equal to the logarithmic capacity of $K$.
+(\cite{fek}, \textbf{Fekete-Szeg\"o Theorem}) If $K$ is a compact subset of $\mathbb{C}$, then the transfinite diameter of $K$ is equal to the logarithmic capacity of $K$.
 \end{proposition}
 
 %\begin{definition}
@@ -104,25 +102,26 @@ v_p(z) =
          \infty, & \text{ otherwise }
 \end{cases}
 \]
-For $z_1,z_2 \in \mathbb{Z}$,  we define the \textbf{$p-$adic metric} by 
+For $z \in \mathbb{Z}$, we definite the \textbf{$p-$adic absoluste value} by
+\[ \lvert z \rvert_p = p^{-v_p(z)}\] and the \textbf{$p-$adic metric} accordingly; that is, for $z_1,z_2 \in \mathbb{Z}$
 \[\rho_p(z_1,z_2) = p^{-v_p(z_1-z_2)}\]
-where $p^\infty$ is taken to be $0$. 
+where $p^{-\infty}$ is taken to be $0$. 
 \end{definition}
 
-It is worth pausing to make a few comments about the above definitions. That the $p-$adic metric is truly a metric is easy to see. In fact, we will see in the next chapter that it is not just a metric, but also an ultrametric, since it satistfies a strengthen version of the triangle identity. The strong triangle identity is not the only interesting property enjoyed by the $p-$adic valuation though. Like the logarithm, the $p-$adic valuation also satisfies: $v_p(x \cdot y) = v_p(x) + v_p(y)$ for any prime $p$ and $x,y$ in $\mathbb{Z}$. Moreover, we note that the $p-$adic valuation and metric have an interesting relationship: two points which have relatively small valuation will have a relatively large distance between them and vice versa. \\
+It is worth pausing to make a few comments about the above definitions. That the $p-$adic metric is truly a metric is easy to see. In fact, we will see in the next chapter that it is not just a metric, but also an ultrametric, since the $p-$adic absolute value satistfies a strengthen version of the triangle identity. The strong triangle identity is not the only interesting property at hand though. Like the logarithm, the $p-$adic valuation also satisfies: $v_p(x \cdot y) = v_p(x) + v_p(y)$ for any prime $p$ and $x,y$ in $\mathbb{Z}$. Moreover, we note that the $p-$adic valuation and $p-$adic metric have an interesting relationship with each other: two points whose difference has a relatively small valuation will have a relatively large distance between them and vice versa. \\
 
 We are now ready to define $p-$orderings, and not long after, to give the connection to Fekete $n-$tuples.\\
 
 \begin{definition}
-\cite{mb1} Let $S$ be a subset of $\mathbb{Z}$  and let $p$ be any prime.\footnote{To apply the definition to a general Dedekind domain, we replace the usual primes with the set of primes tdeals in the ring of interest.} A \textbf{$p$-ordering} of $S$ is a sequence, $\{a_i\}_{i\geq 0}$ in $S$, such that $a_0$ is arbitrary and for $i >0$, $a_i$ minimizes 
-\[ v_p (\prod_{j < i} (a_i - a_j) )\] over $z \in S$.
+\cite{mb1} Let $S$ be a subset of $\mathbb{Z}$  and let $p$ be any prime.\footnote{To apply the definition to a general Dedekind domain, we replace the usual primes with the set of primes ideals in the ring of interest.} A \textbf{$p$-ordering} of $S$ is a sequence, $\{a_i\}_{i\geq 0}$ in $S$, such that $a_0$ is arbitrary and for $i >0$, $a_i$ minimizes 
+\[ v_p (\prod_{j < i} (z - a_j) )\] over $z \in S$.
 \end{definition}
 
 
 A $p-$ordering in $S$, like a Fekete $n-$tuple in $\mathbb{C}$, is not unique. Indeed, in most of the examples we will explore, there will be infinitely-many choices at each stage of the construction. Nonetheless, $p-$orderings give rise to $p-$sequences, which are invariants of $S$:\\
 
 \begin{definition}
-\cite{mb1} Let $S$ be a subset of $\mathbb{Z}$ and let $p$ be any prime. Suppose $\{a_i\}_{i\geq 0}$ is a $p-$ordering of $S$. The \textbf{p-sequence}, occasionally the \textbf{characteristic sequence}, of $S$ is the sequence defined by $a_0=1$ and for $i > 0,$\[\delta(i) = \prod_{j=0}^{i-1} v_p(a_i, a_j)\]
+\cite{mb1} Let $S$ be a subset of $\mathbb{Z}$ and let $p$ be any prime. Suppose $\{a_i\}_{i\geq 0}$ is a $p-$ordering of $S$. The \textbf{p-sequence}, occasionally the \textbf{characteristic sequence}, of $S$ is the sequence defined by $\delta(0)=1$ and for $i > 0,$\[\delta(i) = v_p(\prod_{j=0}^{i-1} (a_i - a_j))\]
 \end{definition}
 
 It is a fact, not entirely obvious, that the $p-$sequence of $S$ is independent of the $p-$ordering used in its construction \cite{mb1}. To define the generalized factorial, Bhargava considered the product of $p-$sequences taken over each prime $p$ for arbitrary subsets of $\mathbb{Z}$.  We will go in another direction.\\
@@ -130,7 +129,7 @@ It is a fact, not entirely obvious, that the $p-$sequence of $S$ is independent 
 Suppose we were to generalize our definition of Fekete $n-$tuple in the obvious way, as below. 
 
 \begin{definition}
-\cite{kj} Let $(M, \rho)$ be a metric space and suppose $S \subseteq M$ is a compact subset. Fix $n \in \mathbb{N}$, and for $z = (z_1,\ldots,z_n) \in S^n$, consider
+Let $(M, \rho)$ be a metric space and suppose $S \subseteq M$ is a compact subset. Fix $n \in \mathbb{N}$, and for $z = (z_1,\ldots,z_n) \in S^n$, consider
 \[\delta_n(z) = \prod_{j < i} \rho(z_i - z_j)^{\frac{2}{(n(n-1))}} \]
 An element $z = (z_1,\ldots,z_n) \in S^n$ is called a \textbf{generalized Fekete n-tuple} if $z$ maximizes $\delta_n$ over all $n-$tuples in $S$.
 \end{definition}
@@ -138,7 +137,7 @@ An element $z = (z_1,\ldots,z_n) \in S^n$ is called a \textbf{generalized Fekete
 What then is the connection to $p-$orderings and $p-$sequences? Suppose $S$ is a subset of $\mathbb{Z}$ and that $\{a_i\}_{i \geq 0}$ is a $p-$ordering of $S$ for some prime $p$. Then of course from the definition of $p-$orderings, we know that for $i >0$, 
 \[ v_p (\prod_{j < i} (a_i - a_j) ) \leq v_p (\prod_{j < i} (z - a_j) )\] for $z \in S$. Something more is true though, namely,
 \[ v_p (\prod_{j < i} (a_i - a_j) ) \leq v_p (\prod (x_i - x_j) )\] for $x_i, x_j \in S$ \cite{mb1}.
-That is, when we pick $a_i$ to minimize the $p-$adic valuation over $\prod_{j < i} (z - a_j)$, we actually achieve the minimum over \textit{all pairs in $S$}. Since minimizing $v_p(x_i - x_j)$ is the same as maximizing $\rho_p(x_i,x_j)$, we have the following remarkable fact: if $\{a_i\}_{i \geq 0}$ is a $p-$ordering of $S$, then $\{a_i\}_{i=0}^n$ is a generalized Fekete $n-$tuple for $(S,\rho_p)$ for each $n$. In particular, $p-$orderings give a recursive construction for generalized Fekete $n-$tuples.\\   
+That is, when we pick $a_i$ to minimize the $p-$adic valuation over $\prod_{j < i} (z - a_j)$, we actually achieve the minimum over the product of \textit{all pairs of differences in $S$}. Since minimizing $v_p(x_i - x_j)$ is the same as maximizing $\rho_p(x_i,x_j)$, we have the following remarkable fact: if $\{a_i\}_{i \geq 0}$ is a $p-$ordering of $S$, then $\{a_i\}_{i=0}^n$ is a generalized Fekete $n-$tuple for $(S,\rho_p)$ for each $n$. In particular, $p-$orderings give a recursive construction for generalized Fekete $n-$tuples.\\   
 
 The first connection between these objects was made by Jean-Luc Chabert in \cite{jlc} when he studied the limit of these sequences not just for the case $M=\mathbb{Z}$ and $\rho=\rho_p$, but in the case that $M$ is any rank-one valuation domain \cite{jlc}. We repeat his theorem 4.2 from \cite{jlc} below,
 
@@ -151,8 +150,7 @@ Let $E$ be a subset of $V$, a rank-one valuation domain with valuation $v$. If $
 Chabert called this limit the valuative capacity of $E$, and we shall do the same. By replacing the notion of $p-$ordering (or $v-$ordering) with the more general notion of $\rho-$ordering, we are able to give a definition of valuative capacity for a general ultrametric space, without appealing to any algebraic (or measure-theoretic) structure. The following result by Johnson in \cite{kj} provides the foundation for the rest of this work:
 
 \begin{proposition} (\cite{kj}, Theorem 1)
-If S is a compact subset of an ultrametric space $(M, \rho)$, then the first n terms of a $\rho$-ordering of $S$ always give a Fekete $n$-tuple of $S$ and all Fekete
-$n$-tuples of $S$ arise in this way.
+If S is a compact subset of an ultrametric space $(M, \rho)$, then the first n terms of a $\rho$-ordering of $S$ always give a Fekete $n$-tuple of $S$ and all Fekete $n$-tuples of $S$ arise in this way.
 \end{proposition}
 
-We explore some consequences of the above in the remainder of this thesis. 
+One important consequence of this remark is that it gives a way to define capacity in a general ultrametric space: we define an analogous structure to a $p-$sequence, which we call a $\rho-$sequence, and consider the limit. 
