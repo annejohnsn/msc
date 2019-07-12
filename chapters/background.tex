@@ -212,38 +212,39 @@ where $\gamma_i \in  \Gamma_S$ if and only if $\exists x,y \in S$ such that $\rh
 \newpage
 \section*{$\rho$-orderings, $\rho$-sequences, and valuative capacity}
 
-We now come to the central theme of this work. The observation that an analogous notion of $p-$ordering can be defined for a general ultrametric space, and that these structures coincide with Fekete $n-$tuples, is due to \cite{kj}. The exploration of this idea makes up the remainder of this work. \\ 
-
-In what follows, we let $S$ be a compact subset of an ultrametric space $(M,\rho)$.\\
+We are now in a position to give a general definition of $p-$orderings and in turn, $p-$sequences and valuative capacity. The observation that an analogous notion of $p-$ordering can be defined for a general ultrametric space, and that these structures coincide with Fekete $n-$tuples, is due to \cite{kj}. The exploration of this idea makes up the remainder of this work. \\ 
 
 \begin{definition}
-	\cite{kj} A \textbf{$\rho$-ordering} of $S$ is a sequence $\{a_i\}_{i=0}^\infty$ in $S$ such that $a_0$ is arbitrary and $\forall n > 0$, $a_n$ maximizes $\prod_{i=0}^{n-1} \rho(s,a_i)$ over $s \in S$. 
+	\cite{kj} Let $S$ be a subset of an ultrametric space $(M,\rho)$. A \textbf{$\rho$-ordering} of $S$ is a sequence $\{a_i\}_{i \geq 0}$ in $S$ such that $a_0$ is arbitrary and $\forall n > 0$, $a_n$ maximizes \[\prod_{i=0}^{n-1} \rho(s,a_i)\] over $s \in S$. 
 \end{definition}
+
+The above generalizes the definition of $p-$orderings for $\mathbb{Z}$, since maximizing the $p-$adic distance between two points in $\mathbb{Z}$ (or $\mathbb{Z}_p$) is the same as minimizing the $p-$adic valuation of the difference of two points. In particular, $\{a_i\}_{i \geq 0}$ is a $p-$ordering of $S$, a subset of $\mathbb{Z}$, if and only if it is a $\rho_p$-ordering of $(S, \rho_p)$. Let us see an example of the simplest kind, that is, for a finite set $S$.
 
 \begin{example}
-Suppose $S$ is a finite subset of $(\mathbb{Z}, \rho_2)$, $S=\{0,2,8,3\}$. Then a $\rho-$ordering of $S$ starts (arbitrarily) with $a_0=0$ , which forces $a_1=3$, since $\rho(0,3)=1=diam(S)$. The sequence continues $a_2=2$ and $a_3=8$, but after this point the sequence becomes arbitrary because  $\prod_{i=0}^{n-1} \rho(s,a_i)$ will contain a $0$, given by the repeated term. Indeed, for any finite subset $S$ with $\lvert S \rvert = n$, the $\rho-$ordering of $S$ is arbitrary from the $n^{th}$ point on. 
+Suppose $S$ is a finite subset of $(\mathbb{Z}, \rho_2)$, $S=\{0,2,8,3\}$. Then a $\rho_2-$ordering of $S$ starts (arbitrarily) with $a_0=0$, which forces $a_1=3$, since $\rho_2(0,3)=1=diam(S)$. The sequence continues $a_2=2$ and $a_3=8$, but after this point the sequence becomes arbitrary because  $\prod_{i=0}^{n-1} \rho(s,a_i)$ will contain a $0$, given by the repeated term. Indeed, for any finite subset $S$ with $\lvert S \rvert = n$, the $\rho-$ordering of $S$ is arbitrary from the $n^{th}$ point on. 
 \end{example}
 
+We now give the definition of a $\rho-$sequence for an ultrametric space, generalizing the notion of a $p-$sequence.
+
 \begin{definition}
-	\cite{kj} Let $\sigma(i)$ be a $\rho-$ordering of $S$. The \textbf{$\rho$-sequence} of $S$ is defined by letting $a_0=1$  and $a_n=\prod_{i=0}^{n-1} \rho(\sigma(n),\sigma(i))$, for $n > 0$.
+	\cite{kj} Let $\{a_i\}_{i \geq 0}$ be a $\rho-$ordering of $S$. The \textbf{$\rho$-sequence} of $S$ is defined by letting $\delta(0)=1$  and for $n > 0$, \[\delta(n)=\prod_{i=0}^{n-1} \rho(a_n,a_i)\]
 \end{definition}
 
-\begin{itemize}
-\item this gives back the n-th diameter - the limit is the transfinite diameter and we take it as the definition of capacity
-\item clean up all the sequence definitions to use the same format
-\item check the historical background and this section to make sure you've said enough about fekete n-tuples and p-orderings corresponding
-\item go through the JLC chabert reference
-\item check that youve used the same notation for closed balls
-\end{itemize}
-
+The two propositions that follow are the critical observations. The first one tells us that we can use the $\rho-$sequence of $S$ as an invariant and the second one motivates the definition of valuative capacity. The proofs of each are given in $\cite{kj}$.
 
 \begin{proposition}
-	\cite{kj} The $\rho$-sequence of $S$ is well-defined so long as $S$ is compact and $\rho$ is an ultrametric. That is, the $\rho$-sequence of a compact subset of an ultrametric spaces does not depend on the choice of $\rho$-ordering of $S$.
+	(\cite{kj}, Lemma 1) The $\rho$-sequence of $S$ is well-defined so long as $S$ is compact and $\rho$ is an ultrametric. That is, the $\rho$-sequence of a compact subset of an ultrametric spaces does not depend on the choice of $\rho$-ordering of $S$.
 \end{proposition}
 
+\begin{proposition} (\cite{kj}, Theorem 1)
+If S is a compact subset of an ultrametric space $(M, \rho)$, then the first n terms of a $\rho$-ordering of $S$ always give a Fekete $n$-tuple of $S$ and all Fekete $n$-tuples of $S$ arise in this way.
+\end{proposition}
+
+Armed with the notion of a well-defined $\rho-$sequence for an ultrametric space, and the knowledge that it gives a construction for Fekete $n-$tuples in that space, we define the valuative capacity of $S$, where $S$ is any compact subset of an ultrametric space.
+
 \begin{definition}
-	\cite{kj}  Let $\gamma(n)$ be the $\rho$-sequence of $S$. The \textbf{valuative capacity} of $S$ is \[\omega(S)
-	:= \lim_{n\to\infty} \gamma(n)^{1/n}\]  
+	\cite{kj}  Let $S$ be a compact subset of an ultrametric space $(M,\rho)$ and let $\delta(n)$ be the $\rho$-sequence of $S$. The \textbf{valuative capacity} of $S$ is \[\omega(S)
+	:= \lim_{n\to\infty} \delta(n)^{1/n}\]  
 \end{definition}
 
 
