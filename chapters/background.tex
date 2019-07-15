@@ -63,7 +63,7 @@ Let $p$ be any prime and consider the metric space $(\mathbb{Z}, \rho_p)$. To se
 \begin{example}
 Let $p$ be any prime. If 
 \[z = \sum_{i \geq 0} b_ip^i\]
-is such that $b_i \in \{0,\ldots,p-1\}$ for all $i$, then we say that $z$ is a \textbf{$p-$adic integer}. If $z = \sum_{i \geq 0} b_ip^i$, we note that if only a finite number of the coefficients of $z$ are non-zero, then $\sum_{i \geq 0} b_ip^i$ is a representation in base $p$ of some element of $\mathbb{Z}$. We can define the $p-$adic order of a $p-$adic integer, denoted $ord_p(z)$, in a way that agrees with the $p-$adic valuation when $\sum_{i \geq 0} b_ip^i$ is in $\mathbb{Z}$, by letting $ord_p(z)$ be the smallest $i$ such that $b_i \neq 0$. The $p-$adic integers are both a ring\footnote{The ring operations carry over on the coefficients of $p-$adic integers in the expected way from $\mathbb{Z}/p\mathbb{Z}$, as long as special care is taken to keep track of carries.} and an ultrametric space with the metric induced by $ord_p(z)$. For a given prime, $p$, we denote the $p-$adic integers by $\mathbb{Z}_{(p)}$.
+is such that $b_i \in \{0,\ldots,p-1\}$ for all $i$, then we say that $z$ is a \textbf{$p-$adic integer}. If $z = \sum_{i \geq 0} b_ip^i$, we note that if only a finite number of the coefficients of $z$ are non-zero, then $\sum_{i \geq 0} b_ip^i$ is a representation in base $p$ of some element of $\mathbb{Z}$. We can define the \textbf{$p-$adic order} of a $p-$adic integer, denoted $ord_p(z)$, in a way that agrees with the $p-$adic valuation when $\sum_{i \geq 0} b_ip^i$ is in $\mathbb{Z}$, by letting $ord_p(z)$ be the smallest $i$ such that $b_i \neq 0$. The $p-$adic integers are both a ring\footnote{The ring operations carry over on the coefficients of $p-$adic integers in the expected way from $\mathbb{Z}/p\mathbb{Z}$, as long as special care is taken to keep track of carries.} and an ultrametric space with the metric induced by $ord_p(z)$. For a given prime, $p$, we denote the $p-$adic integers by $\mathbb{Z}_{(p)}$.
 \end{example} 
 
 In what follows, we will often refer to $p-$adic spaces and it will not make much of a difference whether the reader prefers to think of being in $(\mathbb{Z}, \rho_p)$ or $\mathbb{Z}_{(p)}$. The reason is this: when forming $\rho_p-$orderings of subsets of either space we are always able to do so by selecting elements with finite number of non-zero coefficients, that is, by selecting elements from $\mathbb{Z}$ itself. \\
@@ -140,9 +140,9 @@ We will get a bit closer to showing the relationship between open and closed bal
 \end{lemma}
 
 \begin{proof}
-	A sphere in any metric space is closed, so we need only show a sphere is also open in an ultrametric space. We show a sphere, $S=S(x_0,r)$, is equal to a union of opens, $S = \cup_{x\in S} B^0(x,r)$.\\
+	A sphere in any metric space is closed, so we need only show a sphere is also open in an ultrametric space. We show a sphere, $S=S(x_0,r)$, is equal to a union of open sets, $S = \cup_{x\in S} B^0(x,r)$.\\
 	
-	Let $B=B^0(x,s)$ be an open ball that does not contain $x_0$. Let $r=\rho(x_0,x)$. We must have $r \geq s$, so then (since all triangles are isosocles) every point in $B$ lies in $S(x_0,r)$, that is $B \subseteq S(x_0,r)$. Then for any $x \in S(x_0,r)$, $B^0(x,r) \subseteq S(x_0,r)$ and \[\bigcup_{x \in S(x_0,r)} B^0(x,r) \subseteq S(x_0,r)\] The reverse inequality is clear since the union is taken on points of $S$.
+	Let $B=B^0(x,s)$ be an open ball that does not contain some $x_0$. Let $r=\rho(x_0,x)$. We must have $r \geq s$, so then (since all triangles are isosocles) every point in $B$ lies in $S(x_0,r)$, that is $B \subseteq S(x_0,r)$. Then for any $x \in S(x_0,r)$, $B^0(x,r) \subseteq S(x_0,r)$ and \[\bigcup_{x \in S(x_0,r)} B^0(x,r) \subseteq S(x_0,r)\] The reverse inequality is clear since the union is taken over points of $S$.
 \end{proof}
 
 \begin{proposition}
@@ -150,7 +150,7 @@ We will get a bit closer to showing the relationship between open and closed bal
 \end{proposition}
 
 \begin{proof}
-	The proof follows immediately from the result that spheres are clopen: to see that closed balls are open sets, note that for a closed ball, $B(x_0,r)$, \[B(x_0,r) = B^0(x_0,r) \cup S(x_0,r)\] Likewise, to see that open balls are closed sets, note that \[B^0(x_0,r) = B(x_0,r) \setminus S(x_0,r)\]
+	The proof follows immediately from the result that spheres are both open and closed: to see that closed balls are open sets, note that for a closed ball, $B(x_0,r)$, \[B(x_0,r) = B^0(x_0,r) \cup S(x_0,r)\] Likewise, to see that open balls are closed sets, note that \[B^0(x_0,r) = B(x_0,r) \setminus S(x_0,r)\]
 \end{proof}
 The following proposition is now easy to see, although the result is both unintuitive and important for our purposes. \\
 
@@ -199,8 +199,18 @@ If $(M, \rho)$ is an ultrametric space, we say $M$ is \textbf{discretely-valued}
 If $(M,\rho)$ has a translation-invariant ultrametric then clearly $M$ is discretely-valued since the sets $\phi_a$ are then equal for all $a$ in $M$. Now we have the following question.
 
 \begin{question}
-	Are there mild conditions under which a compact ultrametric space is discretely-valued? In particular, are there conditions that do not appeal to the algebraic structure in $M$?
+	Are there mild conditions under which a compact ultrametric space is discretely-valued? In particular, are there conditions that do not appeal to some algebraic structure in $M$?
 \end{question}
+
+When this is the case, it will become useful to write the set of distances occuring in $S$ as a sequence, put in decreasing order. 
+
+\begin{notation*}
+	If $S$ is a compact, discretely-valued ultrametric space, then we denote the set of distances between points of $S$ by 
+	$$\Gamma_S = \{\gamma_0 = d =diam(S), \gamma_1, \gamma_2, \ldots, \gamma_\infty =0 \}$$
+	
+	where $\gamma_i \in  \Gamma_S$ if and only if $\exists x,y \in S$ such that $\rho(x,y) = \gamma_i$ and  $\gamma_i < \gamma_j$ if and only if $i > j$. 
+\end{notation*}
+
 
 %\begin{corollary}
 %Let $(S,\rho)$ be a compact ultrametric space. If $\Gamma_S$ is the set of distances in $S$, that is, $\Gamma_S \subseteq \mathbb{R}_{\geq 0}$ and $r \in \Gamma_S$ if and only if $\exists x,y \in S$ such that $\rho(x,y)=r$, then $0$ is the only limit point in $\Gamma_S$. That is, $\Gamma_S \setminus 0$ is a discrete subset of $\mathbb{R}$.
@@ -212,20 +222,10 @@ If $(M,\rho)$ has a translation-invariant ultrametric then clearly $M$ is discre
 %Let $\epsilon >0 $ and suppose $B(a_\epsilon, l_\epsilon) \cap B(b,l) \neq \emptyset$. Then, if $l_\epsilon < l$, we must have $B(a_\epsilon, l_\epsilon) \subset B(b,l)$, and so $\rho(a_\epsilon, b) \leq l$. Then $l \in Im(\phi_{a_\epsilon})$ by considering the triangle with vertices $a,b,x$. Since we know that $\phi_{a_\epsilon}$ has discrete image, we must have some $\epsilon$ such that $B(a_\epsilon, l_\epsilon) \cap B(b,l) = \emptyset$ (if $l_\epsilon > l$, then we consider the triangle with vertices $a_\epsilon, b, x_\epsilon$ and appeal to the fact that $\phi_{b}$ has discrete image).
 %\end{proof}
 
-Now we immediately get the following corollary.\\
+We end this section with the following corollary.\\
 \begin{corollary}
 \cite{ar} Let $B(a, r)$ be a closed ball in an compact, discretely-valued ultrametric space. Then there exists $ r' > r \in \mathbb{R}$ such that $B(a, r) = \{x \in M \mid \rho(x,a) < r'\} $; that is, every closed ball is also an open ball with the same centre and  slightly larger radius.
 \end{corollary}
-
-It will become useful to write the set of distances occuring in $S$ as a sequence, put in decreasing order. 
-
-\begin{notation*}
-If $S$ is a compact, discretely-valued ultrametric space, then we denote the set of distances between points of $S$ by 
-$$\Gamma_S = \{\gamma_0 = d =diam(S), \gamma_1, \gamma_2, \ldots, \gamma_\infty =0 \}$$
-
-where $\gamma_i \in  \Gamma_S$ if and only if $\exists x,y \in S$ such that $\rho(x,y) = \gamma_i$ and  $\gamma_i < \gamma_j$ if and only if $i > j$. 
-\end{notation*}
-
 
 %To make use of regularity in $S$ we should, before continuing, also put some constraints on our sequence of distances $\Gamma_S$.
 
@@ -355,7 +355,7 @@ The following proposition is from \cite{kj}, where it is given for some $S$  wri
 
 
 \begin{example}
-We are now in a position to compute the valuative capacity of $(\mathbb{Z}, \rho_p)$. For any $p$, we note that the $\mathbb{Z}$ can be decomposed into $p$ closed balls of radius $\frac{1}{p}$, which are equal to the cosets of $\mathbb{Z}$ modulo $p$. Since $diam(S)=1$, this gives 
+We are now in a position to compute the valuative capacity of $(\mathbb{Z}, \rho_p)$. For any $p$, we note that $\mathbb{Z}$ can be decomposed into $p$ closed balls of radius $\frac{1}{p}$, which are equal to the cosets of $\mathbb{Z}$ modulo $p$. Since $diam(S)=1$, this gives 
 \[\frac{1}{log(\omega(\mathbb{Z}))} = \sum_{i=0}^{p-1} \frac{1}{log(\omega(p\mathbb{Z} +i))} = \frac{p}{log(\omega(p\mathbb{Z}))} = \frac{p}{log(\frac{1}{p} \cdot \omega(\mathbb{Z}))}\]
 Now we have,
 %\[log(\omega(\mathbb{Z})) = \frac{log(\frac{1}{p} \cdot\omega(\mathbb{Z}))}{p}\] so that
@@ -365,15 +365,15 @@ so that,
 and $\omega(\mathbb{Z})= p^{\frac{1}{1-p}}=p^{\frac{-1}{p-1}}$.
 \end{example}
 
-We can apply the same reasoning to any partition of $S$ made up of sets that all have the same capacity to obtain the following:\\
+We can apply the same reasoning to any partition of $S$ made up of sets that all have the same capacity and meeting the requirement that their pairwise distances are all equal to the diameter of $S$.\\
 
 \begin{corollary}
 	Suppose $S = \cup_i^n S_i$ with $\rho(S_i, S_j)=d=diam(S)$ and also $\omega(S_i)=\omega(S_j)$, $\forall i,j$ .  Let $r \in \mathbb{R}$ be such that $\omega(S_i)=r\omega(S)$, $\forall i$. Then $\omega(S) = r^{\frac{1}{n-1}}\cdot d$. 
 \end{corollary}
 
-Now we note that a partition of $S$ into closed balls satsifies the hypotheses if the distance between each ball is equal to the diameter of $S$. In particular, if $B(x_i,r_i)$ is a collection of closed balls such that the pairwise-distance between any $B(x_i,r_i)$ and $B(x_j,r_j)$ is constant, then if we know the capacity of each $B(x_i,r_i)$, we can compute the capacity of their union. If $M$ is discretely-valued, then we can say more. 
+Now we note that a partition of $S$ into closed balls wil satisfy the hypotheses if the distance between each ball is equal to the diameter of $S$. In particular, if $B(x_i,r_i)$ is a collection of closed balls such that the pairwise-distance between any $B(x_i,r_i)$ and $B(x_j,r_j)$ is constant, then if we know the capacity of each $B(x_i,r_i)$, we can compute the capacity of their union. If $M$ is discretely-valued, then we can say more. 
 \begin{corollary}
-	(Joins of computable sets are computable) Let $M$ be a compact, discretely-valued ultrametric space. Let $\Gamma_M = \{\gamma_0, \gamma_1,\ldots, \gamma_\infty=0\}$ be the set of distances in $M$. Suppose that $S = B(x, \gamma_i)$,  for some $x$ and $i$, is the union of $n \geq 2$ or more balls of radius $\gamma_{i+1}$, that is, $S=\cup_{j=1}^n B(x_j, \gamma_{i+1})$ is a join in the lattice of closed balls in $M$, then 
+	(Joins of computable sets are computable) Let $M$ be a compact, discretely-valued ultrametric space. Let $\Gamma_M = \{\gamma_0, \gamma_1,\ldots, \gamma_\infty=0\}$ be the set of distances in $M$. Suppose that $S = B(x, \gamma_i)$,  for some $x$ and $i$, is the union of $n \geq 2$ balls of radius $\gamma_{i+1}$, that is, $S=\cup_{j=1}^n B(x_j, \gamma_{i+1})$ is a join in the lattice of closed balls in $M$. Then 
 	\[\frac{1}{log(\frac{\omega(B(x, \gamma_i))}{\gamma_{i+1}} )} = \sum_{j=1}^n \frac{1}{log(\frac{\omega(B(x_j, \gamma_{i+1}))}{\gamma_{i+1} })}\]
 \end{corollary}
 
