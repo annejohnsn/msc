@@ -1,4 +1,4 @@
-%\section{Ultrametric basics}
+\section{Ultrametric basics}
 
 The principal context for this thesis is an arbitrary ultrametric space, which is a metric space that also satisifies an additional axion, sometimes called the ultrametric inequality or (in the case of vector spaces) the strong triangle propery. We define  ultrametric spaces below and for the rest of this section, we review some of their more important characteristics. The proofs offered in this section are, for the most part, standard and can be found in a number of reference texts, such as \cite{ar}.\\
 
@@ -54,7 +54,7 @@ Let $x,y \in B$. Then \[\rho(x-y,0) = \rho(x,y)  \leq \max(\rho(x,0), \rho(y,0))
 so that $x-y \in B$.
 \end{proof}
  
-In the previous chapter, we claimed that the $p-$adic metric was an ultrametric on the set $\mathbb{Z}$. Indeed, $(\mathbb{Z}, \rho_p)$ and closely related space of $p-$adic integers, denoted $\mathbb{Z}_{(p)}$, are the canonical examples of an ultrametric space. \\
+In the previous chapter, we claimed that the $p-$adic metric was an ultrametric on the set $\mathbb{Z}$. Indeed, $(\mathbb{Z}, \rho_p)$ and the closely related space of $p-$adic integers, denoted $\mathbb{Z}_{(p)}$, are the canonical examples of an ultrametric space. \\
 
 \begin{example} 
 Let $p$ be any prime and consider the metric space $(\mathbb{Z}, \rho_p)$. To see that $(\mathbb{Z}, \rho_p)$ is an ultrametric space, we must show that $\rho_p$ satisfies the ultrametric inequality, or equivalently, that $p-$adic absolute value satisfies the strong triangle inequality. Let $x,y$ be in $\mathbb{Z}$ and suppose $v_p(x)= n_x$ and $v_p(y)= n_y$. Then if $n=\min(n_x,n_y)$, $p^n $ divides $x$ and $p^n$ divides $y$, so $p^n$ divides $x +y$. We see now that $v_p(x+y) \geq \min(v_p(x),  v_p(y))$ and in turn $\lvert x + y \rvert_p \leq \max(\lvert x \rvert_p, \lvert y \rvert_p)$.
@@ -63,24 +63,26 @@ Let $p$ be any prime and consider the metric space $(\mathbb{Z}, \rho_p)$. To se
 \begin{example}
 Let $p$ be any prime. If 
 \[z = \sum_{i \geq 0} b_ip^i\]
-is such that $b_i \in \{0,\ldots,p-1\}$ for all $i$, then we say that $z$ is a \textbf{$p-$adic integer}. If $z = \sum_{i \geq 0} b_ip^i$, we note that if only a finite number of the coefficients of $z$ are non-zero, then $\sum_{i \geq 0} b_ip^i$ is a representation in base $p$ of some element of $\mathbb{Z}$. We can define the $p-$adic order of $p-$adic integer, denoted $ord_p(z)$, in a way that agrees with the $p-$adic valuation when $\sum_{i \geq 0} b_ip^i$ is in $\mathbb{Z}$ by letting $ord_p(z)$ be the smallest $i$ such that $b_i \neq 0$. The $p-$adic integers are both a ring\footnote{The ring operations carry over on the coefficients of $p-$adic integers in the expected way from $\mathbb{Z}/p\mathbb{Z}$, as long as special care is taken to keep track of carries.} and an ultrametric space with the metric induced by $ord_p(z)$.
+is such that $b_i \in \{0,\ldots,p-1\}$ for all $i$, then we say that $z$ is a \textbf{$p-$adic integer}. If $z = \sum_{i \geq 0} b_ip^i$, we note that if only a finite number of the coefficients of $z$ are non-zero, then $\sum_{i \geq 0} b_ip^i$ is a representation in base $p$ of some element of $\mathbb{Z}$. We can define the $p-$adic order of a $p-$adic integer, denoted $ord_p(z)$, in a way that agrees with the $p-$adic valuation when $\sum_{i \geq 0} b_ip^i$ is in $\mathbb{Z}$, by letting $ord_p(z)$ be the smallest $i$ such that $b_i \neq 0$. The $p-$adic integers are both a ring\footnote{The ring operations carry over on the coefficients of $p-$adic integers in the expected way from $\mathbb{Z}/p\mathbb{Z}$, as long as special care is taken to keep track of carries.} and an ultrametric space with the metric induced by $ord_p(z)$. For a given prime, $p$, we denote the $p-$adic integers by $\mathbb{Z}_{(p)}$.
 \end{example} 
 
 In what follows, we will often refer to $p-$adic spaces and it will not make much of a difference whether the reader prefers to think of being in $(\mathbb{Z}, \rho_p)$ or $\mathbb{Z}_{(p)}$. The reason is this: when forming $\rho_p-$orderings of subsets of either space we are always able to do so by selecting elements with finite number of non-zero coefficients, that is, by selecting elements from $\mathbb{Z}$ itself. \\
 
-Ultrametric spaces exhibit properties much unlike traditional metric spaces, and we review of few of these below. Of particular interest to us is the behavior between (closed) balls in an ultrametric space.\\
+Ultrametric spaces exhibit properties much unlike traditional metric spaces, and we review of few of these below. Of particular interest to us is the behavior between (closed) balls in an ultrametric space. \\
 
 \begin{notation*}
-	Let $(M, \rho)$ be a compact ultrametric space and let \[B(a, r)=\{x \in M \mid \rho(x,a) \leq r\}\] denote the \textit{closed} ball of radius $r$, centred at $a$ for some $r \in \mathbb{R}_{> 0}$ and $a \in (M,\rho)$.
+	Let $(M, \rho)$ be a compact ultrametric space and let \[B(a, r)=\{x \in M \mid \rho(x,a) \leq r\}\] denote the \textit{closed} ball of radius $r$, centred at $a$ for some $r \in \mathbb{R}_{> 0}$ and $a \in (M,\rho)$. Let \[B^0(a, r)=\{x \in M \mid \rho(x,a) < r\}\] denote the \textit{open} ball of radius $r$, centred at $a$ for some $r \in \mathbb{R}_{> 0}$ and $a \in (M,\rho)$.
 \end{notation*} 
-In the above notation, we break from  convention in that we denote a closed ball without using any decoration and in that we omit any notation for an open ball. This because, for the most part, the notion of open and closed ball in an ultrametric space overlap, although we will need a few more facts before showing this.\\
+
+
+In the above notation, we break from  convention in that we denote a closed ball without using any decoration. This is because before too long we will work exclusively with closed balls.  We are able to do this because for the most part, the notion of open and closed ball in an ultrametric space overlap, although we will need a few more facts before showing this.\\
 
 \begin{definition}
 Let $S$ be a subset of an ultrametric space. The \textbf{diameter of $S$} is $diam(S) = \sup\limits_{x,y\in S}\rho(x,y)$. Note that if $S$ is compact, $diam(S) = \max\limits_{x,y\in S}\rho(x,y)$.
 \end{definition}
 
 \begin{proposition}
-	Let $B=B(a, r)$ be a (closed) ball in an ultrametric space $(M,\rho)$. Then the diameter of $B$ is less than or equal to the radius of $B$.    
+	Let $B=B(a, r)$ be a ball in an ultrametric space $(M,\rho)$. Then the diameter of $B$ is less than or equal to the radius of $B$.    
 \end{proposition}
 
 \begin{proof}
@@ -101,7 +103,7 @@ If $\rho(x,z) \neq \rho(y,z)$, then without loss, $\rho(x,z) > \rho(y,z)$. At th
 To see that $\rho(x,y) < \rho(x,z)$, simply note that $\rho(x,y) \leq \max(\rho(x,z), \rho(y,z))$
 \end{proof}
 
-With this result in hand, we are able to quickly demonstrate some of the properties of (closed) balls, which are of fundamental importance to us. We see below that the ultrametric inequality, perhaps innocuous on the surface, quickly implies ultrametric balls are markedly different from their archimedean counterparts.\\
+With this result in hand, we are able to quickly demonstrate some of the properties of balls, which are of fundamental importance to us. We see below that the ultrametric inequality, perhaps innocuous on the surface, quickly implies ultrametric balls are markedly different from their Archimedean counterparts.\\
 
 \begin{proposition}
  Every point of a ball in an ultrametric is at its centre. That is, if $B(x_0, r)$ is a ball in an ultrametric space $(M,\rho)$, then $B(x, r)=B(x_0, r)$,  $\forall x \in B(x_0, r)$
@@ -127,20 +129,43 @@ Suppose $B(x_0, r_1) \cap B(y_0, r_2) \neq \emptyset$ and let $z$ be a point in 
 Suppose $\rho(x_0, y_0)=c$ and let $x \in B(x_0, r_1)$ and $y \in B(y_0, r_2)$ be arbitrary. Consider the triangle formed by $(x_0, y_0,y)$. Since $\rho(x_0,y_0)=c$ and  $\rho(y,y_0) \leq r_2 < c$, we must have $\rho(x_0, y)=c$ because triangles in an ultrametric space have at most one short side. Now consider the triangle formed by  $(x_0, x,y)$. Since $\rho(x_0, y)=c$ and  $\rho(x,x_0) \leq r_1 < c$, we must have $\rho(x, y)=c$.
 \end{proof}
 
-The following proposition is  easy to see, although the result is both unintuitive and important for our purposes. \\
+We will get a bit closer to showing the relationship between open and closed balls with the following results and will pick up a few other useful facts along the way. We start with another definition.
+
+\begin{definition}
+	If $(M, \rho)$ is an ultrametric space, then \[S(x_0,r) = \{x \in M; \rho(x,x_0) =r \}\] is the \textbf{sphere of radius $r$ at $x_0$}.
+\end{definition}
+
+\begin{lemma}
+ Spheres (of positive radius) in an ultrametric space are both open and closed as sets.
+\end{lemma}
+
+\begin{proof}
+	A sphere in any metric space is closed, so we need only show a sphere is also open in an ultrametric space. We show a sphere, $S=S(x_0,r)$, is equal to a union of opens, $S = \cup_{x\in S} B^0(x,r)$.\\
+	
+	Let $B=B^0(x,s)$ be an open ball that does not contain $x_0$. Let $r=\rho(x_0,x)$. We must have $r \geq s$, so then (since all triangles are isosocles) every point in $B$ lies in $S(x_0,r)$, that is $B \subseteq S(x_0,r)$. Then for any $x \in S(x_0,r)$, $B^0(x,r) \subseteq S(x_0,r)$ and \[\bigcup_{x \in S(x_0,r)} B^0(x,r) \subseteq S(x_0,r)\] The reverse inequality is clear since the union is taken on points of $S$.
+\end{proof}
 
 \begin{proposition}
-Suppose $S$ is a compact subset of an ultrametric space $(M, \rho)$ and that $\cup_{i \in I} B(x_i,r_i)$ is a cover of $S$ by (closed) balls in $S$. Then there exists $i_1,\ldots, i_n$, a finite subset of $I$, such that  $\cup_{j=1}^{j=n} B(x_{i_j},r_{i_j})$ is a partition of $S$.
+	The open balls in an ultrametric space are closed sets and the closed balls are open sets.
 \end{proposition}
 
 \begin{proof}
-Since $S$ is compact, $\cup_{i \in I} B(x_i,r_i)$ contains a finite subcover of $S$. Say this subcover is given by the elements  $i_1,\ldots, i_{n'} \in I$, and suppose this is not a partition. That is, suppose for some $i_i, i_j$, $ B(x_{i_i},r_{i_i}) \cap  B(x_{i_j},r_{i_j}) \neq \emptyset$. Then, without loss of generality, we must have $ B(x_{i_i},r_{i_i}) \subseteq  B(x_{i_j},r_{i_j})$, so that the removal of $ B(x_{i_i},r_{i_i})$ is still a cover of $S$. We continue this process a finite number of times, since the subcover was finite to begin with, to arrive at a finite partition of $S$.
+	The proof follows immediately from the result that spheres are clopen: to see that closed balls are open sets, note that for a closed ball, $B(x_0,r)$, \[B(x_0,r) = B^0(x_0,r) \cup S(x_0,r)\] Likewise, to see that open balls are closed sets, note that \[B^0(x_0,r) = B(x_0,r) \setminus S(x_0,r)\]
+\end{proof}
+The following proposition is now easy to see, although the result is both unintuitive and important for our purposes. \\
+
+\begin{proposition}
+Suppose $S$ is a compact subset of an ultrametric space $(M, \rho)$ and that $\cup_{i \in I} B(x_i,r_i)$ is a cover of $S$ by closed balls in $S$. Then there exists $i_1,\ldots, i_n$, a finite subset of $I$, such that  $\cup_{j=1}^{j=n} B(x_{i_j},r_{i_j})$ is a partition of $S$.
+\end{proposition}
+
+\begin{proof}
+Since $S$ is compact and $\rho$ is an ultrametric, $\cup_{i \in I} B(x_i,r_i)$ is an open cover and contains a finite subcover of $S$. Say this subcover is given by the elements  $i_1,\ldots, i_{n'} \in I$, and suppose this is not a partition. That is, suppose for some $i_i, i_j$, $ B(x_{i_i},r_{i_i}) \cap  B(x_{i_j},r_{i_j}) \neq \emptyset$. Then, without loss of generality, we must have $ B(x_{i_i},r_{i_i}) \subseteq  B(x_{i_j},r_{i_j})$, so that the removal of $ B(x_{i_i},r_{i_i})$ is still a cover of $S$. We continue this process a finite number of times, since the subcover was finite to begin with, to arrive at a finite partition of $S$.
 \end{proof}
 
 In fact, a slightly stronger statement then the above is true:
 
 \begin{corollary}
-Suppose $S$ is a compact subset of an ultrametric space $(M, \rho)$ and that $B(x_0,r)$ is a (closed) ball in $S$. Then, there exists a finite partition of $S$ having $B(x_0,r)$ as an element.
+Suppose $S$ is a compact subset of an ultrametric space $(M, \rho)$ and that $B(x_0,r)$ is a closed ball in $S$. Then, there exists a finite partition of $S$ having $B(x_0,r)$ as an element.
 \end{corollary}
 
 \begin{proof}
@@ -161,29 +186,41 @@ We end this section by making a few comments about the set of distances that occ
 \cite{ar} 
 \begin{enumerate}[(i)]
 \item The fibers of $f_m$, $f_m^{-1}(s)$, for $s \in S$, form a cover of $S$. In fact, they form an open partition. Since $S$ is compact by assumption, we must have that this partition is finite, and so the image of $f_m$ was also finite.
-\item Let $\epsilon >0$. Let $B^0(a,\epsilon)$ be the \textit{open} ball, $B^0(a,\epsilon)= \{x \in S; \rho(x,\epsilon) < \epsilon\}$. Then $(S\setminus B^0(a,\epsilon))$ is compact, and so from the above we know that $\phi_{a}$ restricted to $(S\setminus B^0(a,\epsilon))$ has finite range (let $M = S$ and $S = (S\setminus B^0(a, \epsilon))$ and apply (\textit{i})). Then the sets \[ [\epsilon, \infty) \cap \{\rho(s,a); s \in S, x \neq a\} \] are finite and $Im(\phi_a)$ is discrete.
+\item Let $\epsilon >0$. Let $B^0(a,\epsilon)$ be the open ball, $B^0(a,\epsilon)= \{x \in S; \rho(x,\epsilon) < \epsilon\}$. Then $(S\setminus B^0(a,\epsilon))$ is compact, and so from the above we know that $\phi_{a}$ restricted to $(S\setminus B^0(a,\epsilon))$ has finite range (let $M = S$ and $S = (S\setminus B^0(a, \epsilon))$ and apply (\textit{i})). Then the sets \[ [\epsilon, \infty) \cap \{\rho(s,a); s \in S, x \neq a\} \] are finite and $Im(\phi_a)$ is discrete.
 \end{enumerate}
 \end{proof}
 
-\begin{corollary}
-Let $(S,\rho)$ be a compact ultrametric space. If $\Gamma_S$ is the set of distances in $S$, that is, $\Gamma_S \subseteq \mathbb{R}_{\geq 0}$ and $r \in \Gamma_S$ if and only if $\exists x,y \in S$ such that $\rho(x,y)=r$, then $0$ is the only limit point in $\Gamma_S$. That is, $\Gamma_S \setminus 0$ is a discrete subset of $\mathbb{R}.
-\end{corollary}
+This leads to the following definition.
 
-\begin{proof}
-Suppose $\l\neq 0$ is a limit point of $\Gamma_S$. There there exists $b,x \in S$ such that $\rho(b,x) = l$ and for all $\epsilon >0$, there exists $a_\epsilon$ and $x_\epsilon$ such that $l - \epsilon <  \rho(a_\epsilon, x_\epsilon) < l + \epsilon$. Let us denote $\rho(a_\epsilon, x_\epsilon)$ by $l_\epsilon$.\\
+\begin{definition}
+If $(M, \rho)$ is an ultrametric space, we say $M$ is \textbf{discretely-valued} if the set $\Gamma_S = \{r \in \mathbb{R}; \exists x,y \in M \text{ such that } \rho(x,y)=r\}$ is a discrete subset of $\mathbb{R}$.
+\end{definition}
 
-Let $\epsilon >0 $ and suppose $B(a_\epsilon, l_\epsilon) \cap B(b,l) \neq \emptyset$. Then, if $l_\epsilon < l$, we must have $B(a_\epsilon, l_\epsilon) \subset B(b,l)$, and so $\rho(a_\epsilon, b) \leq l$. Then $l \in Im(\phi_{a_\epsilon})$ by considering the triangle with vertices $a,b,x$. Since we know that $\phi_{a_\epsilon}$ has discrete image, we must have some $\epsilon$ such that $B(a_\epsilon, l_\epsilon) \cap B(b,l) = \emptyset$ (if $l_\epsilon > l$, then we appeal to the fact that $\phi_{b}$ has discrete image).
-\end{proof}
+If $(M,\rho)$ has a translation-invariant ultrametric then clearly $M$ is discretely-valued since the sets $\phi_a$ are then equal for all $a$ in $M$. Now we have the following question.
+
+\begin{question}
+	Are there mild conditions under which a compact ultrametric space is discretely-valued? In particular, are there conditions that do not appeal to the algebraic structure in $M$?
+\end{question}
+
+%\begin{corollary}
+%Let $(S,\rho)$ be a compact ultrametric space. If $\Gamma_S$ is the set of distances in $S$, that is, $\Gamma_S \subseteq \mathbb{R}_{\geq 0}$ and $r \in \Gamma_S$ if and only if $\exists x,y \in S$ such that $\rho(x,y)=r$, then $0$ is the only limit point in $\Gamma_S$. That is, $\Gamma_S \setminus 0$ is a discrete subset of $\mathbb{R}$.
+%\end{corollary}
+
+%\begin{proof}
+%Suppose $\l\neq 0$ is a limit point of $\Gamma_S$. There there exists $b,x \in S$ such that $\rho(b,x) = l$ and for all $\epsilon >0$, there exists $a_\epsilon$ and $x_\epsilon$ such that $l - \epsilon <  \rho(a_\epsilon, x_\epsilon) < l + \epsilon$. Let us denote $\rho(a_\epsilon, x_\epsilon)$ by $l_\epsilon$.\\
+
+%Let $\epsilon >0 $ and suppose $B(a_\epsilon, l_\epsilon) \cap B(b,l) \neq \emptyset$. Then, if $l_\epsilon < l$, we must have $B(a_\epsilon, l_\epsilon) \subset B(b,l)$, and so $\rho(a_\epsilon, b) \leq l$. Then $l \in Im(\phi_{a_\epsilon})$ by considering the triangle with vertices $a,b,x$. Since we know that $\phi_{a_\epsilon}$ has discrete image, we must have some $\epsilon$ such that $B(a_\epsilon, l_\epsilon) \cap B(b,l) = \emptyset$ (if $l_\epsilon > l$, then we consider the triangle with vertices $a_\epsilon, b, x_\epsilon$ and appeal to the fact that $\phi_{b}$ has discrete image).
+%\end{proof}
 
 Now we immediately get the following corollary.\\
 \begin{corollary}
-\cite{ar} Let $B(a, r)$ be a closed ball in an compact ultrametric space. Then there exists $ r' > r \in \mathbb{R}$ such that $B(a, r) = \{x \in M \mid \rho(x,a) < r'\} $; that is, every closed ball is also an open ball with the same centre and  slightly larger radius.
+\cite{ar} Let $B(a, r)$ be a closed ball in an compact, discretely-valued ultrametric space. Then there exists $ r' > r \in \mathbb{R}$ such that $B(a, r) = \{x \in M \mid \rho(x,a) < r'\} $; that is, every closed ball is also an open ball with the same centre and  slightly larger radius.
 \end{corollary}
 
 It will become useful to write the set of distances occuring in $S$ as a sequence, put in decreasing order. 
 
 \begin{notation*}
-If $S$ is a compact (hence bounded) ultrametric space, then we denote the set of distances between points of $S$ by 
+If $S$ is a compact, discretely-valued ultrametric space, then we denote the set of distances between points of $S$ by 
 $$\Gamma_S = \{\gamma_0 = d =diam(S), \gamma_1, \gamma_2, \ldots, \gamma_\infty =0 \}$$
 
 where $\gamma_i \in  \Gamma_S$ if and only if $\exists x,y \in S$ such that $\rho(x,y) = \gamma_i$ and  $\gamma_i < \gamma_j$ if and only if $i > j$. 
@@ -207,9 +244,6 @@ where $\gamma_i \in  \Gamma_S$ if and only if $\exists x,y \in S$ such that $\rh
 %"In geometry and group theory, a lattice in R n {\displaystyle \mathbb {R} ^{n}} \mathbb {R} ^{n} is a subgroup of the additive group R n {\displaystyle \mathbb {R} ^{n}} \mathbb {R} ^{n} which is isomorphic to the additive group Z n {\displaystyle \mathbb {Z} ^{n}} \mathbb {Z} ^{n}, and which spans the real vector space R n {\displaystyle \mathbb {R} ^{n}} \mathbb {R} ^{n}."
 
 %\end{example}
-
-
-\newpage
 \section*{$\rho$-orderings, $\rho$-sequences, and valuative capacity}
 
 We are now in a position to give a general definition of $p-$orderings and in turn, $p-$sequences and valuative capacity. The observation that an analogous notion of $p-$ordering can be defined for a general ultrametric space, and that these structures coincide with Fekete $n-$tuples, is due to \cite{kj}. The exploration of this idea makes up the remainder of this work. \\ 
@@ -247,40 +281,51 @@ Armed with the notion of a well-defined $\rho-$sequence for an ultrametric space
 	:= \lim_{n\to\infty} \delta(n)^{1/n}\]  
 \end{definition}
 
+We spend the rest of this chapter showing some basic results on valuative capacity. These results form the start of our toolkit for calculating the capacities of specifics sets. They also show that many of the properties of capacity from $\mathbb{C}$ carry over to the non-Archimedean case in a natural way. \\
+
+Let us assume from this point on that $S$ is always a compact subset of an ultrametric space, unless stated otherwisse. 
 
 \begin{proposition}
-	\cite{kj} For $S$ and $\gamma(n)$ as above,  $\lim_{n\to\infty} \gamma(n)^{1/n} = r < \infty$. 
+	(\cite{kj}, theorem) $\omega(S)$ is finite. If $S$ itself is finite, then $\omega(S) =0$.
 \end{proposition}
 
+A compact set $E \subseteq \mathbb{C}$ is said to be polar if the logarithmic capacity of $E$ is $0$ \cite{rand}. Polar sets play a central role in potential theory and the theory of logarithmic capacity, which raises the following question:
+
+\begin{question}
+Are there ultrametric spaces that have some \textit{infinite} subset $S$ with $\omega(S)=0$?
+\end{question}
+
+We also have the expected result on monotoncity for valuative capacity:
 
 \begin{proposition}
-	If $S \subseteq M$ is a finite subset of an ultrametric space, then $\omega(S) =0$.
+	(\cite{kj}, Lemma 4) If $S$ and $T$ are compact subsets of an ultrametric space such that $S \subseteq T$ then $\omega(S) \leq \omega(T)$. 
 \end{proposition}
 
+%\begin{proposition}
+%	(upper bound) If $diam(S) = d$, then $\omega(S) < d$.
+%\end{proposition}
 
-\begin{proposition}
-	(upper bound) If $diam(S) = d$, then $\omega(S) < d$.
-\end{proposition}
+%\begin{proof}
+%	Since $d$ is the diameter of $S$, the $n^{th}$ term of the $\rho$-sequence of $S$ is bounded by $d^n$ and so $ \lim_{n\to\infty} \gamma(n)^{1/n}=d$ if, and only if, $\gamma(n)=d^n$, $\forall n$. This implies $\rho(a_n, a_i) = d$, $\forall n$ and $\forall i < n$, but then $\rho(a_i,a_j)=d$, $\forall i,j$, since the $\rho$-sequence is maximized at each $n$. This means $\omega(S) < d$ would imply that the cover of $S$, $\cup_{a_i} B_d(a_i)$ is in fact an infinite partition, contradicting the compactness of $S$. Then  $\omega(S)= \lim_{n\to\infty} \gamma(n)^{1/n}<d$. 
+%\end{proof}
 
-\begin{proof}
-	Since $d$ is the diameter of $S$, the $n^{th}$ term of the $\rho$-sequence of $S$ is bounded by $d^n$ and so $ \lim_{n\to\infty} \gamma(n)^{1/n}=d$ if, and only if, $\gamma(n)=d^n$, $\forall n$. This implies $\rho(a_n, a_i) = d$, $\forall n$ and $\forall i < n$, but then $\rho(a_i,a_j)=d$, $\forall i,j$, since the $\rho$-sequence is maximized at each $n$. This means $\omega(S) < d$ would imply that the cover of $S$, $\cup_{a_i} B_d(a_i)$ is in fact an infinite partition, contradicting the compactness of $S$. Then  $\omega(S)= \lim_{n\to\infty} \gamma(n)^{1/n}<d$. 
-\end{proof}
+%This doesn't work because  $\cup_{a_i} B_d(a_i)$  could fail to be a cover - the $\rho-$ ordering will be a dense subset under mild conditions - then being compact should imply a contradiction since we should have $\overline{S}=S$ for $S$ compact.
 
-This doesn't work because  $\cup_{a_i} B_d(a_i)$  could fail to be a cover - the $\rho-$ ordering will be a dense subset under mild conditions - then being compact should imply a contradiction since we should have $\overline{S}=S$ for $S$ compact.
-
-Make a comment about algebraic structure here
-
+We show now some results on the interaction between the algebraic structure of the space and valuative capacity. These results can be powerful tools for calculating capacities, in particular, when they are combined with the subadditivity result that follows.
+ 
 \begin{proposition}
 \label{translation invariance}
-	(translation invariance) If $(M, \rho)$ be a compact ultrametric space and s also a topological group for which $\rho$ is (left) invariant under the group operation, then $\omega$ is also (left)-invariant. That\ is, if $\rho(x,y)=\rho(gx,gy)$, $ \forall g,x,y \in M$, then $\omega(gS)=\omega(S)$, for $S \subseteq M$.	
+	(translation invariance) If $(M, \rho)$ is a compact ultrametric space and also a topological group for which $\rho$ is (left) invariant under the group operation, then $\omega$ is also (left)-invariant. That\ is, if $\rho(x,y)=\rho(g+x,g+y)$, $ \forall g,x,y \in M$, then $\omega(g+S)=\omega(S)$, for $S \subseteq M$.	
 \end{proposition}
 
 \begin{proof}
-	Let $\{a_i\}_{i=0}^\infty$ be a $\rho$-ordering for $S$. Then $\{ga_i\}_{i=0}^\infty$ is a $\rho$-ordering for $gS$. Then $$\omega(gS) = \lim_{n\to\infty} \gamma(n)^{1/n} =  \lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(ga_n,ga_i)]^{1/n} = \lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(a_n,a_i)]^{1/n}	 = \omega(S)$$
+	Let $\{a_i\}_{i\geq 0}$ be a $\rho$-ordering for $S$. Then $\{g+a_i\}_{i\geq 0}$ is a $\rho$-ordering for $g+S$. Then \[\omega(g+S) = \lim_{n\to\infty} \delta(n)^{1/n} \]
+	\[ = \lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(g+a_n,g+a_i)]^{1/n} \]
+	\[=\lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(a_n,a_i)]^{1/n}	 = \omega(S) \]
 \end{proof}	
 
 \begin{example}
-	With the notation of the previous section, note that $\rho_p$ is translation invariant since for $x,y \in (\mathbb{Z}_p, \rho_p)$, $\rho_p(x,y) = p^{-v_p(x-y)} = p^{-v_p((a+x)-(a+y))} = \rho_p(a+x,a+y)$. Then $\omega(a+S) = \omega(S)$ for $S \subseteq (\mathbb{Z}_p, \rho_p)$.
+	Note that $\rho_p$ is translation invariant for each $p$ since for any $x,y$, we have $\rho_p(x,y) = p^{-v_p(x-y)} = p^{-v_p((a+x)-(a+y))} = \rho_p(a+x,a+y)$. Then $\omega(a+S) = \omega(S)$ for $S \subseteq (\mathbb{Z}_p, \rho_p)$.
 \end{example}
 
 \begin{proposition}
@@ -288,8 +333,9 @@ Make a comment about algebraic structure here
 \end{proposition}
 
 \begin{proof}
-	Let $\rho$ be the metric induced by $N$, so that $\rho(x,y) = N(x-y), \forall x,y \in V$. Let $\{a_i\}_{i=0}^\infty$ be a $\rho$-ordering for $S$. Then since $N$ is multiplicative, for $u, v \in gS$, $u=gs_i$ and $v=gs_j$ for some $s_i, s_j \in S$,  $$\rho(u, v) = \rho(gs_i, gs_j) =N(gs_i - gs_j) = N(g(s_i - s_j)) = N(g)N(s_i - s_j) = N(g)\rho(s_i,s_j).$$
-	Then $\{ga_i\}_{i=0}^\infty$ is a $\rho$-ordering for $gS$ and 
+	Let $\rho_N$ be the metric induced by $N$, so that $\rho_N(x,y) = N(x-y), \forall x,y \in V$. Let $\{a_i\}_{i\geq 0}$ be a $\rho_N$-ordering for $S$ and let $u, v$ be in $gS$ with $u=gs_i$ and $v=gs_j$ for some $s_i, s_j \in S$. Then, since $N$ is multiplicative, \[\rho(u, v) = \rho(gs_i, gs_j) =N(gs_i - gs_j)\] 
+	\[ = N(g(s_i - s_j)) = N(g)N(s_i - s_j) = N(g)\rho(s_i,s_j),\]
+	so that $\{ga_i\}_{i\geq 0}$ is a $\rho_N$-ordering for $gS$. Then,
 	
 	$$\omega(gS) = \lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(ga_n,ga_i)]^{1/n} 
 	= \lim_{n\to\infty} [\prod_{i=0}^{n-1} N(g)\rho(a_n,a_i)]^{1/n} $$
@@ -298,29 +344,37 @@ Make a comment about algebraic structure here
 
 
 \begin{example}
-	Since $\rho_p$ is multiplicative, $\omega(mS) = v_p(m)\cdot \omega(S)$ for $m \in \mathbb{Z}_p$ and $S \subseteq \mathbb{Z}$. In particular, $\omega(p\mathbb{Z}) = \frac{1}{p}\cdot \omega(\mathbb{Z})$. %= \frac{1}{p}\cdot p^{\frac{1}{1-p}} = p^{-p/p-1}.$
+	Since $\rho_p$ is multiplicative, we have that $\omega(mS) = \lvert m \rvert_p\cdot \omega(S)$ for $m \in \mathbb{Z}$ and $S \subseteq \mathbb{Z}$. In particular, $\omega(p\mathbb{Z}) = \frac{1}{p}\cdot \omega(\mathbb{Z})$. %= \frac{1}{p}\cdot p^{\frac{1}{1-p}} = p^{-p/p-1}.$
 \end{example}
 
-This is important and you should say so. The following proposition is from \cite{kj}, where it is given for some $S$  written as the union of two subsets, although it is easily seen to be true for $S$ equal to any finite union, so long as the other assumptions remain satisfied.
+The following proposition is from \cite{kj}, where it is given for some $S$  written as the union of two subsets, although it is easily seen to be true for $S$ equal to any finite union, so long as the other assumptions remain satisfied.  
 
 \begin{proposition}
-	\cite{kj}(subadditivity) If  $diam(S) := \max_{x,y \in S} \rho(x,y)=d$ and $S=\cup_i^n A_i$ for $A_i$ compact subsets of $M$ with $\rho(A_i, A_j)=d, \forall i,j$, then \[\frac{1}{log(\omega(S)/d) } = \sum_{i=1}^n \frac{1}{log(\omega(A_i)/d)}\] 
+	(\cite{kj}, Proposition 10) (subadditivity) If  $diam(S)=d$ and $S=\cup_i^n A_i$ for $A_i$ compact subsets of $M$ with $\rho(A_i, A_j)=d, \forall i,j$, then \[\frac{1}{log(\omega(S)/d) } = \sum_{i=1}^n \frac{1}{log(\omega(A_i)/d)}\] 
 \end{proposition}
 
 
 \begin{example}
-$\omega(\mathbb{Z})$
+We are now in a position to compute the valuative capacity of $(\mathbb{Z}, \rho_p)$. For any $p$, we note that the $\mathbb{Z}$ can be decomposed into $p$ closed balls of radius $\frac{1}{p}$, which are equal to the cosets of $\mathbb{Z}$ modulo $p$. Since $diam(S)=1$, this gives 
+\[\frac{1}{log(\omega(\mathbb{Z}))} = \sum_{i=0}^{p-1} \frac{1}{log(\omega(p\mathbb{Z} +i))} = \frac{p}{log(\omega(p\mathbb{Z}))} = \frac{p}{log(\frac{1}{p} \cdot \omega(\mathbb{Z}))}\]
+Now we have,
+%\[log(\omega(\mathbb{Z})) = \frac{log(\frac{1}{p} \cdot\omega(\mathbb{Z}))}{p}\] so that
+\[log(\omega(\mathbb{Z})^p) = log(\frac{1}{p} \cdot\omega(\mathbb{Z}))\]
+so that,
+\[\omega(\mathbb{Z})^p - \frac{\omega(\mathbb{Z})}{p} = 0 \]
+and $\omega(\mathbb{Z})= p^{\frac{1}{1-p}}=p^{\frac{-1}{p-1}}$.
 \end{example}
 
-\begin{corollary}
-	Suppose $S = \cup_i^n S_i$ with $\rho(S_i, S_j)=d=diam(S)$ and also $\omega(S_i)=\omega(S_j)$, $\forall i,j$ .  Let $r \in \mathbb{R}$ be such that $\omega(S_i)=r\omega(S)$, $\forall i$. Then $\omega(S) = r^{\frac{1}{n-1}}\cdot d$. In particular if $S = \mathbb{Z}$ and $(M,\rho)= (\mathbb{Z}, \mid \cdot\mid_p)$ then $\omega(S)=(\frac{1}{p})^{1/p-1}$ for any prime $p$. 
-\end{corollary}
-
-\begin{example}
-\end{example}
+We can apply the same reasoning to any partition of $S$ made up of sets that all have the same capacity to obtain the following:\\
 
 \begin{corollary}
-	(Joins of computable sets are computable) Let  $\Gamma_M = \{\gamma_0, \gamma_1,\ldots, \gamma_\infty=0\}$ be the set of distances in $M$. Suppose that $S = B_{\gamma_i}(x)$,  for some $x$ and $i$, is the union of $2$ or more balls of radius $\gamma_{i+1}$, i.e., $S=\cup_{j=1}^n B_{\gamma_{i+1}} (x_j)$ is a join in the lattice of open sets in $M$, then 
-	\[\frac{1}{log(\omega(S)/\gamma_{i+1} )} = \sum_{j=1}^n \frac{1}{log(\omega(B_{\gamma_{i+1}}(x_j))/\gamma_{i+1} )}\]
+	Suppose $S = \cup_i^n S_i$ with $\rho(S_i, S_j)=d=diam(S)$ and also $\omega(S_i)=\omega(S_j)$, $\forall i,j$ .  Let $r \in \mathbb{R}$ be such that $\omega(S_i)=r\omega(S)$, $\forall i$. Then $\omega(S) = r^{\frac{1}{n-1}}\cdot d$. 
 \end{corollary}
 
+Now we note that a partition of $S$ into closed balls satsifies the hypotheses if the distance between each ball is equal to the diameter of $S$. In particular, if $B(x_i,r_i)$ is a collection of closed balls such that the pairwise-distance between any $B(x_i,r_i)$ and $B(x_j,r_j)$ is constant, then if we know the capacity of each $B(x_i,r_i)$, we can compute the capacity of their union. If $M$ is discretely-valued, then we can say more. 
+\begin{corollary}
+	(Joins of computable sets are computable) Let $M$ be a compact, discretely-valued ultrametric space. Let $\Gamma_M = \{\gamma_0, \gamma_1,\ldots, \gamma_\infty=0\}$ be the set of distances in $M$. Suppose that $S = B(x, \gamma_i)$,  for some $x$ and $i$, is the union of $n \geq 2$ or more balls of radius $\gamma_{i+1}$, that is, $S=\cup_{j=1}^n B(x_j, \gamma_{i+1})$ is a join in the lattice of closed balls in $M$, then 
+	\[\frac{1}{log(\frac{\omega(B(x, \gamma_i))}{\gamma_{i+1}} )} = \sum_{j=1}^n \frac{1}{log(\frac{\omega(B(x_j, \gamma_{i+1}))}{\gamma_{i+1} })}\]
+\end{corollary}
+
+Of course, if $M$ is a group, then we know the elements in these partitions are cosets, and if the metric is translation-invariant, then they each have the same capacity. We take up this last corollary in significant detail in the next chapter, obtaining some formulae for valuative capacity with various restrictions on $\Gamma_M$ or related structures.
