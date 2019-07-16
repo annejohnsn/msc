@@ -298,23 +298,21 @@ Let $S$ be as above, a compact, discretely-valued subset of an ultrametric space
 \end{definition}
 
 \begin{definition}
-Suppose $S$ is a compact, discretely-valued subset of an ultrametric space and $S$ is semi-regular. The \textbf{$\alpha$-sequence} of $S$ is the sequence given by $\alpha(k)=\frac{\beta(k+1)}{\beta(k)}$, which is in $\mathbb{N}$ for each $k$. That is, if $B^k_i$ is an element of $S_{\gamma_k}$, then $\alpha(k)$ is equal to the number of children of $B^k_i$ in $T_s$. Since $S$ is semi-regular, this number does not depend on $i$.
+Suppose $S$ is a compact, discretely-valued subset of an ultrametric space and $S$ is semi-regular. The \textbf{$\alpha$-sequence} of $S$ is the sequence given by \[\alpha(k)=\frac{\beta(k+1)}{\beta(k)}\] which is in $\mathbb{N}$ for each $k$. That is, if $B^k_i$ is an element of $S_{\gamma_k}$, then $\alpha(k)$ is equal to the number of children of $B^k_i$ in $T_s$. Since $S$ is semi-regular, this number does not depend on $i$.
 \end{definition}
 
-\begin{lemma}
-	If $G$ is a compact ultrametric group, then $G$  is semi-regular.
-\end{lemma}
+\begin{example}
+	If $G$ is a compact ultrametric space and also a group, each ball centred at $0$ is in fact a subgroup of $G$. Then each set of elements of $S_{\gamma_k}$ is a collection of cosets of $G/B(0,\gamma_k)$. Since $G$ is assumed to be compact, $G/B(0,\gamma_k)$ is finite and so Lagrange's theorem implies that $G$ is semi-regular.
+\end{example}
 
-\begin{proof}
-	Since $G$ is a group, each ball centred at $0$ is in fact a subgroup of $G$. Then each set of elements of $S_{\gamma_k}$ is a collection of cosets of $G/B(0,\gamma_k)$. Since $G$ is assumed to be compact, $G/B(0,\gamma_k)$ is finite and so Lagrange's theorem implies the result.
-\end{proof}
-
+We now work towards a formula for the terms in the $\rho-$sequence of a semi-regular space $S$. We need a few lemmas to get started.\\
+ 
 \begin{lemma}
 Let $n$ and $q$ be in $\mathbb{N}$. Then $\lfloor\frac{n}{q} \rfloor$ counts the numbers strictly less than $n$ that are congruent to $n \mod q$.
 \end{lemma}
 
 \begin{proof}
-By the division algorithm, we know there exists unique $c,r \in \mathbb{Z}$ such that \[n = cq + r\] with $0 \leq r < q$. Since $c$ counts the number of $q$-multiples in the set $\{1,\ldots,n\}$, and each $q$-multiple contains exactly one element that is congruent to $n \mod q$, we need only show $\lfloor\frac{n}{q} \rfloor = c$. Simply note the above implies  \[\frac{n}{q} = c + \frac{r}{q}\] and we must have   $\frac{r}{q} < 1$. Then $c$ is the largest integer such that $\frac{n}{q} < c$, but this is the definition of $\lfloor\frac{n}{q} \rfloor$.
+By the division algorithm, we know there exists unique $c,r \in \mathbb{Z}$ such that \[n = cq + r\] with $0 \leq r < q$. Since $c$ counts the number of $q$-multiples in the set $\{1,\ldots,n\}$, and each $q$-multiple contains exactly one element that is congruent to $n \mod q$, we need only show $\lfloor\frac{n}{q} \rfloor = c$. Simply note the above implies  \[\frac{n}{q} = c + \frac{r}{q}\] and we must have   $\frac{r}{q} < 1$. Then $c$ is the largest integer such that $\frac{n}{q} \leq c$, but this is the definition of $\lfloor\frac{n}{q} \rfloor$.
 \end{proof}
 
 
@@ -341,7 +339,7 @@ Since $S$ is semi-regular, every sequence of $\beta(k)$ terms in $\sigma$ will b
 We introduce another piece of notation before continuing.
 
 \begin{notation}
-	Let $S$ be a compact, discretely-valued subset of an ultrametric space and $\gamma_k$ be an element of $\Gamma_S$, the set of distances in $S$. Then we denote by $v_{\gamma_k}(\delta(n))$ the exponent of $\gamma_k$ in the $n^{th}-$term of the characteristic sequence of $S$.
+	Let $S$ be a compact, discretely-valued subset of an ultrametric space, $\Gamma_S$ the set of distances in $S$ and $\delta(n)$ the characteristic sequence of $S$. Suppose $\gamma_k$ is an element of $\Gamma_S$. Then we denote by $v_{\gamma_k}(\delta(n))$ the exponent of $\gamma_k$ in the $n^{th}-$term of the characteristic sequence of $S$.
 \end{notation}
 
 \begin{proposition}
@@ -362,9 +360,9 @@ The exponent of $\gamma_k$ in the $n^{th}$ term of the characteristic sequence i
 
 
 \begin{example}
-Consider the ultrametric space $(\mathbb{Z}, \rvert \cdot \lvert_p)$  for any prime $p$. Then $\beta(k)=p^k$ and $\alpha(k)=p$ for any $k$. The above gives 
+Consider the ultrametric space $(\mathbb{Z}, \rho_p)$  for any prime $p$. Then $\beta(k)=p^k$ and $\alpha(k)=p$ for any $k \in \mathbb{N} \cup 0$. The above gives 
 \[v_{\gamma_k}(\sigma(n)) =\lfloor \frac{n}{p^{k}}\rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor\]
-and since $\gamma_k = p^{-k}$, $\forall k$, we have 
+Now since $\gamma_k = p^{-k}$, $\forall k$, we are able to compute the exponent of $\frac{1}{p}$ in $\delta(n)$. We have 
 \[v_{\frac{1}{p}}(\sigma(n)) \]
 \[ = \sum_{k=1}^{\infty} k \cdot (\lfloor \frac{n}{p^{k}}\rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor) \]
 \[ = \sum_{k=1}^{\lceil log_p(n) \rceil}  k \cdot (\lfloor \frac{n}{p^{k}}\rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor)\]
@@ -372,9 +370,10 @@ and since $\gamma_k = p^{-k}$, $\forall k$, we have
 \[ = \lfloor \frac{n}{p}\rfloor + \lfloor \frac{n}{p^2}\rfloor  + \ldots +  \lfloor \frac{n}{p^{ \lceil log_p(n)\rceil}} \rfloor \]
 \[ =  \sum_{k=1}^{\lceil log_p(n) \rceil} \lfloor \frac{n}{p^{k}}\rfloor \]
 \[ =  \sum_{k=1}^{\infty} \lfloor \frac{n}{p^{k}}\rfloor \]
-\[= v_{p}(n!) \]
 
-since $\lfloor \frac{n}{p^k} \rfloor = 0$ if $ p^k > n \iff log(p^k) > log(n) \iff k > log_p(n)$, so that we are able to recover the well-known Legendre's formula.
+We are able to simplfy to a finite sum in the above because $\lfloor \frac{n}{p^k} \rfloor = 0$ if \[ p^k > n \iff log(p^k) > log(n) \iff k > log_p(n)\]
+We have already seen that the natural order on the integers gives a $\rho_p$-ordering for each $p$. So then \[v_{\frac{1}{p}}(\delta(n)) = v_{\frac{1}{p}}(\prod_{i=0}^n \frac{1}{p}^{v_p(n-i)}) = \sum_{i=0}^{n-1} v_p(n-i)= v_{p}(n!) \]
+so that we are able to recover the well-known Legendre's formula.
 \end{example}
 
 %Some comment about how the above starts to build up a toolkit independent of  algebraic structure in $S$.
