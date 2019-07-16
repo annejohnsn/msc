@@ -63,7 +63,7 @@ Let $p$ be any prime and consider the metric space $(\mathbb{Z}, \rho_p)$. To se
 \begin{example}
 Let $p$ be any prime. If 
 \[z = \sum_{i \geq 0} b_ip^i\]
-is such that $b_i \in \{0,\ldots,p-1\}$ for all $i$, then we say that $z$ is a \textbf{$p-$adic integer}. If $z = \sum_{i \geq 0} b_ip^i$, we note that if only a finite number of the coefficients of $z$ are non-zero, then $\sum_{i \geq 0} b_ip^i$ is a representation in base $p$ of some element of $\mathbb{Z}$. We can define the \textbf{$p-$adic order} of a $p-$adic integer, denoted $ord_p(z)$, in a way that agrees with the $p-$adic valuation when $\sum_{i \geq 0} b_ip^i$ is in $\mathbb{Z}$, by letting $ord_p(z)$ be the smallest $i$ such that $b_i \neq 0$. The $p-$adic integers are both a ring\footnote{The ring operations carry over on the coefficients of $p-$adic integers in the expected way from $\mathbb{Z}/p\mathbb{Z}$, as long as special care is taken to keep track of carries.} and an ultrametric space with the metric induced by $ord_p(z)$. For a given prime, $p$, we denote the $p-$adic integers by $\mathbb{Z}_{(p)}$.
+is such that $b_i \in \{0,\ldots,p-1\}$ for all $i$, then we say that $z$ is a \textbf{$p-$adic integer}. If $z = \sum_{i \geq 0} b_ip^i$, we note that if only a finite number of the coefficients of $z$ are non-zero, then $\sum_{i \geq 0} b_ip^i$ is a representation in base $p$ of some element of $\mathbb{Z}$. We can define the \textbf{$p-$adic order} of a $p-$adic integer, denoted $ord_p(z)$, in a way that agrees with the $p-$adic valuation when $\sum_{i \geq 0} b_ip^i$ is in $\mathbb{Z}$. We let $ord_p(z)$ be the smallest $i$ such that $b_i \neq 0$. The $p-$adic integers are both a ring\footnote{The ring operations carry over on the coefficients of $p-$adic integers in the expected way from $\mathbb{Z}/p\mathbb{Z}$, as long as special care is taken to keep track of carries.} and an ultrametric space with the metric induced by $ord_p(z)$. For a given prime, $p$, we denote the $p-$adic integers by $\mathbb{Z}_{(p)}$.
 \end{example} 
 
 In what follows, we will often refer to $p-$adic spaces and it will not make much of a difference whether the reader prefers to think of being in $(\mathbb{Z}, \rho_p)$ or $\mathbb{Z}_{(p)}$. The reason is this: when forming $\rho_p-$orderings of subsets of either space we are always able to do so by selecting elements with finite number of non-zero coefficients, that is, by selecting elements from $\mathbb{Z}$ itself. \\
@@ -129,10 +129,10 @@ Suppose $B(x_0, r_1) \cap B(y_0, r_2) \neq \emptyset$ and let $z$ be a point in 
 Suppose $\rho(x_0, y_0)=c$ and let $x \in B(x_0, r_1)$ and $y \in B(y_0, r_2)$ be arbitrary. Consider the triangle formed by $(x_0, y_0,y)$. Since $\rho(x_0,y_0)=c$ and  $\rho(y,y_0) \leq r_2 < c$, we must have $\rho(x_0, y)=c$ because triangles in an ultrametric space have at most one short side. Now consider the triangle formed by  $(x_0, x,y)$. Since $\rho(x_0, y)=c$ and  $\rho(x,x_0) \leq r_1 < c$, we must have $\rho(x, y)=c$.
 \end{proof}
 
-We will get a bit closer to showing the relationship between open and closed balls with the following results and will pick up a few other useful facts along the way. We start with another definition.
+We will get a bit closer to showing the relationship between open and closed balls with the following results and will pick up a few other useful facts along the way. We start with another definition.\\
 
 \begin{definition}
-	If $(M, \rho)$ is an ultrametric space, then \[S(x_0,r) = \{x \in M; \rho(x,x_0) =r \}\] is the \textbf{sphere of radius $r$ at $x_0$}.
+	If $(M, \rho)$ is an ultrametric space, then for $x_0 \in M$ and $r \in \mathbb{R}_{> 0 }$, \[S(x_0,r) = \{x \in M; \rho(x,x_0) =r \}\] is the \textbf{sphere of radius $r$ at $x_0$}.
 \end{definition}
 
 \begin{lemma}
@@ -140,7 +140,7 @@ We will get a bit closer to showing the relationship between open and closed bal
 \end{lemma}
 
 \begin{proof}
-	A sphere in any metric space is closed, so we need only show a sphere is also open in an ultrametric space. We show a sphere, $S=S(x_0,r)$, is equal to a union of open sets, $S = \cup_{x\in S} B^0(x,r)$.\\
+	\cite{ar} A sphere in any metric space is closed, so we need only show a sphere is also open in an ultrametric space. We show a sphere, $S=S(x_0,r)$, is equal to a union of open sets, $S = \cup_{x\in S} B^0(x,r)$.\\
 	
 	Let $B=B^0(x,s)$ be an open ball that does not contain some $x_0$. Let $r=\rho(x_0,x)$. We must have $r \geq s$, so then (since all triangles are isosocles) every point in $B$ lies in $S(x_0,r)$, that is $B \subseteq S(x_0,r)$. Then for any $x \in S(x_0,r)$, $B^0(x,r) \subseteq S(x_0,r)$ and \[\bigcup_{x \in S(x_0,r)} B^0(x,r) \subseteq S(x_0,r)\] The reverse inequality is clear since the union is taken over points of $S$.
 \end{proof}
@@ -162,7 +162,7 @@ Suppose $S$ is a compact subset of an ultrametric space $(M, \rho)$ and that $\c
 Since $S$ is compact and $\rho$ is an ultrametric, $\cup_{i \in I} B(x_i,r_i)$ is an open cover and contains a finite subcover of $S$. Say this subcover is given by the elements  $i_1,\ldots, i_{n'} \in I$, and suppose this is not a partition. That is, suppose for some $i_i, i_j$, $ B(x_{i_i},r_{i_i}) \cap  B(x_{i_j},r_{i_j}) \neq \emptyset$. Then, without loss of generality, we must have $ B(x_{i_i},r_{i_i}) \subseteq  B(x_{i_j},r_{i_j})$, so that the removal of $ B(x_{i_i},r_{i_i})$ is still a cover of $S$. We continue this process a finite number of times, since the subcover was finite to begin with, to arrive at a finite partition of $S$.
 \end{proof}
 
-In fact, a slightly stronger statement then the above is true:
+In fact, a slightly stronger statement then the above is true:\\
 
 \begin{corollary}
 Suppose $S$ is a compact subset of an ultrametric space $(M, \rho)$ and that $B(x_0,r)$ is a closed ball in $S$. Then, there exists a finite partition of $S$ having $B(x_0,r)$ as an element.
@@ -190,19 +190,19 @@ We end this section by making a few comments about the set of distances that occ
 \end{enumerate}
 \end{proof}
 
-This leads to the following definition.
+This leads to the following definition.\\
 
 \begin{definition}
 If $(M, \rho)$ is an ultrametric space, we say $M$ is \textbf{discretely-valued} if the set $\Gamma_S = \{r \in \mathbb{R}; \exists x,y \in M \text{ such that } \rho(x,y)=r\}$ is a discrete subset of $\mathbb{R}$.
 \end{definition}
 
-If $(M,\rho)$ has a translation-invariant ultrametric then clearly $M$ is discretely-valued since the sets $\phi_a$ are then equal for all $a$ in $M$. Now we have the following question.
+If $(M,\rho)$ has a translation-invariant ultrametric then clearly $M$ is discretely-valued since the sets $\phi_a$ are then equal for all $a$ in $M$. Now we have the following question.\\
 
 \begin{question}
 	Are there mild conditions under which a compact ultrametric space is discretely-valued? In particular, are there conditions that do not appeal to some algebraic structure in $M$?
 \end{question}
 
-When this is the case, it will become useful to write the set of distances occuring in $S$ as a sequence, put in decreasing order. 
+When this is the case, it will become useful to write the set of distances occuring in $S$ as a sequence, put in decreasing order.\\
 
 \begin{notation*}
 	If $S$ is a compact, discretely-valued ultrametric space, then we denote the set of distances between points of $S$ by 
@@ -252,19 +252,19 @@ We are now in a position to give a general definition of $p-$orderings and in tu
 	\cite{kj} Let $S$ be a subset of an ultrametric space $(M,\rho)$. A \textbf{$\rho$-ordering} of $S$ is a sequence $\{a_i\}_{i \geq 0}$ in $S$ such that $a_0$ is arbitrary and $\forall n > 0$, $a_n$ maximizes \[\prod_{i=0}^{n-1} \rho(s,a_i)\] over $s \in S$. 
 \end{definition}
 
-The above generalizes the definition of $p-$orderings for $\mathbb{Z}$, since maximizing the $p-$adic distance between two points in $\mathbb{Z}$ (or $\mathbb{Z}_p$) is the same as minimizing the $p-$adic valuation of the difference of two points. In particular, $\{a_i\}_{i \geq 0}$ is a $p-$ordering of $S$, a subset of $\mathbb{Z}$, if and only if it is a $\rho_p$-ordering of $(S, \rho_p)$. Let us see an example of the simplest kind, that is, for a finite set $S$.
+The above generalizes the definition of $p-$orderings for $\mathbb{Z}$, since maximizing the $p-$adic distance between two points in $\mathbb{Z}$ (or $\mathbb{Z}_p$) is the same as minimizing the $p-$adic valuation of the difference of two points. In particular, $\{a_i\}_{i \geq 0}$ is a $p-$ordering of $S$, a subset of $\mathbb{Z}$, if and only if it is a $\rho_p$-ordering of $(S, \rho_p)$. Let us see an example of the simplest kind, that is, for a finite set $S$.\\
 
 \begin{example}
 Suppose $S$ is a finite subset of $(\mathbb{Z}, \rho_2)$, $S=\{0,2,8,3\}$. Then a $\rho_2-$ordering of $S$ starts (arbitrarily) with $a_0=0$, which forces $a_1=3$, since $\rho_2(0,3)=1=diam(S)$. The sequence continues $a_2=2$ and $a_3=8$, but after this point the sequence becomes arbitrary because  $\prod_{i=0}^{n-1} \rho(s,a_i)$ will contain a $0$, given by the repeated term. Indeed, for any finite subset $S$ with $\lvert S \rvert = n$, the $\rho-$ordering of $S$ is arbitrary from the $n^{th}$ point on. 
 \end{example}
 
-We now give the definition of a $\rho-$sequence for an ultrametric space, generalizing the notion of a $p-$sequence.
+We now give the definition of a $\rho-$sequence for an ultrametric space, generalizing the notion of a $p-$sequence.\\
 
 \begin{definition}
 	\cite{kj} Let $\{a_i\}_{i \geq 0}$ be a $\rho-$ordering of $S$. The \textbf{$\rho$-sequence} of $S$ is defined by letting $\delta(0)=1$  and for $n > 0$, \[\delta(n)=\prod_{i=0}^{n-1} \rho(a_n,a_i)\]
 \end{definition}
 
-The two propositions that follow are the critical observations. The first one tells us that we can use the $\rho-$sequence of $S$ as an invariant and the second one motivates the definition of valuative capacity. The proofs of each are given in $\cite{kj}$.
+The two propositions that follow are the critical observations. The first one tells us that we can use the $\rho-$sequence of $S$ as an invariant and the second one motivates the definition of valuative capacity. The proofs of each are given in $\cite{kj}$.\\
 
 \begin{proposition}
 	(\cite{kj}, Lemma 1) The $\rho$-sequence of $S$ is well-defined so long as $S$ is compact and $\rho$ is an ultrametric. That is, the $\rho$-sequence of a compact subset of an ultrametric spaces does not depend on the choice of $\rho$-ordering of $S$.
@@ -274,7 +274,7 @@ The two propositions that follow are the critical observations. The first one te
 If S is a compact subset of an ultrametric space $(M, \rho)$, then the first n terms of a $\rho$-ordering of $S$ always give a Fekete $n$-tuple of $S$ and all Fekete $n$-tuples of $S$ arise in this way.
 \end{proposition}
 
-Armed with the notion of a well-defined $\rho-$sequence for an ultrametric space, and the knowledge that it gives a construction for Fekete $n-$tuples in that space, we define the valuative capacity of $S$, where $S$ is any compact subset of an ultrametric space.
+Armed with the notion of a well-defined $\rho-$sequence for an ultrametric space, and the knowledge that it gives a construction for Fekete $n-$tuples in that space, we define the valuative capacity of $S$, where $S$ is any compact subset of an ultrametric space.\\
 
 \begin{definition}
 	\cite{kj}  Let $S$ be a compact subset of an ultrametric space $(M,\rho)$ and let $\delta(n)$ be the $\rho$-sequence of $S$. The \textbf{valuative capacity} of $S$ is \[\omega(S)
@@ -283,19 +283,19 @@ Armed with the notion of a well-defined $\rho-$sequence for an ultrametric space
 
 We spend the rest of this chapter showing some basic results on valuative capacity. These results form the start of our toolkit for calculating the capacities of specifics sets. They also show that many of the properties of capacity from $\mathbb{C}$ carry over to the non-Archimedean case in a natural way. \\
 
-Let us assume from this point on that $S$ is always a compact subset of an ultrametric space, unless stated otherwisse. 
+Let us assume from this point on that $S$ is always a compact subset of an ultrametric space, unless stated otherwisse.\\ 
 
 \begin{proposition}
 	(\cite{kj}, theorem) $\omega(S)$ is finite. If $S$ itself is finite, then $\omega(S) =0$.
 \end{proposition}
 
-A compact set $E \subseteq \mathbb{C}$ is said to be polar if the logarithmic capacity of $E$ is $0$ \cite{rand}. Polar sets play a central role in potential theory and the theory of logarithmic capacity, which raises the following question:
+A compact set $E \subseteq \mathbb{C}$ is said to be polar if the logarithmic capacity of $E$ is $0$ \cite{rand}. Polar sets play a central role in potential theory and the theory of logarithmic capacity, which raises the following question:\\
 
 \begin{question}
 Are there ultrametric spaces that have some \textit{infinite} subset $S$ with $\omega(S)=0$?
 \end{question}
 
-We also have the expected result on monotoncity for valuative capacity:
+We also have the expected result on monotoncity for valuative capacity:\\
 
 \begin{proposition}
 	(\cite{kj}, Lemma 4) If $S$ and $T$ are compact subsets of an ultrametric space such that $S \subseteq T$ then $\omega(S) \leq \omega(T)$. 
@@ -311,7 +311,7 @@ We also have the expected result on monotoncity for valuative capacity:
 
 %This doesn't work because  $\cup_{a_i} B_d(a_i)$  could fail to be a cover - the $\rho-$ ordering will be a dense subset under mild conditions - then being compact should imply a contradiction since we should have $\overline{S}=S$ for $S$ compact.
 
-We show now some results on the interaction between the algebraic structure of the space and valuative capacity. These results can be powerful tools for calculating capacities, in particular, when they are combined with the subadditivity result that follows.
+We show now some results on the interaction between the algebraic structure of the space and valuative capacity. These results can be powerful tools for calculating capacities, in particular, when they are combined with the subadditivity result that follows.\\
  
 \begin{proposition}
 \label{translation invariance}
@@ -347,7 +347,7 @@ We show now some results on the interaction between the algebraic structure of t
 	Since $\rho_p$ is multiplicative, we have that $\omega(mS) = \lvert m \rvert_p\cdot \omega(S)$ for $m \in \mathbb{Z}$ and $S \subseteq \mathbb{Z}$. In particular, $\omega(p\mathbb{Z}) = \frac{1}{p}\cdot \omega(\mathbb{Z})$. %= \frac{1}{p}\cdot p^{\frac{1}{1-p}} = p^{-p/p-1}.$
 \end{example}
 
-The following proposition is from \cite{kj}, where it is given for some $S$  written as the union of two subsets, although it is easily seen to be true for $S$ equal to any finite union, so long as the other assumptions remain satisfied.  
+The following proposition is from \cite{kj}, where it is given for some $S$  written as the union of two subsets, although it is easily seen to be true for $S$ equal to any finite union, so long as the other assumptions remain satisfied.\\  
 
 \begin{proposition}
 	(\cite{kj}, Proposition 10) (subadditivity) If  $diam(S)=d$ and $S=\cup_i^n A_i$ for $A_i$ compact subsets of $M$ with $\rho(A_i, A_j)=d, \forall i,j$, then \[\frac{1}{log(\omega(S)/d) } = \sum_{i=1}^n \frac{1}{log(\omega(A_i)/d)}\] 
@@ -371,7 +371,7 @@ We can apply the same reasoning to any partition of $S$ made up of sets that all
 	Suppose $S = \cup_i^n S_i$ with $\rho(S_i, S_j)=d=diam(S)$ and also $\omega(S_i)=\omega(S_j)$, $\forall i,j$ .  Let $r \in \mathbb{R}$ be such that $\omega(S_i)=r\omega(S)$, $\forall i$. Then $\omega(S) = r^{\frac{1}{n-1}}\cdot d$. 
 \end{corollary}
 
-Now we note that a partition of $S$ into closed balls wil satisfy the hypotheses if the distance between each ball is equal to the diameter of $S$. In particular, if $B(x_i,r_i)$ is a collection of closed balls such that the pairwise-distance between any $B(x_i,r_i)$ and $B(x_j,r_j)$ is constant, then if we know the capacity of each $B(x_i,r_i)$, we can compute the capacity of their union. If $M$ is discretely-valued, then we can say more. 
+Now we note that a partition of $S$ into closed balls wil satisfy the hypotheses if the distance between each ball is equal to the diameter of $S$. In particular, if $B(x_i,r_i)$ is a collection of closed balls such that the pairwise-distance between any $B(x_i,r_i)$ and $B(x_j,r_j)$ is constant, then if we know the capacity of each $B(x_i,r_i)$, we can compute the capacity of their union. If $M$ is discretely-valued, then we can say more.\\ 
 \begin{corollary}
 	(Joins of computable sets are computable) Let $M$ be a compact, discretely-valued ultrametric space. Let $\Gamma_M = \{\gamma_0, \gamma_1,\ldots, \gamma_\infty=0\}$ be the set of distances in $M$. Suppose that $S = B(x, \gamma_i)$,  for some $x$ and $i$, is the union of $n \geq 2$ balls of radius $\gamma_{i+1}$, that is, $S=\cup_{j=1}^n B(x_j, \gamma_{i+1})$ is a join in the lattice of closed balls in $M$. Then 
 	\[\frac{1}{log(\frac{\omega(B(x, \gamma_i))}{\gamma_{i+1}} )} = \sum_{j=1}^n \frac{1}{log(\frac{\omega(B(x_j, \gamma_{i+1}))}{\gamma_{i+1} })}\]
