@@ -19,6 +19,7 @@ Suppose $S$ is a compact, discretely-valued subset of an ultrametric space and $
 \end{definition}
 
 \begin{example}
+\label{lagrange}	
 	If $G$ is a compact ultrametric space and also a group, each ball centred at $0$ is in fact a subgroup of $G$. Then each set of elements of $S_{\gamma_k}$ is a collection of cosets of $G/B(0,\gamma_k)$. Since $G$ is assumed to be compact, $G/B(0,\gamma_k)$ is finite and so Lagrange's theorem implies that $G$ is semi-regular.
 \end{example}
 
@@ -29,7 +30,7 @@ Let $n$ and $q$ be in $\mathbb{N}$. Then $\lfloor\frac{n}{q} \rfloor$ counts the
 \end{lemma}
 
 \begin{proof}
-By the division algorithm, we know there exists unique $c,r \in \mathbb{Z}$ such that \[n = cq + r\] with $0 \leq r < q$. Since $c$ counts the number of $q$-multiples in the set $\{1,\ldots,n\}$, and each $q$-multiple contains exactly one element that is congruent to $n \mod q$, we need only show $\lfloor\frac{n}{q} \rfloor = c$. Simply note the above implies  \[\frac{n}{q} = c + \frac{r}{q}\] and we must have   $\frac{r}{q} < 1$. Then $c$ is the largest integer such that $\frac{n}{q} \leq c$, but this is the definition of $\lfloor\frac{n}{q} \rfloor$.
+By the division algorithm, we know there exists unique $c,r \in \mathbb{Z}$ such that \[n = cq + r\] with $0 \leq r < q$. Since $c$ counts the number of $q$-multiples in the set $\{1,\ldots,n-1\}$, and each $q$-multiple contains exactly one element that is congruent to $n \mod q$, we need only show $\lfloor\frac{n}{q} \rfloor = c$. Simply note the above implies  \[\frac{n}{q} = c + \frac{r}{q}\] and we must have   $\frac{r}{q} < 1$. Then $c$ is the largest integer such that $\frac{n}{q} \leq c$, but this is the definition of $\lfloor\frac{n}{q} \rfloor$.
 \end{proof}
 
 
@@ -77,6 +78,7 @@ The exponent of $\gamma_k$ in the $n^{th}$ term of the characteristic sequence i
 
 
 \begin{example}
+\label{legendre}
 Consider the ultrametric space $(\mathbb{Z}, \rho_p)$  for any prime $p$. Then $\beta(k)=p^k$ and $\alpha(k)=p$ for any $k \in \mathbb{N} \cup 0$. The above gives 
 \[v_{\gamma_k}(\delta(n)) =\lfloor \frac{n}{p^{k}}\rfloor - \lfloor \frac{n}{p^{k+1}} \rfloor\]
 Now since $\gamma_k = p^{-k}$, $\forall k$, we are able to compute the exponent of $\frac{1}{p}$ in $\delta(n)$. We have 
@@ -89,7 +91,7 @@ Now since $\gamma_k = p^{-k}$, $\forall k$, we are able to compute the exponent 
 \[ =  \sum_{k=1}^{\infty} \lfloor \frac{n}{p^{k}}\rfloor \]
 
 We are able to simplfy to a finite sum in the above because $\lfloor \frac{n}{p^k} \rfloor = 0$ if \[ p^k > n \iff log(p^k) > log(n) \iff k > log_p(n)\]
-We have already seen that the natural order on the integers gives a $\rho_p$-ordering for each $p$. So then \[v_{\frac{1}{p}}(\delta(n)) = v_{\frac{1}{p}}(\prod_{i=0}^n \frac{1}{p}^{v_p(n-i)}) = \sum_{i=0}^{n-1} v_p(n-i)= v_{p}(n!)  =  \sum_{k=1}^{\infty} \lfloor \frac{n}{p^{k}}\rfloor \]
+We have already seen that the natural order on the integers gives a $\rho_p$-ordering for each $p$. So then \[\sum_{k=1}^{\infty} \lfloor \frac{n}{p^{k}}\rfloor= v_{\frac{1}{p}}(\delta(n)) = v_{\frac{1}{p}}(\prod_{i=0}^n \frac{1}{p}^{v_p(n-i)}) = \sum_{i=0}^{n-1} v_p(n-i)= v_{p}(n!)  \]
 so that we are able to recover the well-known Legendre's formula.\\
 \end{example}
 
@@ -102,25 +104,22 @@ We end this section with the following observation.
 \end{proposition}
 
 \begin{proof}
-	The fact that  $\rho(B^1_i, B^1_j) = d = diam(S)$ for any $i \neq j$ is clear and does not depend on the fact that $S$ is semi-regular. In fact, there are plently of ways to see this, but for example, we simply note $\rho(B^1_i, B^1_j) \in \Gamma_S$  and $ \gamma_1 < \rho(B^1_i, B^1_j)\leq \gamma_0 = diam(S)$.
+	The fact that  $\rho(B^1_i, B^1_j) = d = diam(S)$ for any $i \neq j$ is clear and does not depend on the fact that $S$ is semi-regular. In fact, there are plently of ways to see this, but for example, we simply note $\rho(B^1_i, B^1_j) \in \Gamma_S$  and $ \gamma_1 < \rho(B^1_i, B^1_j)\leq \gamma_0 = diam(S)$.\\
 	
-	To see that $\omega( B^1_i) = \omega( B^1_j)$, we note that since $S$ is semi-regular, each $B^1_i$ is semi-regular as well. Moreover, since $S$ is semi-regular, the $\beta$ sequences of $B^1_i$ and $B^1_j$ are the same for each $i$ and $j$. Then the result follows: let $\delta^{B^1_i}(n)$ and $\delta^{B^1_j}(n)$ be the characteristic sequences of $B^1_i$ and $B^1_j$ respectively and we see that for all $k$,
+	To see that $\omega( B^1_i) = \omega( B^1_j)$, we note that since $S$ is semi-regular, each $B^1_i$ is semi-regular as well. Moreover, since $S$ is semi-regular, the $\beta$ sequences of $B^1_i$ and $B^1_j$ are the same for each $i$ and $j$. Then the result follows: let $\delta^{B^1_i}(n)$ and $\delta^{B^1_j}(n)$ be the characteristic sequences of $B^1_i$ and $B^1_j$ respectively. We see that for all $k$,
 	  
 	  \[v_{\gamma_k}(\delta^{B^1_i}(n)) =  \lfloor\frac{n}{\beta^B(k)}\rfloor - \lfloor\frac{n}{\beta^B(k+1)}\rfloor =  v_{\gamma_k}(\delta^{B^1_j}(n)) \]
 	where $\beta^B(k)$ is the $\beta$ sequence for each  $B^1_i$.
 	 
 \end{proof}
 
-Now we have one answer to our first question: when $S$ is semi-regular, we can use the elements of $S_{\gamma_1}$ to build the partition from the corollary. The content of that corollary gave a formula for the valuative capacity. So then, if $S$ is semi-regular, the principal obstacle to computing the capacity of $S$ is  wheter or not we can identify the scaling factor $r$. This leads to our second question: when can we find $r$?
+Now we have one answer to our first question: when $S$ is semi-regular, we can use the elements of $S_{\gamma_1}$ to build the partition from the corollary. The content of that corollary gave a formula for the valuative capacity. Then if $S$ is semi-regular, the principal obstacle to computing the capacity of $S$ becomes whether or not we can identify the scaling factor $r$. This leads to our second question: when can we find $r$?
 
 \section{Regularity}
-The fact that we were able to reduce to a finite sum was not the only reason we were able to simplfy the above calculations. It also helped a great deal that the sum was telescoping. 
-
-
-If $S$ is semi-regular then the elements of $S_{\gamma_1}$ meet the requirements for this corollary. In this case, the principal obstacle to computing the capacity of such a set is whether or not we can compute the scaling factor $r$. We show now how this is related to the fact that we saw a telescoping sum in the above example.
+In Example \ref{legendre}, the fact that we were able to reduce to a finite sum was not the only reason we were able to simplfy the calculations. It also helped a great deal that the sum was telescoping. What does the fact that we saw a telescoping sum have to do with computing the scaling factor $r$? We explore the inter-relatedness of these situations, and with the definition below, in this section.
 
 \begin{definition}
-Let $S$ be a semi-regular subset of an ultrametric space. If there exists a $q \in \mathbb{N}$ such that $\alpha(n) = q$, for all $n$, then $S$ is said to be \textbf{regular}\footnote{This is non-standard: what we call semi-regular, previous authors (\cite{cef}, \cite{fp}, \cite{amice}) have called regular. Note that $S$ is regular in our sense if and only if $T_S$ is regular in the standard graph theory terminology.}. %If there exists a $q \text{ and } N$ in $\mathbb{N}$ such that $\alpha(n) = q$, for all $n \geq N$, then $S$ is said to be $\textbf{eventually regular}$.
+Let $S$ be a semi-regular subset of an ultrametric space. If there exists a $q \in \mathbb{N}$ such that $\alpha(n) = q$, for all $n$, then $S$ is said to be \textbf{regular}\footnote{This is non-standard: what previous authors (\cite{amice},\cite{cef}, \cite{fp}) have called regular is what we have called semi-regular. Note that $S$ is regular in the present sense if and only if $T_S$ is regular in the standard graph theory terminology.}. %If there exists a $q \text{ and } N$ in $\mathbb{N}$ such that $\alpha(n) = q$, for all $n \geq N$, then $S$ is said to be $\textbf{eventually regular}$.
 \end{definition}
 
 %Alt:
@@ -134,8 +133,13 @@ So then $S$ is regular just in case $S$ is semi-regular and the $\alpha-$sequenc
 Let $S$ be a semi-regular subset of an ultrametric space and $\Gamma_S$ is the sequence of decreasing distances in $S$. Then we say $S$ is \textbf{tame}, if for $\gamma_k \in \Gamma_S$, \[\gamma_k = \alpha(k)^{c_k}\] for some $c_k \in \mathbb{Q}$ and for all $k \in \mathbb{N}$.
 \end{definition}
 
+Now we see what this situation means for calculations.\\
+
 \begin{proposition}
-	Let $S$ be a regular, tame subset of a compact ultrametric space with $\gamma_k = q^{c_k}$ for some $c_k \in \mathbb{Q}$ and for all $k \in \mathbb{N}$. Then \[log_q(\omega(S)) =  c_0 + \frac{1}{n}\sum_{k=1}^{\infty} (c_{k} - c_{k-1}) \cdot \lfloor\frac{n}{q^{k}}\rfloor  \]
+	Let $S$ be a regular, tame subset of a compact ultrametric space with $\gamma_k = q^{c_k}$ for some $c_k \in \mathbb{Q}$ and for all $k \in \mathbb{N} \cup 0$. Then 
+	\[v_{q}(\delta(n)) =  c_0n + \sum_{k=1}^{\infty} (c_{k} - c_{k-1}) \cdot \lfloor\frac{n}{q^{k}}\rfloor \]
+	 and 
+	\[log_q(\omega(S)) = \lim_{n\to\infty} c_0 + \frac{1}{n}\sum_{k=1}^{\infty} (c_{k} - c_{k-1}) \cdot \lfloor\frac{n}{q^{k}}\rfloor  \]
 \end{proposition}
 
 \begin{proof}
@@ -149,40 +153,46 @@ and
 %\[=  c_0n - c_0\lfloor\frac{n}{q}\rfloor + c_1\lfloor\frac{n}{q}\rfloor - c_1\lfloor\frac{n}{q^{2}}\rfloor  + c_2\lfloor\frac{n}{q^2}\rfloor - c_2\lfloor\frac{n}{q^{3}}\rfloor \ldots - c_{\lceil log_q(n) \rceil} \lfloor\frac{n}{q^{\lceil log_q(n) \rceil}}\rfloor + \lceil log_q(n) \rceil\lfloor\frac{n}{q^{\lceil log_q(n) \rceil}}\rfloor  \]
 %\[= c_0n + \sum_{k=1}^{\lceil log_q(n) \rceil} (c_{k} - c_{k-1}) \cdot \lfloor\frac{n}{q^{k}}\rfloor \]
 \[=  c_0n + \sum_{k=1}^{\infty} (c_{k} - c_{k-1}) \cdot \lfloor\frac{n}{q^{k}}\rfloor \]
+Then since $\omega(S) = \lim_{n\to\infty} \delta(n) ^{\frac{1}{n}}$,
+\[log_q(\omega(S)) = log_q(\lim_{n\to\infty} \delta(n) ^{\frac{1}{n}}) = log_q(\lim_{n\to\infty}q^{{c_0n + \sum_{k=1}^{\infty} (c_{k} - c_{k-1}) \cdot \lfloor\frac{n}{q^{k}}\rfloor}^{\frac{1}{n}}})\]
+ \[=\lim_{n\to\infty} c_0 + \frac{1}{n}\sum_{k=1}^{\infty} (c_{k} - c_{k-1}) \cdot \lfloor\frac{n}{q^{k}}\rfloor \] 
 \end{proof}
 
-Of course, if $c_i=-i$ for all $i$ (as with $p-$adic spaces), then the above simply becomes $v_q(n!)$. 
+Let us make a small digression, motivated by the following observation: if, as in the case of $p-$adic spaces, $c_i=-i$ for all $i$, then the above simply reduces to $lim_{n\to\infty} \frac{v_q(n!)}{n} $. Moreover, we know that $n!$ is simultaneously a $p-$sequnece for all primes $p$.  
 
 \begin{question}
-	Let $M$ be a set and suppose $\rho_j$ is collection of ultrametrics on $M$ such that each $(M,\rho_j)$ is regular and tame with $c_i=-i$ for all $i$. Then if $\{a_i\}_{i \geq 0 }$ is a $\rho_j$-ordering of $(M,\rho_j)$ for some $j$, is $\{a_i\}_{i \geq 0 }$ simultaneously a $\rho_j$-ordering for all $j$?
+	Let $M$ be a set and suppose $\rho_j$ is collection of ultrametrics on $M$ such that each $(M,\rho_j)$ is regular and tame with $c_i-c_{i+1}=c$ for some constant $c$, for all $i$ and for each $j$. Then if $\{a_i\}_{i \geq 0 }$ is a $\rho_j$-ordering of $(M,\rho_j)$ for some $j$, is $\{a_i\}_{i \geq 0 }$ simultaneously a $\rho_j$-ordering for all $j$?
 \end{question}
-In any case, we have,
 
-\[log_q(\omega(S)) ={log_q \lim_{n\to\infty} ( \frac{c_0n + \sum_{k=1}^{\infty} (c_{k} - c_{k-1}) \lfloor\frac{n}{q^{k}}\rfloor}{n}}) \]
-\[ ={log_q \lim_{n\to\infty} (c_0 + \frac{1}{n}\cdot \sum_{k=1}^{\infty} (c_{k} - c_{k-1}) \lfloor\frac{n}{q^{k}}\rfloor})\]
+We return now to the question at hand. If $S$ is semi-regular, we have already seen that the partition of $S$ given by the elements of $S_{\gamma_1}$ is such that each element has equal capacity and the pairwise distance between them is equal to the diameter of $S$. Now we notice that if $S$ is regular and tame, then so is $B(x_i,\gamma_1)$ for each $i$. This gives us, 
 
-Of course, we have seen $log(\omega(S))$ appear before. Namely, in the subadditivity formula from Chapter 2. What about the right-hand side of the subaddivity formula? $S$ is also semi-regular, which implies that if $\cup_{i=1}^q$ $B(x_i,\gamma_1)$ is a partition of $S$, then $\omega(B(x_i,\gamma_1))=\omega(B(x_j,\gamma_1))$ for all $i$ and $j$. Moreover, $B(x_i,\gamma_1)$ is regular and tame, since $S$ is. Then, 
+\[log_q(\omega(B(x_i,\gamma_1))) = \lim_{n\to\infty} c_1 + \frac{1}{n}\cdot \sum_{k=1}^{\infty} (c_{k+1} - c_{k}) \lfloor \frac{n}{q^{k}}\rfloor\]
 
-\[log_q(\omega(B(x_i,\gamma_1))) = log_q\lim_{n\to\infty} c_1 + \frac{1}{n}\cdot \sum_{k=1}^{\infty} (c_{k+1} - c_{k}) \lfloor \frac{n}{q^{k}}\rfloor\]
+Putting these together, we can solve for the scaling factor.
+If \[\omega(S) = r\cdot \omega(B)\] then
+\[ log_q(r) = \lim_{n\to\infty} c_0 + \frac{1}{n} \sum_{k=1}^\infty (c_k - c_{k-1}) \lfloor \frac{n}{q^k} \rfloor -  c_1 - \frac{1}{n}\cdot \sum_{k=1}^{\infty} (c_{k+1} - c_{k}) \lfloor \frac{n}{q^{k}}\rfloor\]
+\[ = \lim_{n\to\infty} c_0 -c_1 + \frac{1}{n} \sum_{k=1}^\infty (c_k - c_{k-1}) - (c_{k+1} - c_{k}) \lfloor \frac{n}{q^k} \rfloor \]
 
-Then if $(c_{k+1} - c_{k}) = (c_{k} - c_{k-1})$, we see right away that the scaling factor $r=q^{c_0+c_1}$. This gives an alternate proof that $\omega(p\mathbb{Z}) = \frac{1}{p}\omega(\mathbb{Z})$ that does not rely on any algebraic structure. Let us consider $\omega(S)\cdot \omega(B)$.\\
+When do we know the value of this limit? One case is obvious, namely the case where $(c_{k+1} - c_{k}) = (c_{k} - c_{k-1})$, which is guarenteed if the distances between each $c_k$ and $c_{k+1}$ is constant. In this case, we see right away that the scaling factor $r$ is equal to $q^{c_0-c_1}$. In particular, this gives an alternate proof for the fact that $p \cdot \omega(p\mathbb{Z}) = \omega(\mathbb{Z})$ and one which not rely on any algebraic structure. \\
 
-\[\omega(S)\cdot \omega(B) \]
-\[= q^{\lim_{n\to\infty} c_0 + \frac{1}{n}\sum_{k=1}^{\infty} (c_{k} - c_{k-1}) \lfloor\frac{n}{q^{k}}\rfloor} \cdot q ^{\lim_{n\to\infty} c_1 + \frac{1}{n} \cdot\sum_{k=1}^{\infty} (c_{k+1} - c_{k}) \lfloor \frac{n}{q^{k}}\rfloor}\]
-\[= q^{\lim_{n\to\infty} c_0 + \frac{1}{n}\sum_{k=1}^{\infty} (c_{k} - c_{k-1}) \lfloor\frac{n}{q^{k}}\rfloor + c_1 + \frac{1}{n}\cdot \sum_{k=1}^{\infty} (c_{k+1} - c_{k}) \lfloor \frac{n}{q^{k}}\rfloor}\]
-\[= q^{\lim_{n\to\infty} (c_0+c_1) + \frac{1}{n}\sum_{k=0}^{\infty} (c_{k+2} - c_{k}) \lfloor\frac{n}{q^{k+1}}\rfloor}\]
-\[= q^{\lim_{n\to\infty} (c_0+c_1) + \frac{1}{n}\sum_{k=1}^{\infty} (c_{k+1} - c_{k-1}) \lfloor\frac{n}{q^{k}}\rfloor}\]
+It is now clear that if we want to get the most leverage out of regularity, we need more assumptions on our space than we did for semi-regularity. We have seen something like this before. If $S$ is a group with translation invariant metric, we can use translation invariance right away. It implies cosets of $S$ modulo balls centred at $0$ all have the same capacity, which allows us to simpfly the subadditivity formula. If $S$ has a multiplicative norm though, there is one situation in which this property is distinctly more useful. That is, we get the most use out of a multiplicative norm when the subgroups corresponding to the balls centered at $0$ are cyclic.\\
 
+%\begin{example}
+%Let $S$ be a compact, discretely-valued subset of $(M,\rho_N)$, an ultrametric space with metric induced by a multiplicative norm $N$. Suppose there exists $s \in S$ such that $B(0,\gamma_i) = (s^i)$ for $i \geq 0$ and $\gamma_i \in \Gamma_S$. We know from Example \ref{lagrange} that $S$ is semi-regular, but we see now that $S$ is also regular. We want to show $[s^i:s^{i+1}]$ is the same for all $i$.
 
-%Now if $d$ is the diameter of $S$, then $log_q(d)= c_0$.\\
+%\[ B(0,\gamma^1) = \{x \in S; N(x) \leq \gamma_1\} = \{s, s^2, s^3, \ldots \}\]
+%What is the distance between cosets? $\rho(B(0,\gamma_1), B(a,\gamma_1)) = \rho(0,a) = N()$
+%\end{example}
 
-%We substitue these values into the subadditivity formula:\\
+%\begin{question}
+%	If $S$ is a normed vector space and B=$B(0,\gamma_1)$ is a finitely-generated subgroup of $S$. Then is the set $\{c_{k} - c_{k-1}; k \in \mathbb{N}\}$ also finite? 
+%\end{question}
+
 
 %$(c_{k} - c_{k-1})$ is positive ($\Gamma_S$ is strictly decreasing and $\gamma_k=q^{c_k}$ implies that the sequence $c_k$ is  also strictly descreasing. To see this, observe that $\gamma_k=q^{c_k}$ implies $log_q(\gamma_k)=c_k$ and note that log is a monotone function) and since we know this converges, we must have $c_0$ is non-positive.
 
-So then, if $S$ is regular and tame, we find the scaling factor from Corollary \ref{semi-regular formula} is 
 
-Now we see that there is a sense in which we can talk about translation invariance and scaling even when $S$ does not have any underlying algebraic structure. Indeed, semi-regularity and regularity respectively provide the analogous notions.
+We have seen now that semi-regularity implies the presence of a sort of ``well-balanced" partition of $S$. When $S$ is a (translation-invariant) group, the existence of such a partition is guaranteed (Example \ref{lagrange}). Likewise, the presence of a multiplicative norm on $S$ implies a scaling property on the capacity of $S$. Regularity shows us that there is a sense in which we can recover this notion independently of a norm on $S$. When $S$ is an ultrametric space with algebraic structure, translation invariance and scaling are very effective tools for computing capacity. The results of this chapter give us  a sense in which we can generalize this toolkit. Indeed, semi-regularity and regularity respectively provide the analogous notions.
 
 
 
