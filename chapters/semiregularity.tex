@@ -1,7 +1,7 @@
-In the previous chapter, we explored in detail the final Corollary of Chapter 2. This corollary lead us to study the lattice of closed balls in $S$, which we called $T_S$. In this chapter, we take what we have learned and explore the preceding Corollary, repeated below\\
+In the previous chapter, we explored in detail the final Corollary of Chapter 2. This corollary lead us to study the lattice of closed balls in $S$, which we called $T_S$. In this chapter, we take what we have learned and explore the preceding Corollary, repeated below.\\
 
 \begin{corollary*}
-	Suppose $S = \cup_i^n S_i$ with $\rho(S_i, S_j)=d=diam(S)$ and also $\omega(S_i)=\omega(S_j)$, $\forall i,j$ .  Let $r \in \mathbb{R}$ be such that $\omega(S_i)=r\omega(S)$, $\forall i$. Then $\omega(S) = r^{\frac{1}{n-1}}\cdot d$. 
+	Suppose $S = \cup_i^n S_i$ with $\rho(S_i, S_j)=d=diam(S)$ and also $\omega(S_i)=\omega(S_j)$, $\forall i,j$.  Let $r \in \mathbb{R}$ be such that $\omega(S_i)=r\omega(S)$, $\forall i$. Then $\omega(S) = r^{\frac{1}{n-1}}\cdot d$. 
 \end{corollary*}
 
 In particular, we seek answers to the following questions: when does such a partition of $S$ exist and given such a partition, when are we able to compute the scaling factor $r$? In doing so, we show that the structure of $T_S$ plays an important role. 
@@ -30,7 +30,7 @@ Let $n$ and $q$ be in $\mathbb{N}$. Then $\lfloor\frac{n}{q} \rfloor$ counts the
 \end{lemma}
 
 \begin{proof}
-By the division algorithm, we know there exists unique $c,r \in \mathbb{Z}$ such that \[n = cq + r\] with $0 \leq r < q$. Since $c$ counts the number of $q$-multiples in the set $\{1,\ldots,n-1\}$, and each $q$-multiple contains exactly one element that is congruent to $n \mod q$, we need only show $\lfloor\frac{n}{q} \rfloor = c$. Simply note the above implies  \[\frac{n}{q} = c + \frac{r}{q}\] and we must have   $\frac{r}{q} < 1$. Then $c$ is the largest integer such that $\frac{n}{q} \leq c$, but this is the definition of $\lfloor\frac{n}{q} \rfloor$.
+By the division algorithm, we know there exists unique $c,r \in \mathbb{Z}$ such that \[n = cq + r\] with $0 \leq r < q$. Since $c$ counts the number of $q$-multiples in the set $\{1,\ldots,n-1\}$, and each $q$-multiple contains exactly one element that is congruent to $n \mod q$, we need only show $\lfloor\frac{n}{q} \rfloor = c$. Simply note that the above implies  \[\frac{n}{q} = c + \frac{r}{q}\] and we must have   $\frac{r}{q} < 1$. Then $c$ is the largest integer such that $\frac{n}{q} \leq c$, but this is the definition of $\lfloor\frac{n}{q} \rfloor$.
 \end{proof}
 
 
@@ -113,7 +113,7 @@ We end this section with the following observation.
 	 
 \end{proof}
 
-Now we have one answer to our first question: when $S$ is semi-regular, we can use the elements of $S_{\gamma_1}$ to build the partition from the corollary. The content of that corollary gave a formula for the valuative capacity. Then if $S$ is semi-regular, the principal obstacle to computing the capacity of $S$ becomes whether or not we can identify the scaling factor $r$. This leads to our second question: when can we find $r$?
+Now we have one answer to our first question: when $S$ is semi-regular, we can use the elements of $S_{\gamma_1}$ to build the partition from the corollary. The content of that corollary gave a formula for the valuative capacity. Then if $S$ is semi-regular, the principal obstacle to computing the capacity of $S$ is the identification of the scaling factor. This leads to our second question: when can we compute $r$?
 
 \section{Regularity}
 In Example \ref{legendre}, the fact that we were able to reduce to a finite sum was not the only reason we were able to simplfy the calculations. It also helped a great deal that the sum was telescoping. What does the fact that we saw a telescoping sum have to do with computing the scaling factor $r$? We explore the inter-relatedness of these situations, and with the definition below, in this section.
@@ -158,10 +158,10 @@ Then since $\omega(S) = \lim_{n\to\infty} \delta(n) ^{\frac{1}{n}}$,
  \[=\lim_{n\to\infty} c_0 + \frac{1}{n}\sum_{k=1}^{\infty} (c_{k} - c_{k-1}) \cdot \lfloor\frac{n}{q^{k}}\rfloor \] 
 \end{proof}
 
-Let us make a small digression, motivated by the following observation: if, as in the case of $p-$adic spaces, $c_i=-i$ for all $i$, then the above simply reduces to $lim_{n\to\infty} \frac{v_q(n!)}{n} $. Moreover, we know that $n!$ is simultaneously a $p-$sequnece for all primes $p$.  
+Let us make a small digression, motivated by the following observation: if, as in the case of $p-$adic spaces, $c_i=-i$ for all $i$, then the above simply reduces to $lim_{n\to\infty} \frac{v_q(n!)}{n} $. Moreover, we know that $\{0,1,2,\ldots\}$ is simultaneously a $p-$ordering of $\mathbb{Z}$ (with $p-$sequence $v_p(n!)$) for all primes $p$. 
 
 \begin{question}
-	Let $M$ be a set and suppose $\rho_j$ is collection of ultrametrics on $M$ such that each $(M,\rho_j)$ is regular and tame with $c_i-c_{i+1}=c$ for some constant $c$, for all $i$ and for each $j$. Then if $\{a_i\}_{i \geq 0 }$ is a $\rho_j$-ordering of $(M,\rho_j)$ for some $j$, is $\{a_i\}_{i \geq 0 }$ simultaneously a $\rho_j$-ordering for all $j$?
+	Let $M$ be a set and suppose $\rho_j$ is collection of ultrametrics on $M$ such that each $(M,\rho_j)$ is regular and tame with $c_i-c_{i+1}=c$ for some constant $c$, for all $i$ and for each $j$. Then if $\{a_i\}_{i \geq 0 }$ is a $\rho_j$-ordering of $(M,\rho_j)$ for some $j$, is $\{a_i\}_{i \geq 0 }$ simultaneously a $\rho_j$-ordering for all $j$? If particular, if $S$ is a subset of $\mathbb{Z}$, does $S$ being regular imply that $S$ has simultaneous $p-$ordering for each prime $p$?
 \end{question}
 
 We return now to the question at hand. If $S$ is semi-regular, we have already seen that the partition of $S$ given by the elements of $S_{\gamma_1}$ is such that each element has equal capacity and the pairwise distance between them is equal to the diameter of $S$. Now we notice that if $S$ is regular and tame, then so is $B(x_i,\gamma_1)$ for each $i$. This gives us, 
@@ -173,27 +173,15 @@ If \[\omega(S) = r\cdot \omega(B)\] then
 \[ log_q(r) = \lim_{n\to\infty} c_0 + \frac{1}{n} \sum_{k=1}^\infty (c_k - c_{k-1}) \lfloor \frac{n}{q^k} \rfloor -  c_1 - \frac{1}{n}\cdot \sum_{k=1}^{\infty} (c_{k+1} - c_{k}) \lfloor \frac{n}{q^{k}}\rfloor\]
 \[ = \lim_{n\to\infty} c_0 -c_1 + \frac{1}{n} \sum_{k=1}^\infty (c_k - c_{k-1}) - (c_{k+1} - c_{k}) \lfloor \frac{n}{q^k} \rfloor \]
 
-When do we know the value of this limit? One case is obvious, namely the case where $(c_{k+1} - c_{k}) = (c_{k} - c_{k-1})$, which is guarenteed if the distances between each $c_k$ and $c_{k+1}$ is constant. In this case, we see right away that the scaling factor $r$ is equal to $q^{c_0-c_1}$. In particular, this gives an alternate proof for the fact that $p \cdot \omega(p\mathbb{Z}) = \omega(\mathbb{Z})$ and one which not rely on any algebraic structure. \\
+When do we know the value of this limit? One case is obvious, namely the case where $(c_{k+1} - c_{k}) = (c_{k} - c_{k-1})$, which is guarenteed if the distances between each $c_k$ and $c_{k+1}$ is constant. In this case, we see right away that the scaling factor $r$ is equal to $q^{c_0-c_1}$. In particular, this gives an alternate proof for the fact that $p \cdot \omega(p\mathbb{Z}) = \omega(\mathbb{Z})$ and one which does not rely (directly) on any algebraic structure. \\
 
-It is now clear that if we want to get the most leverage out of regularity, we need more assumptions on our space than we did for semi-regularity. We have seen something like this before. If $S$ is a group with translation invariant metric, we can use translation invariance right away. It implies cosets of $S$ modulo balls centred at $0$ all have the same capacity, which allows us to simpfly the subadditivity formula. If $S$ has a multiplicative norm though, there is one situation in which this property is distinctly more useful. That is, we get the most use out of a multiplicative norm when the subgroups corresponding to the balls centered at $0$ are cyclic.\\
-
-%\begin{example}
-%Let $S$ be a compact, discretely-valued subset of $(M,\rho_N)$, an ultrametric space with metric induced by a multiplicative norm $N$. Suppose there exists $s \in S$ such that $B(0,\gamma_i) = (s^i)$ for $i \geq 0$ and $\gamma_i \in \Gamma_S$. We know from Example \ref{lagrange} that $S$ is semi-regular, but we see now that $S$ is also regular. We want to show $[s^i:s^{i+1}]$ is the same for all $i$.
-
-%\[ B(0,\gamma^1) = \{x \in S; N(x) \leq \gamma_1\} = \{s, s^2, s^3, \ldots \}\]
-%What is the distance between cosets? $\rho(B(0,\gamma_1), B(a,\gamma_1)) = \rho(0,a) = N()$
-%\end{example}
+It is now clear that if we want to get the most leverage out of regularity, we need more assumptions on our space than we did for semi-regularity. We have seen something like this before. If $S$ is a group with translation invariant metric, we can use translation invariance right away. It implies the cosets of $S$ modulo balls centred at $0$ all have the same capacity, which allows us to simplify the right-hand side of the subadditivity formula. If $S$ has a multiplicative norm though, there is one situation in which this property is distinctly more useful. That is, we get the most use out of a multiplicative norm when the subgroups corresponding to the balls centered at $0$ are cyclic.\\% We have one more question, before offering some concluding remarks.\\
 
 %\begin{question}
-%	If $S$ is a normed vector space and B=$B(0,\gamma_1)$ is a finitely-generated subgroup of $S$. Then is the set $\{c_{k} - c_{k-1}; k \in \mathbb{N}\}$ also finite? 
+%	Let $(M,\rho_N)$ be an ultrametric space with metric induced by a multiplicative norm $N$. Then $M$ is a normed vector space, in particular a group, so that $M$ is semi-regular. Suppose $M$ is also tame with $\gamma_k=\alpha(k)^{c_k}$ for all $k$ in $\mathbb{N} \cup 0$. If $B(0,\gamma_1)$ is cyclic, then does $c_{k} - c_{k-1} = c$ for some constant $c$ and all $k \in \mathbb{N}$? If $B(0,\gamma_1)$ is a finitely-generated subgroup of $S$, then is the set $\{c_{k} - c_{k-1}; k \in \mathbb{N}\}$ also finite? 
 %\end{question}
 
-
-%$(c_{k} - c_{k-1})$ is positive ($\Gamma_S$ is strictly decreasing and $\gamma_k=q^{c_k}$ implies that the sequence $c_k$ is  also strictly descreasing. To see this, observe that $\gamma_k=q^{c_k}$ implies $log_q(\gamma_k)=c_k$ and note that log is a monotone function) and since we know this converges, we must have $c_0$ is non-positive.
-
-
-We have seen now that semi-regularity implies the presence of a sort of ``well-balanced" partition of $S$. When $S$ is a (translation-invariant) group, the existence of such a partition is guaranteed (Example \ref{lagrange}). Likewise, the presence of a multiplicative norm on $S$ implies a scaling property on the capacity of $S$. Regularity shows us that there is a sense in which we can recover this notion independently of a norm on $S$. When $S$ is an ultrametric space with algebraic structure, translation invariance and scaling are very effective tools for computing capacity. The results of this chapter give us  a sense in which we can generalize this toolkit. Indeed, semi-regularity and regularity respectively provide the analogous notions.
-
+When $S$ is an ultrametric space with algebraic structure, translation invariance and scaling under a norm can be very effective tools for computing capacity. The results of this chapter give us  a sense in which we can generalize this toolkit. Indeed, semi-regularity and regularity respectively provide the analogous notions. Semi-regularity implies the presence of a sort of ``well-balanced" partition of $S$ that we can use in the subadditivity formula. Likewise, regularity shows us that we can recover a notion of scaling, although as with a multiplicative norm, to get the most out of this, the conditions have to be right. 
 
 
 
