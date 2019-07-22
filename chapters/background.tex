@@ -1,15 +1,15 @@
 \section{Ultrametric basics}
 
-The principal context for this thesis is an arbitrary ultrametric space, which is a metric space that also satisifies an additional axion, sometimes called the ultrametric inequality or (in the case of vector spaces) the strong triangle propery. We define  ultrametric spaces below and for the rest of this section, we review some of their more important characteristics. The proofs offered in this section are, for the most part, standard and can be found in a number of reference texts, such as \cite{ar}.\\
+The principal context for this thesis is an arbitrary ultrametric space, which is a metric space that also satisifies an additional axion, sometimes called the ultrametric inequality or (in the case of vector spaces) the strong triangle propery. We define  ultrametric spaces below and for the rest of this section, we review some of their more important properties. The proofs offered in this section are, for the most part, standard and can be found in a number of reference texts, such as \cite{ar}.\\
 
 \begin{definition}
-	 Let $(M, \rho)$ be a metric space; that is, suppose $M$ is a set and $\rho: M \times M \rightarrow \mathbb{R}_{\geq 0}$ is such that:
+	 Let $(M, \rho)$ be a metric space; that is, suppose $M$ is a set and $\rho$ is a map, $\rho: M \times M \rightarrow \mathbb{R}_{\geq 0}$ such that:
 	\begin{enumerate}[(i)]
 		\item $\rho(x,y) = 0$ if and only if $x=y$
 		\item $\rho(x,y) = \rho(y,x)$
 		\item $\rho(x,z) \leq \rho(x,y) + \rho(y,z)$
 	\end{enumerate}
-	for any $x,y,z \in M$. If $\rho$ satistifies the ultrametric inequality,	
+	for any $x,y,z \in M$. If $\rho$ also satisfies the ultrametric inequality,	
 		\[ \rho(x,z) \leq \max{(\rho(x,y), \rho(y,z))}\]
 for any $x,y,z \in M$, then $(M, \rho)$ is an \textbf{ultrametric space}.
 \end{definition}
@@ -17,7 +17,7 @@ for any $x,y,z \in M$, then $(M, \rho)$ is an \textbf{ultrametric space}.
 A special case of an ultrametric space, and one where much of the previous work on this topic has been completed, is one where the metric has been derived from a norm on a vector space. \\
 
 \begin{definition}
-	 Let $(V, N)$ be a normed vector space; that is, suppose $V$ is $\mathbb{F-}$vector space, for $\mathbb{F}$ some subfield of $\mathbb{C}$, and $N: V \rightarrow \mathbb{R}_{\geq 0}$  is such that:
+	 Let $(V, N)$ be a normed vector space; that is, suppose $V$ is an $\mathbb{F-}$vector space, for $\mathbb{F}$ some subfield of $\mathbb{C}$, and $N: V \rightarrow \mathbb{R}_{\geq 0}$  is such that:
 	\begin{enumerate}[(i)]
 		\item $N(x +y ) \leq N(x) + N(y)$
 		\item $N(cx) = \lvert c \rvert \text{ } N(X)$
@@ -29,7 +29,7 @@ A special case of an ultrametric space, and one where much of the previous work 
 \end{definition}
 
 \begin{proposition}
-	Let $(V,N)$ be a normed vector space and suppose $N$ satisfies the strong triangle inequality. Then the metric space, $(V,\rho_N)$, where $\rho_N$ is the metric induced by $N$, that is, $\rho_N(x,y) = N(x-y)$, is an ultrametric space.
+	Let $(V,N)$ be a normed vector space and suppose $N$ satisfies the strong triangle inequality. Then the metric space $(V,\rho_N)$, where $\rho_N$ is the metric induced by $\rho_N(x,y) = N(x-y)$, is an ultrametric space.
 \end{proposition}
 
 \begin{proof}
@@ -40,7 +40,7 @@ We take for granted that  $(V,\rho_N)$ is a metric space and also note that
 \end{proof}
 
 \begin{notation*}
- If $(V, N)$ is a normed vector space, then the metric induced by $N$ is denoted $\rho_N$.
+ If $(V, N)$ is a normed vector space, then the metric induced by $N$ will be denoted $\rho_N$.
 \end{notation*}
 
 When ultrametric spaces come from spaces with algebraic structure, such as normed vector spaces, some of this structure carries over into metric spaces structure in a rather nice way:\\
@@ -54,7 +54,7 @@ Let $x,y \in B$. Then \[\rho(x-y,0) = \rho(x,y)  \leq \max(\rho(x,0), \rho(y,0))
 so that $x-y \in B$.
 \end{proof}
  
-In the previous chapter, we claimed that the $p-$adic metric was an ultrametric on the set $\mathbb{Z}$. Indeed, $(\mathbb{Z}, \rho_p)$ and the closely related space of $p-$adic integers, denoted $\mathbb{Z}_{(p)}$, are the canonical examples of an ultrametric space. \\
+In the previous chapter, we claimed that the $p-$adic metric was an ultrametric on the set $\mathbb{Z}$. Indeed, $(\mathbb{Z}, \rho_p)$ and the closely related space of $p-$adic integers, denoted $\widehat{\mathbb{Z}_p}$, are the canonical examples of an ultrametric space. \\
 
 \begin{example} 
 Let $p$ be any prime and consider the metric space $(\mathbb{Z}, \rho_p)$. To see that $(\mathbb{Z}, \rho_p)$ is an ultrametric space, we must show that $\rho_p$ satisfies the ultrametric inequality, or equivalently, that $p-$adic absolute value satisfies the strong triangle inequality. Let $x,y$ be in $\mathbb{Z}$ and suppose $v_p(x)= n_x$ and $v_p(y)= n_y$. Then if $n=\min(n_x,n_y)$, $p^n $ divides $x$ and $p^n$ divides $y$, so $p^n$ divides $x +y$. We see now that $v_p(x+y) \geq \min(v_p(x),  v_p(y))$ and in turn $\lvert x + y \rvert_p \leq \max(\lvert x \rvert_p, \lvert y \rvert_p)$.
@@ -63,19 +63,19 @@ Let $p$ be any prime and consider the metric space $(\mathbb{Z}, \rho_p)$. To se
 \begin{example}
 Let $p$ be any prime. If 
 \[z = \sum_{i \geq 0} b_ip^i\]
-is such that $b_i \in \{0,\ldots,p-1\}$ for all $i$, then we say that $z$ is a \textbf{$p-$adic integer}. If $z = \sum_{i \geq 0} b_ip^i$, we note that if only a finite number of the coefficients of $z$ are non-zero, then $\sum_{i \geq 0} b_ip^i$ is a representation in base $p$ of some element of $\mathbb{Z}$. We can define the \textbf{$p-$adic order} of a $p-$adic integer, denoted $ord_p(z)$, in a way that agrees with the $p-$adic valuation when $\sum_{i \geq 0} b_ip^i$ is in $\mathbb{Z}$. We let $ord_p(z)$ be the smallest $i$ such that $b_i \neq 0$. The $p-$adic integers are both a ring\footnote{The ring operations carry over on the coefficients of $p-$adic integers in the expected way from $\mathbb{Z}/p\mathbb{Z}$, as long as special care is taken to keep track of carries.} and an ultrametric space with the metric induced by $ord_p(z)$. For a given prime, $p$, we denote the $p-$adic integers by $\mathbb{Z}_{(p)}$.
+is such that $b_i \in \{0,\ldots,p-1\}$ for all $i$, then we say that $z$ is a \textbf{$p-$adic integer}. If $z = \sum_{i \geq 0} b_ip^i$, we note that if only a finite number of the coefficients of $z$ are non-zero, then $\sum_{i \geq 0} b_ip^i$ is a representation in base $p$ of some element of $\mathbb{Z}$. We can define the \textbf{$p-$adic order} of a $p-$adic integer, denoted $ord_p(z)$, in a way that agrees with the $p-$adic valuation when $\sum_{i \geq 0} b_ip^i$ is in $\mathbb{Z}$. We let $ord_p(z)$ be the smallest $i$ such that $b_i \neq 0$. The $p-$adic integers are both a ring\footnote{The ring operations carry over on the coefficients of $p-$adic integers in the expected way from $\mathbb{Z}/p\mathbb{Z}$, as long as special care is taken to keep track of carries.} and an ultrametric space with the metric induced by $ord_p(z)$. For a given prime, $p$, we denote the $p-$adic integers by $\widehat{\mathbb{Z}_p}$.
 \end{example} 
 
-In what follows, we will often refer to $p-$adic spaces and it will not make much of a difference whether the reader prefers to think of being in $(\mathbb{Z}, \rho_p)$ or $\mathbb{Z}_{(p)}$. The reason is this: when forming $\rho_p-$orderings of subsets of either space we are always able to do so by selecting elements with finite number of non-zero coefficients, that is, by selecting elements from $\mathbb{Z}$ itself. \\
+In what follows, we will often refer to $p-$adic spaces and it will not make much of a difference whether the reader prefers to think of being in $(\mathbb{Z}, \rho_p)$ or $\widehat{\mathbb{Z}_p}$. The reason is this: when forming $\rho_p-$orderings of subsets of either space we are always able to do so by selecting elements with finite number of non-zero coefficients, that is, by selecting elements from $\mathbb{Z}$ itself. \\
 
-Ultrametric spaces exhibit properties much unlike traditional metric spaces, and we review of few of these below. Of particular interest to us is the behavior between (closed) balls in an ultrametric space. \\
+Ultrametric spaces exhibit many properties unlike those of traditional metric spaces, and we review of few of these below. Of particular interest to us is the behavior between (closed) balls in an ultrametric space. \\
 
 \begin{notation*}
 	Let $(M, \rho)$ be a compact ultrametric space and let \[B(a, r)=\{x \in M \mid \rho(x,a) \leq r\}\] denote the \textit{closed} ball of radius $r$, centred at $a$ for some $r \in \mathbb{R}_{> 0}$ and $a \in (M,\rho)$. Let \[B^0(a, r)=\{x \in M \mid \rho(x,a) < r\}\] denote the \textit{open} ball of radius $r$, centred at $a$ for some $r \in \mathbb{R}_{> 0}$ and $a \in (M,\rho)$.
 \end{notation*} 
 
 
-In the above notation, we break from  convention in that we denote a closed ball without using any decoration. This is because before too long we will work exclusively with closed balls.  We are able to do this because for the most part, the notion of open and closed ball in an ultrametric space overlap, although we will need a few more facts before showing this.\\
+In the above notation, we break with  convention in that we denote a closed ball without using any decoration. This is because before too long we will work exclusively with closed balls.  We are able to do this because for the most part, the notion of open and closed ball in an ultrametric space overlap, although we will need a few more facts before showing this.\\
 
 \begin{definition}
 Let $S$ be a subset of an ultrametric space. The \textbf{diameter of $S$} is $diam(S) = \sup\limits_{x,y\in S}\rho(x,y)$. Note that if $S$ is compact, $diam(S) = \max\limits_{x,y\in S}\rho(x,y)$.
@@ -88,6 +88,20 @@ Let $S$ be a subset of an ultrametric space. The \textbf{diameter of $S$} is $di
 \begin{proof}
 Suppose $d = diam(B) > r$. This would imply there exists $x,y$ in $B$ such that $\rho(x,y) > r$, in particular $\rho(x,y)$ is strictly greater than $\max(\rho(x,a), \rho(y,a))$, which is a contradiction since $\rho$ is an ultrametric.
 \end{proof}
+ 
+The following example shows that we can obtain a strict inequality in the above proposition.
+
+\begin{example}
+	Let $M$ be a non-empty set. Let $\rho$ be the ultrametric given by, 
+	\[
+	\rho(x,y) = 
+	\begin{cases}
+		0, & \text{ if x=y} \\
+		1, & \text{ if x } \neq \text{ y}
+	\end{cases}
+	\]
+for $x,y \in M$. Then $B(x, \frac{1}{2})$ has radius $\frac{1}{2}$ and diameter $0$ for any $x$ in $M$.
+\end{example}
 
 In the following proposition, we describe the triangles in an ultrametric space, and the result is more or less a restatement, in geometric terms, of the ultrametric inequality.\\
 
@@ -122,7 +136,7 @@ Suppose $B(x_0, r_1) \cap B(y_0, r_2) \neq \emptyset$ and let $z$ be a point in 
 \end{proof}
 
 \begin{proposition}
- The distance between any two non-overlapping balls in an ultrametric is constant. That is, if $B(x_0, r_1)$ and $B(y_0, r_2)$ are two balls in an ultrametric space with $B(x_0, r_1) \cap B(y_0, r_2) = \emptyset$, then there exists a $c \in \mathbb{R}_{> 0}$ such that  $\rho(x,y)=c$, $\forall x \in B(x_0, r_1)$ and $\forall y \in B(y_0, r_2)$.
+ The distance between points in  two non-overlapping balls in an ultrametric is constant. That is, if $B(x_0, r_1)$ and $B(y_0, r_2)$ are two balls in an ultrametric space with $B(x_0, r_1) \cap B(y_0, r_2) = \emptyset$, then there exists a $c \in \mathbb{R}_{> 0}$ such that  $\rho(x,y)=c$, $\forall x \in B(x_0, r_1)$ and $\forall y \in B(y_0, r_2)$.
 \end{proposition}
 
 \begin{proof}
@@ -136,7 +150,7 @@ We will get a bit closer to showing the relationship between open and closed bal
 \end{definition}
 
 \begin{lemma}
- Spheres (of positive radius) in an ultrametric space are both open and closed as sets.
+ (\cite{ar}) Spheres (of positive radius) in an ultrametric space are both open and closed as sets.
 \end{lemma}
 
 \begin{proof}
@@ -146,7 +160,7 @@ We will get a bit closer to showing the relationship between open and closed bal
 \end{proof}
 
 \begin{proposition}
-	The open balls in an ultrametric space are closed sets and the closed balls are open sets.
+	(\cite{ar}) The open balls in an ultrametric space are closed sets and the closed balls are open sets.
 \end{proposition}
 
 \begin{proof}
@@ -175,7 +189,7 @@ Let $\mathcal{C}$ be the cover of $S$ given by $\cup_{x\in S} B(x,r) \cap S$. Fr
 We end this section by making a few comments about the set of distances that occur between the points of a compact ultrametric space.\\
 
 \begin{proposition}
-\cite{ar} Let $S$ be a compact subset of an ultrametric space, $(M, \rho)$
+(\cite{ar}) Let $S$ be a compact subset of an ultrametric space, $(M, \rho)$
 \begin{enumerate}[(i)]
 \item For $m \in (M \setminus S)$, let $f_m:S \rightarrow \mathbb{R}$, be the function defined by $f_m(s) = \rho(m,s)$. Then $Im(f_m)$ is finite for all $m \in (M \setminus S)$.
 \item For $a \in S$, let $\phi_a: S \setminus \{a\} \rightarrow \mathbb{R}$ be the function defined by $\phi_a(x)=\rho(x,a)$. Then $Im(\phi_a)$ is a discrete subset of $\mathbb{R}$ for all $a \in S$.
@@ -183,7 +197,7 @@ We end this section by making a few comments about the set of distances that occ
 \end{proposition}
 
 \begin{proof}
-\cite{ar} 
+(\cite{ar}) 
 \begin{enumerate}[(i)]
 \item The fibers of $f_m$, $f_m^{-1}(s)$, for $s \in S$, form a cover of $S$. In fact, they form an open partition. Since $S$ is compact by assumption, we must have that this partition is finite, and so the image of $f_m$ was also finite.
 \item Let $\epsilon >0$. Let $B^0(a,\epsilon)$ be the open ball, $B^0(a,\epsilon)= \{x \in S; \rho(x,\epsilon) < \epsilon\}$. Then $(S\setminus B^0(a,\epsilon))$ is compact, and so from the above we know that $\phi_{a}$ restricted to $(S\setminus B^0(a,\epsilon))$ has finite range (let $M = S$ and $S = (S\setminus B^0(a, \epsilon))$ and apply (\textit{i})). Then the sets \[ [\epsilon, \infty) \cap \{\rho(s,a); s \in S, x \neq a\} \] are finite and $Im(\phi_a)$ is discrete.
@@ -224,7 +238,7 @@ When this is the case, it will become useful to write the set of distances occur
 
 We end this section with the following corollary.\\
 \begin{corollary}
-\cite{ar} Let $B(a, r)$ be a closed ball in an compact, discretely-valued ultrametric space. Then there exists $ r' > r \in \mathbb{R}$ such that $B(a, r) = \{x \in M \mid \rho(x,a) < r'\} $; that is, every closed ball is also an open ball with the same centre and  slightly larger radius.
+(\cite{ar}) Let $B(a, r)$ be a closed ball in an compact, discretely-valued ultrametric space. Then there exists $ r' > r \in \mathbb{R}$ such that $B(a, r) = \{x \in M \mid \rho(x,a) < r'\} $; that is, every closed ball is also an open ball with the same centre and  slightly larger radius.
 \end{corollary}
 
 %To make use of regularity in $S$ we should, before continuing, also put some constraints on our sequence of distances $\Gamma_S$.
@@ -252,10 +266,10 @@ We are now in a position to give a general definition of $p-$orderings and in tu
 	\cite{kj} Let $S$ be a subset of an ultrametric space $(M,\rho)$. A \textbf{$\rho$-ordering} of $S$ is a sequence $\{a_i\}_{i \geq 0}$ in $S$ such that $a_0$ is arbitrary and $\forall n > 0$, $a_n$ maximizes \[\prod_{i=0}^{n-1} \rho(s,a_i)\] over $s \in S$. 
 \end{definition}
 
-The above generalizes the definition of $p-$orderings for $\mathbb{Z}$, since maximizing the $p-$adic distance between two points in $\mathbb{Z}$ (or $\mathbb{Z}_p$) is the same as minimizing the $p-$adic valuation of the difference of two points. In particular, $\{a_i\}_{i \geq 0}$ is a $p-$ordering of $S$, a subset of $\mathbb{Z}$, if and only if it is a $\rho_p$-ordering of $(S, \rho_p)$. Let us see an example of the simplest kind, that is, for a finite set $S$.\\
+The above generalizes the definition of $p-$orderings for $\mathbb{Z}$, since maximizing the $p-$adic distance between two points in $\mathbb{Z}$ (or $\widehat{\mathbb{Z}_p}$) is the same as minimizing the $p-$adic valuation of the difference of two points. In particular, $\{a_i\}_{i \geq 0}$ is a $p-$ordering of $S$, a subset of $\mathbb{Z}$, if and only if it is a $\rho_p$-ordering of $(S, \rho_p)$. Let us see an example of the simplest kind, i.e., for a finite set $S$.\\
 
 \begin{example}
-Suppose $S$ is a finite subset of $(\mathbb{Z}, \rho_2)$, $S=\{0,2,8,3\}$. Then a $\rho_2-$ordering of $S$ starts (arbitrarily) with $a_0=0$, which forces $a_1=3$, since $\rho_2(0,3)=1=diam(S)$. The sequence continues $a_2=2$ and $a_3=8$, but after this point the sequence becomes arbitrary because  $\prod_{i=0}^{n-1} \rho(s,a_i)$ will contain a $0$, given by the repeated term. Indeed, for any finite subset $S$ with $\lvert S \rvert = n$, the $\rho-$ordering of $S$ is arbitrary from the $n^{th}$ point on. 
+Suppose $S$ is the finite subset of $(\mathbb{Z}, \rho_2)$, given by $S=\{0,2,8,3\}$. Then a $\rho_2-$ordering of $S$ starts (arbitrarily) with $a_0=0$, which forces $a_1=3$, since $\rho_2(0,3)=1=diam(S)$. The sequence continues $a_2=2$ and $a_3=8$, but after this point the sequence becomes arbitrary because  $\prod_{i=0}^{n-1} \rho(s,a_i)$ will contain a $0$, given by the repeated term. Indeed, for any finite subset $S$ with $\lvert S \rvert = n$ the $\rho-$ordering of $S$ is arbitrary from the $n^{th}$ point on. 
 \end{example}
 
 We now give the definition of a $\rho-$sequence for an ultrametric space, generalizing the notion of a $p-$sequence.\\
@@ -271,7 +285,7 @@ The two propositions that follow are the critical observations. The first one te
 \end{proposition}
 
 \begin{proposition} (\cite{kj}, Theorem 1)
-If S is a compact subset of an ultrametric space $(M, \rho)$, then the first n terms of a $\rho$-ordering of $S$ always give a Fekete $n$-tuple of $S$ and all Fekete $n$-tuples of $S$ arise in this way.
+If S is a compact subset of an ultrametric space $(M, \rho)$, then the first n terms of a $\rho$-ordering of $S$ give a Fekete $n$-tuple of $S$ and all Fekete $n$-tuples of $S$ arise in this way.
 \end{proposition}
 
 Armed with the notion of a well-defined $\rho-$sequence for an ultrametric space, and the knowledge that it gives a construction for Fekete $n-$tuples in that space, we define the valuative capacity of $S$, where $S$ is any compact subset of an ultrametric space.\\
@@ -281,12 +295,12 @@ Armed with the notion of a well-defined $\rho-$sequence for an ultrametric space
 	:= \lim_{n\to\infty} \delta(n)^{1/n}\]  
 \end{definition}
 
-We spend the rest of this chapter showing some basic results on valuative capacity. These results form the start of our toolkit for calculating the capacities of specifics sets. They also show that many of the properties of capacity from $\mathbb{C}$ carry over to the non-Archimedean case in a natural way. \\
+We spend the rest of this chapter establishing some basic results on valuative capacity. These results form the start of our toolkit for calculating the capacities of specifics sets. They also show that many of the properties of capacity from $\mathbb{C}$ carry over to the non-Archimedean case in a natural way. \\
 
-Let us assume from this point on that $S$ is always a compact subset of an ultrametric space, unless stated otherwisse.\\ 
+Let us assume from this point on that $S$ is always a compact subset of an ultrametric space, unless stated otherwise.\\ 
 
 \begin{proposition}
-	(\cite{kj}, theorem) $\omega(S)$ is finite. If $S$ itself is finite, then $\omega(S) =0$.
+	(\cite{kj}) $\omega(S)$ is finite. If $S$ itself is finite, then $\omega(S) =0$.
 \end{proposition}
 
 A compact set $E \subseteq \mathbb{C}$ is said to be polar if the logarithmic capacity of $E$ is $0$ \cite{rand}. Polar sets play a central role in potential theory and the theory of logarithmic capacity, which raises the following question:\\
@@ -369,7 +383,7 @@ We can apply the same reasoning to any partition of $S$ made up of sets that all
 
 \begin{corollary}
 \label{semiregular}
-	Suppose $S = \cup_i^n S_i$ with $\rho(S_i, S_j)=d=diam(S)$ and also $\omega(S_i)=\omega(S_j)$, $\forall i,j$ .  Let $r \in \mathbb{R}$ be such that $\omega(S_i)=r\omega(S)$, $\forall i$. Then $\omega(S) = r^{\frac{1}{n-1}}\cdot d$. 
+	Suppose $S = \cup_i^n S_i$ with $\rho(S_i, S_j)=d=diam(S)$ and also $\omega(S_i)=\omega(S_j)$, $\forall i,j$ .  Let $r \in \mathbb{R}$ be such that $\omega(S_i)=r\omega(S)$, $\forall i$. Then $\omega(S) = r^{\frac{1}{n-1}}$. 
 \end{corollary}
 
 Now we note that a partition of $S$ into closed balls wil satisfy the hypotheses if the distance between each ball is equal to the diameter of $S$. In particular, if $B(x_i,r_i)$ is a collection of closed balls such that the pairwise-distance between any $B(x_i,r_i)$ and $B(x_j,r_j)$ is constant, then if we know the capacity of each $B(x_i,r_i)$, we can compute the capacity of their union. If $M$ is discretely-valued, then we can say more.\\ 
