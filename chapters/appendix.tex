@@ -1,5 +1,14 @@
-\newpage
-Describe the functions.
+\section*{Maple Code}
+
+In this appendix, we include for reference the Maple code that was used to investigate the capacity of product spaces. The result of this investigation also influenced the development of Chapters 3 and 4. There are three procedures listed here.
+
+\begin{enumerate}
+	\item The first procedure, \texttt{ComputePadicProductOrdering}, takes as input a list indicating a finite set of primes, $p_1, 
+\ldots, p_n$, and an integer $m$ and returns the first $m$ terms of a $\rho_\infty-$ordering of $(\mathbb{Z}_{p_1} \times \ldots \times \mathbb{Z}_{p_1} )$. This is done explicitly by following the algorithm described in Chapter 3.
+	\item The next procedure, \texttt{ComputePartialRhoSeq}, computes the resulting $\rho_\infty-$sequence for a product space by multiplying out the distances given by a $\rho_\infty-$ordering. It takes as input a metric and a matrix representing a $\rho_\infty-$ordering for a product space and returns a number indicating the value of the $n^{th}$ characteristic sequence, where $n$ is the row dimension of the input matrix. These two procedures therefore result in the naive computation of the partial characteristic sequence of a product space, found by explicitly calculating a $\rho_\infty-$ordering and the $\rho_\infty-$sequence in turn.
+	
+	\item The final procedure, \texttt{FastPartialRhoSeq}, exploits the fact that the terms occurring in the characteristic sequence of a product space are all powers of the primes specifying the space. It takes as input the (beginning of) the sequence of decreasing distances and a list of primes, specifying the space. If $k$ distances are specified in $A$, it returns the $\beta(k)^{th}$ term in the characteristic sequence, where $\beta$ is the structure sequence.
+\end{enumerate}
 
 \newpage
 \lstinputlisting{code/Padic_Product_Ordering.txt}
