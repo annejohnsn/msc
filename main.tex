@@ -1,4 +1,4 @@
-\documentclass[12pt]{dalthesis}
+\documentclass[12pt, glossary]{dalthesis}
 %\usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 %\usepackage{tgtermes} 
@@ -98,7 +98,7 @@ morestring=[d]"
 
 \begin{document}
 
-\title{title}
+\title{Valuative Capacity of Some Compact Subsets of Ultrametric Spaces}
 \author{Anne Johnson}
 
 \mcs
@@ -112,24 +112,28 @@ morestring=[d]"
 % Month and Year of Defence
 \defencemonth{August}\defenceyear{2019}
 
-\dedicate{Optionally, the thesis can be dedicated to someone, and the
-  student can enter the dedication content here.}
+%\dedicate{Optionally, the thesis can be dedicated to someone, and the
+%  student can enter the dedication content here.}
 
-%\nolistoftables
-%\nolistoffigures
+\nolistoftables
+\nolistoffigures
 
-%\frontmatter
+\frontmatter
 
 
-%\begin{abstract}
+\begin{abstract}
 %	something about math
-%\end{abstract}
+\end{abstract}
 
-%\begin{acknowledgements}
-%  remember to thank people
-%\end{acknowledgements}
+\printglossary
+
+\begin{acknowledgements}
+ % remember to thank people
+\end{acknowledgements}
 
 \mainmatter
+
+\glossary{name={$\mathbb{Z}$},description={this is a test}}
 
 \chapter{Introduction}
 \input{chapters/introduction_outline}
@@ -147,30 +151,40 @@ morestring=[d]"
 %\chapter*{feb_presentation}
 %\input{feb_presentation/presentation}
 
+\begin{thebibliography}{9}
+\bibitem[Ac]{na} N.L. Ackerman, Completeness in Generalized Ultrametric Spaces, \textit{$p$-Adic Numbers, Ultrametric Analysis, and Applications} \textbf{5(2)} (2013), 89-105.
+\bibitem[Am]{amice} Y. Amice, Interpolation $p$-adique, \textit{Bull. Soc. Math. France} \textbf{92} (1964) 117-180.
+\bibitem[BR]{rum} M. Baker and R Rumely, \textit{Potential Theory and Dynamics on the Berkovich
+Projective Line}, Amer. Math. Soc., Providence, 2010.
+\bibitem[B1]{mb2} M. Bhargava, $P$-orderings and polynomial functions on arbitrary subsets of Dedekind
+rings, \textit{J. reine angew. Math.}, \textbf{490} (1997), 101-127.
+\bibitem[B2]{mb1} M. Bhargava, The factorial function and generalizations, \textit{Am. Math. Monthly}
+\textbf{107} (2000), 783-799.
+\bibitem[B3]{mb3} M. Bhargava, On $P$-orderings, Rings of Integer Valued Polynomials and Ultrametric
+Analysis, \textit{Journal of the Amer. Math. Soc.} \textbf{22(4)} (2009), 963-993.
+\bibitem[Ca]{dgc}  D. Cantor, On an extension of the definition of transfinite diameter and some applications, \textit{J. reine angew. Math} \textbf{316} (1980), 160-207.  
+\bibitem[Ch]{jlc} J.-L. Chabert, Generalized factorial ideals, \textit{Commutative algebra, Arab. J. Sci. Eng.
+Sect. C} \textbf{26} (2001), 51-68.
+\bibitem[CEF]{cef} J.-L.Chabert, S. Evrard, Y. Fares, Regular subsets of valued fields and Bhargava’s $v$-orderings, \textit{Math. Z.} \textbf{274} (2013) 263-290.
+\bibitem[EF]{ef} S. Evrard and Y. Fares, $p$-adic subsets whose factorials satisfy a generalized Legendre
+formula, \textit{London Math. Soc.}, \textbf{40} (2008), 37-50.
+\bibitem[FP]{fp} Y. Fares, S. Petite, The valuative capacity of subshifts of finite type, \textit{J. Number Theory} \textbf{158}
+(2016), 165-184.
+%\bibitem[GV]{gvdp} Lothar Gerritzen and Marius van der Put, Schottky Groups and Mumford Curves.
+\bibitem[F]{fek} M. Fekete, Uber die Verteilung der Wurzelen bei gewisser algebraiche Gleichun-
+gen mit ganzzahligen Koeffizienten, \textit{Math. Zeits.} \textbf{17} (1923), 228-249.
+\bibitem[J1]{kj} K. Johnson, $p$-orderings, Fekete $n-$tuples and capacity in ultrametric spaces (in preparation).
+\bibitem[J2]{kj2} K. Johnson, Limits of characteristic sequences of integer-valued polynomials on
+homogeneous sets, \textit{J. Number Theory} \textbf{129} (2009), 2933-2942.
+\bibitem[Ra1]{rand} T. Ransford, \textit{Potential Theory in the Complex Plane}, Cambridge University Press, Cambridge, 1995.
+\bibitem[Ra2]{rand2} T. Randsford, Computation of Logarithmic Capacity, \textit{Comp. Methods Function Theory} \textbf{10} (2010), 555-578.
+\bibitem[Ro]{ar} A.M. Robert, \textit{A course in p-adic analysis}, Springer-Verlag, New York, 2000.
+\bibitem[S]{sim} B. Simon, Equilibrium measures and capacities in spectral theory, \textit{Inverse Probl. Imaging} \textbf{1}:4 (2007), 713–772. 
+\bibitem[W]{wer} J. Wermer, \textit{Potential Theory}, Springer Lecture Notes in Mathematics, \textbf{408}, Providence, 1981.
+\end{thebibliography}
+
 \appendix
-\chapter*{Appendix}
+\chapter{Maple Code}
 \input{chapters/appendix}	
 
-\begin{thebibliography}{9}
-\bibitem[Ac]{na} Nate Ackerman,  Completeness in Generalized Ultrametric Spaces
-\bibitem[Am]{amice} Amice. Interpolation p-adique, Bull. Soc. Math. France 92 (1964) 117–180.
-\bibitem[BR]{rum} Matthew Baker and Robert Rumely. Potential theory and dynamics on the Berkovich Projective Line.
-\bibitem[B1]{mb1} Manjul Bhargava. The factorial function and generlizations
-\bibitem[B2]{mb2} Manjul Bhargava. $P$-orderings and polynomial functions on arbitrary subsets of Dedekind rings.
-\bibitem[B3]{mb3} Manjul Bhargava. On $ P$-orderings, rings of integer-valued polynomials, and ultrametric analysis
-\bibitem[Ca]{dgc}  D.G. Cantor. On an extension of the definition of transfinite diameter and some applications.  
-\bibitem[Ch]{jlc} Jean-Luc Chabert. Generalized Factorial Ideals.
-\bibitem[CEF]{cef} Jean-Luc Chabert, Sabine Evrard and Youssef Fares. Regular subsets of valued fields and Bhargava’s $v$-orderings
-\bibitem[EF]{ef} Sabine Evrard and Youssef Fares. $p$-adic subsets whose factorials satisfy a genearlized Legendre formula.
-\bibitem[FP]{fp} Youssef Fares and Samuel Petite. The valuative capcity of subshifts of finite type.
-\bibitem[GV]{gvdp} Lothar Gerritzen and Marius van der Put, Schottky Groups and Mumford Curves.
-\bibitem[F]{fek} Fekete.
-\bibitem[J1]{kj} Keith Johnson, P-orderings and Fekete sets
-\bibitem[J2]{kj2} Keith Johnson, that paper that's at school
-\bibitem[Ra1]{rand} Thomas Randsford. Potential theory in the complex plane.
-\bibitem[Ra2]{rand2} Thomas Randsford. Computation of Logarithmic Capacity.
-\bibitem[Ro]{ar} Alain M. Robert. A course in p-adic analysis.
-\bibitem[S]{sim} Barry Simon. Equilibrium measures and capacities in spectral theory.
-\bibitem[W]{wer} John Wermer. Potential Theory.
-\end{thebibliography}
 \end{document} 

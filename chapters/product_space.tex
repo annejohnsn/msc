@@ -1,8 +1,8 @@
-We consider now an application on the above. A natural space to consider is the product space of ultrametric spaces, for example $\mathbb{Z}^n$, for some $1 < n < \infty$. If we restrict our attention to bounded subsets, then a natural candidate for an ultrametric on a finite product space is given by
-\[ \rho_\infty(x,y) = \rho_\infty((x_1,x_2,\ldots,x_n),(y_1,y_2, \ldots, y_n)) = \max_{i} \{\rho(x_i, y_i)\}\] where $\rho$ is the metric from the base space. In fact, since we have only defined valuative capacity for compact subsets of an ultrametric spaces, there is no loss of generality by restricting our metric to bounded spaces.  We also see that no problems arise in letting both $M$ and $\rho$ vary between components of the space, as long as each $M_i$ remains bounded and each $\rho_i$ is an ultrametric.\\
+We consider now an application on the above. A natural space to consider is the product space of ultrametric spaces, for example $\mathbb{Z}^n$, for some $1 < n < \infty$. A natural candidate for an ultrametric on a finite product space is given by
+\[ \rho_\infty(x,y) = \rho_\infty((x_1,x_2,\ldots,x_n),(y_1,y_2, \ldots, y_n)) = \max_{i} \{\rho(x_i, y_i)\}\] where $\rho$ is the metric from the base space.  We also see that no problems arise in letting both $M$ and $\rho$ vary between components of the space, as long as each $\rho_i$ is an ultrametric.\\
 
 \begin{proposition}
-Let $(M_i, \rho_i)$ for $i$ in some finite index set, $I$, be a collection of metric spaces and suppose $\rho_i$ is a bounded ultrametric for all $i$. Then $(M,\rho_\infty)$ is an ultrametric space, where $M=M_1 \times M_2 \times M_3 \times \ldots \times M_n$ and $\rho_\infty$ is the metric described above.
+Let $(M_i, \rho_i)$ for $i$ in some finite index set, $I$, be a collection of metric spaces and suppose $\rho_i$ is an ultrametric for all $i$. Then $(M,\rho_\infty)$ is an ultrametric space, where $M=M_1 \times M_2 \times M_3 \times \ldots \times M_n$ and $\rho_\infty$ is the metric described above.
 \end{proposition}
 
 \begin{proof}
@@ -64,7 +64,7 @@ We now introduce two examples, the details of which make up the rest of this cha
 \end{example}
 
 \begin{example}
-	Let $(\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2}, \rho_{\infty})$ be the metric space with elements $\{(x,y)\mid x,y \in \mathbb{Z}\}$ and metric $\rho_{\infty}((x_1,x_2), (y_1,y_2)) = \max(\rho_{p_1}(x_1, y_1)), \rho_{p_2}(x_2, y_2))$, for two distinct primes, $p_1 \neq p_2$, where both $\rho_{p_i}$ are p-adic metrics. Since each $\rho_{p_i}$ is translation invariant in $\mathbb{Z}_{p_i}$, valuative capacity will be translation invariant  in  $(\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2}, \rho_{p,\infty})$; however, unlike the case of $p_1=p_2$, this space does not have a multiplicative property that allows for scaling.
+	Let $(\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2}, \rho_{P,\infty})$ be the metric space with elements $\{(x,y)\mid x,y \in \mathbb{Z}\}$ and metric $\rho_{P,\infty}((x_1,x_2), (y_1,y_2)) = \max(\rho_{p_1}(x_1, y_1)), \rho_{p_2}(x_2, y_2))$, for two distinct primes, $p_1 \neq p_2$, where both $\rho_{p_i}$ are p-adic metrics. Since each $\rho_{p_i}$ is translation invariant in $\mathbb{Z}_{p_i}$, valuative capacity will be translation invariant  in  $(\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2}, \rho_{P,\infty})$; however, unlike the case of $p_1=p_2$, this space does not have a multiplicative property that allows for scaling.
 \end{example}
 
 What is the valuative capacity of  $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\infty})$  from the example above? Suppose $p=2$.  Using translation invariance, scaling and subaddivity, we can compute the result by first noting that we can write $\mathbb{Z}_2 \times \mathbb{Z}_2$ as a union, as below,\\
@@ -101,7 +101,7 @@ In turn, we have
 So that $\omega(\mathbb{Z}_p \times \mathbb{Z}_p)$ is a solution of the equation $x^{p^2} - \frac{x}{p} = x(x^{p^2-1} - \frac{1}{p})$ over $\mathbb{R}$. Since $\mathbb{R}$ is a division ring, this means the positive solutions are given by solving $x^{p^2-1}-\frac{1}{p}$. Solutions of this equation are of the form $p^{\frac{-1}{p^2-1}}$ times a $p^2-1$ root of unity, and so there is exactly one positive, real solution, namely $p^{\frac{-1}{p^2-1}}$ itself. Then the valulative capacity of the entire product space $\mathbb{Z}_p \times \mathbb{Z}_p$ is $p^{\frac{-1}{p^2-1}}$. In fact, from here it is not hard to see that by taking the $n$-fold product, we would end up with the same equation except that the exponent of $p$ would become $n$ rather than $2$. We arrive at the following result:\\
 
 \begin{proposition}
-Let $M=(\mathbb{Z}_p^n, \rho_{p, \infty})$ be the ultrametric space with points equal to the $n$-fold product of $\mathbb{Z}_p$ (for $n < \infty$) for some fixed prime $p$. The valuative capacity of $M$ is  $(\frac{1}{p})^{\frac{1}{p^n-1}}$.
+Let $M=(\mathbb{Z}_p^n, \rho_{p, \infty})$ be the ultrametric space with points equal to the $n$-fold product of $(\mathbb{Z}, \rho_p)$ (for $n < \infty$) for some fixed prime $p$. The valuative capacity of $M$ is  $(\frac{1}{p})^{\frac{1}{p^n-1}}$.
 \end{proposition}
 
 \begin{proof}
