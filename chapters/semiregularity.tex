@@ -51,7 +51,7 @@ If $S$ is semi-regular and $\sigma$ denotes the canonical $\rho$-ordering of $S$
 \end{lemma}
 
 \begin{proof}
-Since $S$ is semi-regular, every sequence of $\beta(k)$ terms in $\sigma$ will be from each of distinct elements of $S_{\gamma_k}$ (for any $k$). Moreover, since $\sigma$ is a canonical $\rho-$ordering, we always pull from the elements of $S_{\gamma_k}$ in the same order. Then $\sigma(n)$ and $\sigma(m)$ are descendents of some $B^k_j$ if and only if $n = m \mod \beta(k)$. Then the result follows since $\rho(\sigma(n),\sigma(m))=\gamma_k$ if and only if $B^k_i$ for some $i \in 1,\ldots, \beta(k)$ is the join of $B^n_i \ni \sigma(n)$ and $B^m_{i'} \ni \sigma(m)$.  \\ 
+Since $S$ is semi-regular, every sequence of $\beta(k)$ terms in $\sigma$ will be from each of the distinct elements of $S_{\gamma_k}$ (for any $k$). Moreover, since $\sigma$ is a canonical $\rho-$ordering, we always pull from the elements of $S_{\gamma_k}$ in the same order. Then $\sigma(n)$ and $\sigma(m)$ are descendents of some $B^k_j$ if and only if $n = m \mod \beta(k)$. Then the result follows since $\rho(\sigma(n),\sigma(m))=\gamma_k$ if and only if $B^k_i$ for some $i \in 1,\ldots, \beta(k)$ is the join of $B^n_i \ni \sigma(n)$ and $B^m_{i'} \ni \sigma(m)$.  \\ 
 \end{proof}
 
 We introduce another piece of notation before continuing.
@@ -99,7 +99,7 @@ We end this section with the following observation.
 
 \begin{proposition}
 	Let $S$ be a semi-regular subset of an ultrametric space $(M,\rho)$. Let $S_{\gamma_1}$ be the partition of $S$ described in chapter $3$, that is,
-	\[S_{\gamma_1} = \bigcup_{i=1}^{b} B(x_i,\gamma_1) = \bigcup_{i=1}^{n} B^1_i\]
+	\[S_{\gamma_1} = \bigcup_{i=1}^{n} B(x_i,\gamma_1) = \bigcup_{i=1}^{n} B^1_i\]
 	Then $\rho(B^1_i, B^1_j) = d = diam(S)$ for any $i \neq j$ in $1,\ldots,n$ and $\omega( B^1_i) = \omega( B^1_j)$ for all $i$ and $j$.
 \end{proposition}
 
@@ -150,7 +150,7 @@ and since $\gamma_k = q^{c_k}$, we calculate
 and
 \[v_{q}(\delta(n)) =  \sum_{k=0}^{\infty} c_k \cdot(\lfloor\frac{n}{q^k}\rfloor - \lfloor\frac{n}{q^{k+1}}\rfloor) \]
 %\[=  \sum_{k=0}^{\lceil log_q(n) \rceil} c_k \cdot(\lfloor\frac{n}{q^k}\rfloor - \lfloor\frac{n}{q^{k+1}}\rfloor) \]
-%\[=  c_0n - c_0\lfloor\frac{n}{q}\rfloor + c_1\lfloor\frac{n}{q}\rfloor - c_1\lfloor\frac{n}{q^{2}}\rfloor  + c_2\lfloor\frac{n}{q^2}\rfloor - c_2\lfloor\frac{n}{q^{3}}\rfloor \ldots - c_{\lceil log_q(n) \rceil} \lfloor\frac{n}{q^{\lceil log_q(n) \rceil}}\rfloor + \lceil log_q(n) \rceil\lfloor\frac{n}{q^{\lceil log_q(n) \rceil}}\rfloor  \]
+\[=  c_0n - c_0\lfloor\frac{n}{q}\rfloor + c_1\lfloor\frac{n}{q}\rfloor - c_1\lfloor\frac{n}{q^{2}}\rfloor  + c_2\lfloor\frac{n}{q^2}\rfloor - c_2\lfloor\frac{n}{q^{3}}\rfloor \ldots - c_{\lceil log_q(n) \rceil} \lfloor\frac{n}{q^{\lceil log_q(n) \rceil}}\rfloor + \lceil log_q(n) \rceil\lfloor\frac{n}{q^{\lceil log_q(n) \rceil}}\rfloor  \]
 %\[= c_0n + \sum_{k=1}^{\lceil log_q(n) \rceil} (c_{k} - c_{k-1}) \cdot \lfloor\frac{n}{q^{k}}\rfloor \]
 \[=  c_0n + \sum_{k=1}^{\infty} (c_{k} - c_{k-1}) \cdot \lfloor\frac{n}{q^{k}}\rfloor \]
 Then since $\omega(S) = \lim_{n\to\infty} \delta(n) ^{\frac{1}{n}}$,
