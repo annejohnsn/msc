@@ -36,7 +36,7 @@
 
 \title{Valuative capacity of compact subsets of ultrametric spaces}
 \author{Anne Johnson}
-\date{\today}
+\date{August 9, 2019}
 
 
 
@@ -93,7 +93,7 @@ An element $z = (z_1,\ldots,z_n) \in K^n$ is called a \textbf{Fekete n-tuple} if
 	\end{definition}
 	\pause
     \begin{itemize}
-	   \item The terms $\prod_{i=0}^n \rho(a_n - a_j)$ do not depend on the choice of $\rho-$ordering. We call this the \textbf{$\rho-$sequence} of $S$. \\
+	   \item If $\rho$ is an ultrametric, the terms $\prod_{i=0}^n \rho(a_n - a_j)$ do not depend on the choice of $\rho-$ordering. We call this the \textbf{$\rho-$sequence} of $S$. \\
 	\end{itemize}
 \end{frame}
 
@@ -196,6 +196,19 @@ Valuative capacity has the following properties:
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{Product Space: $(\mathbb{Z},\rho_2) \times (\mathbb{Z},\rho_3)$}
+\begin{lemma}
+	Let $S = (\mathbb{Z},\rho_2) \times (\mathbb{Z},\rho_3) $ and consider the $k^{th}$ element of the $\beta$ sequence of $S$, $\beta(k) = 2^i \cdot 3^j$. If $k$ is such that $\gamma_k=2^{-i}$ for some $i$, then $j$ counts the numbers $a \in \mathbb{Z}_{\geq 0}$ such that $3^a < 2^{i}$.
+\end{lemma}
+\pause
+\begin{proof}
+	\begin{itemize}
+	\item $\Gamma_S$ is strictly monotone decreasing and each $\gamma_k$ is equal to a non-positive power of $2$ or $3$. \pause
+	\item If $\gamma_k = 2^i$, then all non-positive powers of $3$ and $2$ which are greater than $2^i$ must be equal to some $\gamma_j$, $0 \leq j < k$.\pause %That is, $2^i$ only appears in the $\Gamma_S$ sequence after all larger powers of $2$ and $3$ have been exhausted.
+	\item Since we are only considering the case $\gamma_k$ is a power of $2$, this includes all of the smaller powers of $3$.
+	\end{itemize}
+\end{proof}
+\end{frame}
 \begin{frame}{Product Space: $(\mathbb{Z},\rho_2) \times (\mathbb{Z},\rho_3)$}
 	 \[v_{\gamma_{\frac{1}{2}}}(\delta(n)) = \sum_{i=1}^\infty i \cdot \lfloor\frac{n + 2^i \cdot 3^{\lceil \frac{i}{log_2(3)}\rceil}}{2^{i+1}\cdot 3^{\lceil \frac{i}{log_2(3)}\rceil}} \rfloor\]
 		\pause
