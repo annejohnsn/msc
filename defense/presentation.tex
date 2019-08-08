@@ -55,7 +55,7 @@ An element $z = (z_1,\ldots,z_n) \in K^n$ is called a \textbf{Fekete n-tuple} if
 
 \begin{frame}{Background}
 	\begin{definition}	
-		\cite{fek} Let $K$ be a compact subset of a metric space, $(M,\rho)$. Fix $n \in \mathbb{N}$, and for $z = (z_1,\ldots,z_n) \in K^n$, consider
+		 Let $K$ be a compact subset of a metric space, $(M,\rho)$. Fix $n \in \mathbb{N}$, and for $z = (z_1,\ldots,z_n) \in K^n$, consider
 		\[\delta_n(z) = \prod_{j < i} \rho(z_i, z_j)^{\frac{2}{(n(n-1))}} \]
 		An element $z = (z_1,\ldots,z_n) \in K^n$ is called a \textbf{generalized Fekete n-tuple} if $z$ maximizes $\delta_n$ over all $n-$tuples in $K$.
 	\end{definition}
@@ -86,9 +86,9 @@ An element $z = (z_1,\ldots,z_n) \in K^n$ is called a \textbf{Fekete n-tuple} if
 \end{proposition*}
 \end{frame}
 
-\begin{frame}{Valuative capacity: set-up}
+\begin{frame}{Valuative capacity: set-up from \cite{kj}}
 	\begin{definition}
-		(\cite{kj}) Let $S$ be a compact subset of $(M,\rho)$. A \textbf{$\rho$-ordering} of $S$ is a sequence, $\{a_i\}_{i\geq 0}$ in $S$, such that $a_0$ is arbitrary and for $i >0$, $a_i$ maximizes 
+		 Let $S$ be a compact subset of $(M,\rho)$. A \textbf{$\rho$-ordering} of $S$ is a sequence, $\{a_i\}_{i\geq 0}$ in $S$, such that $a_0$ is arbitrary and for $i >0$, $a_i$ maximizes 
 		\[ \prod_{j < i} \rho(z, a_j) )\] over $z \in S$.\\
 	\end{definition}
 	\pause
@@ -97,7 +97,7 @@ An element $z = (z_1,\ldots,z_n) \in K^n$ is called a \textbf{Fekete n-tuple} if
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Valuative capacity: set-up}
+\begin{frame}{Valuative capacity: set-up from \cite{kj}}
 	\begin{itemize}
 		\item $\rho-$orderings give a recursive construction for generalized Fekete $n-$tuples.\\	
 		\pause	
@@ -148,7 +148,7 @@ Valuative capacity has the following properties:
 \begin{frame}{Semi-regularity}
 %Note to self: define semi-regularity	
 \begin{proposition}
-	If $S$ is a semi-regular ultrametric space, $\delta$ is the characteristic sequence of $S$, $\beta$ is the structure sequence of $S$, and $\alpha$ is the sequence describing the semi-regularity, then
+	If $S$ is a semi-regular ultrametric space, $\delta$ is the  $\rho-$sequence of $S$, $\beta$ is the structure sequence of $S$, and $\alpha$ is the sequence describing the semi-regularity, then
 	\[v_{\gamma_k}(\delta(n)) =  \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor = \sum_{j=1}^{\alpha(k)-1} \lfloor \frac{n + j\cdot \beta(k)}{\alpha(k)\beta(k)} \rfloor\]
 \end{proposition}
 
@@ -171,14 +171,15 @@ Valuative capacity has the following properties:
 		\pause
 		\item Regularity shows us that we can recover a notion of scaling, when the conditions are right.
 		\pause 
-		\item Taken together, they extend the toolkit for computing capacity without appealing to algebraic structure\only<+>{.}\only<+->{!} 
+		\item Taken together, they extend the toolkit for computing capacity without appealing to algebraic structure.%\only<+>{.}\only<+->{!} 
 	\end{itemize}
 \end{frame}
 
 
 \begin{frame}{Product Space}
 \begin{proposition}
-	Let $(M_i, \rho_i)$, for $i$ in some finite index set $I$, be a collection of metric spaces and suppose $\rho_i$ is an ultrametric for each $i$. Then $(M,\rho_\infty)$ is an ultrametric space, where $M=M_1 \times M_2 \times \ldots \times M_n$ and $\rho_\infty$ is the metric described above.
+	Let $(M_i, \rho_i)$, for $i$ in some finite index set $I$, be a collection of metric spaces and suppose $\rho_i$ is an ultrametric for each $i$. Then $(M,\rho_\infty)$ is an ultrametric space, where $M=M_1 \times M_2 \times \ldots \times M_n$ and $\rho_\infty$ is the metric given by,
+	\[ \rho_\infty(x,y) = \rho_\infty((x_1,x_2,\ldots,x_n),(y_1,y_2, \ldots, y_n)) \]\[= \max_{i} \{\rho(x_i, y_i)\}\]
 \end{proposition}
 \pause
 \begin{itemize}
