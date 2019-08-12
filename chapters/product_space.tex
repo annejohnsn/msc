@@ -182,7 +182,7 @@ So now we are reduced to counting the number of non-negative integers $a$ that s
 % for n from 1 to 100 do
 % evalf(Sum(x*floor((n*10000+2^x*3^ceil(x/log[2](3)))/(2^(x+1)*3^ceil(x/log[2](3)))), x = 1 .. infinity));
 %end do;
-
+%identity fun
 %for n from 1 to 100 do
  %evalf(1/(n*100000)*Sum(x*floor((n*100000+2^x*3^ceil(x/log[2](3)))/(2^(x+1)*3^ceil(x/log[2](3)))), x = 1 .. infinity));
 %end do;
@@ -190,7 +190,7 @@ So now we are reduced to counting the number of non-negative integers $a$ that s
 
 %First, recall that in computing the valuative capacity of these spaces, we were ultimately reduced to finding solutions to polynomials of the form $x^{p^n} - \frac{x}{p}$ for some $n$ and for some $p$. The first observation is that these polynomials are $\mathbb{Z}$-valued on $p\mathbb{Z}$, that is, they are elements of $Int(p\mathbb{Z},\mathbb{Z})$. We might ask then, what sort of polynomials would arise in finding the valuative capacity of spaces such as $(\mathbb{Z}_2 \times \mathbb{Z}_3, \rho_\infty)$ or in computing the valuative capacity of infinite product spaces, such as $\mathbb{Z}_p \times \mathbb{Z}_p \times \mathbb{Z}_p \times \ldots$ for either some fixed prime $p$ or over each prime. \\
 
-A symmetric argument shows that exponent of $\frac{1}{3}$ in the $i^{th}$ element of the $\rho_\infty-$sequence of $S$ is\\ 
+A symmetric argument shows that exponent of $\frac{1}{3}$ in the $n^{th}$ element of the $\rho_\infty-$sequence of $S$ is\\ 
 
 \begin{align} 
 \sum_{i=1}^\infty i \cdot (\lfloor\frac{n + 2^{\lceil \frac{i}{log_3(2)}\rceil} \cdot 3^i}{2^{\lceil \frac{i}{log_3(2)}\rceil}\cdot 3^{i+1}} \rfloor + \lfloor\frac{n + 2^{\lceil \frac{i}{log_3(2)}\rceil+1} \cdot 3^i}{2^{\lceil \frac{i}{log_3(2)}\rceil}\cdot 3^{i+1}} \rfloor)

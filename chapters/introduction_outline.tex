@@ -1,17 +1,17 @@
 
-In the course of developing a generalized factorial function, Manjul Bhargava introduced the notion of  $p-$orderings of a Dedekind domain \cite{mb1, mb2}, a combinatorial concept which, along with his generalized factorial, provided deep and perhaps unexpected results in number theory. The concepts laid down in these papers have enriched the theory of integer-valued polynomials \cite{mb3, kj2} and have also provided a natural framework to extend many classical results in analysis to a $p-$adic setting, such as polynomial approximation and mapping theorems \cite{mb1, mb2,mb3}. In this thesis, we examine how a tool based on $p-$orderings can extend another concept from classical analysis, namely the \textit{valuative capacity} of a set, to non-Archimedean settings.\\
+In the course of developing a generalized factorial function, Manjul Bhargava introduced the notion of a $p-$ordering of a Dedekind domain \cite{mb1, mb2}, a combinatorial concept which, along with his generalized factorial, provided deep and perhaps unexpected results in number theory. The concepts laid down in these papers have enriched the theory of integer-valued polynomials \cite{mb3, kj2} and have also provided a natural framework to extend many classical results in analysis to a $p-$adic setting, such as polynomial approximation and mapping theorems \cite{mb1, mb2,mb3}. In this thesis, we examine how a tool based on $p-$orderings can extend another concept from classical analysis, namely the \textit{valuative capacity} of a set, to non-Archimedean settings.\\
 
 The historical background to this work comes in two parts. On the one hand, there is the background on logarithmic capacity from potential theory, and secondly, there is the background from Bhargava's $p-$orderings. We give a brief summary of each here. A similar treatment, with slightly different perspective, is found in \cite{fp}. Jean-Luc Chabert was the first to draw a connection between the two, and many of the known results in this area stem from his work or that of his colleagues. Building on the result in \cite{kj}, we extend the work by Chabert and colleagues by studying valuative capacity in a more general setting, namely that of an ultrametric space, which may or may not also be a local field. In doing so, we show many properties of capacity are in fact independent of the algebraic structure of a space, although such structure, when it exists, can act as a useful probe.\\
 
 \section{Logarithmic capacity}
-The theory of capacity has been developed as a topic in potential theory in a variety of settings. Classically, the notion of capacity was developed over both $\mathbb{C}$ and $\mathbb{R}^n$, although the theory has been further developed in a rather general way by Rumely for Berkovich spaces. A  signficant body of work on the analytic properties of capacity can be found for a number of different contexts. For example, such a treatment of the subject over $\mathbb{C}$ can be found in \cite{wer} and \cite{rand}, over Berkovich spaces in \cite{rum}, and over $\mathbb{Q}_p$ in \cite{dgc}. We give a brief account of capacity over $\mathbb{C}$ here, presenting only the most essential definitions and results.   One advantage of tracing the historical roots of capacity back to $\mathbb{C}$ is that the theory in this setting also comes equipped with a physical interpretation. As we are about to see, capacity in the classical sense gives a mathematical model for the amount of electrostatic charge a conductor can hold. The exposition below is closely based on \cite{rand} and \cite{rand2}.\\
+The theory of capacity has been developed as a topic in potential theory in a variety of settings. Classically, the notion of capacity was developed over both $\mathbb{C}$ and $\mathbb{R}^n$, although the theory has been further developed in a rather general way by Rumely for Berkovich spaces. A  significant body of work on the analytic properties of capacity can be found for a number of different contexts. For example, such a treatment of the subject over $\mathbb{C}$ can be found in \cite{wer} and \cite{rand}, over Berkovich spaces in \cite{rum}, and over $\mathbb{Q}_p$ in \cite{dgc}. We give a brief account of capacity over $\mathbb{C}$ here, presenting only the most essential definitions and results.   One advantage of tracing the historical roots of capacity back to $\mathbb{C}$ is that the theory in this setting also comes equipped with a physical interpretation. As we are about to see, capacity in the classical sense gives a mathematical model for the amount of electrostatic charge a conductor can hold. The exposition below is closely based on \cite{rand} and \cite{rand2}.\\
 
 Even restricting ourself to the definition of capacity of subsets of $\mathbb{C}$, we find two paths, one which will give us some physical interpretation, and one which will lead more naturally to $p-$orderings. We start with the former.\\
 
 \begin{definition} 
 \cite{rand2} Let $\mu$ be a finite Borel measure on $\mathbb{C}$ and suppose $\mu$ has compact support.  We associate to $\mu$ a function, $p_{\mu}:\mathbb{C} \rightarrow (-\infty, \infty]$, given by
 \[p_\mu (x) =\int \log \frac{1}{\lvert x - y \rvert} d\mu(y)\] called the \textbf{potential function} of $\mu$. The \textbf{energy} of $\mu$ is 
-\[I(\mu) =\int \int \log \frac{1}{\lvert x - y \rvert} d\mu(y) d\mu(x)\]
+\[I(\mu) =\int \int \log \frac{1}{\lvert x - y \rvert} d\mu(y) d\mu(x).\]
 \end{definition}
 
 This gives at once the physical interpretation promised above. We interpret the potential function of a measure as giving the potential energy of a point. Viewing the measure as a charge distribution, the double integral gives back the total energy in the system. Now we come upon a physical reality: charged particles in a conductor will naturally distribute themselves in order to minimize the energy. This leads to the definition below:\\
@@ -30,16 +30,16 @@ We state the following proposition without proof. A sketch of the proof can be f
 We are now ready to give our first definition of capacity.\\
 
 \begin{definition}
-\cite{rand2} Let $K$ be a compact subset of $\mathbb{C}$. The logarithmic capacity of $E$ is 
+\cite{rand2} Let $K$ be a compact subset of $\mathbb{C}$. The logarithmic capacity of $K$ is 
 \[C(K) = e^{-I(\nu)}\] where $\nu$ is an equilibrium measure on $K$. If $I(\nu)=\infty$, then we understand that $C(K) =0$.
 \end{definition}
 
-We present below a few results on capacity in $\mathbb{C}$, some of which will reappear in the remainder of this work, although the context, and the proofs (omitted here), bear little resemblence to the present case.\\ 
+We present below a few results on capacity in $\mathbb{C}$, some of which will reappear in the remainder of this work, although the context, and the proofs (omitted here), bear little resemblance to the present case.\\ 
 
 \begin{proposition}
 (\cite{rand}, 5.1.2) Let $K,  K_1,K_2$ be compact subsets of $\mathbb{C}$.
 \begin{enumerate}
-\item $K_1 \subseteq K_2$, then $C(K_1) \leq C(K_2)$.
+\item If $K_1 \subseteq K_2$, then $C(K_1) \leq C(K_2)$.
 \item $C(\alpha K + \beta) = \lvert \alpha \rvert C(K)$ for all $\alpha, \beta \in \mathbb{C}$.
 \item $C(K) = C(\delta_eK)$, where $\delta_e$ is the exterior boundary.\footnote{The exterior boundary of a compact subset, K, of $\mathbb{C}$ is the boundary of the unbounded, connected component of $U = \mathbb{C}\setminus K$.}
 \end{enumerate}
@@ -48,18 +48,18 @@ We present below a few results on capacity in $\mathbb{C}$, some of which will r
 \begin{proposition}
 (\cite{rand}, 5.1.4) Suppose $\{B_n\}$ is a sequence of Borel subsets of $\mathbb{C}$. Let $B=\cup_n B_n$ and $d \geq 0$. 
 \begin{enumerate}
-\item If $diam(b) \leq d$, then $C(B) \leq d$ and \[\frac{1}{log(\frac{d}{C(B)})} \leq \sum_n \frac{1}{log(\frac{d}{C(B_n)})}\]
-\item If $dist(B_j, B_k) \geq d$ whenever $j \neq k$, then \[\frac{1}{log^+(\frac{d}{C(B)})} \geq \sum_n \frac{1}{log^+(\frac{d}{C(B_n)})}\] where $log^+(x) = \max(log(x),0)$.
+\item If $diam(B) \leq d$, then $C(B) \leq d$ and \[\frac{1}{\log(\frac{d}{C(B)})} \leq \sum_n \frac{1}{\log(\frac{d}{C(B_n)})}\]
+\item If $dist(B_j, B_k) \geq d$ whenever $j \neq k$, then \[\frac{1}{log^+(\frac{d}{C(B)})} \geq \sum_n \frac{1}{\log^+(\frac{d}{C(B_n)})}\] where $\log^+(x) = \max(\log(x),0)$.
 \end{enumerate}
 \end{proposition}
 
 
 
-We now know show an equivalent way of  defining of capacity, still over $\mathbb{C}$, which starts with the following two definitions due to Fekete \cite{fek}.\\ 
+We now show an equivalent way of  defining capacity, still over $\mathbb{C}$, which starts with the following two definitions due to Fekete \cite{fek}.\\ 
 
 \begin{definition}
 \cite{fek} Let $K \subseteq \mathbb{C}$ be a compact subset. Fix $n \in \mathbb{N}$, and for $z = (z_1,\ldots,z_n) \in K^n$, consider
-\[\delta_n(z) = \prod_{j < i} \lvert z_i - z_j \rvert^{\frac{2}{(n(n-1))}} \]
+\[\delta_n(z) = \prod_{j < i} \lvert z_i - z_j \rvert^{\frac{2}{n(n-1)}} \]
 An element $z = (z_1,\ldots,z_n) \in K^n$ is called a \textbf{Fekete n-tuple} if $z$ maximizes $\delta_n$ over all $n-$tuples in $K$.
 \end{definition}
 Note that since $K$ is compact by assumption, a Fekete $n-$tuple exists for each $n$.\\
@@ -87,7 +87,7 @@ We end this section with an observation about the points $z_i$ in $\mathbb{C}$ (
 
 \section{P-orderings}
 
-The development of $p-$orderings was motivated by the observation that the factorial function had important number-theoretic applications, yet was only defined for the set $\mathbb{Z}$. In order to generalize the factorial, Bhargava defined it via an invariant, called the $p-$sequence, which could be attached to any subset of a Dedekind domain \footnote{In fact, Bhargava associated $p-$ sequences to the more general class of Dedekind rings, which are locally principal, Noetherian rings in which all nonzero
+The development of $p-$orderings was motivated by the observation that the factorial function had important number-theoretic applications, yet was only defined for the set $\mathbb{Z}$. In order to generalize the factorial, Bhargava defined it via an invariant, called the $p-$sequence, which could be attached to any subset of a Dedekind domain \footnote{In fact, Bhargava associated $p-$sequences to the more general class of Dedekind rings, which are locally principal, Noetherian rings in which all nonzero
 primes are maximal.}    \cite{mb1}.\\
 
 We cannot go much further without introducing the following definition. 
@@ -101,13 +101,13 @@ v_p(z) =
          \infty, & \text{ otherwise }
 \end{cases}
 \]
-For $z \in \mathbb{Z}$, we definite the \textbf{$p-$adic absoluste value} by
+For $z \in \mathbb{Z}$, we definite the \textbf{$p-$adic absolute value} by
 \[ \lvert z \rvert_p = p^{-v_p(z)}\] and the \textbf{$p-$adic metric} accordingly; that is, for $z_1,z_2 \in \mathbb{Z}$
 \[\rho_p(z_1,z_2) = p^{-v_p(z_1-z_2)}\]
 where $p^{-\infty}$ is taken to be $0$. 
 \end{definition}
 
-It is worth pausing to make a few comments about the above definitions. That the $p-$adic metric is truly a metric is easy to see. In fact, we will see in the next chapter that it is not just a metric, but also an ultrametric, since the $p-$adic absolute value satistfies a strengthen version of the triangle identity. The strong triangle identity is not the only interesting property at hand though. Like the logarithm, the $p-$adic valuation also satisfies: $v_p(x \cdot y) = v_p(x) + v_p(y)$ for any prime $p$ and $x,y$ in $\mathbb{Z}$. Moreover, we note that the $p-$adic valuation and $p-$adic metric have an interesting relationship with each other: two points whose difference has a relatively small valuation will have a relatively large distance between them and vice versa. \\
+It is worth pausing to make a few comments about the above definitions. That the $p-$adic metric is truly a metric is easy to see. In fact, we will see in the next chapter that it is not just a metric, but also an ultrametric, since the $p-$adic absolute value satistfies a strengthened version of the triangle identity. The strong triangle identity is not the only interesting property at hand, though. Like the logarithm, the $p-$adic valuation also satisfies $v_p(x \cdot y) = v_p(x) + v_p(y)$ for any prime $p$ and $x,y$ in $\mathbb{Z}$. Moreover, we note that the $p-$adic valuation and $p-$adic metric have an interesting relationship with each other: two points whose difference has a relatively small valuation will have a relatively large distance between them and vice versa. \\
 
 We are now ready to define $p-$orderings, and not long after, to give the connection to Fekete $n-$tuples.\\
 
@@ -132,16 +132,15 @@ Let $(M, \rho)$ be a metric space and suppose $S \subseteq M$ is a compact subse
 \[\delta_n(z) = \prod_{j < i} \rho(z_i - z_j)^{\frac{2}{(n(n-1))}} \]
 An element $z = (z_1,\ldots,z_n) \in S^n$ is called a \textbf{generalized Fekete n-tuple} if $z$ maximizes $\delta_n$ over all $n-$tuples in $S$.
 \end{definition}
-%This marks the first and last result we present about a metric space. From this point on, we will dwell in the world of ultrametric spaces.
-What then is the connection to $p-$orderings and $p-$sequences? Suppose $S$ is a subset of $\mathbb{Z}$ and that $\{a_i\}_{i \geq 0}$ is a $p-$ordering of $S$ for some prime $p$. Then of course from the definition of $p-$orderings, we know that for $i >0$, 
-\[ v_p (\prod_{j < i} (a_i - a_j) ) \leq v_p (\prod_{j < i} (z - a_j) )\] for $z \in S$. Something more is true though, namely,
-\[ v_p (\prod_{j < i} (a_i - a_j) ) \leq v_p (\prod (x_i - x_j) )\] for $x_i, x_j \in S$ \cite{mb1}.
-That is, when we pick $a_i$ to minimize the $p-$adic valuation over $\prod_{j < i} (z - a_j)$, we actually achieve the minimum over the product of \textit{all pairs of differences in $S$}. Since minimizing $v_p(x_i - x_j)$ is the same as maximizing $\rho_p(x_i,x_j)$, we have the following remarkable fact: if $\{a_i\}_{i \geq 0}$ is a $p-$ordering of $S$, then $\{a_i\}_{i=0}^n$ is a generalized Fekete $n-$tuple for $(S,\rho_p)$ for each $n$. In particular, $p-$orderings give a recursive construction for generalized Fekete $n-$tuples.\\   
+What then is the connection to $p-$orderings and $p-$sequences? Suppose $S$ is a subset of $\mathbb{Z}$ and that $\{a_i\}_{i \geq 0}$ is a $p-$ordering of $S$ for some prime $p$. Then of course from the definition of $p-$orderings, we know that for $n >0$, 
+\[ v_p (\prod_{j < n} (a_n - a_j) ) \leq v_p (\prod_{j < n} (z - a_j) )\] for $z \in S$. Something more is true though, namely,
+\[ v_p (\prod_{j < n} (a_n - a_j) ) \leq v_p (\prod^n (x_i - x_j) )\] for $x_i, x_j \in S$ \cite{mb1}.
+That is, when we pick $a_n$ to minimize the $p-$adic valuation over $\prod_{j < n} (z - a_j)$, we actually achieve the minimum over the product of \textit{all pairs of n differences in $S$}. Since minimizing $v_p(x_i - x_j)$ is the same as maximizing $\rho_p(x_i,x_j)$, we have the following remarkable fact: if $\{a_i\}_{i \geq 0}$ is a $p-$ordering of $S$, then $\{a_i\}_{i=0}^n$ is a generalized Fekete $n-$tuple for $(S,\rho_p)$ for each $n$. In particular, $p-$orderings give a recursive construction for generalized Fekete $n-$tuples.\\   
 
-The first connection between these objects was made by Jean-Luc Chabert in \cite{jlc} when he studied the limit of these sequences not just for the case $M=\mathbb{Z}$ and $\rho=\rho_p$, but in the case that $M$ is any rank-one valuation domain \cite{jlc}. We repeat his theorem 4.2 from \cite{jlc} below,
+The first connection between these objects was made by Jean-Luc Chabert in \cite{jlc} when he studied the limit of these sequences not just for the case $M=\mathbb{Z}$ and $\rho=\rho_p$, but in the case that $M$ is any rank-one valuation domain \cite{jlc}. We repeat his Rheorem 4.2 from \cite{jlc} below,
 
 \begin{proposition}
-Let $E$ be a subset of $V$, a rank-one valuation domain with valuation $v$. If $\{a_i\}_{i \geq 0}$ is $v-$ordering \footnote{A $v-$ordering of $E$ is exactly as expected: a sequence of distinct element $\{a_i\}_{i \geq 0}$ in $E$ is $v-$ordering of $E$ if for $n >0$,
+Let $E$ be a subset of $V$, a rank-one valuation domain with valuation $v$. If $\{a_i\}_{i \geq 0}$ is a $v-$ordering \footnote{A $v-$ordering of $E$ is exactly as expected: a sequence of distinct element $\{a_i\}_{i \geq 0}$ in $E$ is $v-$ordering of $E$ if for $n >0$,
 \[ v(\prod_{k=0}^{n-1} (a_n-a_k) ) \leq v(\prod_{k=0}^{n-1} (x-a_k)  \] for each $x \in E$.} of $E$, then
 \[\lim_{n\to\infty} \frac{1}{n} \sum_{k=0}^{n-1} v(a_n-a_k) =\frac{2}{n(n+1)} \inf_{x_0, \ldots, x_n \in E} v (\prod_{0\leq j < i \leq n} (x_i-x_j))\]
 \end{proposition}
