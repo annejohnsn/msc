@@ -47,7 +47,7 @@ By the division algorithm, we know there exists unique $c,r \in \mathbb{Z}$ such
 \begin{proof}
 \[\lfloor\frac{n}{b} \rfloor - \lfloor \frac{n}{ab} \rfloor = \lfloor a \cdot \frac{n}{ab} \rfloor - \lfloor \frac{n}{ab} \rfloor  = \sum_{k=0}^{a-1} \lfloor \frac{n}{ab} + \frac{k}{a} \rfloor - \lfloor \frac{n}{ab} \rfloor \text{ (*)}\]
 \[= \sum_{k=1}^{a-1} \lfloor \frac{n}{ab} + \frac{k}{a} \rfloor = \sum_{k=1}^{a-1} \lfloor \frac{n + kb}{ab} \rfloor \]
-where the final step in (*) is due to Hermite's identity: $\lfloor nx \rfloor = \sum_{k=0}^{n-1} \lfloor x + \frac{k}{n} \rfloor$, for $n \in \mathbb{N}$ and $x \in \mathbb{R}$.
+where the final step in (*) is due to Hermite's identity (\cite{st}): $\lfloor nx \rfloor = \sum_{k=0}^{n-1} \lfloor x + \frac{k}{n} \rfloor$, for $n \in \mathbb{N}$ and $x \in \mathbb{R}$.
 \end{proof}                                                                                                              
 
 \begin{lemma}
