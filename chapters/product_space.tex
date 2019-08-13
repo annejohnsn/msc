@@ -8,11 +8,10 @@ Let $(M_i, \rho_i)$, for $i$ in some finite index set $I$, be a collection of me
 \begin{proof}
 Let $(M, \rho_\infty)$ be the product of ultrametric spaces as above and let $x$ and $y$ be two points in the space. Clearly, $\rho_\infty(x,y) \geq 0$ since each $\rho_i(x_i,y_i) \geq 0$, and $\rho_\infty(x,y) = 0 \iff \rho_i(x_i,y_i) =0,\forall i \iff x_i=y_i, \forall i \iff x=y$. The fact that $\rho_\infty$ is symmetric is also an easy consequence of the fact that each $\rho_i$ is symmetric since  $\rho_i(x_i, y_i) = \rho_i(y_i, x_i)$ implies $\max_{i}\{\rho_i(x_i, y_i)\} = \max_i\{\rho_i(y_i, x_i)\}$. To see that $\rho_\infty$ is an ultrametric, note that if $z=\{z_i\}$ is any other point of $M$, then
 \begin{align*}
-    \rho_\infty(x, y) &&\\
-     = \max_i\{\rho_i(x_i,y_i)\} && \\
-    \leq \max_i\{\max(\rho_i(x_i,z_i),\rho_i(y_i,z_i))\} && \text{ since each $\rho_i$ is an ultrametric } \\
-    \leq \max(\max_i\{\rho_i(x_i,z_i)\}, \max_i\{\rho_i(y_i,z_i)\})  \\
-    = \max(\rho_\infty(x,z),\rho_\infty(y,z))  
+   \qquad \rho_\infty(x, y)& = \max_i\{\rho_i(x_i,y_i)\}  \\
+    &\leq \max_i\{\max(\rho_i(x_i,z_i),\rho_i(y_i,z_i))\} & \text{ since each $\rho_i$ is an ultrametric } \\
+    &\leq \max(\max_i\{\rho_i(x_i,z_i)\}, \max_i\{\rho_i(y_i,z_i)\})  \\
+    &= \max(\rho_\infty(x,z),\rho_\infty(y,z))  
 \end{align*}
 %* Let $M= max(sup_i(\{a_i\}, sup_j(\{b_j\})))$, then $M \geq a_i, \forall i$ and $M \geq b_i, \forall i$, so $M \geq max(a_i,b_i), \forall i$, hence $M \geq sup_i(max(a_i,b_i)$.
 \end{proof}
@@ -59,12 +58,12 @@ Suppose $(M,\rho_\infty)$ is the product of ultrametric spaces $(M_i, \rho_i)$ a
 
 \begin{proof}
 Let $(M,\rho_\infty)$ be as above. Suppose also that \[\rho_i(x_i,y_i) = \rho_i(s_i +_i x_i, s_i +_iy_i), \forall s_i, x_i, y_i \in M_i, \forall i.\] that is, suppose each $\rho_i$ is (left) translation invariant. Then,  
-\[
-\rho_\infty(s +x, s+y)  
-= \max_i\{\rho_i(s_i +_ix_i, s_i +_i y_i)\} 
-= \max_i\{\rho_i(x_i, y_i)\}
-= \rho_\infty(x,y).
-\] so that $\rho_\infty$ is translation invariant.  Proposition \ref{translation invariance} implies that valuative capacity is as well. 
+\begin{align*}
+\rho_\infty(s +x, s+y) &= \max_i\{\rho_i(s_i +_ix_i, s_i +_i y_i)\} \\
+&= \max_i\{\rho_i(x_i, y_i)\}\\
+&= \rho_\infty(x,y).
+\end{align*} 
+so that $\rho_\infty$ is translation invariant.  Proposition \ref{translation invariance} implies that valuative capacity is as well. 
 \end{proof}
 
 In the next proposition, we show that scaling carries over to product space as well, although the conditions are now more restrictive. In contrast to the proposition above, here  we cannot allow the spaces to vary between components.\\
@@ -76,10 +75,10 @@ Let $(m, \rho_N)$ be an ultrametric space, where $\rho_N$ is the metric induced 
 \begin{proof}
 Let $M, \rho,$ and $\rho_{\infty}$ be as above. Then, 
 \begin{align*}
-\rho_\infty(cx, cy) = \max_i\{\rho_N(c_i x_i, c_i y_i)\} && \\
-= \max_i\{\vert c \rvert_{\rho_N} \text{ }  \rho_N(x_i, y_i)\} && \\
-= \vert c \rvert_{\rho_N} \text{ } \max_i\{\rho_N(x_i,y_i)\} && \\
-= \vert c \rvert_{\rho_N} \text{ } \rho_\infty(x_i,y_i)
+\rho_\infty(cx, cy) &= \max_i\{\rho_N(c_i x_i, c_i y_i)\} \\
+&= \max_i\{\vert c \rvert_{\rho_N} \text{ }  \rho_N(x_i, y_i)\} \\
+&= \vert c \rvert_{\rho_N} \text{ } \max_i\{\rho_N(x_i,y_i)\} \\
+&= \vert c \rvert_{\rho_N} \text{ } \rho_\infty(x_i,y_i)
 \end{align*}
 \end{proof}
 
@@ -108,10 +107,13 @@ What is the valuative capacity of  $(\mathbb{Z}_p \times \mathbb{Z}_p, \rho_{p,\
 
 Since the pairwise distances on the right-hand side are always $1 = diam(\mathbb{Z}_2 \times \mathbb{Z}_2)$, the decomposition formula implies that \\
 
-\[
-\frac{1}{\log(\omega(\mathbb{Z}_2 \times \mathbb{Z}_2))} \]
-\[ = \frac{1}{\log(\omega(2\mathbb{Z}_2 \times 2\mathbb{Z}_2))} + \frac{1}{\log(\omega(2\mathbb{Z}_2 \times 2\mathbb{Z}_2 +1))} +\] \[ \frac{1}{\log(\omega(2\mathbb{Z}_2+1 \times 2\mathbb{Z}_2))} + \frac{1}{\log(\omega(2\mathbb{Z}_2+1 \times 2\mathbb{Z}_2+1))}\]
-\[ = \frac{4}{\log(\lvert 2 \rvert_2 \cdot \omega(\mathbb{Z}_2 \times \mathbb{Z}_2))} = \frac{4}{\log(\frac{1}{2} \cdot \omega(\mathbb{Z}_2 \times \mathbb{Z}_2))}\]% =  \frac{4}{log(\frac{1}{2}) + log(\omega(\mathbb{Z}_2 \times \mathbb{Z}_2))}\]
+\begin{align*}
+\qquad  \frac{1}{\log(\omega(\mathbb{Z}_2 \times \mathbb{Z}_2))}& = \frac{1}{\log(\omega(2\mathbb{Z}_2 \times 2\mathbb{Z}_2))} + \frac{1}{\log(\omega(2\mathbb{Z}_2 \times 2\mathbb{Z}_2 +1))} \\
+  &\qquad \qquad + \frac{1}{\log(\omega(2\mathbb{Z}_2+1 \times 2\mathbb{Z}_2))} + \frac{1}{\log(\omega(2\mathbb{Z}_2+1 \times 2\mathbb{Z}_2+1))}\\
+& = \frac{4}{\log(\lvert 2 \rvert_2 \cdot \omega(\mathbb{Z}_2 \times \mathbb{Z}_2))} \\
+&= \frac{4}{\log(\frac{1}{2} \cdot \omega(\mathbb{Z}_2 \times \mathbb{Z}_2))}
+% =  \frac{4}{log(\frac{1}{2}) + log(\omega(\mathbb{Z}_2 \times \mathbb{Z}_2))}\]
+\end{align*}
 Then,
 \[4\cdot \log(\omega(\mathbb{Z}_2 \times \mathbb{Z}_2)) =\log(\frac{\omega(\mathbb{Z}_2 \times \mathbb{Z}_2)}{2}) \]
 

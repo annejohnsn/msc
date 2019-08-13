@@ -335,13 +335,12 @@ We show now some results on the interaction between the algebraic structure of t
 \begin{proof}
 	Let $\{a_i\}_{i\geq 0}$ be a $\rho$-ordering for $S$. Then $\{g+a_i\}_{i\geq 0}$ is a $\rho$-ordering for $g+S$. Then
 
-	\begin{flalign*} 
-	\omega(g+S) & \\
-	= \lim_{n\to\infty} \delta(n)^{1/n}  & \\
-	= \lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(g+a_n,g+a_i)]^{1/n}  & \\ 
-	=\lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(a_n,a_i)]^{1/n}	 & \\
-	= \omega(S) 
-	\end{flalign*}
+	\begin{align*} 
+	\omega(g+S) &= \lim_{n\to\infty} \delta(n)^{1/n}   \\
+	&= \lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(g+a_n,g+a_i)]^{1/n}   \\ 
+	&=\lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(a_n,a_i)]^{1/n}	  \\
+	&= \omega(S) 
+	\end{align*}
 
 \end{proof}	
 
@@ -355,19 +354,21 @@ We show now some results on the interaction between the algebraic structure of t
 
 \begin{proof}
 	Let $\rho_N$ be the metric induced by $N$, so that $\rho_N(x,y) = N(x-y), \forall x,y \in V$. Let $\{a_i\}_{i\geq 0}$ be a $\rho_N$-ordering for $S$ and let $u, v$ be in $gS$ with $u=gs_i$ and $v=gs_j$ for some $s_i, s_j \in S$. Then, since $N$ is multiplicative, 
-	\begin{flalign*}
-	\rho(u, v)  & \\
-	= \rho(gs_i, gs_j) &\\
-	= N(gs_i - gs_j) & \\
-	= N(g(s_i - s_j)) & \\
-	= N(g)N(s_i - s_j)& \\
-	= N(g)\rho(s_i,s_j),
-	\end{flalign*}
+	\begin{align*}
+	\rho(u, v) & = \rho(gs_i, gs_j) \\
+	& = N(gs_i - gs_j)  \\
+	& = N(g(s_i - s_j))  \\
+	& = N(g)N(s_i - s_j) \\
+	& = N(g)\rho(s_i,s_j),
+	\end{align*}
 	so that $\{ga_i\}_{i\geq 0}$ is a $\rho_N$-ordering for $gS$. Then,
-	
-	$$\omega(gS) = \lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(ga_n,ga_i)]^{1/n} 
-	= \lim_{n\to\infty} [\prod_{i=0}^{n-1} N(g)\rho(a_n,a_i)]^{1/n} $$
-	$$= \lim_{n\to\infty} [N(g)^n\prod_{i=0}^{n-1} \rho(a_n,a_i)]^{1/n} = N(g) \lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(a_n,a_i)]^{1/n} = N(g) \omega(S)$$
+	\begin{align*}
+	\omega(gS) &= \lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(ga_n,ga_i)]^{1/n} \\
+	&= \lim_{n\to\infty} [\prod_{i=0}^{n-1} N(g)\rho(a_n,a_i)]^{1/n} \\
+	&= \lim_{n\to\infty} [N(g)^n\prod_{i=0}^{n-1} \rho(a_n,a_i)]^{1/n}\\
+	&= N(g) \lim_{n\to\infty} [\prod_{i=0}^{n-1} \rho(a_n,a_i)]^{1/n} \\
+	&= N(g) \omega(S).
+	\end{align*}
 \end{proof}
 
 
