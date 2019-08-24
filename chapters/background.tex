@@ -297,7 +297,7 @@ Armed with the notion of a well-defined $\rho-$sequence for an ultrametric space
 
 We spend the rest of this chapter establishing some basic results on valuative capacity. These results form the start of our toolkit for calculating the capacities of specifics sets. They also show that many of the properties of capacity from $\mathbb{C}$ carry over to the non-Archimedean case in a natural way. \\
 
-Let us assume from this point on that $S$ is always a compact subset of an ultrametric space, unless stated otherwise.\\ 
+Let us assume from this point on that $S$ is always a compact subset of an ultrametric space.\\ 
 
 \begin{proposition}
  $\omega(S)$ is finite. If $S$ itself is finite, then $\omega(S) =0$.
@@ -312,7 +312,7 @@ Are there ultrametric spaces that have some \textit{infinite} subset $S$ with $\
 We also have the expected result on monotoncity for valuative capacity:\\
 
 \begin{proposition}
-	(\cite{kj}, Lemma 4) If $S$ and $T$ are compact subsets of an ultrametric space such that $S \subseteq T$ then $\omega(S) \leq \omega(T)$. 
+	(\cite{kj}, Lemma 4) If $S$ and $T$ are compact subsets of an ultrametric space such that $S \subseteq T$, then $\omega(S) \leq \omega(T)$. 
 \end{proposition}
 
 %\begin{proposition}
@@ -325,7 +325,7 @@ We also have the expected result on monotoncity for valuative capacity:\\
 
 %This doesn't work because  $\cup_{a_i} B_d(a_i)$  could fail to be a cover - the $\rho-$ ordering will be a dense subset under mild conditions - then being compact should imply a contradiction since we should have $\overline{S}=S$ for $S$ compact.
 
-We show now some results on the interaction between the algebraic structure of the space and valuative capacity. These results can be powerful tools for calculating capacities, in particular, when they are combined with the subadditivity result that follows.\\
+We show now some results on the interaction between the algebraic structure of the space and valuative capacity. These results can be powerful tools for calculating capacities, in particular, when they are combined with the decomposition result that follows.\\
  
 \begin{proposition}
 \label{translation invariance}
@@ -401,7 +401,7 @@ We can apply the same reasoning to any partition of $S$ made up of sets that all
 	Suppose $S = \cup_i^n S_i$ with $\rho(S_i, S_j)=d=diam(S)$ and also $\omega(S_i)=\omega(S_j)$, $\forall i,j$ .  Let $r \in \mathbb{R}$ be such that $\omega(S_i)=r\omega(S)$, $\forall i$. Then $\omega(S) = r^{\frac{1}{n-1}}$. 
 \end{corollary}
 
-Now we note that a partition of $S$ into closed balls will satisfy the hypotheses if the pairwise distance between elements is equal to the diameter of $S$. In particular, if $B(x_i,r_i)$ is a collection of closed balls such that the pairwise-distance between any $B(x_i,r_i)$ and $B(x_j,r_j)$ is constant, then if we know the capacity of each $B(x_i,r_i)$, we can compute the capacity of their union. If $M$ is discretely-valued, then we can say more.\\ 
+Now we note that a partition of $S$ into closed balls will satisfy the hypotheses if the pairwise distance between elements is equal to the diameter of $S$. In particular, if $B(x_i,r_i)$ is a collection of closed balls such that the pairwise-distance between any $B(x_i,r_i)$ and $B(x_j,r_j)$ is constant, then if we know the capacity of each $B(x_i,r_i)$, we can compute the capacity of their union. If $M$ is discretely-valued, then we can say slightly more.\\ 
 \begin{corollary}
 	(Joins of computable sets are computable) Let $M$ be a compact, discretely-valued ultrametric space. Let $\Gamma_M = \{\gamma_0, \gamma_1,\ldots, \gamma_\infty=0\}$ be the set of distances in $M$. Suppose that $S = B(x, \gamma_i)$,  for some $x$ and $i$, is the union of $n \geq 2$ balls of radius $\gamma_{i+1}$, that is, $S=\cup_{j=1}^n B(x_j, \gamma_{i+1})$ is a join in the lattice of closed balls in $M$. Then 
 	\[\frac{1}{\log(\frac{\omega(B(x, \gamma_i))}{\gamma_{i+1}} )} = \sum_{j=1}^n \frac{1}{\log(\frac{\omega(B(x_j, \gamma_{i+1}))}{\gamma_{i+1} })}\]
