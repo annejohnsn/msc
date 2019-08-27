@@ -11,7 +11,7 @@ Let $(M, \rho_\infty)$ be the product of ultrametric spaces as above and let $x$
    \qquad \rho_\infty(x, y)& = \max_i\{\rho_i(x_i,y_i)\}  \\
     &\leq \max_i\{\max(\rho_i(x_i,z_i),\rho_i(y_i,z_i))\} & \text{ since each $\rho_i$ is an ultrametric } \\
     &\leq \max(\max_i\{\rho_i(x_i,z_i)\}, \max_i\{\rho_i(y_i,z_i)\})  \\
-    &= \max(\rho_\infty(x,z),\rho_\infty(y,z))  
+    &= \max(\rho_\infty(x,z),\rho_\infty(y,z)). 
 \end{align*}
 %* Let $M= max(sup_i(\{a_i\}, sup_j(\{b_j\})))$, then $M \geq a_i, \forall i$ and $M \geq b_i, \forall i$, so $M \geq max(a_i,b_i), \forall i$, hence $M \geq sup_i(max(a_i,b_i)$.
 \end{proof}
@@ -19,7 +19,7 @@ Let $(M, \rho_\infty)$ be the product of ultrametric spaces as above and let $x$
 If we are going to compute the capacity of product spaces, we must check that compactness is preserved when taking products. By Tychonoff's theorem, it is enough to show that the product metric, $\rho_\infty$, gives the product topology on the space. To do this, we adapt the proofs in Munkres (\cite{mun}), where they are given for the analogous case of finite products of $\mathbb{R}$.\\
 
 \begin{definition-proposition} 
-	(\cite{mun}, page 114) Suppose $X_i$, for $i$ in some index set $I$, is a family of topological spaces.  Let $\pi_j: \prod_{i \in I} X_i \rightarrow X_j$ be the map given by projection onto the $j$-th component, that is, $\pi_j (x) = \pi_j ((x_i)_{i \in I}) = x_j$. For each $j \in I$, let $\mathcal{S}_j$ be the collection \[\mathcal{S}_j = \{\pi^{-1}_j (U_j)\mid U_j \text{ open in } X_j\}\] Let $\mathcal{S}$ be the union of the $\mathcal{S}_j$ over $j \in I$, $\mathcal{S}= \cup_{j \in I} \mathcal{S}_j$. Then $\mathcal{S}$ is a subbasis that generates a topology on  $\prod_{i \in I} X_i$ called the \textbf{product topology}.\\
+	(\cite{mun}, page 114) Suppose $X_i$, for $i$ in some index set $I$, is a family of topological spaces.  Let $\pi_j: \prod_{i \in I} X_i \rightarrow X_j$ be the map given by projection onto the $j$-th component, that is, $\pi_j (x) = \pi_j ((x_i)_{i \in I}) = x_j$. For each $j \in I$, let $\mathcal{S}_j$ be the collection \[\mathcal{S}_j = \{\pi^{-1}_j (U_j)\mid U_j \text{ open in } X_j\}.\] Let $\mathcal{S}$ be the union of the $\mathcal{S}_j$ over $j \in I$, $\mathcal{S}= \cup_{j \in I} \mathcal{S}_j$. Then $\mathcal{S}$ is a subbasis that generates a topology on  $\prod_{i \in I} X_i$ called the \textbf{product topology}.\\
 \end{definition-proposition}
 
 
@@ -78,7 +78,7 @@ Let $M, \rho,$ and $\rho_{\infty}$ be as above. Then,
 \rho_\infty(cx, cy) &= \max_i\{\rho_N(c_i x_i, c_i y_i)\} \\
 &= \max_i\{\vert c \rvert_{\rho_N} \text{ }  \rho_N(x_i, y_i)\} \\
 &= \vert c \rvert_{\rho_N} \text{ } \max_i\{\rho_N(x_i,y_i)\} \\
-&= \vert c \rvert_{\rho_N} \text{ } \rho_\infty(x_i,y_i)
+&= \vert c \rvert_{\rho_N} \text{ } \rho_\infty(x_i,y_i).
 \end{align*}
 \end{proof}
 
@@ -111,7 +111,7 @@ Since the pairwise distances on the right-hand side are always $1 = diam(\mathbb
 \qquad  \frac{1}{\log(\omega(\mathbb{Z}_2 \times \mathbb{Z}_2))}& = \frac{1}{\log(\omega(2\mathbb{Z}_2 \times 2\mathbb{Z}_2))} + \frac{1}{\log(\omega(2\mathbb{Z}_2 \times 2\mathbb{Z}_2 +1))} \\
   &\qquad \qquad + \frac{1}{\log(\omega(2\mathbb{Z}_2+1 \times 2\mathbb{Z}_2))} + \frac{1}{\log(\omega(2\mathbb{Z}_2+1 \times 2\mathbb{Z}_2+1))}\\
 & = \frac{4}{\log(\lvert 2 \rvert_2 \cdot \omega(\mathbb{Z}_2 \times \mathbb{Z}_2))} \\
-&= \frac{4}{\log(\frac{1}{2} \cdot \omega(\mathbb{Z}_2 \times \mathbb{Z}_2))}
+&= \frac{4}{\log(\frac{1}{2} \cdot \omega(\mathbb{Z}_2 \times \mathbb{Z}_2))}.
 % =  \frac{4}{log(\frac{1}{2}) + log(\omega(\mathbb{Z}_2 \times \mathbb{Z}_2))}\]
 \end{align*}
 Then,
@@ -127,13 +127,13 @@ so that ${\omega(\mathbb{Z}_2 \times \mathbb{Z}_2)}$ is a solution of the equati
 
 To compute the valuative capacity for a $2$-fold product for an arbitary prime $p$, note that we can always decompose $\mathbb{Z}_p \times \mathbb{Z}_p$ into a union of $p^2$ sets, each of the form $\{(p\mathbb{Z}_p+s) \times (p\mathbb{Z}_p +t)\}$ for $s,t \in (0,\ldots, p-1)$, and the pairwise distance between these sets will always be $1 = diam(\mathbb{Z}_p \times \mathbb{Z}_p)$. (To see this, either note that we can always find co-prime elements, or note that each set is a closed ball of radius $1/p$ centred at (s,t) and so the distance between them must be greater than $1/p$, and $1$ is the only possible distance greater than $1/p$ in $\mathbb{Z}_p \times \mathbb{Z}_p$).  Then, we combine our tools as before to obtain the equation,\\
 
-\[\frac{1}{\log(\omega(\mathbb{Z}_p \times \mathbb{Z}_p))} = \frac{p^2}{\log(\lvert p \rvert_p \cdot \omega(\mathbb{Z}_p \times \mathbb{Z}_p))} =  \frac{p^2}{\log(\frac{1}{p} \cdot \omega(\mathbb{Z}_p \times \mathbb{Z}_p))}    \]
+\[\frac{1}{\log(\omega(\mathbb{Z}_p \times \mathbb{Z}_p))} = \frac{p^2}{\log(\lvert p \rvert_p \cdot \omega(\mathbb{Z}_p \times \mathbb{Z}_p))} =  \frac{p^2}{\log(\frac{1}{p} \cdot \omega(\mathbb{Z}_p \times \mathbb{Z}_p))}.    \]
 
 In turn, we have 
 
 \[ \omega(\mathbb{Z}_p \times \mathbb{Z}_p)^{p^2} =  \frac{\omega(\mathbb{Z}_p \times \mathbb{Z}_p)}{p}  \]
 
-So that $\omega(\mathbb{Z}_p \times \mathbb{Z}_p)$ is a solution of the equation $x^{p^2} - \frac{x}{p} = x(x^{p^2-1} - \frac{1}{p})=0$ over $\mathbb{R}$. Since $\mathbb{R}$ is a field, this means the positive solutions are given by solving $x^{p^2-1}-\frac{1}{p}$. Solutions of this equation are of the form $p^{\frac{-1}{p^2-1}}$ times a $p^2-1$ root of unity, and so there is exactly one positive, real solution, namely $p^{\frac{-1}{p^2-1}}$ itself. Thus the valuative capacity of the entire product space $\mathbb{Z}_p \times \mathbb{Z}_p$ is $p^{\frac{-1}{p^2-1}}$. In fact, from here it is not hard to see that by taking the $n$-fold product, we would end up with the same equation except that the exponent of $p$ would become $n$ rather than $2$. We arrive at the following result:\\
+so that $\omega(\mathbb{Z}_p \times \mathbb{Z}_p)$ is a solution of the equation $x^{p^2} - \frac{x}{p} = x(x^{p^2-1} - \frac{1}{p})=0$ over $\mathbb{R}$. Since $\mathbb{R}$ is a field, this means the positive solutions are given by solving $x^{p^2-1}-\frac{1}{p}$. Solutions of this equation are of the form $p^{\frac{-1}{p^2-1}}$ times a $p^2-1$ root of unity, and so there is exactly one positive, real solution, namely $p^{\frac{-1}{p^2-1}}$ itself. Thus the valuative capacity of the entire product space $\mathbb{Z}_p \times \mathbb{Z}_p$ is $p^{\frac{-1}{p^2-1}}$. In fact, from here it is not hard to see that by taking the $n$-fold product, we would end up with the same equation except that the exponent of $p$ would become $n$ rather than $2$. We arrive at the following result:\\
 
 \begin{proposition}
 Let $M=(\mathbb{Z}_p^n, \rho_{p, \infty})$ be the ultrametric space with points equal to the $n$-fold product of $(\mathbb{Z}, \rho_p)$ (for $n < \infty$) for some fixed prime $p$. The valuative capacity of $M$ is  $(\frac{1}{p})^{\frac{1}{p^n-1}}$.
@@ -145,18 +145,18 @@ Above.
 
 Taking $n=1$, we see that this agrees with the valuative capacity of $\mathbb{Z}$ computed in the second chapter. \\
 
-What about $(\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2})$ for distinct primes? These spaces do not admit a scaling property, so the same toolset is not available. They are, however, semi-regular, so we know that\\  \[v_{\gamma_k}(\sigma(n)) =  \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor = \sum_{j=1}^{\alpha(k)-1} \lfloor \frac{n + j\cdot \beta(k)}{\alpha(k)\beta(k)} \rfloor \]
+What about $(\mathbb{Z}_{p_1} \times \mathbb{Z}_{p_2})$ for distinct primes? These spaces do not admit a scaling property, so the same toolset is not available. They are, however, semi-regular, so we know that\\  \[v_{\gamma_k}(\sigma(n)) =  \lfloor\frac{n}{\beta(k)}\rfloor - \lfloor\frac{n}{\beta(k+1)}\rfloor = \sum_{j=1}^{\alpha(k)-1} \lfloor \frac{n + j\cdot \beta(k)}{\alpha(k)\beta(k)} \rfloor. \]
 Suppose $p_1 =2$ and $p_2 =3$. Recall that the $\alpha$ sequence of $S=(\mathbb{Z}_{2} \times \mathbb{Z}_{3})$ counts the number of closed balls of radius $\gamma_{k+1}$ partitioning a closed ball of radius $\gamma_k$. In this case, $\Gamma_S$ is the non-positive powers of $2$ and $3$ sorted into decreasing order, so that $\Gamma_S$ starts $\{1, \frac{1}{2},\frac{1}{3},\frac{1}{4},\frac{1}{8},\frac{1}{9},\ldots \}$ and $\alpha(S)$ starts $\{6,2,3,2,2,3,2,3,2,\ldots\}$. The $\beta$ sequence of $S$, which counts the number of distinct balls of a fixed radius, then starts $\{6,12,36,72,144,\ldots\}$.\\
 
 We know that the capacity of $S$ will be a product of some negative power of $2$ and some negative power of $3$.  From Lemma \ref{semi-regular formula}, we know that when $\alpha(k)=2$, we have\\ 
 \[v_{\gamma_k}(\delta(n)) = \lfloor \frac{n + \beta(k)}{2\cdot \beta(k)} \rfloor\]
 
 and when $\alpha(k)=3$, we have\\
-\[v_{\gamma_k}(\delta(n)) = \lfloor \frac{n + \beta(k)}{3\cdot \beta(k)} \rfloor + \lfloor \frac{n + 2\cdot \beta(k)}{3\cdot \beta(k)} \rfloor \]
+\[v_{\gamma_k}(\delta(n)) = \lfloor \frac{n + \beta(k)}{3\cdot \beta(k)} \rfloor + \lfloor \frac{n + 2\cdot \beta(k)}{3\cdot \beta(k)} \rfloor. \]
 
 We also know that if $\alpha(k)=2$, then $\gamma_k$ must be a (negative) power of $2$, and likewise if $\alpha(k)=3$, then $\gamma_k$ is a power of $3$.\\
 
-Let us first explore the exponent of $2$ in $\delta(n)$. We start by noting that if $\gamma_k$ is some $2^{-i}$, then \[v_{\gamma_k}(\delta(n)) =\lfloor \frac{n + 2^i\cdot 3 ^j}{2^{i+1} \cdot 3^j} \rfloor \] since there will be a copy of $2$ in $\beta(k)$ for every occurence of $2$ in $\alpha(0),\ldots,\alpha(k)$, which is also what $i$ counts. So then, the exponent of $\frac{1}{2}$ in the $n^{th}$ characteristic sequence of $S$ is \[ \sum_{i=1}^\infty i \cdot \lfloor\frac{n + 2^i \cdot 3^j}{2^{i+1}\cdot 3^j} \rfloor\] What can we say about $j$, the exponent of $3$?\\ 
+Let us first explore the exponent of $2$ in $\delta(n)$. We start by noting that if $\gamma_k$ is some $2^{-i}$, then \[v_{\gamma_k}(\delta(n)) =\lfloor \frac{n + 2^i\cdot 3 ^j}{2^{i+1} \cdot 3^j} \rfloor \] since there will be a copy of $2$ in $\beta(k)$ for every occurence of $2$ in $\alpha(0),\ldots,\alpha(k)$, which is also what $i$ counts. So then, the exponent of $\frac{1}{2}$ in the $n^{th}$ characteristic sequence of $S$ is \[ \sum_{i=1}^\infty i \cdot \lfloor\frac{n + 2^i \cdot 3^j}{2^{i+1}\cdot 3^j} \rfloor.\] What can we say about $j$, the exponent of $3$?\\ 
 
 \begin{lemma}
 Let $S = (\mathbb{Z}_{2} \times \mathbb{Z}_{3}) $ and consider the $k^{th}$ element of the $\beta$ sequence of $S$, $\beta(k) = 2^i \cdot 3^j$. If $k$ is such that $\gamma_k=2^{-i}$ for some $i$, then $j$ counts the numbers $a \in \mathbb{Z}_{\geq 0}$ such that $3^a < 2^{i}$.
@@ -172,14 +172,14 @@ $\Gamma_S$ is strictly monotone decreasing and each $\gamma_k$ is equal to a non
  \iff
  \log_2(3^a) < \log_2(2^i)
 \iff  
-a \cdot \log_2(3) < i
+a \cdot \log_2(3) < i.
 \end{align*}
 
 So now we are reduced to counting the number of non-negative integers $a$ that satisfy this last inequality for a given $i$.  The number of such $a$'s will simply be the the value of the largest $a$ plus $1$ since $a$ satisfying the relation implies all $0 \leq a' \leq a$ solve the relation. Then, we are in fact reduced to finding the largest $a \in \mathbb{Z}$ that satisfies $a < \frac{i}{log_2(3)}$, but this is exactly $\lfloor \frac{i}{log_2(3)}\rfloor$. This in turn gives $j =  \lfloor \frac{i}{log_2(3)}\rfloor + 1= \lceil \frac{i}{log_2(3)}\rceil$, since $\frac{i}{log_2(3)}$ is never an integer. We now revisit our expression for the exponent of $\frac{1}{2}$ and substitute our new found value for $j$:\\
 
 \begin{align} 
 \sum_{i=1}^\infty i \cdot \lfloor\frac{n + 2^i \cdot 3^{\lceil \frac{i}{log_2(3)}\rceil}}{2^{i+1}\cdot 3^{\lceil \frac{i}{log_2(3)}\rceil}} \rfloor
-=\sum_{i=1}^\infty i \cdot (\lfloor\frac{n}{2^i \cdot 3^{\lceil \frac{i}{log_2(3)}\rceil }}\rfloor -  \lfloor\frac{n}{2^{i+1}\cdot 3^{\lceil \frac{i}{log_2(3)}\rceil}} \rfloor)
+=\sum_{i=1}^\infty i \cdot (\lfloor\frac{n}{2^i \cdot 3^{\lceil \frac{i}{log_2(3)}\rceil }}\rfloor -  \lfloor\frac{n}{2^{i+1}\cdot 3^{\lceil \frac{i}{log_2(3)}\rceil}} \rfloor).
 \end{align}
 % for n from 1 to 100 do
 % evalf(Sum(x*floor((n*10000+2^x*3^ceil(x/log[2](3)))/(2^(x+1)*3^ceil(x/log[2](3)))), x = 1 .. infinity));
@@ -195,7 +195,7 @@ So now we are reduced to counting the number of non-negative integers $a$ that s
 A symmetric argument shows that exponent of $\frac{1}{3}$ in the $n^{th}$ element of the $\rho_\infty-$sequence of $S$ is\\ 
 
 \begin{align} 
-\sum_{i=1}^\infty i \cdot (\lfloor\frac{n + 2^{\lceil \frac{i}{log_3(2)}\rceil} \cdot 3^i}{2^{\lceil \frac{i}{log_3(2)}\rceil}\cdot 3^{i+1}} \rfloor + \lfloor\frac{n + 2^{\lceil \frac{i}{log_3(2)}\rceil+1} \cdot 3^i}{2^{\lceil \frac{i}{log_3(2)}\rceil}\cdot 3^{i+1}} \rfloor)
+\sum_{i=1}^\infty i \cdot (\lfloor\frac{n + 2^{\lceil \frac{i}{log_3(2)}\rceil} \cdot 3^i}{2^{\lceil \frac{i}{log_3(2)}\rceil}\cdot 3^{i+1}} \rfloor + \lfloor\frac{n + 2^{\lceil \frac{i}{log_3(2)}\rceil+1} \cdot 3^i}{2^{\lceil \frac{i}{log_3(2)}\rceil}\cdot 3^{i+1}} \rfloor).
 \end{align}
 
 %\[=\sum_{i=1}^\infty i \cdot (\lfloor\frac{n}{2^{\lceil \frac{i}{log_3(2)}\rceil } \cdot 3^i}\rfloor -  \lfloor\frac{n}{2^{\lceil \frac{i}{log_3(2)}\rceil}\cdot 3^{i+1}} \rfloor)\]

@@ -48,7 +48,7 @@ We present below a few results on capacity in $\mathbb{C}$, some of which will r
 \begin{proposition}
 (\cite{rand}, 5.1.4) Suppose $\{B_n\}$ is a sequence of Borel subsets of $\mathbb{C}$. Let $B=\cup_n B_n$ and $d \geq 0$. 
 \begin{enumerate}
-\item If $diam(B) \leq d$, then $C(B) \leq d$ and \[\frac{1}{\log(\frac{d}{C(B)})} \leq \sum_n \frac{1}{\log(\frac{d}{C(B_n)})}\]
+\item If $diam(B) \leq d$, then $C(B) \leq d$ and \[\frac{1}{\log(\frac{d}{C(B)})} \leq \sum_n \frac{1}{\log(\frac{d}{C(B_n)})}.\]
 \item If $dist(B_j, B_k) \geq d$ whenever $j \neq k$, then \[\frac{1}{log^+(\frac{d}{C(B)})} \geq \sum_n \frac{1}{\log^+(\frac{d}{C(B_n)})}\] where $\log^+(x) = \max(\log(x),0)$.
 \end{enumerate}
 \end{proposition}
@@ -59,7 +59,7 @@ We now show an equivalent way of  defining capacity, still over $\mathbb{C}$, wh
 
 \begin{definition}
 \cite{fek} Let $K \subseteq \mathbb{C}$ be a compact subset. Fix $n \in \mathbb{N}$, and for $z = (z_1,\ldots,z_n) \in K^n$, consider
-\[\delta_n(z) = \prod_{j < i} \lvert z_i - z_j \rvert^{\frac{2}{n(n-1)}} \]
+\[\delta_n(z) = \prod_{j < i} \lvert z_i - z_j \rvert^{\frac{2}{n(n-1)}}.\]
 An element $z = (z_1,\ldots,z_n) \in K^n$ is called a \textbf{Fekete n-tuple} if $z$ maximizes $\delta_n$ over all $n-$tuples in $K$.
 \end{definition}
 Note that since $K$ is compact by assumption, a Fekete $n-$tuple exists for each $n$.\\
@@ -120,7 +120,7 @@ We are now ready to define $p-$orderings, and not long after, to give the connec
 A $p-$ordering in $S$, like a Fekete $n-$tuple in $\mathbb{C}$, is not unique. Indeed, in most of the examples we will explore, there will be infinitely-many choices at each stage of the construction. Nonetheless, $p-$orderings give rise to $p-$sequences, which are invariants of $S$:\\
 
 \begin{definition}
-\cite{mb1} Let $S$ be a subset of $\mathbb{Z}$ and let $p$ be any prime. Suppose $\{a_i\}_{i\geq 0}$ is a $p-$ordering of $S$. The \textbf{p-sequence}, occasionally the \textbf{characteristic sequence}, of $S$ is the sequence defined by $\delta(0)=1$ and for $i > 0,$\[\delta(i) = v_p(\prod_{j=0}^{i-1} (a_i - a_j))\]
+\cite{mb1} Let $S$ be a subset of $\mathbb{Z}$ and let $p$ be any prime. Suppose $\{a_i\}_{i\geq 0}$ is a $p-$ordering of $S$. The \textbf{p-sequence}, occasionally the \textbf{characteristic sequence}, of $S$ is the sequence defined by $\delta(0)=1$ and for $i > 0,$\[\delta(i) = v_p(\prod_{j=0}^{i-1} (a_i - a_j)).\]
 \end{definition}
 
 It is a fact, not entirely obvious, that the $p-$sequence of $S$ is independent of the $p-$ordering used in its construction \cite{mb1}. To define the generalized factorial, Bhargava considered the product of $p-$sequences taken over each prime $p$ for arbitrary subsets of $\mathbb{Z}$.  We will go in another direction.\\
@@ -129,7 +129,7 @@ Suppose we were to generalize our definition of Fekete $n-$tuple in the obvious 
 
 \begin{definition}
 Let $(M, \rho)$ be a metric space and suppose $S \subseteq M$ is a compact subset. Fix $n \in \mathbb{N}$, and for $z = (z_1,\ldots,z_n) \in S^n$, consider
-\[\delta_n(z) = \prod_{j < i} \rho(z_i - z_j)^{\frac{2}{(n(n-1))}} \]
+\[\delta_n(z) = \prod_{j < i} \rho(z_i - z_j)^{\frac{2}{(n(n-1))}}. \]
 An element $z = (z_1,\ldots,z_n) \in S^n$ is called a \textbf{generalized Fekete n-tuple} if $z$ maximizes $\delta_n$ over all $n-$tuples in $S$.
 \end{definition}
 What then is the connection to $p-$orderings and $p-$sequences? Suppose $S$ is a subset of $\mathbb{Z}$ and that $\{a_i\}_{i \geq 0}$ is a $p-$ordering of $S$ for some prime $p$. Then of course from the definition of $p-$orderings, we know that for $n >0$, 
@@ -142,7 +142,7 @@ The first connection between these objects was made by Jean-Luc Chabert in \cite
 \begin{proposition}
 Let $E$ be a subset of $V$, a rank-one valuation domain with valuation $v$. If $\{a_i\}_{i \geq 0}$ is a $v-$ordering \footnote{A $v-$ordering of $E$ is exactly as expected: a sequence of distinct element $\{a_i\}_{i \geq 0}$ in $E$ is $v-$ordering of $E$ if for $n >0$,
 \[ v(\prod_{k=0}^{n-1} (a_n-a_k) ) \leq v(\prod_{k=0}^{n-1} (x-a_k)  \] for each $x \in E$.} of $E$, then
-\[\lim_{n\to\infty} \frac{1}{n} \sum_{k=0}^{n-1} v(a_n-a_k) =\frac{2}{n(n+1)} \inf_{x_0, \ldots, x_n \in E} v (\prod_{0\leq j < i \leq n} (x_i-x_j))\]
+\[\lim_{n\to\infty} \frac{1}{n} \sum_{k=0}^{n-1} v(a_n-a_k) =\frac{2}{n(n+1)} \inf_{x_0, \ldots, x_n \in E} v (\prod_{0\leq j < i \leq n} (x_i-x_j)).\]
 \end{proposition}
 
 Chabert called this limit the valuative capacity of $E$, and we shall do the same. The following result by Johnson in \cite{kj}, in which $p-$ordering has been replaced by $\rho-$ordering, provides the foundation for the rest of this work:
